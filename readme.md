@@ -2,6 +2,10 @@
 
 ## React Native
 
+### Architecture
+- [[Standard] Project Architecture](react-native/architecture/project-architecture.s.md)
+- [[Standard] File Naming](react-native/architecture/file-naming.s.md)
+
 ### Debugging
 
 - [[MO] Debug Javascript Code](react-native/debugging/debug-javascript.mo.md)
