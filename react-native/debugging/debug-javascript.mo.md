@@ -5,8 +5,8 @@
 
 ## Setup Steps
 
-1. Have your app running on a simulator or device
-2. Open **React Native Debugger**
-3. Shake your device to open the development menu
-4. Press `Debug JS Remotely`
-5. Your app should now be connected to your debugger
+- Have your app running on a simulator or device
+- Open **React Native Debugger**
+- Shake your device to open the development menu
+- Press `Debug JS Remotely`
+- Your app should now be connected to your debugger

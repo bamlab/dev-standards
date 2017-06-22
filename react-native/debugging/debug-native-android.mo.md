@@ -6,7 +6,7 @@
 
 ## Steps
 
-1. Open **Android Studio**
-2. Click on *File > Open*
-3. Navigate to and open *<PATH_TO_YOUR_PROJECT>/android*
-4. Run in debug mode from **Android Studio**
+- Open **Android Studio**
+- Click on *File > Open*
+- Navigate to and open *<PATH_TO_YOUR_PROJECT>/android*
+- Run in debug mode from **Android Studio**
