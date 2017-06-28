@@ -2,6 +2,9 @@
 
 ## React Native
 
+### Setup
+- [[MO] Setup & Deploy New Project to Staging](react-native/setup/setup-and-deploy-new-project-to-staging.md) 
+
 ### Architecture
 - [[Standard] Project Architecture](react-native/architecture/project-architecture.s.md)
 - [[Standard] File Naming](react-native/architecture/file-naming.s.md)
