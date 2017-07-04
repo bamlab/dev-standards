@@ -24,6 +24,7 @@ Open the plugins menu and install:
 - Prettier *(Esben Peterson)*
 - React Native Tools *(Visual Studio Mobile Tools)*
 - Auto Close Tag *(Jun Han)*
+- Git Lens *(Eric Amodio)*
 
 #### 3. Base preferences
 
@@ -35,6 +36,9 @@ Open the plugins menu and install:
 "files.insertFinalNewline": true,
 "flow.useNPMPackagedFlow": true,
 "workbench.iconTheme": "vs-seti",
+"files.associations": {
+  "Fastfile": "ruby"
+}
 ```
 
 #### 4. Setup Fira Code
