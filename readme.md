@@ -1,5 +1,8 @@
 # Standards and Methods of Operation
 
+## Contributing
+- [[Standard] Writing a standard](contributing/standard.s.md)
+
 ## React Native
 
 ### Setup
