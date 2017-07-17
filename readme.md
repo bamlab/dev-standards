@@ -2,6 +2,7 @@
 
 ## Contributing
 - [[Standard] Writing a standard](contributing/standard.s.md)
+- [[Standard] Writing a method of operation](contributing/mo.s.md)
 
 ## React Native
 
