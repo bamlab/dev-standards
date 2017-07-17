@@ -25,6 +25,7 @@ Open the plugins menu and install:
 - React Native Tools *(Visual Studio Mobile Tools)*
 - Auto Close Tag *(Jun Han)*
 - Git Lens *(Eric Amodio)*
+- Jest *(Orta)*
 
 #### 3. Base preferences
 
