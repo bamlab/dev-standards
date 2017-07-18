@@ -1,6 +1,6 @@
 # [MO] Install CodePush on your project (~1h)
 
-## Owner: TBD
+## Owner TBD
 
 ## Prerequisites (~0 min, you should already have that)
 
