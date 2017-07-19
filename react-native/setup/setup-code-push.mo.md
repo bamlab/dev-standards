@@ -1,66 +1,75 @@
-# [MO] Install CodePush on your project (~1h)
+# [MO] Install CodePush on your project *(~1h)*
 
-## Owner TBD
+## Owner: Louis Lagrange
 
-## Prerequisites (~0 min, you should already have that)
+## Prerequisites *(~2min)*
 
-- [ ] A running react app, preferably started with the generator.
+- [ ] A running React Native app, preferably started with the generator
+- [ ] A compatible React Native version (see [compatibility table](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms))
 
-## CodePush?
+## What is CodePush?
 
 > A React Native app is composed of JavaScript files and any accompanying images, which are bundled together by the packager and distributed as part of a platform-specific binary (i.e. an .ipa or .apk file). Once the app is released, updating either the JavaScript code (e.g. making bug fixes, adding new features) or image assets, requires you to recompile and redistribute the entire binary, which of course, includes any review time associated with the store(s) you are publishing to.
 
-Codepush allows to rebuild and push only the modified JS code.
+CodePush allows to rebuild and push only the modified JS code.
 
-Pros :
-
+Pros:
 - Faster builds
-- Easier to update: no need to refetch the whole app on HockeyApp
-- Deploy history
+- Easier to update: no need to download the whole app again on HockeyApp
+- See deployment history and statistics
+- Easy rollbacks
+- If you enable it in production, you can install updates silently and automatically
 
-![Code Push ***REMOVED***](./codepush.PNG)
+Cons:
+- You rely on Microsoft Azure's servers
 
+Here's an example on ***REMOVED***'s ***REMOVED*** app, where we enabled it on staging in order to speed up development (at the bottom of the screen).
+![Code Push ***REMOVED***](./../../assets/codepush.png)
 
 ## Steps
 
-### 1. Install code-push cli (~1 min)
+### 1. Install code-push cli *(~1 min)*
 
-  `npm install -g code-push-cli`
+```bash
+npm install -g code-push-cli
+```
 
 *Check:* `code-push -v` should give you a version.
 
-### 2. Login into code-push (~4 min)
+### 2. Login into code-push *(~4 min)*
 
-Login into Github with `***REMOVED***`. In your terminal:
-
-  `code-push register`
-
-and finish the login process using Github.
-
-*Check:* `code-push whoami` should give you your Github email.
-
-### 3. Install the react-native module (~5 min)
-
-**Check version compatibility beforehand**: [https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms).
+Login into GitHub with `***REMOVED***`. In your terminal:
 
 ```bash
-# Add the npm dependency.
+code-push register
+```
+
+and finish the login process using GitHub.
+
+*Check:* `code-push whoami` should give you your GitHub email.
+
+### 3. Install the react-native module *(~5 min)*
+
+Lookup the compatible version (we'll name it `<your.version>`) in the [compatibility table](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms).
+
+```bash
+# Add the npm dependency
 yarn add react-native-code-push@<your.version>
-# Register your android app:
+# Register your Android app
 code-push app add <MyApp>-android android react-native
-# Save the output staging token for later use
-# Register your ios app:
+# Save the Staging token for later use
+# Register your iOS app
 code-push app add <MyApp>-ios ios react-native
-# Save the output staging token for later use
-# Link the native modules. Paste your staging tokens.
+# Save the Staging token for later use
+# Link the native modules. Paste your Staging tokens when prompted.
 react-native link react-native-code-push
 ```
 
-*Check:* your app should build with the binary codepush modules. The deploy keys are present in `Info.plist` and in `MainApplication.java`.
+*Check:* your app should build with the binary CodePush modules. The deploy keys are present in `Info.plist` and in `MainApplication.java`.
 
-### 4. Update your code (~35 min)
+### 4. Update your code *(~35 min)*
 
-#### update App.js (~10 min)
+#### Update App.js *(~10 min)*
 
 ```js
 // @flow
@@ -89,7 +98,7 @@ export default AppComponent;
 
 *Check:* No check on simulator. Your app should not crash (duh!).
 
-#### update Home.js (~15 min)
+#### Update Home.js *(~15 min)*
 
 You can put the update process on any page you like, or even check if an update is available with a long press somewhere... It is up to you and your PO.
 
@@ -181,7 +190,7 @@ export default Home
 
 *Check:* On simulator, you should see an update button if you force the env to staging. You can force the labels in the state variables `updateDescription` and `updateLabel` to check their position.
 
-#### create bin/deploy.sh (~10 min)
+#### Create bin/deploy.sh *(~10 min)*
 
 ```bash
 #!/bin/sh
@@ -217,7 +226,7 @@ esac
 
 *Check:* `./bin/deploy.sh`, `y` should deploy your application exactly like before. `./bin/deploy.sh`, `n` should deploy with codepush.
 
-#### update package.json (~1 min)
+#### Update package.json *(~1 min)*
 
 ```json
 {
@@ -235,19 +244,19 @@ esac
 
 *Check:* `yarn deploy.sh`, `y` should deploy your application exactly like before. `yarn deploy.sh`, `n` should deploy with codepush.
 
-### Test! (~15 min)
+### 5. Test! *(~15 min)*
 
 Open your PR, merge into the main branch. Have a hard build.
 You can now deploy with code-push.
 
 Bump your versions into `.env.staging` file before every hard deploy. If not, your JS code might try to call native libraries not present in your app.
 
-### Optional
+### 6. Externalize the keys (optional) *(~10min)*
 
-Externalize the keys in `Info.plist` and `manifest.xml`: see [https://github.com/kraynel/code-push-demo/commit/3cdd2496fab763a9814c1898c73505cd14fca9d1](https://github.com/kraynel/code-push-demo/commit/3cdd2496fab763a9814c1898c73505cd14fca9d1)
+Externalize the keys in `Info.plist` and `AndroidManifest.xml`: see [https://github.com/kraynel/code-push-demo/commit/3cdd2496fab763a9814c1898c73505cd14fca9d1](https://github.com/kraynel/code-push-demo/commit/3cdd2496fab763a9814c1898c73505cd14fca9d1)
 
 ## Troubleshooting
 
 You can try the CodePush [documentation](http://microsoft.github.io/code-push/docs/getting-started.html), and particularly the [react-native section](http://microsoft.github.io/code-push/docs/react-native.html).
 
-You should also Andon the projects with a working CodePush process: [***REMOVED***](https://github.com/bamlab/***REMOVED***), [***REMOVED***](https://github.com/bamlab/***REMOVED***), ***REMOVED*** and ***REMOVED*** at ***REMOVED***.
+You should also Andon the teams with a working CodePush process: [***REMOVED***](https://github.com/bamlab/***REMOVED***), [***REMOVED***](https://github.com/bamlab/***REMOVED***), ***REMOVED*** and ***REMOVED*** at ***REMOVED***.
