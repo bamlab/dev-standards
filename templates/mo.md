@@ -1,5 +1,7 @@
-# [MO] <Title>
+# [MO] <Title> *(~<Time> min)*
 
-## Prerequisites
+## Owner: <YourFullName>
 
-## Steps
+## Prerequisites *(~<Time> min)*
+
+## Steps *(~<Time> min)*
