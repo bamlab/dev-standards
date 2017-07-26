@@ -26,7 +26,7 @@ for (let moFile of moFiles) {
   if (!fileContent.match(/## Troubleshooting/))
     warn(`**${fileUrl}**: Seems you do not need a *Troubleshoot* part`);
   if (!readmeContent.match(moFile))
-    fail(`**${fileUrl}**: Does not seem to be included in the root readme`);
+    warn(`**${fileUrl}**: Does not seem to be included in the root readme`);
 }
 
 for (let standardFile of standardFiles) {
@@ -45,5 +45,5 @@ for (let standardFile of standardFiles) {
   if (!fileContent.match(/## Good Examples/))
     fail(`**${fileUrl}**: You failed to mention a *Good Examples* `);
   if (!readmeContent.match(standardFile))
-    fail(`**${fileUrl}**: Does not seem to be included in the root readme`);
+    warn(`**${fileUrl}**: Does not seem to be included in the root readme`);
 }
