@@ -1,5 +1,6 @@
 # [MO] Setup VSCode
 
+## Owner: [Yann Leflour](https://github.com/yleflour)
 ## Steps
 
 ### Installation
@@ -26,6 +27,7 @@ Open the plugins menu and install:
 - Auto Close Tag *(Jun Han)*
 - Git Lens *(Eric Amodio)*
 - Jest *(Orta)*
+- Color Highlight *(Sergii Naumov)*
 
 #### 3. Base preferences
 

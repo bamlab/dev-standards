@@ -4,6 +4,10 @@
 - [[Standard] Writing a standard](contributing/standard.s.md)
 - [[Standard] Writing a method of operation](contributing/mo.s.md)
 
+## Project Standards
+- [Project Success](project-standards/project-success/index.md)
+- [Technical Agility](project-standards/technical-agility/index.md)
+
 ## React Native
 
 ### Setup

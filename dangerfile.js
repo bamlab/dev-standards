@@ -36,7 +36,7 @@ for (let standardFile of standardFiles) {
 
   if (!fileContent.match(/^# \[Standard\] /))
     fail(`**${fileUrl}**: Title doesn't contain \`[Standard]\` tag at the begining`);
-  if (!fileContent.match(/## Owner .+/))
+  if (!fileContent.match(/## Owner: .+/))
     fail(`**${fileUrl}**: Standard doesn't have an *Owner*, could it be you?`);
   if (!fileContent.match(/## Checks/))
     fail(`**${fileUrl}**: Standard doesn't have a *Checks* part, how could you call this an Standard?`);
