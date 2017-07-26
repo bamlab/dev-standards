@@ -51,10 +51,10 @@ sing: `In House (Enterprise only)`
 - Your git repo for match: `git@github.com:bamlab/certificates.git`
 - The branch you want to use for match: `<Press Enter>`
 - The developer.apple.com team id for t
-he certificates: `***REMOVED***`
-- Your apple id: `***REMOVED***`
+he certificates: `**redacted**`
+- Your apple id: `**redacted**`
 - Your keystore password: `<Press Enter>`
-- A valid HockeyApp token: `***REMOVED***`
+- A valid HockeyApp token: `**redacted**`
 
 ### 4. Deploy Staging
 ```
@@ -64,7 +64,7 @@ bundle exec fastlane android deploy --env=staging
 
 ### 5. Create the download link
 - Go to [smarturl.it](https://manage.smarturl.it)
-- Go to Hockey App with `***REMOVED***`
+- Go to Hockey App with `**redacted**`
   - For each app (Android + iOS)
     - Go to `Manage app`
     - Go to `Distribution`

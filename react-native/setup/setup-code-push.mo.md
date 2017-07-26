@@ -23,8 +23,8 @@ Pros:
 Cons:
 - You rely on Microsoft Azure's servers
 
-Here's an example on ***REMOVED***'s ***REMOVED*** app, where we enabled it on staging in order to speed up development (at the bottom of the screen).
-![Code Push ***REMOVED***](./../../assets/codepush.png)
+Here's an example on **redacted** app, where we enabled it on staging in order to speed up development (at the bottom of the screen).
+![Code Push **redacted**](./../../assets/codepush.png)
 
 ## Steps
 
@@ -38,7 +38,7 @@ npm install -g code-push-cli
 
 ### 2. Login into code-push *(~4 min)*
 
-Login into GitHub with `***REMOVED***`. In your terminal:
+Login into GitHub with bam developers account. In your terminal:
 
 ```bash
 code-push register
@@ -259,4 +259,7 @@ Externalize the keys in `Info.plist` and `AndroidManifest.xml`: see [https://git
 
 You can try the CodePush [documentation](http://microsoft.github.io/code-push/docs/getting-started.html), and particularly the [react-native section](http://microsoft.github.io/code-push/docs/react-native.html).
 
-You should also Andon the teams with a working CodePush process: [***REMOVED***](https://github.com/bamlab/***REMOVED***), [***REMOVED***](https://github.com/bamlab/***REMOVED***), ***REMOVED*** and ***REMOVED*** at ***REMOVED***.
+You should also Andon the teams with a working CodePush process: 
+- [Nicolas Ngomai](https://github.com/lechinoix)
+- [Xavier Lefevre](https://github.com/xavierlefevre)
+- [Kevin Reynel](https://github.com/kraynel)

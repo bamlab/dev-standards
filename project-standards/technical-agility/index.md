@@ -1,7 +1,7 @@
 # Technical Agility
 
 ### Document
-- [Google Drive > BAM > Standards](***REMOVED***)
+- Google Drive > BAM > Standards
 
 ### Objective
 > Ensuring a sustainable and easy to takeover technical project

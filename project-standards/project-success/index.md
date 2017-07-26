@@ -1,7 +1,7 @@
 # Project Success
 
 ### Document
-- [Google Drive > BAM > Standards](***REMOVED***)
+- Google Drive > BAM > Standards
 
 ### Objective
 > Succeeding to accompany our client, by making this project a success for him and for BAM
