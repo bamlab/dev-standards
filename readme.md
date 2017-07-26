@@ -31,3 +31,7 @@
 ### Visual Studio Code
 
 - [[MO] Setup VSCode](editors/vscode/setup-vscode.mo.md)
+
+## Security
+
+- [[MO] 2-Factor Authentication](security/2FA.mo.md) (15 min)
