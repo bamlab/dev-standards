@@ -20,7 +20,7 @@
 
 ## Bad Examples
 
-### Example 1: [[MO] Debug Javascript on an iOS Device](../react-native/debugging/debug-javascript-ios-device.mo.md)
+### Example 1: [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
 
 - There is no owner
 - No time is mentionned
@@ -29,4 +29,4 @@
 
 ## Good Examples
 
-### Example 2: [[MO] Debug Javascript Code (~3 min)](../react-native/debugging/debug-javascript.mo.md)
+### Example 2: [[MO] Debug Javascript Code (~3 min)](/react-native/debugging/debug-javascript.mo.md)

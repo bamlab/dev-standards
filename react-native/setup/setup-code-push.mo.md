@@ -24,7 +24,7 @@ Cons:
 - You rely on Microsoft Azure's servers
 
 Here's an example on **redacted** app, where we enabled it on staging in order to speed up development (at the bottom of the screen).
-![Code Push **redacted**](./../../assets/codepush.png)
+![Code Push **redacted**](/assets/codepush.png)
 
 ## Steps
 

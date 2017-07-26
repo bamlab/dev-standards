@@ -17,7 +17,7 @@
 
 ## Examples
 
-#### Example 1: [[Standard] Project Architecture](../react-native/architecture/project-architecture.s.md)
+#### Example 1: [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
 
 - There is no owner
 - There are no examples
