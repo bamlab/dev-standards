@@ -1,6 +1,22 @@
+![](https://www.bam.tech/hs-fs/hubfs/Identity/Logo.jpg?t=1501080758406&width=200&name=Logo.jpg)
+
 # Standards and Methods of Operation
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">BAM Standards</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+## Who are we
+
+We are mobile developers, based in Paris, working with hybrid and cross plateform technologies. 
+
+Our goal is to help the client business succeed, by solving togethers their problems using agile and lean, 
+and developping the best product to satisfy the client's user needs.
+
+Learn more about us [in our french website](http://www.bam.tech/).
+
+## Why this repository
+
+Part of lean philosophy is to standardize best practices and spread them out.
+
+Every time a developer is struggling doing a part of his job (eg, change the application icon, deploying features very fast using code push, ect...), 
+we help him solve his problem and then together write either a [Standard] or a [Mode of Operation].
 
 ## Contributing
 - [[Standard] Writing a standard](//contributing/standard.s.md)
@@ -44,3 +60,7 @@
 ## Security
 
 - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
+
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">BAM Standards</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
