@@ -1,4 +1,4 @@
-![](https://www.bam.tech/hs-fs/hubfs/Identity/Logo.jpg?t=1501080758406&width=380&name=Logo.jpg)
+![](https://www.bam.tech/hs-fs/hubfs/Identity/Logo.jpg?t=1501080758406&width=200&name=Logo.jpg)
 
 # Standards and Methods of Operation
 
