@@ -48,7 +48,7 @@ h for the environment just set: `<Press Enter>`
 yment?: `HockeyApp`
 - The type of certificate you will be u
 sing: `In House (Enterprise only)`
-- Your git repo for match: `git@github.com:bamlab/certificates.git`
+- Your git repo for match: `git@github.com:<TeamRepo>/certificates.git`
 - The branch you want to use for match: `<Press Enter>`
 - The developer.apple.com team id for t
 he certificates: `**redacted**`
