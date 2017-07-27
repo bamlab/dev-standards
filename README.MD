@@ -8,9 +8,9 @@
 
 ## Who are we
 
-We are expert mobile developers, based in Paris, working with hybrid and cross plateform technologies. 
+We are mobile developers, based in Paris, working with hybrid and cross plateform technologies. 
 
-Our goal is to help the client business succeed, by solving togethers theirs problems using agile and lean, 
+Our goal is to help the client business succeed, by solving togethers their problems using agile and lean, 
 and developping the best product to satisfy the client's user needs.
 
 Learn more about us [in our french website](http://www.bam.tech/).
