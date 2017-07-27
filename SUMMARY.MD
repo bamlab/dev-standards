@@ -9,9 +9,9 @@
   - [Project Success](/project-standards/project-success/index.md)
     - [Deployed in production](/project-standards/project-success/production.s.md)
   - [Technical Agility](/project-standards/technical-agility/index.md)
-    - [Domain Driven Development](/project-standards/project-success/code-vocabulary-identical-business-vocabulary.s.md)
-    - [Easy project installation](/project-standards/project-success/under-15-minutes-project-installation.s.md)
-    - [Up to date dependencies](/project-standards/project-success/up-to-date-dependencies.s.md)
+    - [Domain Driven Development](/project-standards/technical-agility/code-vocabulary-identical-business-vocabulary.s.md)
+    - [Easy project installation](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
+    - [Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
 - React Native
   - Setup
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md) 
