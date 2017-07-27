@@ -1,17 +1,18 @@
 # Table of Contents
 
+- [Index](/README.MD)
 - Contributing
-  - [[Standard] Writing a standard](//contributing/standard.s.md)
+  - [[Standard] Writing a standard](/contributing/standard.s.md)
   - [[Standard] Writing a method of operation](/contributing/mo.s.md)
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md) 
 - Project Standards
   - [Project Success](/project-standards/project-success/index.md)
-    - [Deployed in production](/project-standards/project-success/production.s.md)
+    - [[Standard] Deployed in production](/project-standards/project-success/production.s.md)
   - [Technical Agility](/project-standards/technical-agility/index.md)
-    - [Domain Driven Development](/project-standards/technical-agility/code-vocabulary-identical-business-vocabulary.s.md)
-    - [Easy project installation](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
-    - [Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
+    - [[Standard] Domain Driven Development](/project-standards/technical-agility/code-vocabulary-identical-business-vocabulary.s.md)
+    - [[Standard] Easy project installation](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
+    - [[Standard] Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
 - React Native
   - Setup
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md) 
