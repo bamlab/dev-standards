@@ -2,6 +2,7 @@
 
 ## Prerequisites
 - [ ] Have you entire environment setup
+- [ ] Generating a new SSH key and adding it to the ssh-agent: (https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 
 ## Steps
 
@@ -78,4 +79,10 @@ bundle exec fastlane android deploy --env=staging
     - Android: The Hockey App iOS Download & Feedback `Public Page url`
   - Organize
     - Custom Alias: `smarturl.it/<projectName>`
+   
+   
+ ### 6. Troubleshooting
+ 
+ If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
+ 
 
