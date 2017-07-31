@@ -6,7 +6,7 @@
 
 ## Steps
 
-> :warning: The Ip mentionned is the one from your local network and not your router's ip on the internet
+> :warning: The Ip mentioned is the one from your local network and not your router's ip on the internet
 
 > :warning: Make sure you have reverted the changes after debugging to avoid build issues
 
