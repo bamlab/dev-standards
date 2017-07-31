@@ -46,6 +46,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Debug Native Android Code](/react-native/debugging/debug-native-android.mo.md)
 - [[MO] Debug Native iOS Code](/react-native/debugging/debug-native-ios.mo.md)
 - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
+- [[MO] Debug Network calls](/react-native/debugging/debug-network-calls.mo.md)
 
 ### Features
 
