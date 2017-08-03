@@ -22,6 +22,10 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[Standard] Writing a standard](/contributing/standard.s.md)
 - [[Standard] Writing a method of operation](/contributing/mo.s.md)
 
+## Backend
+### Django 
+- [[MO] Get started with Django](/backend/django/getting-stated.mo.md) 
+
 ## Code Quality
 - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md) 
 
