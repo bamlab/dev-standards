@@ -1,17 +1,17 @@
 # [MO] Get Started with Django, in 3/4 hour (~45 min)
 
-# Owner: [Tycho Tatitscheff](https://github.com/tychota)
+## Owner: [Tycho Tatitscheff](https://github.com/tychota)
 
-# Prerequisites (~10 min)
+## Prerequisites (~10 min)
 
 - Have **HomeBrew** installed (`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)`) (~3 min)
 - Have `$PATH` environment variable priorizing Homebrew package (`export PATH=/usr/local/bin:/usr/local/sbin:$PATH` in .bashrc or similar) (~3 min)
 - Have **Python3** installed (`brew install python3`)  (~2 min)
 - Have **virtualenv** installed (`pip install virtualenv`) (~1 min)
 
-# Steps (~35 min)
+## Steps (~35 min)
 
-## Initialise a new python project (~5 min)
+### Initialise a new python project (~5 min)
 
 - Create a directory for the project: `mkdir ~/Code/django_formation`
 - Go to the directory: `cd ~/Code/django_formation`
@@ -38,7 +38,7 @@
 > drwxr-xr-x  67 user  staff   2.2K Aug  3 14:03 ..
 > ```
 
-## Install django (~1 min)
+### Install django (~1 min)
 
 - Install django with pip:  `pip install django`
 - Save the dependencies to a lockfile: `pip freeze > requirements.txt`
@@ -52,7 +52,7 @@
 
 > **CHECK 2**: django commands should be available `django-admin.py`
 
-## Create a project and a first application (~4 min)
+### Create a project and a first application (~4 min)
 
 - Start new project **MAB** (Mobile Application Backend, or BAM reversed): `django-admin.py startproject mab .` (Note the trailing '.' character)
 - Go to `mab`: `cd mab`
@@ -73,16 +73,16 @@ INSTALLED_APPS = [
 - Go back to root of the project: `cd ~/Code/django_formation`
 - Migrate the database: `python manage.py migrate`
 > **NOTE**: In order to keep the method of operation simple, we use the built in sqlite adapters. You can read more to change it the [beautiful documentation](https://docs.djangoproject.com/en/1.11/ref/settings/#databases).
+- Create the django super user: `python manage.py createsuperuser` and fill with a username, an email and a `very-secret(™)` password
 
 > **CHECK**:
-> - Create the django super user: `python manage.py createsuperuser` and fill with a username and a `very-secret(™)` password
 > - Run the server: `python manage.py runserver`
 > - Access `http://127.0.0.1:8000` and see the "It worked page"
 > - Access `http://127.0.0.1:8000/admin`, connect and see the admin page
 
-## Add the first model (~5 min)
+### Add the first model (~5 min)
 
-> **NOTE**: for editing Python code, I recommand using [Pycharm](insertLink). The debugging and auto complete features helps a lot. There is a community edition that is free to use.
+> **NOTE**: for editing Python code, I recommand using [Pycharm](insertLink). The debugging and auto complete features helps a lot. There is a community edition that is free to use. That being said, [@yann](https://github.com/yleflour) commited on making VSCode great agin, even for python. Stay tuned.
 
 - Open `mab/library/models.py` in Pycharm (or other, if you still resists).
 - Lets start with a model `Author`: a model derive from `models.Model`, and for project documentation have a small docstring explaining what it is
@@ -131,14 +131,14 @@ class Author(models.Model):
 - Migrate the database: `python manage.py migrate`
 
 > **CHECK 1**:
-> - Launch `python manage.py showmigrations`
+> - Launch `python manage.py showmigrations`: you should see a table with django internal migrations and your migration for library app
 
 > **CHECK 2**:
 > - Install https://sqlitestudio.pl
 > - Open the migrated sqlite file
 > - See the new table
 
-## Complete with other models (~1 min)
+### Complete with other models (~1 min)
 
 - Edit the `models.py` file so it looks like:
 
@@ -182,7 +182,7 @@ class Book(models.Model):
 
 - Make migrations and migrate
 
-## Generate the admin (~1 min)
+### Generate the admin (~1 min)
 
 - Open admin.py
 
@@ -198,7 +198,7 @@ admin.site.register(Book)
 > - Access `http://127.0.0.1:8000/admin`, connect and see the admin page
 
 
-## Customize the admin (~3 min)
+### Customize the admin (~3 min)
 
 - You can edit the admin to profit from django powerful admin
 
@@ -282,7 +282,7 @@ admin.site.register(Book, BookAdmin)
 > **CHECK**:
 > - Access `http://127.0.0.1:8000/admin`, connect and see the admin page
 
-## Install REST Framework (~5 min)
+### Install REST Framework (~5 min)
 
 - Run `pip install djangorestframework`
 - Save the dependencies to a lockfile: `pip freeze > requirements.txt`
@@ -309,7 +309,7 @@ urlpatterns = [
 ]
 ```
 
-## Write your first rest API (~10 min)
+### Write your first rest API (~10 min)
 
 - Create a file `rest.py` in the same folder as `models.py`
 - Copy the following
@@ -347,9 +347,16 @@ urlpatterns = [
 
 ```
 
-# Next steps
+## Next steps
 
 - [GraphQL with django](http://docs.graphene-python.org/projects/django/en/latest/tutorial-relay/)
 - [Screencast of django](https://godjango.com/)
 - [Best Book ever for django](https://www.twoscoopspress.com/products/two-scoops-of-django-1-11)
 - [Awesome Django](http://awesome-django.com/#awesome-django)
+
+
+## Troubleshoot
+
+- Django documentation is well organized: https://docs.djangoproject.com/en/1.11/
+- [Sam et Max blog](http://sametmax.com/) is an awesome ressource for python learning in French, especially django. Beware, at least 1/3 of the article are not about Python and really non safe for work.
+- Django has a strong community on [Reddit](https://www.reddit.com/r/django/) and [blogs](https://www.djangoproject.com/community/blogs/)
