@@ -23,12 +23,14 @@
 > **CHECK 1**: You should see the name of the env in front or your terminal prompt
 
 > **CHECK 2**: Python should now points to your env:
+>
 > ```bash
 > (.venv) ➜  django git:(master) ✗ which python
 > ~/Code/django_formation/django/.venv/bin/python
 > ```
 
 > **CHECK 3**: you should have a `.env` and a `.git` folder, plus a `.gitignore` file
+>
 > ```bash
 > (.venv) ➜  django git:(master) ✗ ls -lath
 > drwxr-xr-x   9 user  staff   306B Aug  3 14:18 .git
@@ -59,6 +61,7 @@
 > **NOTE**: this way of organizing app inside project is not the default, but, in a smaller extends, it is the recommended way for django by [Two Scoops of Django](https://www.twoscoopspress.com/products/two-scoops-of-django-1-11), the best book in the world about good practise with django.
 - Create a first app **Library** (that will store and manage BAM books): `django-admin.py startapp library`
 - Add `'mab.library'` to the `INSTALLED_APPS`, in the settings.py
+
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -70,6 +73,7 @@ INSTALLED_APPS = [
     'mab.library'
 ]
 ```
+
 - Go back to root of the project: `cd ~/Code/django_formation`
 - Migrate the database: `python manage.py migrate`
 > **NOTE**: In order to keep the method of operation simple, we use the built in sqlite adapters. You can read more to change it the [beautiful documentation](https://docs.djangoproject.com/en/1.11/ref/settings/#databases).
@@ -287,6 +291,7 @@ admin.site.register(Book, BookAdmin)
 - Run `pip install djangorestframework`
 - Save the dependencies to a lockfile: `pip freeze > requirements.txt`
 - Add `'rest_framework'` to your `INSTALLED_APPS` setting.
+
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -300,6 +305,7 @@ INSTALLED_APPS = [
 ]
 ```
 - Add django rest framework urls, in `urls.py` (optional)
+
 ```python
 from django.conf.urls import url, include
 urlpatterns = [
@@ -313,6 +319,7 @@ urlpatterns = [
 
 - Create a file `rest.py` in the same folder as `models.py`
 - Copy the following
+
 ```python
 from rest_framework import routers, serializers, viewsets
 from .models import Book
@@ -334,6 +341,7 @@ router.register(r'books', BookViewSet)
 ```
 
 - Add router urls, in `urls.py`
+
 ```python
 from django.conf.urls import url, include
 from django.contrib import admin
@@ -344,7 +352,6 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
 ]
-
 ```
 
 ## Next steps
