@@ -355,7 +355,7 @@ urlpatterns = [
 - [Awesome Django](http://awesome-django.com/#awesome-django)
 
 
-## Troubleshoot
+## Troubleshooting
 
 - Django documentation is well organized: https://docs.djangoproject.com/en/1.11/
 - [Sam et Max blog](http://sametmax.com/) is an awesome ressource for python learning in French, especially django. Beware, at least 1/3 of the article are not about Python and really non safe for work.
