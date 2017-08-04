@@ -311,7 +311,7 @@ urlpatterns = [
 
 ## Write your first rest API (~10 min)
 
-- Create a file `rest.py` in the same folder as `models.py``
+- Create a file `rest.py` in the same folder as `models.py`
 - Copy the following
 ```python
 from rest_framework import routers, serializers, viewsets
