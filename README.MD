@@ -27,7 +27,8 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Get started with Django](/backend/django/getting-started.mo.md) 
 
 ## Code Quality
-- [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md) 
+- [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
+- [[Standard] Pull Request Template](/code-quality/pull-request-template.s.md)
 
 ## Project Standards
 - [Project Success](/project-standards/project-success/index.md)
