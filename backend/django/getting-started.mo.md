@@ -2,14 +2,24 @@
 
 ## Owner: [Tycho Tatitscheff](https://github.com/tychota)
 
+## Context
+
+During this standard, we will take the exemple of a book library gestion app.
+
+We will thus create a MAB project (`BAM`, reversed) and a Library app containing a `Book` and a `Author` Models.
+
+We will create an Admin using Django Admin Framework and a rest API, using Django Rest Framework.
+
 ## Prerequisites (~10 min)
 
 - Have **HomeBrew** installed (`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)`) (~3 min)
 - Have `$PATH` environment variable priorizing Homebrew package (`export PATH=/usr/local/bin:/usr/local/sbin:$PATH` in .bashrc or similar) (~3 min)
-- Have **Python3** installed (`brew install python3`)  (~2 min)
-- Have **virtualenv** installed (`pip install virtualenv`) (~1 min)
+- Have **Python 3.6** installed (`brew install python3`): 3.6 is needed for [f"{variable} text" syntax] (https://cito.github.io/blog/f-strings/), if you have version 3.x (x lower then 6, just use the old format "{} text".format(variable)  (~2 min)
+- Have **virtualenv** installed (`pip3 install virtualenv`) (~1 min)
 
 ## Steps (~35 min)
+
+> **CHECK 1**: You should commit between each steps
 
 ### Initialise a new python project (~5 min)
 
@@ -60,7 +70,7 @@
 - Go to `mab`: `cd mab`
 > **NOTE**: this way of organizing app inside project is not the default, but, in a smaller extends, it is the recommended way for django by [Two Scoops of Django](https://www.twoscoopspress.com/products/two-scoops-of-django-1-11), the best book in the world about good practise with django.
 - Create a first app **Library** (that will store and manage BAM books): `django-admin.py startapp library`
-- Add `'mab.library'` to the `INSTALLED_APPS`, in the settings.py
+- Add `'mab.library'` to the `INSTALLED_APPS`, in the settings.py (**DO NOT REPLACE THE WHOLE FILE**)
 
 ```python
 INSTALLED_APPS = [
@@ -82,11 +92,11 @@ INSTALLED_APPS = [
 > **CHECK**:
 > - Run the server: `python manage.py runserver`
 > - Access `http://127.0.0.1:8000` and see the "It worked page"
-> - Access `http://127.0.0.1:8000/admin`, connect and see the admin page
+> - Access `http://127.0.0.1:8000/admin`, connect and see the admin page with the username/password created above
 
 ### Add the first model (~5 min)
 
-> **NOTE**: for editing Python code, I recommand using [Pycharm](insertLink). The debugging and auto complete features helps a lot. There is a community edition that is free to use. That being said, [@yann](https://github.com/yleflour) commited on making VSCode great agin, even for python. Stay tuned.
+> **NOTE**: for editing Python code, I recommand using [Pycharm](https://www.jetbrains.com/pycharm/). The debugging and auto complete features helps a lot. There is a community edition that is free to use. That being said, [@yann](https://github.com/yleflour) commited on making VSCode great agin, even for python. Stay tuned.
 
 - Open `mab/library/models.py` in Pycharm (or other, if you still resists).
 - Lets start with a model `Author`: a model derive from `models.Model`, and for project documentation have a small docstring explaining what it is
@@ -365,5 +375,5 @@ urlpatterns = [
 ## Troubleshooting
 
 - Django documentation is well organized: https://docs.djangoproject.com/en/1.11/
-- [Sam et Max blog](http://sametmax.com/) is an awesome ressource for python learning in French, especially django. Beware, at least 1/3 of the article are not about Python and really non safe for work.
+- **Beware, at least 1/3 of the article are not about Python and really NSFW.** [Sam et Max blog](http://sametmax.com/) remains the best ressource for python learning in French, especially django. 
 - Django has a strong community on [Reddit](https://www.reddit.com/r/django/) and [blogs](https://www.djangoproject.com/community/blogs/)
