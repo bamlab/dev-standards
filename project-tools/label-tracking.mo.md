@@ -17,10 +17,25 @@ Scrumble offers you tools to have and share visibility about:
 
 ### 1. Select the Trello columns you want to consider (~1min)
 
-For example the Done columns of the latest 3 sprints
+For example the `Done` columns of all the completed sprints
 
 ### 2. Simply read the (approximate) complexity of each label
 
-On our example, the `Usage` label represented a load of 37-38 complexity points on the sprints 19 to 21
 
-![Scrumble label tracking](/assets/scrumble-label-tracking.png)
+## Exemple
+
+If we consider a project with this trello:
+
+![Label tracking trello](/assets/label-tracking-trello.png)
+
+
+The team can see, for each track:
+
+- how much complexity has been done (by selecting the `DONE` columns):
+
+![Label tracking trello](/assets/label-tracking-done.png)
+
+
+- the load of work remaining (by selecting the `Backlog` columns):
+
+![Label tracking trello](/assets/label-tracking-remaining.png)
