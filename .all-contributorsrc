@@ -92,6 +92,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "4ian",
+      "name": "Florian Rival",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1280130?v=4",
+      "profile": "http://www.compilgames.net",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
