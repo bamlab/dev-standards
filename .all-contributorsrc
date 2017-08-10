@@ -42,6 +42,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "xavierlefevre",
+      "name": "Xavier Lefèvre",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/14938214?v=4",
+      "profile": "https://github.com/xavierlefevre",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
