@@ -1,0 +1,24 @@
+{
+  "projectName": "dev-standard",
+  "projectOwner": "bamlab",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 80,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "yleflour",
+      "name": "Yann Leflour",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1863461?v=4",
+      "profile": "http://bamlab.fr/",
+      "contributions": [
+        "question",
+        "blog",
+        "code",
+        "infra",
+        "review"
+      ]
+    }
+  ]
+}
