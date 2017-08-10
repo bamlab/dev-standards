@@ -72,6 +72,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "DariusAf",
+      "name": "Darius Afchar",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15544105?v=4",
+      "profile": "https://github.com/DariusAf",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
