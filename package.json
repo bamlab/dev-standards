@@ -6,10 +6,16 @@
   "author": "Yann Leflour <yannl@bamlab.fr>",
   "license": "MIT",
   "scripts": {
-    "test": "echo 'No other tests'"
+    "test": "echo 'No other tests'",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "devDependencies": {
     "danger": "^1.0.0",
     "lodash": "^4.17.4"
+  },
+  "dependencies": {
+    "all-contributors-cli": "^4.4.0",
+    "gitbook-plugin-ga": "^2.0.0"
   }
 }
