@@ -52,6 +52,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "Minishlink",
+      "name": "Louis Lagrange",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/82368?v=4",
+      "profile": "http://louislagrange.free.fr",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
