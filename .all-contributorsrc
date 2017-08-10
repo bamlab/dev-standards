@@ -82,6 +82,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "Arlevoy",
+      "name": "Arthur Levoyer",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26787996?v=4",
+      "profile": "https://github.com/Arlevoy",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
