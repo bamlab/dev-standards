@@ -62,6 +62,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "Almouro",
+      "name": "Alexandre Moureaux",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4534323?v=4",
+      "profile": "http://blog.bam.tech",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
