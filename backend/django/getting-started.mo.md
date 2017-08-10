@@ -2,6 +2,8 @@
 
 ## Owner: [Tycho Tatitscheff](https://github.com/tychota)
 
+> **Note**: Please create an [issue](https://github.com/bamlab/dev-standards/issues/new) or even a Pull Request with your feedback, typo correction.
+
 ## Context
 
 During this standard, we will take the exemple of a book library gestion app.
@@ -19,7 +21,7 @@ We will create an Admin using Django Admin Framework and a rest API, using Djang
 
 ## Steps (~35 min)
 
-> **CHECK 1**: You should commit between each steps
+> **Important Note**: You should commit between each steps, as you have a shippable application at the end of each steps. This will help you reverting if you delete important stuff.
 
 ### Initialise a new python project (~5 min)
 
@@ -375,5 +377,5 @@ urlpatterns = [
 ## Troubleshooting
 
 - Django documentation is well organized: https://docs.djangoproject.com/en/1.11/
-- **Beware, at least 1/3 of the article are not about Python and really NSFW.** [Sam et Max blog](http://sametmax.com/) remains the best ressource for python learning in French, especially django. 
+- **Beware, at least 1/3 of the article are not about Python and really NSFW.** [Sam et Max blog](http://sametmax.com/) is really the best ressource for python learning in French, especially django. 
 - Django has a strong community on [Reddit](https://www.reddit.com/r/django/) and [blogs](https://www.djangoproject.com/community/blogs/)
