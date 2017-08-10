@@ -102,6 +102,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "Nhacsam",
+      "name": "Nicolas Djambazian",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/905860?v=4",
+      "profile": "http://nicolas.djambazian.fr",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
