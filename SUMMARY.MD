@@ -6,7 +6,9 @@
   - [[Standard] Writing a method of operation](/contributing/mo.s.md)
 - Backend
   - Django
-    - [[MO] Get started with Django](/backend/django/getting-started.mo.md) 
+    - [[MO] Get started with Django](/backend/django/getting-started.mo.md)
+  - GraphQL JS
+    - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md) 
 - Project Standards
