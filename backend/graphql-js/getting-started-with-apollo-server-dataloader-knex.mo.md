@@ -893,4 +893,4 @@ class Hero {
 ## Next steps
 
 - Add [Koa Jwt](https://github.com/koajs/jwt)
-- Add graphiQL with authorization header (get inspired by [BAM API](https://github.com/bamlab/bam-api)
+- Add graphiQL with authorization header (get inspired by [BAM API](https://github.com/bamlab/bam-api))
