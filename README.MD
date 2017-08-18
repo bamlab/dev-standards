@@ -25,8 +25,9 @@ we help him solve his problem and then together write either a [Standard] or a [
 ## Backend
 ### Django 
 - [[MO] Get started with Django](/backend/django/getting-started.mo.md)
+
 ### GraphQL JS 
-- [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md) 
+- [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 
 ## Code Quality
 - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
