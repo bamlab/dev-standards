@@ -108,6 +108,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "tpucci",
+      "name": "Thomas Pucci",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/16262904?v=4",
+      "profile": "https://github.com/tpucci",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
