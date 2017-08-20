@@ -29,6 +29,7 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
 - Init a git repository: `git init`
 - Create two services with Docker-compose, one postgres database and one node server:
   - For this step, notice that our final folder architecture looks like this:
+
   ```
   📂 graphql_formation
   ├ 📂 api
@@ -38,8 +39,10 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
   ├ 🗋 config.env
   └ 🗋 docker-copose.yml
   ```
+
   - > Make sure your local 3000 port is available as we will use this port to reach our API
   - In a new `api/Dockerfile` file, write all the commands to assemble the API image:
+
   ```Dockerfile
   FROM node:8.1.0-alpine
 
@@ -48,11 +51,15 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
   EXPOSE 3000
   CMD ["yarn", "run", "serve"]
   ```
+
   - In a new `db/Dockerfile` file, write all the commands to assemble the db image:
+ 
   ```Dockerfile
   FROM postgres:9.6.3
   ```
+ 
   - In a new `docker-compose.yml` file, declare the two services:
+ 
   ```yml
   version: '3'
   services:
@@ -75,7 +82,9 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
       ports:
         - 5431:5432
   ```
+ 
   - In a new `config.env` file, declare your environnement variable for these Docker containers:
+ 
   ```
   POSTGRES_USER=heroesuser
   POSTGRES_PASSWORD=heroespassword
@@ -83,6 +92,7 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
   PGDATA=/data
   DB_HOST=db
   ```
+
 - Build these services with the command: `docker-compose build`
 
 > **CHECK 1**: You terminal should prompt successively these lines confirming Docker images have been built:
@@ -97,11 +107,13 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
 - In the `api` folder, interactively create a `package.json` file: `cd api && yarn init`
 - Add `nodemon`, `babel-cli`, `babel-plugin-transform-class-properties`, `babel-preset-flow` and `babel-preset-es2015` to our dev dependencies: `yarn add nodemon babel-cli babel-plugin-transform-class-properties babel-preset-es2015 babel-preset-flow -D`
 - In our `package.json`, write the command to launch the server:
+
 ```json
 "scripts": {
   "serve": "nodemon index.js --exec babel-node --presets=es2015,flow --plugins transform-class-properties"
 }
 ```
+
 - Create a new empty file `index.js`
 - Go back to the root of the project: `cd ..`
 - Run the project: `docker-compose up` 
@@ -131,6 +143,7 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
 
 - Install koa and koa-router in our API: `cd api && yarn add koa koa-router`
 - In the `index.js` file, create our server:
+
 ```js
 import Koa from 'koa';
 import koaRouter from 'koa-router';
@@ -159,22 +172,25 @@ console.log('Server is up and running');
 
 - Install Koa body parser and Koa graphiQL: `yarn add koa-bodyparser koa-graphiql`
 - In the `index.js` file, let our API knows it should use Koa body parser and koa-graphiql:
+
 ```js
 import koaBody from 'koa-bodyparser';
 import graphiql from 'koa-graphiql';
 
-...
+// ...
 
 router.get('/graphiql', graphiql(async (ctx) => ({
   url: '/api',
 })));
 
-...
+// ...
 
 app.use(koaBody());
 ```
+
 - Install graphQL, graphQL Server Koa and graphQL tools: `yarn add graphql graphql-server-koa graphql-tools`
 - In a new folder `presentation` add a new `schema.js` file describing a simple graphQL schema:
+
 ```js
 import { makeExecutableSchema } from 'graphql-tools';
 
@@ -215,7 +231,9 @@ const schema = makeExecutableSchema({ typeDefs, resolvers });
 
 export default schema;
 ```
+
 - In the `index.js` file, add our `api` endpoint:
+
 ```js
 import { graphqlKoa } from 'graphql-server-koa';
 import schema from './presentation/schema';
@@ -235,17 +253,20 @@ router.post(
 ```
 
 > **CHECK 1**: In **Postman**, making a *POST* request to `localhost:3000/api` which content-type is *JSON(application/json)* with the following raw body:
+> 
 > ```json
 > {
 >   "query": "{heroes { firstName lastName }}"
 > }
 > ```
+> 
 > ...should return our two heroes, Clark and Bruce:
 > ![](assets/presentation_layer.png)
->
+
 > **CHECK 2**: Hitting `localhost:3000/graphiql` should return graphiql interface and show the Docs
->
+
 > **CHECK 3**: Using graphiql interface with the following query:
+> 
 > ```
 > {
 >   heroes {
@@ -254,6 +275,7 @@ router.post(
 >   }
 > }
 > ```
+>
 > ...should return our two heroes, Clark and Bruce:
 
 ### Create a business layer (~3min)
@@ -261,6 +283,7 @@ router.post(
 > This layer will contain all business logic: access controll, scoping / whitelisting, batching and caching and computed properties. More explanations can be found [here, in the bam-api repo](https://github.com/bamlab/bam-api). In this MO, we will only cover access control logic and batching.
 
 - In a new `business` folder add a new `hero.js` file describing our class for this business object:
+
 ```js
 const mockedHeroes = [
   {
@@ -303,18 +326,16 @@ class Hero {
 
 export default Hero;
 ```
+
 - In our previous `presentation/schema.js` file, modify our mocked resolvers to use our business layer:
+
 ```diff
 +import Hero from '../business/hero';
-
-...
 
   type Query {
     heroes: [Hero]
 +    hero(id: Int!): Hero
   }
-
-...
 
 const resolvers = {
   Query: {
@@ -335,6 +356,7 @@ const resolvers = {
 ```
 
 > **CHECK 1**: Using graphiql interface with the following query:
+>
 > ```
 > {
 >   heroes {
@@ -344,8 +366,9 @@ const resolvers = {
 >   }
 > }
 > ```
-> ...should return our two heroes, Clark and Bruce.
 >
+> ...should return our two heroes, Clark and Bruce.
+
 > **CHECK 2**: Using graphiql interface with the following query:
 > ```
 > {
@@ -357,7 +380,7 @@ const resolvers = {
 > }
 > ```
 > ...should return Clark Kent with its `id: 1`.
->
+
 > **CHECK 3**: Using graphiql interface with the following query:
 > ```
 > {
@@ -368,12 +391,14 @@ const resolvers = {
 >   }
 > }
 > ```
+>
 > ...should return Bruce Wayne with its `id: 2`.
 
 ### Seed our database (~5min)
 
 - Install `knex` and `pg` at the root of the project: `cd .. && yarn add knex pg`
 - At the root of our project, add a `knexfile.js` file:
+
 ```js
 module.exports = {
   development: {
@@ -394,7 +419,9 @@ module.exports = {
   },
 };
 ```
+
 - Create a migration file: `yarn knex migrate:make add_heroes_table` and complete the new created file with this:
+
 ```js
 exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists('Heroes', function(table) {
@@ -409,7 +436,9 @@ exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists('Heroes');
 };
 ```
+
 - Create a seed file: `yarn knex seed:make heroes` and complete the new created file with this:
+
 ```js
 exports.seed = function(knex, Promise) {
   return knex('Heroes').del()
@@ -423,9 +452,11 @@ exports.seed = function(knex, Promise) {
     });
 };
 ```
+
 - Run the migration and the seed: `yarn knex migrate:latest && yarn knex seed:run`
 
 > **CHECK 1**: You can access the db and prompt content of the `Heroes` table: `docker-compose exec db psql -U heroesuser -d heroesdb` then inside the container: `select * from "Heroes";`;
+>
 > ```bash
 >  id | firstName |    lastName    |    heroName     
 > ----+-----------+----------------+-----------------
@@ -435,6 +466,7 @@ exports.seed = function(knex, Promise) {
 >   4 | Susan     | Storm-Richards | Invisible Woman 
 > (4 rows)
 > ```
+>
 > Exit with: `CTRL-D`
 
 ### Create a db layer with knex (~4min)
@@ -443,6 +475,7 @@ exports.seed = function(knex, Promise) {
 
 - Install `knex` and `pg` in our API: `cd api && yarn add knex pg`
 - In the `db` folder add a new `index.js` file:
+
 ```js
 import knex from 'knex';
 
@@ -457,7 +490,9 @@ export default knex({
   debug: true,
 });
 ```
+
 - In a new `db/queryBuilders` subfolder, create a new `hero.js` file and add these few methods to query our data:
+
 ```js
 // @flow
 import db from '..';
@@ -486,7 +521,9 @@ class Hero {
 
 export default Hero;
 ```
+
 - Modify the `hero.js` file in our business layer this way:
+
 ```diff
 -const heroes = [
 -  {
@@ -503,8 +540,6 @@ export default Hero;
 +import HeroDB from '../db/queryBuilders/hero';
  
  class Hero {
-
-   ...
  
    static async load(ctx, args) {
 -    const data = heroes[args.id];
@@ -523,6 +558,7 @@ export default Hero;
 ```
 
 > **CHECK 1**: Using graphiql interface with the following query:
+>
 > ```
 > {
 >   hero(id:1) {
@@ -533,8 +569,9 @@ export default Hero;
 > }
 > ```
 > ...should return Clark Kent with its `id: 1`.
->
+
 > **CHECK 2**: Using graphiql interface with the following query:
+>
 > ```
 > {
 >   heroes {
@@ -544,6 +581,7 @@ export default Hero;
 >   }
 > }
 > ```
+>
 > ...should return all 4 heroes of our database.
 
 ### Add association to our API (~4min)
@@ -552,6 +590,7 @@ export default Hero;
 
 - Create a new migration: `cd .. && yarn knex migrate:make add_heroes_enemies`
 - Complete the newly created migration file with this:
+
 ```js
 exports.up = function(knex, Promise) {
   return knex.schema.table('Heroes', function(table) {
@@ -565,7 +604,9 @@ exports.down = function(knex, Promise) {
   });
 };
 ```
+
 - Modify our `heroes.js` seeds:
+
 ```js
 exports.seed = function(knex, Promise) {
   return knex('Heroes').del()
@@ -579,8 +620,10 @@ exports.seed = function(knex, Promise) {
     });
 };
 ```
+
 - Run these migrations: `yarn knex migrate:latest && yarn knex seed:run`
 - In our business layer, modify `hero.js` this way:
+
 ```diff
 class Hero {
   id: number;
@@ -596,10 +639,9 @@ class Hero {
 +    this.heroName = data.heroName;
 +    this.enemyId = data.enemyId;
   }
-...
-}
 ```
 - In our API, in our presentation layer, modify our `schema.js`:
+
 ```diff
 const typeDefs = [`
   type Hero {
@@ -623,6 +665,7 @@ const resolvers = {
 ```
 
 > **CHECK 1**: Using graphiql interface with the following query:
+>
 > ```
 > {
 >   hero(id:1) {
@@ -636,24 +679,30 @@ const resolvers = {
 >   }
 > }
 > ```
+>
 > ...should return Clark Kent with its heroName and its enemy: Batman.
 
 ### Push your API to the next level: use caching with Dataloader (~4min)
 
 > Trying to query heroes and their enemies'heroName will show up a N+1 problem. Indeed, our API make 5 round-trips to our database! Try yourself:
+>
 > ```json
 > {
 > 	"query": "{heroes { id firstName lastName heroName enemy { heroName } }}"
 > }
 > ```
+>
 > We can reduce these calls adding caching to our business layer
 
 - Install `Dataloader`: `cd api && yarn add dataloader`
 - Add a `getLoaders` method to our `hero.js` file in our business layer:
+
 ```js
 import DataLoader from 'dataloader';
 
-...
+
+class Hero {
+  //...
 
   static getLoaders() {
     const getById = new DataLoader(ids => HeroDB.getByIds(ids));
@@ -664,12 +713,13 @@ import DataLoader from 'dataloader';
     };
     return { getById, primeLoaders };
   }
+  //...
+}
 ```
 - In our `index.js` file, add a new dataloader to our context for each query on `/api` route:
+
 ```diff
 +import Hero from './business/hero';
-
-...
 
 router.post(
   '/api',
@@ -686,7 +736,9 @@ router.post(
   })
 );
 ```
+
 - Back in our `hero.js` business layer file, modify `load` and `loadAll` methods to use our dataloader:
+
 ```diff
   static async load(ctx, args) {
 +    const data = await ctx.dataLoaders.hero.getById.load(args.id);
@@ -702,7 +754,9 @@ router.post(
     return data.map(row => new Hero(row));
   }
 ```
+
 - Protect `loader.load()` function call if no argument is supplied:
+
 ```diff
   static async load(ctx, args) {
 +    if (!args.id) return null;
@@ -714,6 +768,7 @@ router.post(
 ```
 
 > **CHECK 1**: Using graphiql interface with the following query:
+>
 > ```
 > {
 >   heroes {
@@ -727,8 +782,9 @@ router.post(
 >   }
 > }
 > ```
-> ...should return all heroes and their enemies and your terminal should prompt only one request to the DB.
 >
+> ...should return all heroes and their enemies and your terminal should prompt only one request to the DB.
+
 > **CHECK 2**: Using graphiql interface with the following query:
 > ```
 > {
@@ -752,6 +808,7 @@ router.post(
 >   }
 > }
 > ```
+>
 > ...should return Clark Kent and Bruce Wayne; and only one *SELECT* call should have beeen made to our DB.
 
 ### Add access control to our API (~3min)
@@ -759,6 +816,7 @@ router.post(
 > This is a very simple example, for a more advanced solution, prefer using [Koa Jwt](https://github.com/koajs/jwt).
 
 - In a new `utils.js` file, add these two methods to parse Authorization header and verify token:
+
 ```js
 export const parseAuthorizationHeader = (req) => {
   const header = req.headers.authorization;
@@ -782,11 +840,11 @@ export const verifyToken = token => new Promise((resolve, reject) => {
   resolve();
 });
 ```
+
 - In our `index.js` file, parse authorization header and pass it to our context:
+
 ```diff
 +import { parseAuthorizationHeader } from './utils';
-
-...
 
 router.post(
   '/api',
@@ -804,37 +862,40 @@ router.post(
   })
 );
 ```
+
 - In our business layer, modify `hero.js`:
+
 ```diff
 +import { verifyToken } from '../utils';
 
-...
 
   static async load(ctx, args) {
 +    await verifyToken(ctx.authToken);
-
-...
 
   static async loadAll(ctx, args) {
 +    await verifyToken(ctx.authToken);
 ```
 
 > **CHECK 1**: In **Postman**, making a *POST* request to `localhost:3000/api` which content-type is *JSON(application/json)* with the following raw body:
+>
 > ```json
 > {
 > 	"query": "{hero(id:1) { id firstName lastName heroName }}"
 > }
 > ```
-> ...should return `UNAUTHORIZED`.
 >
+> ...should return `UNAUTHORIZED`.
+
 > **CHECK 2**: In **Postman**, making a *POST* request to `localhost:3000/api` which content-type is *JSON(application/json)* with the following raw body:
+>
 > ```json
 > {
 > 	"query": "{heroes { id firstName lastName heroName }}"
 > }
 > ```
-> ...should return `UNAUTHORIZED`.
 >
+> ...should return `UNAUTHORIZED`.
+
 > **CHECK 3**: In **Postman**, making a *POST* request to `localhost:3000/api` which content-type is *JSON(application/json)* and *Authorization Header* is `Bearer authorized` with the following raw body:
 > ```json
 > {
@@ -848,12 +909,15 @@ router.post(
 ### Troubleshooting: Accessing data by id in the correct order (~3min)
 
 > You should notice that in **Postman** making a *POST* request to `localhost:3000/api` which content-type is *JSON(application/json)* and *Authorization Header* is `Bearer authorized` with the following raw body:
+>
 > ```json
 > {
 > 	"query": "{h1: hero(id:1) { id firstName lastName heroName enemy { heroName } } h2: hero(id:2) { id firstName lastName heroName enemy { heroName } }}"
 > }
 > ```
+>
 > ...returns the same than the following request (ids switched):
+>
 > ```json
 > {
 > 	"query": "{h1: hero(id:2) { id firstName lastName heroName enemy { heroName } } h2: hero(id:1) { id firstName lastName heroName enemy { heroName } }}"
@@ -863,15 +927,17 @@ router.post(
 > This is due to our DB query: `select * from "Heroes" where "id" in (1, 2)` return the same result than: `select * from "Heroes" where "id" in (2, 1)`.
 
 - In `utils.js`, add the following method:
+
 ```js
 export const orderByArgIdsOrder = ids => ("array_position(string_to_array(?, ',')::integer[], id)", ids.join(','));
 ```
+
 - In our db layer, modify `hero.js` like this:
+
 ```diff
 +import { orderByArgIdsOrder } from '../../utils';
 
 class Hero {
-...
 
   static async getByIds(ids: Array<number>): Promise<Array<CostDBType>> {
     return db
@@ -883,11 +949,13 @@ class Hero {
 ```
 
 > **CHECK 1**: In **Postman**, making a *POST* request to `localhost:3000/api` which content-type is *JSON(application/json)* and *Authorization Header* is `Bearer authorized` with the following raw body:
+>
 > ```json
 > {
 > 	"query": "{h1: hero(id:2) { heroName } h2: hero(id:1) { heroName }}""
 > }
 > ```
+>
 > ...should return Batman (as `h1`) then Superman (as `h2`).
 
 ## Next steps
