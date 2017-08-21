@@ -530,6 +530,7 @@ class Hero {
 export default Hero;
 ```
 - Modify the `api/db/queryBuilders/hero.js` file in our business layer this way:
+
 ```diff
 -const heroes = [
 -  {
@@ -628,6 +629,7 @@ exports.seed = function(knex, Promise) {
 
 - Run these migrations: `yarn knex migrate:latest && yarn knex seed:run`
 - In our business layer, modify `api/business/hero.js` this way:
+
 ```diff
 class Hero {
   id: number;
@@ -645,6 +647,7 @@ class Hero {
   }
 ```
 - In our API, in our presentation layer, modify our `api/presentation/schema.js`:
+
 ```diff
 const typeDefs = [`
   type Hero {
@@ -720,6 +723,7 @@ class Hero {
 }
 ```
 - In our `api/index.js` file, add a new dataloader to our context for each query on `/api` route:
+
 ```diff
 +import Hero from './business/hero';
 
@@ -739,6 +743,7 @@ router.post(
 );
 ```
 - Back in our `api/business/hero.js` business layer file, modify `load` and `loadAll` methods to use our dataloader:
+
 ```diff
   static async load(ctx, args) {
 +    const data = await ctx.dataLoaders.hero.getById.load(args.id);
@@ -841,6 +846,7 @@ export const verifyToken = token => new Promise((resolve, reject) => {
 });
 ```
 - In our `api/index.js` file, parse authorization header and pass it to our context:
+
 ```diff
 +import { parseAuthorizationHeader } from './utils';
 
@@ -861,6 +867,7 @@ router.post(
 );
 ```
 - In our business layer, modify `api/business/hero.js`:
+
 ```diff
 +import { verifyToken } from '../utils';
 
@@ -928,6 +935,7 @@ router.post(
 export const orderByArgIdsOrder = ids => ("array_position(string_to_array(?, ',')::integer[], id)", ids.join(','));
 ```
 - In our db layer, modify `api/db/queryBuilders/hero.js` like this:
+
 ```diff
 +import { orderByArgIdsOrder } from '../../utils';
 
