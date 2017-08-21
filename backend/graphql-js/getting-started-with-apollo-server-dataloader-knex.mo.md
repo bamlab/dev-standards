@@ -1,4 +1,4 @@
-# [MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex (~45 min)
+# [MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex (~73min)
 
 ## Owner: [Thomas Pucci](https://github.com/tpucci)
 
@@ -19,17 +19,16 @@ We will have a Hero model with superheroes real and hero names. We will add one 
 
 Our API will be lightly protected and use batching to minimise DB round-trips.
 
-## Steps (~39min)
+## Steps (~61min)
 
 > **Note**: You should commit between each step.
 
-### Intialise a new project (~4min)
+### Initialise a new project (~6min)
 
 - Create and go to a new directory for the project: `mkdir graphql_formation && cd graphql_formation`
 - Init a git repository: `git init`
 - Create two services with Docker-compose, one postgres database and one node server:
-  - For this step, notice that our final folder architecture looks like this:
-
+  - > For this step, notice that our final folder architecture looks like this:
   ```
   📂 graphql_formation
   ├ 📂 api
@@ -95,26 +94,35 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
 
 - Build these services with the command: `docker-compose build`
 
-> **CHECK 1**: You terminal should prompt successively these lines confirming Docker images have been built:
+> **CHECK 1**: Your terminal should prompt successively these lines confirming Docker images have been built:
 >
 > `Successfully tagged heroes-db:latest`
 >
 > `Successfully tagged heroes-api:latest`
 
-### Install nodemon and run our project (~3min)
-
-- Add this to the project .gitignore: `echo "api/node_modules" > .gitignore`
-- In the `api` folder, interactively create a `package.json` file: `cd api && yarn init`
+### Install nodemon and run our project (~5min)
+- Add this to the project .gitignore: `echo "node_modules" > .gitignore`
+- In the `api` folder, interactively create a `api/package.json` file: `cd api && yarn init`
 - Add `nodemon`, `babel-cli`, `babel-plugin-transform-class-properties`, `babel-preset-flow` and `babel-preset-es2015` to our dev dependencies: `yarn add nodemon babel-cli babel-plugin-transform-class-properties babel-preset-es2015 babel-preset-flow -D`
-- In our `package.json`, write the command to launch the server:
-
+- In a new `api/.babelrc` file, write the babel configuration:
 ```json
-"scripts": {
-  "serve": "nodemon index.js --exec babel-node --presets=es2015,flow --plugins transform-class-properties"
+{
+  "presets":[
+    "es2015",
+    "flow"
+  ],
+  "plugins":[
+    "transform-class-properties"
+  ]
 }
 ```
-
-- Create a new empty file `index.js`
+- In our `api/package.json`, write the command to launch the server:
+```json
+"scripts": {
+  "serve": "nodemon index.js --exec babel-node"
+}
+```
+- Create a new empty file `api/index.js`
 - Go back to the root of the project: `cd ..`
 - Run the project: `docker-compose up` 
 
@@ -132,14 +140,14 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
 > ```
 > Exit with: `CTRL-D`
 >
-> **CHECK 3**: You can access the db and prompt the PostgreSQL version: `docker-compose exec db psql -U heroesuser -d heroesdb` then inside the container: `select version()`;
+> **CHECK 3**: You can access the db and prompt the PostgreSQL version: `docker-compose exec db psql -U heroesuser -d heroesdb` then inside the container: `select version();`
 > ```bash
 > PostgreSQL 9.6.3 on x86_64-pc-linux-gnu, compiled by gcc (Debian 4.9.2-10) 4.9.2, 64-bit
 > ```
 > Exit with: `CTRL-D`
 
 
-### Create a koa server (~2min)
+### Create a koa server (~3min)
 
 - Install koa and koa-router in our API: `cd api && yarn add koa koa-router`
 - In the `index.js` file, create our server:
@@ -155,7 +163,7 @@ router.get('/', ctx => {
   ctx.body = 'Hello World!';
 });
 
-app.use(router.routes())
+app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen(3000);
 
@@ -166,30 +174,12 @@ console.log('Server is up and running');
 >
 > **CHECK 2**: Hitting `localhost:3000` should return `Hello World!`: `curl localhost:3000`
 
-### Create a presentation layer with graphQL (~4min)
+### Create a presentation layer with graphQL (~6min)
 
-> This layer will let our API know how to present data: what data one user can query ? How should he query this data (fields, root queries, sub queries...) ?
+> This layer will let our API know how to present data: what data one user can query? How should front end query this data (fields, root queries, sub queries...)?
 
-- Install Koa body parser and Koa graphiQL: `yarn add koa-bodyparser koa-graphiql`
-- In the `index.js` file, let our API knows it should use Koa body parser and koa-graphiql:
-
-```js
-import koaBody from 'koa-bodyparser';
-import graphiql from 'koa-graphiql';
-
-// ...
-
-router.get('/graphiql', graphiql(async (ctx) => ({
-  url: '/api',
-})));
-
-// ...
-
-app.use(koaBody());
-```
-
-- Install graphQL, graphQL Server Koa and graphQL tools: `yarn add graphql graphql-server-koa graphql-tools`
-- In a new folder `presentation` add a new `schema.js` file describing a simple graphQL schema:
+- Install graphQL, graphQL Server Koa, graphQL tools and Koa body-parser: `yarn add graphql graphql-server-koa graphql-tools koa-bodyparser`
+- In a new folder `api/presentation` add a new `schema.js` file describing a simple graphQL schema:
 
 ```js
 import { makeExecutableSchema } from 'graphql-tools';
@@ -231,8 +221,7 @@ const schema = makeExecutableSchema({ typeDefs, resolvers });
 
 export default schema;
 ```
-
-- In the `index.js` file, add our `api` endpoint:
+- In the `api/index.js` file, add our `api` endpoint:
 
 ```js
 import { graphqlKoa } from 'graphql-server-koa';
@@ -250,6 +239,11 @@ router.post(
     };
   })
 );
+
+...
+
+// Write the following line before all other app.use(...) calls:
+app.use(koaBody());
 ```
 
 > **CHECK 1**: In **Postman**, making a *POST* request to `localhost:3000/api` which content-type is *JSON(application/json)* with the following raw body:
@@ -262,6 +256,21 @@ router.post(
 > 
 > ...should return our two heroes, Clark and Bruce:
 > ![](assets/presentation_layer.png)
+
+- Install Koa graphiQL: `yarn add koa-graphiql`
+- In the `index.js` file, let our API knows it should use Koa-graphiql:
+
+```js
+import koaBody from 'koa-bodyparser';
+import graphiql from 'koa-graphiql';
+
+...
+
+// Write the following block after others router.verb(...) calls:
+router.get('/graphiql', graphiql(async (ctx) => ({
+  url: '/api',
+})));
+```
 
 > **CHECK 2**: Hitting `localhost:3000/graphiql` should return graphiql interface and show the Docs
 
@@ -278,11 +287,11 @@ router.post(
 >
 > ...should return our two heroes, Clark and Bruce:
 
-### Create a business layer (~3min)
+### Create a business layer (~5min)
 
-> This layer will contain all business logic: access controll, scoping / whitelisting, batching and caching and computed properties. More explanations can be found [here, in the bam-api repo](https://github.com/bamlab/bam-api). In this MO, we will only cover access control logic and batching.
+> This layer will contain all business logic: access controll, scoping / whitelisting, batching and caching and computed properties. More explanations can be found [here, in the bam-api repo](https://github.com/bamlab/bam-api). In this MO, we will only cover access control logic and batching / caching.
 
-- In a new `business` folder add a new `hero.js` file describing our class for this business object:
+- In a new `api/business` folder add a new `hero.js` file describing our class for this business object:
 
 ```js
 const mockedHeroes = [
@@ -394,7 +403,7 @@ const resolvers = {
 >
 > ...should return Bruce Wayne with its `id: 2`.
 
-### Seed our database (~5min)
+### Seed our database (~8min)
 
 - Install `knex` and `pg` at the root of the project: `cd .. && yarn add knex pg`
 - At the root of our project, add a `knexfile.js` file:
@@ -469,12 +478,12 @@ exports.seed = function(knex, Promise) {
 >
 > Exit with: `CTRL-D`
 
-### Create a db layer with knex (~4min)
+### Create a db layer with knex (~6min)
 
 > This layer let our API query the data using knex query builder.
 
 - Install `knex` and `pg` in our API: `cd api && yarn add knex pg`
-- In the `db` folder add a new `index.js` file:
+- In the `api/db` folder add a new `index.js` file:
 
 ```js
 import knex from 'knex';
@@ -490,8 +499,7 @@ export default knex({
   debug: true,
 });
 ```
-
-- In a new `db/queryBuilders` subfolder, create a new `hero.js` file and add these few methods to query our data:
+- In a new `api/db/queryBuilders` subfolder, create a new `hero.js` file and add these few methods to query our data:
 
 ```js
 // @flow
@@ -521,9 +529,7 @@ class Hero {
 
 export default Hero;
 ```
-
-- Modify the `hero.js` file in our business layer this way:
-
+- Modify the `api/db/queryBuilders/hero.js` file in our business layer this way:
 ```diff
 -const heroes = [
 -  {
@@ -584,7 +590,7 @@ export default Hero;
 >
 > ...should return all 4 heroes of our database.
 
-### Add association to our API (~4min)
+### Add association to our API (~6min)
 
 > Association are made both in our db and in our API, in our presentation layer.
 
@@ -604,8 +610,7 @@ exports.down = function(knex, Promise) {
   });
 };
 ```
-
-- Modify our `heroes.js` seeds:
+- Modify our `api/db/seeds/heroes.js` seeds:
 
 ```js
 exports.seed = function(knex, Promise) {
@@ -622,8 +627,7 @@ exports.seed = function(knex, Promise) {
 ```
 
 - Run these migrations: `yarn knex migrate:latest && yarn knex seed:run`
-- In our business layer, modify `hero.js` this way:
-
+- In our business layer, modify `api/business/hero.js` this way:
 ```diff
 class Hero {
   id: number;
@@ -640,8 +644,7 @@ class Hero {
 +    this.enemyId = data.enemyId;
   }
 ```
-- In our API, in our presentation layer, modify our `schema.js`:
-
+- In our API, in our presentation layer, modify our `api/presentation/schema.js`:
 ```diff
 const typeDefs = [`
   type Hero {
@@ -682,7 +685,7 @@ const resolvers = {
 >
 > ...should return Clark Kent with its heroName and its enemy: Batman.
 
-### Push your API to the next level: use caching with Dataloader (~4min)
+### Push your API to the next level: use caching with Dataloader (~6min)
 
 > Trying to query heroes and their enemies'heroName will show up a N+1 problem. Indeed, our API make 5 round-trips to our database! Try yourself:
 >
@@ -695,7 +698,7 @@ const resolvers = {
 > We can reduce these calls adding caching to our business layer
 
 - Install `Dataloader`: `cd api && yarn add dataloader`
-- Add a `getLoaders` method to our `hero.js` file in our business layer:
+- Add a `getLoaders` method to our `api/business/hero.js` file in our business layer:
 
 ```js
 import DataLoader from 'dataloader';
@@ -716,8 +719,7 @@ class Hero {
   //...
 }
 ```
-- In our `index.js` file, add a new dataloader to our context for each query on `/api` route:
-
+- In our `api/index.js` file, add a new dataloader to our context for each query on `/api` route:
 ```diff
 +import Hero from './business/hero';
 
@@ -736,9 +738,7 @@ router.post(
   })
 );
 ```
-
-- Back in our `hero.js` business layer file, modify `load` and `loadAll` methods to use our dataloader:
-
+- Back in our `api/business/hero.js` business layer file, modify `load` and `loadAll` methods to use our dataloader:
 ```diff
   static async load(ctx, args) {
 +    const data = await ctx.dataLoaders.hero.getById.load(args.id);
@@ -811,11 +811,11 @@ router.post(
 >
 > ...should return Clark Kent and Bruce Wayne; and only one *SELECT* call should have beeen made to our DB.
 
-### Add access control to our API (~3min)
+### Add access control to our API (~5min)
 
 > This is a very simple example, for a more advanced solution, prefer using [Koa Jwt](https://github.com/koajs/jwt).
 
-- In a new `utils.js` file, add these two methods to parse Authorization header and verify token:
+- In a new `api/utils.js` file, add these two methods to parse Authorization header and verify token:
 
 ```js
 export const parseAuthorizationHeader = (req) => {
@@ -840,9 +840,7 @@ export const verifyToken = token => new Promise((resolve, reject) => {
   resolve();
 });
 ```
-
-- In our `index.js` file, parse authorization header and pass it to our context:
-
+- In our `api/index.js` file, parse authorization header and pass it to our context:
 ```diff
 +import { parseAuthorizationHeader } from './utils';
 
@@ -862,9 +860,7 @@ router.post(
   })
 );
 ```
-
-- In our business layer, modify `hero.js`:
-
+- In our business layer, modify `api/business/hero.js`:
 ```diff
 +import { verifyToken } from '../utils';
 
@@ -906,7 +902,7 @@ router.post(
 >
 > ![](assets/authorization.png)
 
-### Troubleshooting: Accessing data by id in the correct order (~3min)
+### Troubleshooting: Accessing data by id in the correct order (~5min)
 
 > You should notice that in **Postman** making a *POST* request to `localhost:3000/api` which content-type is *JSON(application/json)* and *Authorization Header* is `Bearer authorized` with the following raw body:
 >
@@ -931,9 +927,7 @@ router.post(
 ```js
 export const orderByArgIdsOrder = ids => ("array_position(string_to_array(?, ',')::integer[], id)", ids.join(','));
 ```
-
-- In our db layer, modify `hero.js` like this:
-
+- In our db layer, modify `api/db/queryBuilders/hero.js` like this:
 ```diff
 +import { orderByArgIdsOrder } from '../../utils';
 
