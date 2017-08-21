@@ -224,6 +224,7 @@ export default schema;
 - In the `api/index.js` file, add our `api` endpoint:
 
 ```js
+import koaBody from 'koa-bodyparser';
 import { graphqlKoa } from 'graphql-server-koa';
 import schema from './presentation/schema';
 
@@ -261,7 +262,6 @@ app.use(koaBody());
 - In the `index.js` file, let our API knows it should use Koa-graphiql:
 
 ```js
-import koaBody from 'koa-bodyparser';
 import graphiql from 'koa-graphiql';
 
 ...
