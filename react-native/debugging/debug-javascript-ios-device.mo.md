@@ -1,20 +1,26 @@
 # [MO] Debug Javascript on an iOS Device
 
 ## Prerequisites
+
 - [ ] Have [React Native Debugger](https://github.com/jhen0409/react-native-debugger) installed
 - [ ] Have a certificate + provisioning profile for debug
 
 ## Steps
 
 - Obtain signing certificate:
+
   - Get the bundle Identifier from your `fastlane/.env.staging` it's the `IOS_APP_ID` key
   - Copy it in your ios/yourAppName/info.plist after the key `<key>CFBundleIdentifier</key>`
   - Create a new lane in your FastFile :
-  ```
-    lane :get_dev_provisioning_profile do
-      match(type: 'development', shallow_clone: true)
-    end
-  ```
+  
+```
+lane :get_dev_provisioning_profile do
+  match(type: 'development', shallow_clone: true)
+end
+```
+
+  - Execute your lane : `bundle exec fastlane get_dev_provisioning_profile`
+  - Enter repo password
   - Then select the new Development provisioning profile in XCode in the General Tab.
 
 > :warning: The Ip mentionned is the one from your local network and not your router's ip on the internet
