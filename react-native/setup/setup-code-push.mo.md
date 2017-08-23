@@ -192,57 +192,9 @@ export default Home
 
 #### Create bin/deploy.sh *(~10 min)*
 
-```bash
-#!/bin/sh
-read -r -p "Hard deploy [y/N] " response
-case "$response" in
+- [[MO] Add a deploy script to your app](/react-native/setup/deploy-script.mo.md)
 
-    [yY][eE][sS]|[yY])
-      echo "Hard deploy"
-      read -r -p "Did you bump the versions in fastlane/.env.staging [y/N] " response
-        case "$response" in
-          [yY][eE][sS]|[yY])
-          ## Your standard hard deploy steps
-          bundle exec fastlane android deploy --env=staging && bundle exec fastlane ios deploy --env=staging
-
-          ;;
-        esac
-        ;;
-
-    *)
-      echo "Soft deploy"
-      git stash
-      git checkout staging
-      git pull
-      source fastlane/.env.staging
-      MESSAGE=$(git log HEAD --pretty=format:"%h : %s" -1)
-      echo "Deploying Commit : $MESSAGE"
-      yarn
-      code-push release-react -d Staging <MyApp>-android android -m --targetBinaryVersion $ANDROID_VERSION_NAME --des "$MESSAGE"
-      code-push release-react -d Staging <MyApp>-ios ios -m --targetBinaryVersion $IOS_VERSION --des "$MESSAGE"
-        ;;
-esac
-```
-
-*Check:* `./bin/deploy.sh`, `y` should deploy your application exactly like before. `./bin/deploy.sh`, `n` should deploy with codepush.
-
-#### Update package.json *(~1 min)*
-
-```json
-{
-  ...
-  "scripts": {
-    ...
-    "deploy:staging": "./bin/deploy.sh",
-    ...
-  },
-  "dependencies": {
-    ...
-  }
-}
-```
-
-*Check:* `yarn deploy.sh`, `y` should deploy your application exactly like before. `yarn deploy.sh`, `n` should deploy with codepush.
+*Check:* `yarn deploy -- -t hard` should deploy your application with Fastlane. `yarn deploy` should deploy with codepush.
 
 ### 5. Test! *(~15 min)*
 
