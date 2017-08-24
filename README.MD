@@ -61,6 +61,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 ### Features
 
 - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
+- [[Article] Setup DeepLinking with react-navigation](/react-native/features/deep-linking.md)
 
 ## Editors
 
