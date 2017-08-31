@@ -62,6 +62,11 @@ we help him solve his problem and then together write either a [Standard] or a [
 
 - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
 
+## Redux
+
+- [[Repo] Handle loaders and errors with Redux saga like a boss](https://github.com/bamlab/react-redux-toolbox#redux) (star the repo if it helped ;)
+- [[Repo] Listen to React Native app state changes](https://github.com/bamlab/redux-enhancer-react-native-appstate) (star the repo if it helped ;)
+
 ## Editors
 
 ### Visual Studio Code
