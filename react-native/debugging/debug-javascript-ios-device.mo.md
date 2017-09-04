@@ -1,5 +1,7 @@
 # [MO] Debug Javascript on an iOS Device
 
+## Owner: Yann Leflour
+
 ## Prerequisites
 
 - [ ] Have [React Native Debugger](https://github.com/jhen0409/react-native-debugger) installed
