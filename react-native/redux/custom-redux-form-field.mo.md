@@ -1,6 +1,6 @@
 # [MO] How to use redux-form with custom fields (~10min)
 
-## Owner : [Darius Afchar](https://github.com/DariusAf)
+## Owner: [Darius Afchar](https://github.com/DariusAf)
 
 * What is **redux-form** ?
 

@@ -31,7 +31,10 @@
     - [[MO] Debug Native iOS Code](/react-native/debugging/debug-native-ios.mo.md)
     - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
   - Redux
-    - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.md)
+    - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
+    - [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
+  - Features
+    - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
 - Editors
   - Visual Studio Code
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)
