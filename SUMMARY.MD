@@ -2,6 +2,7 @@
 
 - [Index](/README.MD)
 - Contributing
+  - [[MO] Contributing](/contributing/contributing.mo.md)
   - [[Standard] Writing a standard](/contributing/standard.s.md)
   - [[Standard] Writing a method of operation](/contributing/mo.s.md)
 - Backend

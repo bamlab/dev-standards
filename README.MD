@@ -19,6 +19,7 @@ Every time a developer is struggling doing a part of his job (eg, change the app
 we help him solve his problem and then together write either a [Standard] or a [Mode of Operation].
 
 ## Contributing
+- **READ FIRST:** [[MO] Contributing](/contributing/contributing.mo.md)
 - [[Standard] Writing a standard](/contributing/standard.s.md)
 - [[Standard] Writing a method of operation](/contributing/mo.s.md)
 

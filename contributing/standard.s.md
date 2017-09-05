@@ -3,7 +3,7 @@
 ## Owner: Yann Leflour
 
 ## Checks
-- Has an owner
+- Has an owner with a link to his Github Profile
 - Should contain all the the parts present in this document
   - Title
   - Checks
@@ -13,7 +13,7 @@
     - Based on real world use case
 - Title should be prefixed by [Standard]
 - File name should be kebab case and suffixed by `.s`
-- Referenced in the root readme.md
+- Referenced in the root *README.MD* and *SUMMARY.MD*
 
 ## Examples
 
