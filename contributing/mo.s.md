@@ -4,19 +4,18 @@
 
 ## Checks:
 
-- Has an owner
+- Has an owner with a link to his Github Profile
 - Should contain the following parts:
   - Title + time
-  - Prerequisites + time
-  - Steps
-    - Name + Time
-    - How?
-    - Check
+  - A list of prerequisites
+  - A list of steps
+    - A *Name* and aproximate *time to complete*
+    - A *how to*
+    - A way to *check* that the step has been completed appropriately
   - Troubleshooting *(optional)*
 - Title should be prefixed by *[MO]*
 - File name should be kebab case and suffixed by `.mo`
-- Referenced in the root *readme.md*
-- Prerequisites are first time only
+- Is referenced in the root *README.MD* and *SUMMARY.MD*
 
 ## Bad Examples
 
@@ -29,4 +28,4 @@
 
 ## Good Examples
 
-### Example 2: [[MO] Debug Javascript Code (~3 min)](/react-native/debugging/debug-javascript.mo.md)
+### Example 2: [Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex (~75min)](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
