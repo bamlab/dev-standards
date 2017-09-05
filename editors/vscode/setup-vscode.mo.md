@@ -22,7 +22,7 @@ Open the plugins menu and install:
 - Flow Language Support *(flowtype)*
 - npm Intellisense *(Christian Kohler)*
 - Path Intellisense *(Christian Kohler)*
-- Prettier *(Esben Peterson)*
+- Prettier *(Esben Petersen)*
 - React Native Tools *(Visual Studio Mobile Tools)*
 - Auto Close Tag *(Jun Han)*
 - Git Lens *(Eric Amodio)*
