@@ -1,4 +1,4 @@
-# [Standard] Method of Operation
+# [MO] Method of Operation
 
 ## Owner: Yann Leflour
 
@@ -23,8 +23,8 @@
 ### Example 1: [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
 
 - There is no owner
-- No time is mentionned
-- No checks are mentionned
+- No time is mentioned
+- No checks are mentioned
 - Troubleshooting is not in its own part
 
 ## Good Examples

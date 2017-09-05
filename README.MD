@@ -73,6 +73,9 @@ we help him solve his problem and then together write either a [Standard] or a [
 
 - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)
 
+## Project tools
+- [[MO] Label tracking with scrumble](/project-tools/label-tracking.mo.md)
+
 ## Security
 
 - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
