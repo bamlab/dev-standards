@@ -118,6 +118,13 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "bourliam",
+      "name": "Maxime Bourliatoux",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/29543919?v=4",
+      "profile": "https://github.com/bourliam",
+      "contributions": []
     }
   ]
 }
