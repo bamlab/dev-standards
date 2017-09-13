@@ -43,14 +43,3 @@ Open the plugins menu and install:
   "Fastfile": "ruby"
 }
 ```
-
-#### 4. Setup Fira Code
-
-- Install the [Fira Code font](https://github.com/tonsky/FiraCode)
-- Hit `cmd+shift+p`
-- Select `Preferences: Open User Settings`
-- Add the following:
-```json
-"editor.fontFamily": "Fira Code",
-"editor.fontLigatures": true,
-```
