@@ -73,12 +73,12 @@ it('should select the SIM card number', () => {
 
 2) A saga and the test of the order execution:
 
-``` javascript
+```javascript
 // Saga
 export function* cancelPlan(action) {
   const uuidPlan = yield select(nextPlanUuidSelector);
   try {
-    yield call([myAPI, 'deletePlanByUuid'], uuidPlan);
+    yield call([tripica, 'deleteSandBoxByUuid'], uuidPlan);
     const subscription = yield select(subscriptionSelector);
     yield put(fetchNextPlan(subscription));
   } catch (e) {
@@ -101,8 +101,8 @@ describe('cancelPlan saga', () => {
     it('should select nextPlanUuidSelector', () => {
       expect(saga.next().value).toEqual(select(nextPlanUuidSelector));
     });
-    it('should call deletePlanByUuid', () => {
-      expect(saga.next('1234').value).toEqual(call([myAPI, 'deletePlanByUuid'], '1234'));
+    it('should call deleteSandBoxByUuid', () => {
+      expect(saga.next('1234').value).toEqual(call([tripica, 'deleteSandBoxByUuid'], '1234'));
     });
     it('should select subscriptionSelector', () => {
       expect(saga.next().value).toEqual(select(subscriptionSelector));
@@ -127,8 +127,8 @@ describe('cancelPlan saga', () => {
     it('should select nextPlanUuidSelector', () => {
       expect(saga.next().value).toEqual(select(nextPlanUuidSelector));
     });
-    it('should call deletePlanByUuid', () => {
-      expect(saga.next('1234').value).toEqual(call([tripica, 'deletePlanByUuid'], '1234'));
+    it('should call deleteSandBoxByUuid', () => {
+      expect(saga.next('1234').value).toEqual(call([tripica, 'deleteSandBoxByUuid'], '1234'));
     });
     it('should dispatch cancelPlanFailure if API call failed', () => {
       expect(saga.next(new Error('fetch API failed')).value).toEqual(put(cancelPlanFailure));
