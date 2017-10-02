@@ -23,9 +23,9 @@ That being said, if flow is misconfigured and you blindly trust the result, you 
 
 ## Examples
 
-#### // @flow comment
+### // @flow comment
 
-##### ✅ **Good example**
+#### ✅ **Good example**
 
 ```js
 // @ flow
@@ -39,7 +39,7 @@ class Comp from React.Component {
 
 If you make a typo in `React`, you can see it, for instance.
 
-##### ⛔️ **Bad example**
+#### ⛔️ **Bad example**
 
 ```js
 import React from "react";
@@ -51,9 +51,9 @@ class Comp from Reeeeeeeact.Component {
 
 If you make a typo in `React`, you can don't see it.
 
-#### Exact object types
+### Exact object types
 
-##### ✅ **Good example**
+#### ✅ **Good example**
 
 ```js
 // @ flow
@@ -67,7 +67,7 @@ const Troupeau = (props: PropsType) => (<View><Text>{props.chevres.lenght}</Text
 
 If you make a typo in `PropsType`, you can see it.
 
-##### ⛔️ **Bad example**
+#### ⛔️ **Bad example**
 
 ```js
 // @ flow
