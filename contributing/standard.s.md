@@ -2,6 +2,12 @@
 
 ## Owner: Yann Leflour
 
+# Why
+
+The why part is important so Bamers know what is the risk addressed by this standard.
+
+Thus they have more context and are able to onboard other dev by presenting the impact.
+
 ## Checks
 - Has an owner with a link to his Github Profile
 - Should contain all the the parts present in this document
