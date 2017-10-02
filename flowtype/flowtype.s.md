@@ -4,9 +4,9 @@
 
 ## Why
 
-Flowtype is awesome.:
-- it successfully replace unit tests for some tasks, like ensuring that the differents parts of the app, remains in sync with each others.
-- it give you autocompletes
+Flowtype is awesome:
+- it successfully replaces unit tests for some tasks, like ensuring that the differents parts of the app, remains in sync with each others.
+- it give you autocompletion
 
 That being said, if flow is misconfigured and you blindly trust the result, you can still have bug where it should have raised an alert for you.
 
@@ -73,10 +73,10 @@ If you make a typo in `PropsType`, you can see it.
 // @ flow
 
 type PropsType = {
-    chevres: Array<string>
+    maChevrePreferee: string
 }
 
-const Troupeau = (props: PropsType) => (<View><Text>{props.moutons.lenght}</Text></View>)
+const Troupeau = (props: PropsType) => (<View><Text>{props.monMoutonPrefere}</Text></View>)
 ```
 
-(`moutons` should raise an error, but don't since `PropsType` are not exact)
+(`monMoutonPrefere` should raise an error, but don't since `PropsType` are not exact)
