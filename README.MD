@@ -60,6 +60,9 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
 - [[MO] Debug Network calls](/react-native/debugging/debug-network-calls.mo.md)
 
+### React
+- [[Standard] Binding functions in A React component](/react-native/react/binding-function-in-react-component.s.md)
+
 ### Redux
 
 - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)

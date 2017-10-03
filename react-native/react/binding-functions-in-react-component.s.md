@@ -1,4 +1,4 @@
-# Binding functions in react components
+# [Standard] Binding functions in react components
 
 ## Owner: [Jean Faverie](https://github.com/jfaverie)
 
@@ -15,9 +15,9 @@ The tutorial does it the old ES5 way when we should better use the ES6 way (with
 - Have **react-native** installed (`npm i -g react-native-cli`) (~2 min)
 - Have a react-native projet (`react-native init <project name`) (~2 min)
 
-## Steps
+## Checks
 
-- When using the TextInput onChange, the tutorial tells you to define an handleChange function this way (CAUTION, this is deprecated, use the next step) :
+- When using the TextInput onChange, the tutorial tells you to define an handleChange function this way (CAUTION, this is a BAD EXAMPLE) :
 
 ```javascript
 class Test extends Component {
@@ -40,7 +40,7 @@ class Test extends Component {
 
 - This is bad in two ways : performance and syntax.
 
-1. Performance : the first problem here is we use `bind` at every `onChange` event, which is very costly. What we coud do is : 
+1. Performance : the first problem here is we use `bind` at every `onChange` event, which is very costly. What we coud do is (still not optimal) : 
 
 ```javascript
 class Test extends Component {
@@ -62,7 +62,7 @@ class Test extends Component {
 ```
 we improve our performance, as we only bind at the creation of the class. This is not ideal though.
 
-2. The `bind` function is used to be sure to use the good context (the `this` of the class, not the one of the handleChange function). We can improve the syntax by using an arrow function, which has no proper context and uses the context of the class.
+2. The `bind` function is used to be sure to use the good context (the `this` of the class, not the one of the handleChange function). We can improve the syntax by using an arrow function, which has no proper context and uses the context of the class (you can use tis example).
 
 ```javascript
 class Test extends Component {
