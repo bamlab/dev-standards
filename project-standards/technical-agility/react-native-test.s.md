@@ -73,7 +73,7 @@ it('should select the SIM card number', () => {
 
 2) A saga and the test of the order execution:
 
-```javascript
+``` javascript
 // Saga
 export function* cancelPlan(action) {
   const uuidPlan = yield select(nextPlanUuidSelector);
