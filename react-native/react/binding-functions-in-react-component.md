@@ -1,4 +1,4 @@
-# [MO] Get Started with Django, in 3/4 hour (~45 min)
+# Binding functions in react components
 
 ## Owner: [Jean Faverie](https://github.com/jfaverie)
 
