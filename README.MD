@@ -69,6 +69,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 
 - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
 - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
+- [[MO] Add icon(s) with icomoon](/react-native/features/icomoon.mo.md)
 
 ## Editors
 
