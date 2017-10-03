@@ -33,7 +33,7 @@
     - [[MO] Debug Native iOS Code](/react-native/debugging/debug-native-ios.mo.md)
     - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
   - React
-    - [[Standard] Binding functions in A React component](/react-native/react/binding-function-in-react-component.s.md)
+    - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
   - Redux
     - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
     - [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)

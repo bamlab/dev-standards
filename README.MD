@@ -61,7 +61,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Debug Network calls](/react-native/debugging/debug-network-calls.mo.md)
 
 ### React
-- [[Standard] Binding functions in A React component](/react-native/react/binding-function-in-react-component.s.md)
+- [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
 
 ### Redux
 
