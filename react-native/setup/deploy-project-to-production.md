@@ -25,7 +25,7 @@ yo rn-toolbox:fastlane-env
 - Which platform will you use for deployment?: `AppStore`
 - Your git repo for match: `git@github.com:<TeamRepo>/certificates.git`
 - The branch you want to use for match: `<Press Enter>` => The same as for the staging/hockeyapp setup, one Apple account means one branch usualy
-- The developer.apple.com team id for the certificates: `**redacted**` => Can be found in Membership
+- The developer.apple.com team id for the certificates: `**redacted**` => Can be found in Membership (on the website https://developer.apple.com)
 - The itunesconnect.apple.com team name: `**redacted**` => Can be found at the bottom top right
 - Your apple id: `**redacted**` => The username of the apple account
 - Your keystore password: `<Press Enter>` => You can directly accept the generated password from the generator
