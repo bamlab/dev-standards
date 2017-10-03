@@ -26,7 +26,7 @@ My React Native app is well tested if :
 
 ## Good Examples
 1) A reducer and its test (~2min):
-```
+``` javascript
 // Reducer
 export default (state, action) => {
   switch (action.type) {
@@ -54,7 +54,7 @@ it('should set the SIM card number', () => {
 ```
 
 A selector and its test (~2min):
-```
+``` javascript
 // Selector
 export const SIMSerialNumberSelector = state => state.signUp.simCardScan.SIMSerialNumber;
 
@@ -73,7 +73,7 @@ it('should select the SIM card number', () => {
 
 2) A saga and the test of the order execution:
 
-```
+``` javascript
 // Saga
 export function* cancelPlan(action) {
   const uuidPlan = yield select(nextPlanUuidSelector);
