@@ -11,7 +11,7 @@
   - GraphQL JS
     - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 - Code Quality
-  - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md) 
+  - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
 - Project Standards
   - [Project Success](/project-standards/project-success/index.md)
     - [[Standard] Deployed in production](/project-standards/project-success/production.s.md)
@@ -19,9 +19,12 @@
     - [[Standard] Domain Driven Development](/project-standards/technical-agility/code-vocabulary-identical-business-vocabulary.s.md)
     - [[Standard] Easy project installation](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
     - [[Standard] Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
+- Successful Sprint
+  - Coding
+    - [[Standard] Good practices to resolve a ticket](/successful-sprint/coding/plan-your-ticket-to-improve-efficency.s.md)
 - React Native
   - Setup
-    - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md) 
+    - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
     - [# [MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
   - Architecture
