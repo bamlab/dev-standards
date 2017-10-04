@@ -108,6 +108,65 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "tpucci",
+      "name": "Thomas Pucci",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/16262904?v=4",
+      "profile": "https://github.com/tpucci",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "bourliam",
+      "name": "Maxime Bourliatoux",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/29543919?v=4",
+      "profile": "https://github.com/bourliam",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "AliceB08",
+      "name": "AliceB08",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30256638?v=4",
+      "profile": "https://github.com/AliceB08",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "AuroreM",
+      "name": "AuroreM",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15011364?v=4",
+      "profile": "https://github.com/AuroreM",
+      "contributions": [
+        "blog"
+      ]
+    },
+    {
+      "login": "Miniplop",
+      "name": "Kevin Jean",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15800180?v=4",
+      "profile": "https://github.com/Miniplop",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "jfaverie",
+      "name": "Jean Faverie",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/16465614?v=4",
+      "profile": "https://github.com/jfaverie",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }

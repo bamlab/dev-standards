@@ -7,7 +7,7 @@
 - [ ] On React, follow the Jest [documentation](https://facebook.github.io/jest/docs/en/tutorial-react.html#content)
 - [ ] On React Native, it's already done (if needed, jest [doc](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#content))
 
-## Steps *(~60 min)*
+## Steps *(~30 min)*
 - Create a simple test:
 ```javascript
 describe('ComponentToTest', () => {
