@@ -74,6 +74,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 ### Features
 
 - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
+- [[MO] Setup DeepLinking with react-navigation](/react-native/features/deep-linking.md)
 - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
 
 ## Editors
