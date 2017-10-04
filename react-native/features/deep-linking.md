@@ -5,7 +5,7 @@
 * What is deep linking ?
 
 Deeplinking permits you to register a custom URL Scheme in your phone so that when calling a url as `myapp://mypath?param=value` the phone will open the app with the `mypath?param=value`.
-In React Native, you can use the Linking Module that handle the external links in your app.
+In React Native, you can use the `Linking Module` that handle the external links in your app.
 When calling a deeplink in your app, a 'url' event will be dispatch with the url associated.
 
 ## How to implement ?
@@ -20,7 +20,7 @@ When calling a deeplink in your app, a 'url' event will be dispatch with the url
 If you have Facebook SDK installed, a "application" function will already be implemented in your AppDelegate.m
 You will nedd to refactor the two methods as is :
 
-```
+```objectivec
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
@@ -45,7 +45,7 @@ You will nedd to refactor the two methods as is :
 
 If you already have an intent-filter in your MainApplication, had a different one just beside
 
-```
+```xml
 <intent-filter>
   <action android:name="android.intent.action.MAIN" />
   <category android:name="android.intent.category.LAUNCHER" />
