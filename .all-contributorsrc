@@ -157,6 +157,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "jfaverie",
+      "name": "Jean Faverie",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/16465614?v=4",
+      "profile": "https://github.com/jfaverie",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
