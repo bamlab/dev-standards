@@ -22,7 +22,7 @@ Open the plugins menu and install:
 - Flow Language Support *(flowtype)*
 - npm Intellisense *(Christian Kohler)*
 - Path Intellisense *(Christian Kohler)*
-- Prettier *(Esben Peterson)*
+- Prettier *(Esben Petersen)*
 - React Native Tools *(Visual Studio Mobile Tools)*
 - Auto Close Tag *(Jun Han)*
 - Git Lens *(Eric Amodio)*
@@ -42,15 +42,4 @@ Open the plugins menu and install:
 "files.associations": {
   "Fastfile": "ruby"
 }
-```
-
-#### 4. Setup Fira Code
-
-- Install the [Fira Code font](https://github.com/tonsky/FiraCode)
-- Hit `cmd+shift+p`
-- Select `Preferences: Open User Settings`
-- Add the following:
-```json
-"editor.fontFamily": "Fira Code",
-"editor.fontLigatures": true,
 ```

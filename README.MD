@@ -19,6 +19,7 @@ Every time a developer is struggling doing a part of his job (eg, change the app
 we help him solve his problem and then together write either a [Standard] or a [Mode of Operation].
 
 ## Contributing
+- **READ FIRST:** [[MO] Contributing](/contributing/contributing.mo.md)
 - [[Standard] Writing a standard](/contributing/standard.s.md)
 - [[Standard] Writing a method of operation](/contributing/mo.s.md)
 
@@ -37,6 +38,9 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [Project Success](/project-standards/project-success/index.md)
 - [Technical Agility](/project-standards/technical-agility/index.md)
 
+## Scrum
+- [[Standard] Timebox](/scrum/timebox.s.md)
+
 ## React Native
 
 ### Setup
@@ -44,6 +48,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Deploy Project to Production - Only iOS Testflight](/react-native/setup/deploy-project-to-production.md)
 - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
 - [[MO] Add a deploy script to your app](/react-native/setup/deploy-script.mo.md)
+- [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
 - [[Article] Setup your React Native project icon](https://blog.bam.tech/developper-news/change-your-react-native-app-icons-in-a-single-command-line)
 
 ### Architecture
@@ -58,10 +63,19 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
 - [[MO] Debug Network calls](/react-native/debugging/debug-network-calls.mo.md)
 
+### React
+- [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
+
+### Redux
+
+- [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
+- [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
+
 ### Features
 
 - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
-- [[Article] Setup DeepLinking with react-navigation](/react-native/features/deep-linking.md)
+- [[MO] Setup DeepLinking with react-navigation](/react-native/features/deep-linking.md)
+- [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
 
 ## Editors
 
@@ -79,14 +93,15 @@ we help him solve his problem and then together write either a [Standard] or a [
 
 ## Contributors
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors)
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 | [<img src="https://avatars0.githubusercontent.com/u/1863461?v=4" width="80px;"/><br /><sub>Yann Leflour</sub>](http://bamlab.fr/)<br />[📝](#blog-yleflour "Blogposts") [🚇](#infra-yleflour "Infrastructure (Hosting, Build-Tools, etc)") [👀](#review-yleflour "Reviewed Pull Requests") | [<img src="https://avatars2.githubusercontent.com/u/13785185?v=4" width="80px;"/><br /><sub>TychoTa</sub>](https://twitter.com/TychoTa)<br />[📝](#blog-tychota "Blogposts") [🚇](#infra-tychota "Infrastructure (Hosting, Build-Tools, etc)") [👀](#review-tychota "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/4620699?v=4" width="80px;"/><br /><sub>Kevin Raynel</sub>](https://github.com/kraynel)<br />[📝](#blog-kraynel "Blogposts") [👀](#review-kraynel "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/14938214?v=4" width="80px;"/><br /><sub>Xavier Lefèvre</sub>](https://github.com/xavierlefevre)<br />[📝](#blog-xavierlefevre "Blogposts") [👀](#review-xavierlefevre "Reviewed Pull Requests") | [<img src="https://avatars2.githubusercontent.com/u/82368?v=4" width="80px;"/><br /><sub>Louis Lagrange</sub>](http://louislagrange.free.fr)<br />[📝](#blog-Minishlink "Blogposts") [👀](#review-Minishlink "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/4534323?v=4" width="80px;"/><br /><sub>Alexandre Moureaux</sub>](http://blog.bam.tech)<br />[📝](#blog-Almouro "Blogposts") [👀](#review-Almouro "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/15544105?v=4" width="80px;"/><br /><sub>Darius Afchar</sub>](https://github.com/DariusAf)<br />[📝](#blog-DariusAf "Blogposts") [👀](#review-DariusAf "Reviewed Pull Requests") |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars3.githubusercontent.com/u/26787996?v=4" width="80px;"/><br /><sub>Arthur Levoyer</sub>](https://github.com/Arlevoy)<br />[📝](#blog-Arlevoy "Blogposts") [👀](#review-Arlevoy "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/1280130?v=4" width="80px;"/><br /><sub>Florian Rival</sub>](http://www.compilgames.net)<br />[📝](#blog-4ian "Blogposts") [👀](#review-4ian "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/905860?v=4" width="80px;"/><br /><sub>Nicolas Djambazian</sub>](http://nicolas.djambazian.fr)<br />[📝](#blog-Nhacsam "Blogposts") [👀](#review-Nhacsam "Reviewed Pull Requests") | [<img src="https://avatars1.githubusercontent.com/u/16262904?v=4" width="80px;"/><br /><sub>Thomas Pucci</sub>](https://github.com/tpucci)<br />[📝](#blog-tpucci "Blogposts") [👀](#review-tpucci "Reviewed Pull Requests") |
+| [<img src="https://avatars3.githubusercontent.com/u/26787996?v=4" width="80px;"/><br /><sub>Arthur Levoyer</sub>](https://github.com/Arlevoy)<br />[📝](#blog-Arlevoy "Blogposts") [👀](#review-Arlevoy "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/1280130?v=4" width="80px;"/><br /><sub>Florian Rival</sub>](http://www.compilgames.net)<br />[📝](#blog-4ian "Blogposts") [👀](#review-4ian "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/905860?v=4" width="80px;"/><br /><sub>Nicolas Djambazian</sub>](http://nicolas.djambazian.fr)<br />[📝](#blog-Nhacsam "Blogposts") [👀](#review-Nhacsam "Reviewed Pull Requests") | [<img src="https://avatars1.githubusercontent.com/u/16262904?v=4" width="80px;"/><br /><sub>Thomas Pucci</sub>](https://github.com/tpucci)<br />[📝](#blog-tpucci "Blogposts") [👀](#review-tpucci "Reviewed Pull Requests") | [<img src="https://avatars2.githubusercontent.com/u/29543919?v=4" width="80px;"/><br /><sub>Maxime Bourliatoux</sub>](https://github.com/bourliam)<br />[📝](#blog-bourliam "Blogposts") [👀](#review-bourliam "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/30256638?v=4" width="80px;"/><br /><sub>AliceB08</sub>](https://github.com/AliceB08)<br />[📝](#blog-AliceB08 "Blogposts") [👀](#review-AliceB08 "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/15011364?v=4" width="80px;"/><br /><sub>AuroreM</sub>](https://github.com/AuroreM)<br />[📝](#blog-AuroreM "Blogposts") |
+| [<img src="https://avatars0.githubusercontent.com/u/15800180?v=4" width="80px;"/><br /><sub>Kevin Jean</sub>](https://github.com/Miniplop)<br />[📝](#blog-Miniplop "Blogposts") [👀](#review-Miniplop "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/16465614?v=4" width="80px;"/><br /><sub>Jean Faverie</sub>](https://github.com/jfaverie)<br />[📝](#blog-jfaverie "Blogposts") [👀](#review-jfaverie "Reviewed Pull Requests") |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
