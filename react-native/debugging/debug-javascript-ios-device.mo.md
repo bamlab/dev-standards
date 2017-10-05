@@ -21,7 +21,7 @@ lane :get_dev_provisioning_profile do
 end
 ```
 
-  - Execute your lane : `bundle exec fastlane get_dev_provisioning_profile`
+  - Execute your lane : `bundle exec fastlane get_dev_provisioning_profile --env=staging`
   - Enter repo password
   - Then select the new Development provisioning profile in XCode in the General Tab.
 
