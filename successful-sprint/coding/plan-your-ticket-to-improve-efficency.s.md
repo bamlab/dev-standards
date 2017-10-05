@@ -24,3 +24,9 @@ For each of those parts I write down:
 ## Tips:
 * Andon as much as possible while constructing your plan.
 * When the plan is finished, you HAVE to present it to a more experienced dev in order to challenge it before coding.
+
+#### Good Example:
+I don't start coding unless I have already written my plan down on a paper
+
+#### Bad Example:
+I read my ticket and start coding immediately
