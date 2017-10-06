@@ -28,7 +28,23 @@ For each of those parts I write down:
 ## Examples:
 
 ###  Good Example:
-I don't start coding unless I have already written my plan down on a paper
+Ticket: (1) As a user, in the page "Portfolio Creation Summary", when I click on the tab "In the Past", I see the graph data.
+Plan:
+1. Goal: Check that the graph data is already available
+ . Functional test: use the debugger to check that this.state.backtest.composition is not an empty array
+ . Duration: 2 minutes
+2. Goal: Show the graph data
+ . Solution1: Use <ul> and <li>
+        backtest.composition.map ((data) => <li> {data} </li>)
+  After the architecture challenge, the solution changed
+ . Solution2: Use <Flatlist />
+        <FlatList
+        data={backtestData.composition}
+        renderItem={({ item }) => (<Text key={data}></Text>)}
+        />
+ .Duration: 10 minutes
+ .Functional test: display the Flatlist
+ .Automatic test + commit
 
 ### Bad Example:
 I read my ticket and start coding immediately
