@@ -4,9 +4,9 @@
 
 ## Who are we
 
-We are mobile developers, based in Paris, working with hybrid and cross plateform technologies. 
+We are mobile developers, based in Paris, working with hybrid and cross plateform technologies.
 
-Our goal is to help the client business succeed, by solving togethers their problems using agile and lean, 
+Our goal is to help the client business succeed, by solving togethers their problems using agile and lean,
 and developping the best product to satisfy the client's user needs.
 
 Learn more about us [in our french website](http://www.bam.tech/).
@@ -15,7 +15,7 @@ Learn more about us [in our french website](http://www.bam.tech/).
 
 Part of lean philosophy is to standardize best practices and spread them out.
 
-Every time a developer is struggling doing a part of his job (eg, change the application icon, deploying features very fast using code push, ect...), 
+Every time a developer is struggling doing a part of his job (eg, change the application icon, deploying features very fast using code push, ect...),
 we help him solve his problem and then together write either a [Standard] or a [Mode of Operation].
 
 ## Contributing
@@ -24,10 +24,10 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[Standard] Writing a method of operation](/contributing/mo.s.md)
 
 ## Backend
-### Django 
+### Django
 - [[MO] Get started with Django](/backend/django/getting-started.mo.md)
 
-### GraphQL JS 
+### GraphQL JS
 - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 
 ## Code Quality
@@ -44,12 +44,13 @@ we help him solve his problem and then together write either a [Standard] or a [
 ## React Native
 
 ### Setup
-- [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md) 
+- [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
 - [[MO] Deploy Project to Production - Only iOS Testflight](/react-native/setup/deploy-project-to-production.md)
 - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
 - [[MO] Add a deploy script to your app](/react-native/setup/deploy-script.mo.md)
 - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
 - [[Article] Setup your React Native project icon](https://blog.bam.tech/developper-news/change-your-react-native-app-icons-in-a-single-command-line)
+- [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
