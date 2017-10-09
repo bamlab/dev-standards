@@ -36,7 +36,7 @@ Our API will be lightly protected and use batching to minimise DB round-trips.
   ├ 📂 db
   │ └ 🗋 Dockerfile
   ├ 🗋 config.env
-  └ 🗋 docker-copose.yml
+  └ 🗋 docker-compose.yml
   ```
 
   - > Make sure your local 3000 port is available as we will use this port to reach our API
