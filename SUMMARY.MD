@@ -11,7 +11,7 @@
   - GraphQL JS
     - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 - Code Quality
-  - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md) 
+  - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
 - Project Standards
   - [Project Success](/project-standards/project-success/index.md)
     - [[Standard] Deployed in production](/project-standards/project-success/production.s.md)
@@ -21,7 +21,7 @@
     - [[Standard] Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
 - React Native
   - Setup
-    - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md) 
+    - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
     - [# [MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
   - Architecture
@@ -40,6 +40,7 @@
   - Features
     - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
     - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
+  - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
 - Editors
   - Visual Studio Code
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)
