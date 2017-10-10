@@ -5,7 +5,7 @@
 ## Prerequisites *(~30min)*
 
 - [ ] An Android or iOS app with the Firebase SDK installed
-   - For React Native apps, you can use [`react-native-firebase](https://github.com/invertase/react-native-firebase)
+   - For React Native apps, you can use [`react-native-firebase`](https://github.com/invertase/react-native-firebase)
 
 ## Steps *(~30min)*
 
