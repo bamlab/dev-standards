@@ -22,6 +22,13 @@ For each of those parts I write down:
 5. A reminder to commit the relevant modifications
 6. An estimation of the time I need to finish this part.
 
+You can use this template while planning:
+
+| Component file   |     Modifications    | Technical tests |
+|:-----------------:|:------------------:|:------------------:|
+| File1.component.js |  The modification to do  |  test |
+| File2.style.js | The modification to do  | test |
+
 ## Tips:
 * Andon (first your architect, second your coach then other developers) as much as possible while constructing your plan.
 * When the plan is finished, you HAVE to present it to a more experienced dev in order to challenge it before coding.
