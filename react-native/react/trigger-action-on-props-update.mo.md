@@ -1,4 +1,4 @@
-# Trigger action on props update with componentWillReceiveProps
+# [MO] Trigger action on props update with componentWillReceiveProps
 
 ## Owner: Yassine Chbani
 
