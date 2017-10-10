@@ -38,12 +38,14 @@ Ticket title: (1) As a user, in the page "Portfolio Creation Summary", when I cl
   - **Goal**: Show the graph data
   - **Solution 1**: Use ul and li ---->  backtest.composition.map ((data) => li {data} /li)
   * After the architecture challenge, I changed the solution. He proposed **Solution 2** <Flatlist /> ----> 
-  ```js
+
+```javascript
 <FlatList 
   data={backtestData.composition} 
   renderItem={({ item }) => (<Text key={data} </Text>)}  
 />
 ```
+
   - **Functional test**: display the Flatlist
   - **Automatic test + commit**
   - **Duration**: 15 minutes
