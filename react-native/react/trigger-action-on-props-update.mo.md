@@ -8,7 +8,7 @@ If you have ever worked with React, you will have probably used Redux at some po
 subscribe to any changes to the store state and react accordingly. But what happens if you want to similarly handle the update
 of one of your component's props? For example, call a certain method for a given change of the props?
 
-Well you're in luck, because Facebook provides a set of methods that get called at different points of the lifecycle of a component [^1]. We are going to look at the `ComponentWillReceiveProps`method in the following article.
+Well you're in luck, because Facebook provides a set of methods that get called at different points of the lifecycle of a component <sup>1</sup>. We are going to look at the `ComponentWillReceiveProps`method in the following article.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ triggered from within or outside the page.
 
 ## Steps (~10 minutes)
 
-- Add a prop `isActivated` to your component that gets updated from outside the page e.g. from the store:
+- Add a prop `isConnected` to your component that gets updated from outside the page e.g. from the store:
 
 ```jsx
 import { Connectivity } from '../../../Connectivity';
@@ -99,11 +99,11 @@ const mapStateToProps = state => ({
 });
 ```
 
-A couple of interesting notes[^2]:
+A couple of interesting notes<sup>2</sup>:
 - `componentWillReceiveProps` can be called even if the props did not change
 - If done before `render()`is called, then calling `setState` will not trigger an additional render
 
-[^1]:
-See [this](https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1) or
+<sup>1</sup> : See [this](https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1) or
 [that article](https://reactjs.org/docs/react-component.html) about the full lifecycle of a React component.
-[^2]:https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/update/component_will_receive_props.html
+
+<sup>2</sup> : https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/update/component_will_receive_props.html
