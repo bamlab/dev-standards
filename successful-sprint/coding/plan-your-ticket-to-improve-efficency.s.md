@@ -59,4 +59,14 @@ Ticket title: (1) As a user, in the page "Portfolio Creation Summary", when I cl
 - **Total Duration**: 20 minutes
 
 ## Bad Examples:
-I read my ticket and start coding immediately
+### Ticket "Portfolio Creation Summary"
+Ticket title: (1) As a user, in the page "General Car State", I see the 4 pictures of the car.
+
+**Plan**:
+- **Part 1**
+  - **Goal**: 
+  - **Functional test**: 
+  - **Duration**:
+- **Part 2**
+  - **Goal**:
+  - **Solution 1**:
