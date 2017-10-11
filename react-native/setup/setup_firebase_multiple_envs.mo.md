@@ -11,7 +11,7 @@
 
 It's pretty straightforward to install Firebase when you have only one environment.
 But what if you have multiple environments, such as `dev`, `staging` and `production`?
-Here's the steps by steps.
+Here's a step-by-step guide.
 
 ### Android *(~10min)*
 On Android, Firebase groups the different configurations in one file.
