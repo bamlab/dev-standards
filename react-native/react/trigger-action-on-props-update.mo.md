@@ -10,6 +10,7 @@ of one of your component's props? For example, call a certain method for a given
 
 Well you're in luck, because Facebook provides a set of methods that get called at different points of the lifecycle of a component <sup>1</sup>. We are going to look at the `ComponentWillReceiveProps`method in the following article.
 
+
 ## Prerequisites
 
 Your page has a set of props that can change after it has been mounted and before it gets unmounted. The props change can be
@@ -18,6 +19,7 @@ triggered from within or outside the page.
 ## Steps (~10 minutes)
 
 - Add a prop `isConnected` to your component that gets updated from outside the page e.g. from the store:
+
 
 ```jsx
 import { Connectivity } from '../../../Connectivity';
@@ -99,6 +101,7 @@ const mapStateToProps = state => ({
 });
 ```
 
+
 A couple of interesting notes<sup>2</sup>:
 - `componentWillReceiveProps` can be called even if the props did not change
 - If done before `render()`is called, then calling `setState` will not trigger an additional render
@@ -107,3 +110,4 @@ A couple of interesting notes<sup>2</sup>:
 [that article](https://reactjs.org/docs/react-component.html) about the full lifecycle of a React component.
 
 <sup>2</sup> : https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/update/component_will_receive_props.html
+
