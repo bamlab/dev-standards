@@ -47,7 +47,7 @@ These 3 files are in the `icomoon.zip` archive: but if you only have the `*.svg`
   - `resources/icons/icomoon.ttf`
 
 
-## 3. [If you are using code-push] Don't forget to hard deploy
-
- Deploying with CodePush will **not** update the icons of the app
+> :warning: **If you are using code-push, don't forget to hard deploy**
+>
+> Deploying with CodePush will **not** update the icons of the app
 
