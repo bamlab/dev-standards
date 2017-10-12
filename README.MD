@@ -77,6 +77,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
 - [[MO] Setup DeepLinking with react-navigation](/react-native/features/deep-linking.md)
 - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
+- [[MO] AsyncStorage: a React Native system for permanent storage](/react-native/features/asyncstorage.mo.md)
 
 ### React-Navigation
  - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
