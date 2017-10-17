@@ -61,12 +61,14 @@ Ticket title: (1) As a user, in the page "Portfolio Creation Summary", when I cl
 ## Bad Examples:
 ### Ticket "Portfolio Creation Summary"
 Ticket title: (1) As a user, in the page "General Car State", I see the 4 pictures of the car.
+<p align="center">
+  <img src="https://github.com/bamlab/dev-standards/successful-sprint/coding/bad_example_car1.png" width="200"/>
+</p>
 
-**Plan**:
-- **Part 1**
-  - **Goal**: 
-  - **Functional test**: 
-  - **Duration**:
-- **Part 2**
-  - **Goal**:
-  - **Solution 1**:
+- **What I did**
+  - Put the 4 pictures in a container view 
+  - Use flex-wrap to have 2 pictures per row
+- **Result**
+  - As the devices in the definition of the Done had a big screen => Photos displayed correctly
+- **Unexpected result**
+  - The PO tested it on an iphone 5s (small screen) => return validation
