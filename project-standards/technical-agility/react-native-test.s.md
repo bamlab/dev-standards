@@ -25,7 +25,8 @@ My React Native app is well tested if :
 *TBD*
 
 ## Good Examples
-1) A reducer and its test (~2min):
+1.
+- Reducer (~2min):
 ``` javascript
 // Reducer
 export default (state, action) => {
@@ -53,7 +54,7 @@ it('should set the SIM card number', () => {
 });
 ```
 
-A selector and its test (~2min):
+- Selector (~2min):
 ``` javascript
 // Selector
 export const SIMSerialNumberSelector = state => state.signUp.simCardScan.SIMSerialNumber;
@@ -71,7 +72,8 @@ it('should select the SIM card number', () => {
 });
 ```
 
-2) A saga and the test of the order execution:
+2.
+- The execution order of a saga
 
 ``` javascript
 // Saga
@@ -135,4 +137,122 @@ describe('cancelPlan saga', () => {
     });
   });
 });
+```
+
+- The effect of  a saga on the state
+
+*TDB*
+
+3.
+*TO DO : Regarder flow-typed*
+- The props presence of a presentational component
+
+``` javascript
+// ChoosePlan.js
+import type { NavigationScreenProp } from 'react-navigation';
+type Props = NavigationScreenProp & DispatchProps & StateProps;
+
+export type DispatchProps = {
+  clearChoosenPhoneNumber: Function,
+};
+
+export type StateProps = {
+  newOfferPrice: number,
+  newOfferPeriodicity: Object,
+  isFreeSimPathAvailable: boolean,
+  isOfferValid?: boolean,
+};
+```
+
+- The props presence of the container component
+``` javascript
+// ChoosePlan.container.js
+import type { DispatchProps, StateProps } from './ChoosePlan';
+
+const mapDispatchToProps: DispatchProps = {
+  clearChoosenPhoneNumber,
+};
+
+const mapStateToProps = (state: StateType): StateProps => ({
+  newOfferPrice: newOfferPriceSelector(state),
+  newOfferPeriodicity: newOfferPeriodicitySelector(state),
+  isFreeSimPathAvailable: true,
+  isOfferValid: isNewOfferValidSelector(state),
+});
+
+```
+
+4.
+- The UI of a component
+``` javascript
+import 'react-native';
+import React from 'react';
+import PendingDeliveryPanel from './PendingDeliveryPanel';
+import renderer from 'react-test-renderer';
+
+describe('<PendingDeliveryPanel />', () => {
+  const deliveryResource = {
+    deliveryAddress: {
+      street1: '1 rue du Paradis',
+      postCode: '56000',
+      city: 'Vannes',
+      region: 'Bretagne',
+      deliveryInstructions: 'Sonnez !',
+      status: 'inPreparation',
+    },
+    deliveryMethod: {
+      id: 'PREMIUM_DELIVERY',
+      price: 70,
+    },
+  };
+  it('renders correctly with "inPreparation" as a deliveryStatus', () => {
+    const tree = renderer.create(<PendingDeliveryPanel navigation={() => {}} deliveryResource={deliveryResource} />);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+  it('renders correctly with "shipped" as a deliveryStatus', () => {
+    deliveryResource.status = 'shipped';
+    deliveryResource.trackingLink = 'http://tracking-link.com';
+    const tree = renderer.create(<PendingDeliveryPanel navigation={() => {}} deliveryResource={deliveryResource} />);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+  it('renders correctly with "delivered" as a deliveryStatus', () => {
+    deliveryResource.status = 'delivered';
+    deliveryResource.trackingLink = 'http://tracking-link.com';
+    const tree = renderer.create(<PendingDeliveryPanel navigation={() => {}} deliveryResource={deliveryResource} />);
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+});
+
+```
+
+5.
+- The service are tested
+```javascript
+// FormatService.spec.js
+// The service formats a phone number
+import FormatService from './normalization';
+
+describe('FormatService', () => {
+  describe('formatPhone', () => {
+    it('should return only numbers if length < 3', () => {
+      expect(FormatService.formatPhone('12')).to.equal('12');
+    });
+    it('should return 3 numbers and an hyphen if length = 3', () => {
+      expect(FormatService.formatPhone('123')).to.equal('123');
+    });
+    it('should return 3 numbers, an hyphen and numbers if 3 <= length < 6', () => {
+      expect(FormatService.formatPhone('12345')).to.equal('123-45');
+    });
+    it('should return 3 numbers, an hyphen, 3 numbers and an hyphen if length = 6', () => {
+      expect(FormatService.formatPhone('123456')).to.equal('123-456');
+    });
+    it('should return 3 numbers, an hyphen, 3 numbers and an hyphen and numbers if 6 < length <= 10', () => {
+      expect(FormatService.formatPhone('12345678')).to.equal('123-456-78');
+    });
+    it('should return only 10 digits even if the number has more than 10 digits', () => {
+      expect(FormatService.formatPhone('123456789012')).to.equal('123-456-789012');
+    });
+  });
+});
+
 ```
