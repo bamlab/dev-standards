@@ -60,7 +60,7 @@ Ticket title: (1) As a user, in the page "Portfolio Creation Summary", when I cl
 
 ## Bad Examples:
 ### Ticket "Portfolio Creation Summary"
-Ticket title: (1) As a user, in the page "General Car State", I see the 4 pictures of the car.
+Ticket title: (2) As a user, in the page "General Car State", I see the 4 pictures of the car.
 <p align="center">
   <img src="https://github.com/bamlab/dev-standards/successful-sprint/coding/bad_example_car1.png" width="200"/>
 </p>
@@ -69,6 +69,13 @@ Ticket title: (1) As a user, in the page "General Car State", I see the 4 pictur
   - Put the 4 pictures in a container view 
   - Use flex-wrap to have 2 pictures per row
 - **Result**
-  - As the devices in the definition of the Done had a big screen => Photos displayed correctly
+  - As the devices in the definition of the Done had a big screen => Photos were displayed correctly
 - **Unexpected result**
-  - The PO tested it on an iphone 5s (small screen) => return validation
+  - The PO tested it on an iphone 5s (small screen) and the result wasn't the same. 
+  - Therefore, I had to take back this ticket to work on it again (2h of rework).
+  - My coach encouraged me to use flexDirection (2 cars on a row and the 2 rows in the same column) instead of using flex-wrap. 
+<p align="center">
+  <img src="https://github.com/bamlab/dev-standards/successful-sprint/coding/bad_example_car2.png" width="200"/>
+</p>
+
+  
