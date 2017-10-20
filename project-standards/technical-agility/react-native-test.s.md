@@ -77,71 +77,101 @@ it('should select the SIM card number', () => {
 
 ``` javascript
 // Saga
-export function* cancelPlan(action) {
-  const uuidPlan = yield select(nextPlanUuidSelector);
-  try {
-    yield call([myAPI, 'deletePlanByUuid'], uuidPlan);
-    const subscription = yield select(subscriptionSelector);
-    yield put(fetchNextPlan(subscription));
-  } catch (e) {
-    yield put(cancelPlanFailure())
-  }
+export function* selectSubscriptionDuringActivateSaga(action) {
+  yield put(selectSubscription(action.payload.subscription));
+  yield call(initNewOfferWithSelectedSubscription);
+  yield call(goToNextActivationPage);
 }
 
 export default function*() {
-  yield takeEvery('CANCEL_PLAN_REQUEST', cancelPlan);
+  yield takeEvery('SIGNUP_SELECT_SUBSCRIPTION_DURING_ACTIVATE', selectSubscriptionDuringActivateSaga);
 }
 
 // Test
-describe('cancelPlan saga', () => {
-  describe('Success case', () => {
-    const action = {
-      type: 'CANCEL_PLAN_REQUEST',
-    };
-    const saga = cancelPlan(action);
+import { selectSubscriptionDuringActivateSaga } from './sagas';
+import { testSaga } from 'redux-saga-test-plan';
 
-    it('should select nextPlanUuidSelector', () => {
-      expect(saga.next().value).toEqual(select(nextPlanUuidSelector));
-    });
-    it('should call deletePlanByUuid', () => {
-      expect(saga.next('1234').value).toEqual(call([myAPI, 'deletePlanByUuid'], '1234'));
-    });
-    it('should select subscriptionSelector', () => {
-      expect(saga.next().value).toEqual(select(subscriptionSelector));
-    });
-    it('should select put fetchNextPlan', () => {
-      const subscription = {
-        data: Map({
-          daysLeft: 15,
-          nextRenewalDate: '1504796837',
-        }),
-      };
-      expect(saga.next(subscription).value).toHaveProperty('PUT');
-    });
-  });
-
-  describe('Failure case', () => {
-    const action = {
-      type: 'CANCEL_PLAN_REQUEST',
-    };
-    const saga = cancelPlan(action);
-
-    it('should select nextPlanUuidSelector', () => {
-      expect(saga.next().value).toEqual(select(nextPlanUuidSelector));
-    });
-    it('should call deletePlanByUuid', () => {
-      expect(saga.next('1234').value).toEqual(call([tripica, 'deletePlanByUuid'], '1234'));
-    });
-    it('should dispatch cancelPlanFailure if API call failed', () => {
-      expect(saga.next(new Error('fetch API failed')).value).toEqual(put(cancelPlanFailure));
-    });
+describe('selectSubscriptionDuringActivateSaga', () => {
+  it('should select subscription and go to the next page', () => {
+    testSaga(selectSubscriptionDuringActivateSaga, {
+      type: 'SIGNUP_SELECT_SUBSCRIPTION_DURING_ACTIVATE',
+      payload: { subscription: { ouid: 'ouidSubscription' } },
+    })
+      .next()
+      .put(selectSubscription({ ouid: 'ouidSubscription' }))
+      .next()
+      .call(initNewOfferWithSelectedSubscription)
+      .next()
+      .call(goToNextActivationPage)
+      .next()
+      .isDone();
   });
 });
 ```
 
 - The effect of  a saga on the state
 
-*TDB*
+```javascript
+// Saga
+export function* confirmPersonalInfo(action) {
+  let customer = fromJS(action.payload);
+  const sameAddresses = customer.get('billingAddress').equals(customer.get('idAddress'));
+
+  customer = customer.setIn(['idAddress', 'country'], customer.get('nationality'));
+  if (action.meta.useAddressAsBilling) {
+    customer = customer.set('billingAddress', customer.get('idAddress'));
+  } else if (sameAddresses) {
+    customer = customer.set('billingAddress', new Map());
+  }
+  const birthdate = customer.get('birthdate') ? moment(customer.get('birthdate'), I18n.t('dateFormat')).valueOf() : '';
+  customer = customer.set('birthdate', birthdate);
+
+  try {
+    yield put(setPersonalInfo(customer.toJS()));
+    yield put(NavigationActions.navigate({ routeName: 'selfieCheck' }));
+  } catch (e) {
+    console.warn('[saga] confirmPersonalInfo', e);
+    HandleErrorService.showToastError(e);
+  }
+}
+
+// Test
+it('should set the personal infos in the store', () => {
+    const action = {
+      type: 'SIGNUP_CONFIRM_PERSONAL_INFO',
+      payload,
+    };
+    const expectedState = Map({
+      fetching: true,
+      failure: false,
+      toRefresh: true,
+      refreshing: false,
+      data: Map({
+        ouid: '569C3BBD0C238FB43B804DEE3B865C2A',
+        gender: 'MALE',
+        birthdate: -324352800000,
+        billingAddress: Map({
+          street1: '19 JALAN S…',
+          postCode: '47300',
+          city: 'PETALING J…',
+          country: 'MYS',
+        }),
+        idAddress: Map({
+          street1: '19 JALAN S…',
+          postCode: '47300',
+          city: 'PETALING J…',
+          country: 'MYS',
+        }),
+        fullName: 'SOMANATHAN A/L K.C.A MENON',
+        nationality: 'MYS',
+      }),
+    });
+    return expectSaga(confirmPersonalInfo, action)
+      .withReducer(customerReducer)
+      .run()
+      .then(result => expect(result.storeState).toEqual(expectedState));
+  });
+```
 
 3.
 *TO DO : Regarder flow-typed*
