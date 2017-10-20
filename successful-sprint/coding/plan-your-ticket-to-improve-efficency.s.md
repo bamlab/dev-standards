@@ -59,7 +59,7 @@ Ticket title: (1) As a user, in the page "Portfolio Creation Summary", when I cl
 - **Total Duration**: 20 minutes
 
 ## Bad Examples:
-### Ticket "Portfolio Creation Summary"
+### Ticket "General Car State"
 Ticket title: (2) As a user, in the page "General Car State", I see the 4 pictures of the car.
 <p align="center">
   <img src="https://github.com/bamlab/dev-standards/successful-sprint/coding/bad_example_car1.png" width="200"/>
