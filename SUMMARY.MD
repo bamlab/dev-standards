@@ -19,6 +19,7 @@
     - [[Standard] Domain Driven Development](/project-standards/technical-agility/code-vocabulary-identical-business-vocabulary.s.md)
     - [[Standard] Easy project installation](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
     - [[Standard] Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
+    - [[Standard] The tests' standards of my framework are respected](/project-standards/technical-agility/react-native-test.s.md)
 - React Native
   - Setup
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
