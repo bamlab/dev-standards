@@ -13,7 +13,7 @@ You may sometimes need to control the screen orientation of your app. You might 
 
 # Force a unique orientation for your app
 
-## Steps (~2 minutes)
+## Steps (~5 minutes)
 
 - for iOS, open XCode, in your project settings -> general -> deployment info check the devices orientations you want to allow on your app :
 
