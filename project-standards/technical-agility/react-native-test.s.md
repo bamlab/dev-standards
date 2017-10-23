@@ -20,7 +20,6 @@ My React Native app is well tested if :
   - 4) The presentational components are tested with a snapshot. It avoids UI regression.
   - 5) The services are tested. It helps to decouple the code.
 
-
 ## Bad Examples
 *TBD*
 
@@ -29,7 +28,7 @@ My React Native app is well tested if :
 - Reducer (~2min):
 ``` javascript
 // Reducer
-export default (state, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case 'SIGNUP_SET_SIM_CARD_NUMBER':
       return {
