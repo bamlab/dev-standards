@@ -113,17 +113,17 @@ describe('selectSubscriptionDuringActivateSaga', () => {
 ```javascript
 // Saga
 export function* confirmPersonalInfo(action) {
-  let customer = fromJS(action.payload);
-  const sameAddresses = customer.get('billingAddress').equals(customer.get('idAddress'));
+  let customer = action.payload;
+  const sameAddresses = customer.billingAddress.equals(customer.idAddress);
 
-  customer = customer.setIn(['idAddress', 'country'], customer.get('nationality'));
+  customer.idAddress['country'] =  customer.nationality;
   if (action.meta.useAddressAsBilling) {
-    customer = customer.set('billingAddress', customer.get('idAddress'));
+    customer.billingAddress = customer.idAddress;
   } else if (sameAddresses) {
-    customer = customer.set('billingAddress', new Map());
+    customer.billingAddress = {};
   }
-  const birthdate = customer.get('birthdate') ? moment(customer.get('birthdate'), I18n.t('dateFormat')).valueOf() : '';
-  customer = customer.set('birthdate', birthdate);
+  const birthdate = customer.birthdate ? moment(customer.birthdate, I18n.t('dateFormat').valueOf() : '';
+  customer.birthdate = birthdate;
 
   try {
     yield put(setPersonalInfo(customer.toJS()));
