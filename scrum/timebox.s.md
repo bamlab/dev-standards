@@ -41,13 +41,13 @@ What I have done:
   - Creation of a saga `submitReport` in which:
     - A PATCH request is sent to the CRM that changes the field `new_report` on the dynamics 365 website
     - The customer is redirected to the dashboard
-  - Chen the customer clicks on the `SEND` button on the last page of the report, the saga is launched.
+  - When the customer clicks on the `SEND` button on the last page of the report, the saga is launched.
 
 What is left to do:
 
-  - The id of the appointment is stocked in the state of teh `report` page when the user clicks on the button `write a report`
+  - The id of the appointment is stored in the state of the `report` page when the user clicks on the button `write a report`
   - Use this id in the request
-  - Put in the payload of teh request the fields that are in the state of the page `report` to update the report in the CRM
+  - Put in the payload of the request the fields that are in the state of the page `report` to update the report in the CRM
 
 I have added a ticket in the Sprint+1 with a checklist: (2) As a customer, when I click on the `SEND` button my report is added to the CRM
 

@@ -10,6 +10,7 @@ of one of your component's props? For example, call a certain method for a given
 
 Well you're in luck, because Facebook provides a set of methods that get called at different points of the lifecycle of a component <sup>1</sup>. We are going to look at the `ComponentWillReceiveProps`method in the following article.
 
+
 ## Prerequisites
 
 Your page has a set of props that can change after it has been mounted and before it gets unmounted. The props change can be
