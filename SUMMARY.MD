@@ -24,6 +24,7 @@
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
     - [# [MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
+    - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
   - Architecture
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
