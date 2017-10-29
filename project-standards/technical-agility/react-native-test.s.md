@@ -20,20 +20,18 @@ My React Native app is well tested if :
   - 4) The presentational components are tested with a snapshot. It avoids UI regression.
   - 5) The services are tested. It helps to decouple the code.
 
-## Bad Examples
-*TBD*
-
 ## Good Examples
-1.
-- Reducer (~2min):
+
+### 1. Reducer & selector (~2min & ~2min):
 ``` javascript
 // Reducer
 export default (state = {}, action) => {
   switch (action.type) {
-    case 'SIGNUP_SET_SIM_CARD_NUMBER':
+    case 'SIGNUP_SET_USER_INFO':
       return {
         ...state,
-        SIMSerialNumber: action.payload.SIMSerialNumber,
+        id: action.payload.id,
+        name: action.payload.name,
       };
     default:
       return state;
@@ -41,38 +39,38 @@ export default (state = {}, action) => {
 };
 
 //Test
-it('should set the SIM card number', () => {
+it('should set the user info', () => {
   const action = {
-    type: 'SIGNUP_SET_SIM_CARD_NUMBER',
+    type: 'SIGNUP_SET_USER_INFO',
     payload: {
-      SIMSerialNumber: '89101214',
+      id: 1,
+      name: 'Donald',
     },
   };
   const nextState = reducer(initialState, action);
-  expect(nextState.SIMSerialNumber).toEqual('89101214');
+  expect(nextState.user).toEqual({
+    id: 1,
+    name: 'Donald',
+  })
 });
-```
 
-- Selector (~2min):
-``` javascript
 // Selector
-export const SIMSerialNumberSelector = state => state.signUp.simCardScan.SIMSerialNumber;
+export const userIdSelector = state => state.user.id;
 
 //Test
-it('should select the SIM card number', () => {
+it('should select the user Id', () => {
   const state = {
-    signUp: {
-      simCardScan: {
-        SIMSerialNumber: '1234',
-      },
+    user: {
+      id: 1,
     },
   };
-  expect(SIMSerialNumberSelector(state)).toEqual('1234');
+  expect(userIdSelector(state)).toEqual(1);
 });
 ```
 
-2.
-- The execution order of a saga
+### 2. Sagas ( ~5 -> ~15 min)
+
+The execution order:
 
 ``` javascript
 // Saga
@@ -116,7 +114,7 @@ describe('getFavoriteBooksByTypeSaga', () => {
 });
 ```
 
-- The effect of  a saga on the state
+The effect on the state:
 
 ```javascript
 // Test
@@ -141,12 +139,10 @@ it('should set the favorite books by type in the store', () => {
   });
 ```
 
-3.
-*TO DO : Regarder flow-typed*
-- The props presence of a presentational component
+### 3. The props presence of a presentational component and a container (~ 5min)
 
 ``` javascript
-// ChoosePlan.js
+// ChoosePlan.js - component
 import type { NavigationScreenProp } from 'react-navigation';
 type Props = NavigationScreenProp & DispatchProps & StateProps;
 
@@ -162,9 +158,8 @@ export type StateProps = {
 };
 ```
 
-- The props presence of the container component
 ``` javascript
-// ChoosePlan.container.js
+// ChoosePlan.container.js - container
 import type { DispatchProps, StateProps } from './ChoosePlan';
 
 const mapDispatchToProps: DispatchProps = {
@@ -180,8 +175,7 @@ const mapStateToProps = (state: StateType): StateProps => ({
 
 ```
 
-4.
-- The UI of a component
+### 4. The UI of a component (~5 min)
 ``` javascript
 import 'react-native';
 import React from 'react';
@@ -223,8 +217,7 @@ describe('<PendingDeliveryPanel />', () => {
 
 ```
 
-5.
-- The services
+### 5. The services (~ 5min)
 ```javascript
 // FormatService.spec.js
 // The service formats a phone number
@@ -255,5 +248,4 @@ describe('FormatService', () => {
     });
   });
 });
-
 ```
