@@ -172,49 +172,74 @@ const mapStateToProps = (state: StateType): StateProps => ({
   publicationDate: bookPublicationDateSelector(state),
   isFavorite: isFavoriteBookSelector(state),
 });
-
 ```
 
 ### 4. The UI of a component (~5 min)
 ``` javascript
 import 'react-native';
 import React from 'react';
-import PendingDeliveryPanel from './PendingDeliveryPanel';
+import BookView from './BookView';
 import renderer from 'react-test-renderer';
 
-describe('<PendingDeliveryPanel />', () => {
-  const deliveryResource = {
-    deliveryAddress: {
-      street1: '1 rue du Paradis',
-      postCode: '56000',
-      city: 'Vannes',
-      region: 'Bretagne',
-      deliveryInstructions: 'Sonnez !',
-      status: 'inPreparation',
-    },
-    deliveryMethod: {
-      id: 'PREMIUM_DELIVERY',
-      price: 70,
-    },
-  };
-  it('renders correctly with "inPreparation" as a deliveryStatus', () => {
-    const tree = renderer.create(<PendingDeliveryPanel navigation={() => {}} deliveryResource={deliveryResource} />);
+describe('<BookView />', () => {
+  it('renders correctly when the book is not a favorite one', () => {
+    const tree = renderer.create(<BookView
+      navigation={() => {}}
+      setBookAsFavorite={() => {}}
+      title={'Antigone'}
+      author={'Jean Anouilh'}
+      />
+    );
     expect(tree.toJSON()).toMatchSnapshot();
   });
-  it('renders correctly with "shipped" as a deliveryStatus', () => {
-    deliveryResource.status = 'shipped';
-    deliveryResource.trackingLink = 'http://tracking-link.com';
-    const tree = renderer.create(<PendingDeliveryPanel navigation={() => {}} deliveryResource={deliveryResource} />);
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-  it('renders correctly with "delivered" as a deliveryStatus', () => {
-    deliveryResource.status = 'delivered';
-    deliveryResource.trackingLink = 'http://tracking-link.com';
-    const tree = renderer.create(<PendingDeliveryPanel navigation={() => {}} deliveryResource={deliveryResource} />);
+  it('renders correctly when the book is a favorite one', () => {
+    const tree = renderer.create(<BookView
+      navigation={() => {}}
+      setBookAsFavorite={() => {}}
+      title={'Antigone'}
+      author={'Jean Anouilh'}
+      isFavorite={true}
+      />
+    );
     expect(tree.toJSON()).toMatchSnapshot();
   });
 });
+```
 
+If a child of this component is connected, you need to mock the store in your test:
+```javascript
+//
+import { createStore, Provider } from 'react-redux';
+describe('<BookView />', () => {
+  const store = createStore({
+    books: {
+      favorite: {
+        crime: [],
+        work: [{
+          title: 'Lean in',
+          author: 'Sheryl Sandberg'
+        }]
+      },
+    },
+    user: {
+      name: 'Donald',
+      id: 1
+    }
+  });
+  it('renders correctly when the book is not a favorite one', () => {
+    const tree = renderer.create(
+      <Provider store={store}>
+        <BookView
+          navigation={() => {}}
+          setBookAsFavorite={() => {}}
+          title={'Antigone'}
+          author={'Jean Anouilh'}
+        />
+      </Provider>
+    );
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+});
 ```
 
 ### 5. The services (~ 5min)
