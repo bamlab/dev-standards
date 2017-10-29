@@ -26,6 +26,8 @@ My React Native app is well tested if :
 
 ## Good Examples
 
+In these examples we use `jest`, `redux-saga-test-plan` and `flow`.
+
 ### 1. Reducer & selector (~2min & ~2min):
 ``` javascript
 // Reducer
