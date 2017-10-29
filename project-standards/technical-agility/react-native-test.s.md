@@ -120,7 +120,7 @@ describe('getFavoriteBooksByTypeSaga', () => {
 
 ```javascript
 // Test
-import reducer from '../reducer';
+import rootReducer from '../reducer';
 
 it('should set the favorite books by type in the store', () => {
     const expectedState = {
@@ -135,7 +135,7 @@ it('should set the favorite books by type in the store', () => {
       type: 'GET_FAVORITE_BOOKS_BY_TYPE',
       payload: { type: 'crime' },
     })
-      .withReducer(reducer)
+      .withReducer(rootReducer)
       .run()
       .then(result => expect(result.storeState).toEqual(expectedState));
   });
