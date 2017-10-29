@@ -1,6 +1,6 @@
 # [MO] Enable component overflow on MapView
 
-## Owner: Yassine Chbani
+## Owner: [Yassine Chbani](https://github.com/yassinecc)
 
 ## Motivation
 
@@ -8,7 +8,7 @@ It is usual to position React components in such a way that every child is rende
 
 ## Prerequisites
 
-Our setup will include one child view that we want rendered as such:
+Our setup will include one child view that we want rendered on top of its MapView neighbour:
 
 ![Without uncle](../../assets/withoutUncle.png)
 
@@ -33,13 +33,13 @@ render () {
 }
 ```
 
-- The trick here is to introduce a fourth component, `uncle`, which will host the child outside the parent. The `uncle` will have a negative `marginTop` value so that it overlaps with the previously rendered `neighbour` component, and position our child component right at the top of its `uncle`:
+- The trick here is to introduce `uncle`, a fourth component which will host the child outside the parent. The uncle will have a negative `marginTop` value so that it overlaps with the previously rendered `neighbour` component:
 
 ```jsx
 const OVERLAP_HEIGHT = 50
 
 const styles = {
-  neighbour: {
+  uncle: {
     backgroundColor: 'transparent',
     marginTop: - OVERLAP_HEIGHT
   },
@@ -49,7 +49,7 @@ const styles = {
   parent: {
     marginTop: OVERLAP_HEIGHT
   }
-  uncle: {
+  neighbour: {
     // Another style
   }
 }
@@ -59,9 +59,9 @@ The new layout idea is the following:
 
 ![With uncle](../../assets/withUncle.png)
 
-Notice how the `uncle` component is transparent: you probably don't want to hide the part of `neighbour` that is at the same level as the top of the `child`. We added `marginTop: OVERLAP_HEIGHT` to preserve the original vertical layout of `parent` with respect to `neighbour`.
+Notice how the `child` if positioned right at the top of its `uncle`. We didn't want to hide the part of `neighbour` that is at the same level as the top of the `child`, so the background color of the `uncle` is set to transparent. In `parent`'s style, we added `marginTop: OVERLAP_HEIGHT` to preserve the original vertical layout of this component with respect to `neighbour`.
 
-- The last step is to make sure that the child will be rendered on top of the parent. The easiest way it to call the child just before the end of the `uncle`. That way you don't have to deal with `zIndex`:
+- The last step is to make sure that the child will be rendered on top of the parent. The easiest way it to call the child just before the end of the `uncle`. That way you don't have to deal with `zIndex` properties:
 
 ```jsx
 render () {
