@@ -1,6 +1,6 @@
-# [MO] AsyncStorage: a React Native system for permanent storage
+# [MO] Preloading MobX data with AsyncStorage
 
-## Owner: Yassine Chbani
+## Owner: [Yassine Chbani](https://github.com/yassinecc)
 
 ## Motivation
 
@@ -22,7 +22,7 @@ It is recommended to use an extra layer of abstraction on top of the bare AsyncS
 ``
 booking
 |- id
-|- reservationDate
+|- bookingDate
 |- clientId
 |- roomId
 |_ isPaymentConfirmed
@@ -45,31 +45,21 @@ room
 
 You have two options from this point:
 
-1. Store each key individually
+1. Storing simple values
 
-Let's first define a extra layer to list all of our AsyncStorage keys, in a `myAsyncStorage.js` file for example:
+In this example, we want to display basic info about a current booking, such as `bookingDate`, `clientName`, and `roomNumber`. Let's first define a extra layer to list our AsyncStorage keys, in a `myAsyncStorage.js` file for example:
 
 ```jsx
 import { AsyncStorage } from 'react-native'
 
-const BOOKING_ID = 'BOOKING_ID'
-const RESERVATION_DATE = 'RESERVATION_DATE'
-const IS_PAYMENT_CONFIRMED = 'IS_PAYMENT_CONFIRMED'
-const CLIENT_ID = 'CLIENT_ID'
+const BOOKING_DATE = 'BOOKING_DATE'
 const CLIENT_NAME = 'CLIENT_NAME'
-const ROOM_ID = 'ROOM_ID'
 const ROOM_NUMBER = 'ROOM_NUMBER'
-const ROOM_IS_AVAILABLE = 'ROOM_IS_AVAILABLE'
 
 export const asyncStorageKeys = {
-  BOOKING_ID,
-  RESERVATION_DATE,
-  IS_PAYMENT_CONFIRMED,
-  CLIENT_ID,
+  BOOKING_DATE,
   CLIENT_NAME,
-  ROOM_ID,
-  ROOM_NUMBER,
-  ROOM_IS_AVAILABLE
+  ROOM_NUMBER
 }
 ```
 
@@ -82,47 +72,41 @@ import { asyncStorageKeys } from 'myApp/src/services/myAsyncStorage'
 
 class BookingsStore {
   constructor () {
-    AsyncStorage.getItem(asyncStorageKeys.BOOKING_ID)
-      .then(bookingId => {
-        if (bookingId) {
-          this.bookingId = bookingId
+    AsyncStorage.getItem(asyncStorageKeys.BOOKING_DATE)
+      .then(bookingDate => {
+        if (bookinDate) {
+          this.bookingDate = bookingDate
         }
       })
 
-      AsyncStorage.getItem(asyncStorageKeys.RESERVATION_DATE)
-      .then(reservationDate => {
-        if (reservationDate) {
-          this.reservationDate = reservationDate
+      AsyncStorage.getItem(asyncStorageKeys.CLIENT_NAME)
+      .then(clientName => {
+        if (clientName) {
+          this.clientName = clientName
         }
       })
 
-      ...
-
-      AsyncStorage.getItem(asyncStorageKeys.ROOM_IS_AVAILABLE)
-      .then(roomIsAvailable => {
-        if (roomIsAvailable) {
-          this.roomIsAvailable = roomIsAvailable
+      AsyncStorage.getItem(asyncStorageKeys.ROOM_NUMBER)
+      .then(roomNumber => {
+        if (roomNumber) {
+          this.roomNumber = roomNumber
         }
       })
   }
-  @observable bookingId = null
-  @observable reservationDate = null
-  @observable isPaymentConfirmed = false
-  @observable clientId = null
+  @observable bookingDate = null
   @observable clientName = ''
-  @observable roomId = null
-  @observable roomIsAvailable = false
+  @observable roomNumber = null
   
-  @action leaveRoom(roomId) {
-    AsyncStorage.setItem(asyncStorageKeys.ROOM_IS_AVAILABLE, true)
+  @action leaveRoom(roomNumber) {
+    AsyncStorage.setItem(asyncStorageKeys.ROOM_NUMBER, true)
   }
   }
 }
 ```
 
-This approach works but has serious drawbacks: first off, if your app has many objects with many keys, declaring each and everyone of them as an observable quickly gets out of hand. It is also very complicated to store multiple bookings in the device. Fortunately there is wa workaround to solve these issues.
+This approach works fine until you want to preload data in the form of objects and not strings. e.g. multiple bookings. Fortunately there is a workaround to solve this issue.
 
-2. Store the objects in JSON strings
+2. Storing complex objects in JSON strings
 
 We mentioned earlier that you shouldn't pass anything else than a string to `AsyncStorage.setItem`. You can however use `JSON.stringify` to convert your JavaScript objects to serialized JSON strings for storage. The original objects can be recovered using the `JSON.parse` method. Our `myAsyncStorage.js` file becomes:
 
@@ -139,12 +123,17 @@ export const asyncStorageKeys = {
   ROOMS
 }
 
-export const getItemFromAsyncStorage = (itemName) => {
+export const getObjectFromAsyncStorage = (itemName) => {
   return AsyncStorage.getItem(itemName)
-  .then(item => JSON.parse(item))
+  .then(item => {
+    if(item) JSON.parse(item)
+    else {
+      reject(Error('Empty result'))
+    }
+  ).catch(error => console.log(error))
 }
 
-export const setItemInAsyncStorage = (key, value) => {
+export const setObjectInAsyncStorage = (key, value) => {
   const valueString = JSON.stringify(value)
   AsyncStorage.setItem(key, value)
 }
@@ -160,24 +149,18 @@ import { asyncStorageKeys, getItemFromAsyncStorage, setItemInAsyncStorage } from
 class BookingsStore {
   constructor () {
     getItemFromAsyncStorage(asyncStorageKeys.BOOKINGS)
-    .then(bookings.map(booking => {
-      if (booking) {
-        this.bookings.push(booking)
-      }
+    .then(bookings.map(booking => 
+      this.bookings.push(booking)
     }))
 
     getItemFromAsyncStorage(asyncStorageKeys.CLIENT)
     .then(client => {
-      if (client) {
-        this.client = client
-      }
+      this.client = client
     })
 
     getItemFromAsyncStorage(asyncStorageKeys.ROOMS)
     .then(rooms.map(room => {
-      if (room) {
-        this.rooms.push(room)
-      }
+      this.rooms.push(room)
     }))
   }
   @observable bookings = null
@@ -185,12 +168,14 @@ class BookingsStore {
   @observable rooms = null
   
   @action leaveRoom(roomId) {
-    this.rooms.[roomId].isAvailable = true
+    this.rooms[roomId].isAvailable = true
     setItemInAsyncStorage(asyncStorageKeys.ROOMS, this.rooms)
   }
   }
 }
 ```
+
+Notice that by using Promise rejection in the `getObjectFromAsyncStorage` method, we can avoid checking whether loaded items are empty, thus refactoring our code.
 
 ## Troubleshooting and extras
 
