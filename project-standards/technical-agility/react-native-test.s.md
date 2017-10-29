@@ -142,35 +142,35 @@ it('should set the favorite books by type in the store', () => {
 ### 3. The props presence of a presentational component and a container (~ 5min)
 
 ``` javascript
-// ChoosePlan.js - component
+// BookView.js - component
 import type { NavigationScreenProp } from 'react-navigation';
 type Props = NavigationScreenProp & DispatchProps & StateProps;
 
 export type DispatchProps = {
-  clearChoosenPhoneNumber: Function,
+  setBookAsFavorite: Function,
 };
 
 export type StateProps = {
-  newOfferPrice: number,
-  newOfferPeriodicity: Object,
-  isFreeSimPathAvailable: boolean,
-  isOfferValid?: boolean,
+  title: string,
+  author: string,
+  publicationDate?: Date,
+  isFavorite: boolean,
 };
 ```
 
 ``` javascript
-// ChoosePlan.container.js - container
+// BookView.container.js - container
 import type { DispatchProps, StateProps } from './ChoosePlan';
 
 const mapDispatchToProps: DispatchProps = {
-  clearChoosenPhoneNumber,
+  setBookAsFavorite,
 };
 
 const mapStateToProps = (state: StateType): StateProps => ({
-  newOfferPrice: newOfferPriceSelector(state),
-  newOfferPeriodicity: newOfferPeriodicitySelector(state),
-  isFreeSimPathAvailable: true,
-  isOfferValid: isNewOfferValidSelector(state),
+  title: bookTitleSelector(state),
+  author: bookAuthorSelector(state),
+  publicationDate: bookPublicationDateSelector(state),
+  isFavorite: isFavoriteBookSelector(state),
 });
 
 ```
@@ -220,31 +220,23 @@ describe('<PendingDeliveryPanel />', () => {
 ### 5. The services (~ 5min)
 ```javascript
 // FormatService.spec.js
-// The service formats a phone number
+// The service formats an ISEN book code
 import FormatService from './normalization';
 
 describe('FormatService', () => {
-  describe('formatPhone', () => {
+  describe('formatIsenNumber', () => {
     it('should return undefined if the value is undefined', () => {
-      expect(FormatService.formatPhone('12')).to.equal('12');
+      expect(FormatService.formatPhone(undefined)).to.equal(undefined);
     });
-    it('should return only numbers if length < 3', () => {
-      expect(FormatService.formatPhone('12')).to.equal('12');
+    it('should return undefined if length != 13', () => {
+      expect(FormatService.formatPhone('123')).to.equal(undefined);
+      expect(FormatService.formatPhone('12345678910111213')).to.equal(undefined);
     });
-    it('should return 3 numbers and a hyphen if length = 3', () => {
-      expect(FormatService.formatPhone('123')).to.equal('123');
+    it('should return undefined if there is a letter ', () => {
+      expect(FormatService.formatPhone('123a45678910')).to.equal(undefined);
     });
-    it('should return 3 numbers, a hyphen and numbers if 3 <= length < 6', () => {
-      expect(FormatService.formatPhone('12345')).to.equal('123-45');
-    });
-    it('should return 3 numbers, a hyphen, 3 numbers and a hyphen if length = 6', () => {
-      expect(FormatService.formatPhone('123456')).to.equal('123-456');
-    });
-    it('should return 3 numbers, a hyphen, 3 numbers and a hyphen and numbers if 6 < length <= 10', () => {
-      expect(FormatService.formatPhone('12345678')).to.equal('123-456-78');
-    });
-    it('should return only 10 digits even if the number has more than 10 digits', () => {
-      expect(FormatService.formatPhone('123456789012')).to.equal('123-456-789012');
+    it('should return formatted ISEN code', () => {
+      expect(FormatService.formatPhone('9782253002154')).to.equal('978-2-253-00215-4');
     });
   });
 });
