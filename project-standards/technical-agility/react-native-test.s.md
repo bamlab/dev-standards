@@ -20,6 +20,10 @@ My React Native app is well tested if :
   - 4) The presentational components are tested with a snapshot. It avoids UI regression.
   - 5) The services are tested. It helps to decouple the code.
 
+## Bad Examples
+
+// @TODO
+
 ## Good Examples
 
 ### 1. Reducer & selector (~2min & ~2min):
