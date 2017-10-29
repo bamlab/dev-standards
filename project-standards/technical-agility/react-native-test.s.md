@@ -76,32 +76,40 @@ it('should select the SIM card number', () => {
 
 ``` javascript
 // Saga
-export function* selectSubscriptionDuringActivateSaga(action) {
-  yield put(selectSubscription(action.payload.subscription));
-  yield call(initNewOfferWithSelectedSubscription);
-  yield call(goToNextActivationPage);
+export function* getFavoriteBooksByTypeSaga(action) {
+  const userId = yield select(userIdSelector);
+  const books = yield call(getFavoriteBookByType(userId, action.payload.type));
+  yield put(setFavoritesBooks(books, type));
 }
 
 export default function*() {
-  yield takeEvery('SIGNUP_SELECT_SUBSCRIPTION_DURING_ACTIVATE', selectSubscriptionDuringActivateSaga);
+  yield takeEvery('GET_FAVORITE_BOOKS_BY_TYPE', getFavoriteBooksByTypeSaga);
 }
 
 // Test
-import { selectSubscriptionDuringActivateSaga } from './sagas';
+import { getFavoriteBooksByTypeSaga} from './sagas';
 import { testSaga } from 'redux-saga-test-plan';
 
-describe('selectSubscriptionDuringActivateSaga', () => {
-  it('should select subscription and go to the next page', () => {
-    testSaga(selectSubscriptionDuringActivateSaga, {
-      type: 'SIGNUP_SELECT_SUBSCRIPTION_DURING_ACTIVATE',
-      payload: { subscription: { ouid: 'ouidSubscription' } },
+const favoriteCrimeBooks = [{
+    title: 'The Truth About the Harry Quebert Affair',
+    author: 'Joël Dicker'
+  }, {
+    title: 'Pars vite et reviens tard',
+    author: 'Fred Vargas',
+  }];
+
+describe('getFavoriteBooksByTypeSaga', () => {
+  it('should get user favorite books and store them', () => {
+    testSaga(getFavoriteBooksByTypeSaga, {
+      type: 'GET_FAVORITE_BOOKS_BY_TYPE',
+      payload: { type: 'crime' },
     })
       .next()
-      .put(selectSubscription({ ouid: 'ouidSubscription' }))
-      .next()
-      .call(initNewOfferWithSelectedSubscription)
-      .next()
-      .call(goToNextActivationPage)
+      .select(userIdSelector)
+      .next(1)
+      .call(getFavoriteBookByType, 1, 'crime')
+      .next(favoriteCrimeBooks)
+      .put(setFavoritesBooks(favoriteCrimeBooks))
       .next()
       .isDone();
   });
@@ -111,62 +119,23 @@ describe('selectSubscriptionDuringActivateSaga', () => {
 - The effect of  a saga on the state
 
 ```javascript
-// Saga
-export function* confirmPersonalInfo(action) {
-  let customer = action.payload;
-  const sameAddresses = customer.billingAddress.equals(customer.idAddress);
-
-  customer.idAddress['country'] =  customer.nationality;
-  if (action.meta.useAddressAsBilling) {
-    customer.billingAddress = customer.idAddress;
-  } else if (sameAddresses) {
-    customer.billingAddress = {};
-  }
-  const birthdate = customer.birthdate ? moment(customer.birthdate, I18n.t('dateFormat').valueOf() : '';
-  customer.birthdate = birthdate;
-
-  try {
-    yield put(setPersonalInfo(customer.toJS()));
-    yield put(NavigationActions.navigate({ routeName: 'selfieCheck' }));
-  } catch (e) {
-    console.warn('[saga] confirmPersonalInfo', e);
-    HandleErrorService.showToastError(e);
-  }
-}
-
 // Test
-it('should set the personal infos in the store', () => {
-    const action = {
-      type: 'SIGNUP_CONFIRM_PERSONAL_INFO',
-      payload,
-    };
-    const expectedState = Map({
-      fetching: true,
-      failure: false,
-      toRefresh: true,
-      refreshing: false,
-      data: Map({
-        ouid: '569C3BBD0C238FB43B804DEE3B865C2A',
-        gender: 'MALE',
-        birthdate: -324352800000,
-        billingAddress: Map({
-          street1: '19 JALAN S…',
-          postCode: '47300',
-          city: 'PETALING J…',
-          country: 'MYS',
-        }),
-        idAddress: Map({
-          street1: '19 JALAN S…',
-          postCode: '47300',
-          city: 'PETALING J…',
-          country: 'MYS',
-        }),
-        fullName: 'SOMANATHAN A/L K.C.A MENON',
-        nationality: 'MYS',
-      }),
+import reducer from '../reducer';
+
+it('should set the favorite books by type in the store', () => {
+    const expectedState = {
+      books: {
+        favorite: {
+          crime: favoriteCrimeBooks,
+        },
+      },
+    }
     });
-    return expectSaga(confirmPersonalInfo, action)
-      .withReducer(customerReducer)
+    return expectSaga(getFavoriteBooksByTypeSaga, {
+      type: 'GET_FAVORITE_BOOKS_BY_TYPE',
+      payload: { type: 'crime' },
+    })
+      .withReducer(reducer)
       .run()
       .then(result => expect(result.storeState).toEqual(expectedState));
   });
