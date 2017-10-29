@@ -224,7 +224,7 @@ describe('<PendingDeliveryPanel />', () => {
 ```
 
 5.
-- The service are tested
+- The services
 ```javascript
 // FormatService.spec.js
 // The service formats a phone number
@@ -232,19 +232,22 @@ import FormatService from './normalization';
 
 describe('FormatService', () => {
   describe('formatPhone', () => {
+    it('should return undefined if the value is undefined', () => {
+      expect(FormatService.formatPhone('12')).to.equal('12');
+    });
     it('should return only numbers if length < 3', () => {
       expect(FormatService.formatPhone('12')).to.equal('12');
     });
-    it('should return 3 numbers and an hyphen if length = 3', () => {
+    it('should return 3 numbers and a hyphen if length = 3', () => {
       expect(FormatService.formatPhone('123')).to.equal('123');
     });
-    it('should return 3 numbers, an hyphen and numbers if 3 <= length < 6', () => {
+    it('should return 3 numbers, a hyphen and numbers if 3 <= length < 6', () => {
       expect(FormatService.formatPhone('12345')).to.equal('123-45');
     });
-    it('should return 3 numbers, an hyphen, 3 numbers and an hyphen if length = 6', () => {
+    it('should return 3 numbers, a hyphen, 3 numbers and a hyphen if length = 6', () => {
       expect(FormatService.formatPhone('123456')).to.equal('123-456');
     });
-    it('should return 3 numbers, an hyphen, 3 numbers and an hyphen and numbers if 6 < length <= 10', () => {
+    it('should return 3 numbers, a hyphen, 3 numbers and a hyphen and numbers if 6 < length <= 10', () => {
       expect(FormatService.formatPhone('12345678')).to.equal('123-456-78');
     });
     it('should return only 10 digits even if the number has more than 10 digits', () => {
