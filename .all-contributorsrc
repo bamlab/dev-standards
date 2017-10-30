@@ -217,6 +217,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "GuillaumeRenouvin",
+      "name": "GuillaumeRenouvin",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/15981192?v=4",
+      "profile": "https://github.com/GuillaumeRenouvin",
+      "contributions": [
+        "question",
+        "review"
+      ]
     }
   ]
 }
