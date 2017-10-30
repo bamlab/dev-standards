@@ -43,6 +43,9 @@ we help him solve his problem and then together write either a [Standard] or a [
 ### Coding
 - [[Standard] Good practices to resolve a ticket](/successful-sprint/coding/plan-your-ticket-to-improve-efficency.s.md)
 
+## Scrum
+- [[Standard] Timebox](/scrum/timebox.s.md)
+
 ## React Native
 
 ### Setup
@@ -52,6 +55,8 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Add a deploy script to your app](/react-native/setup/deploy-script.mo.md)
 - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
 - [[Article] Setup your React Native project icon](https://blog.bam.tech/developper-news/change-your-react-native-app-icons-in-a-single-command-line)
+- [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
+- [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
@@ -67,6 +72,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 
 ### React
 - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
+- [[MO] Trigger an action on props update](/react-native/react/trigger-action-on-props-update.mo.md)
 
 ### Redux
 
@@ -76,7 +82,11 @@ we help him solve his problem and then together write either a [Standard] or a [
 ### Features
 
 - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
+- [[MO] Setup DeepLinking with react-navigation](/react-native/features/deep-linking.md)
 - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
+
+### React-Navigation
+ - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
 
 ## Editors
 
