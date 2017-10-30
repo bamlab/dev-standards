@@ -21,11 +21,16 @@
     - [[Standard] Domain Driven Development](/project-standards/technical-agility/code-vocabulary-identical-business-vocabulary.s.md)
     - [[Standard] Easy project installation](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
     - [[Standard] Up to date dependencies](/project-standards/technical-agility/up-to-date-dependencies.s.md)
+- Successful Sprint
+  - Coding
+    - [[Standard] Good practices to resolve a ticket](/successful-sprint/coding/plan-your-ticket-to-improve-efficency.s.md)
 - React Native
   - Setup
-    - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md) 
+    - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
-    - [# [MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
+    - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
+    - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
+    - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
   - Architecture
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
@@ -34,12 +39,16 @@
     - [[MO] Debug Native Android Code](/react-native/debugging/debug-native-android.mo.md)
     - [[MO] Debug Native iOS Code](/react-native/debugging/debug-native-ios.mo.md)
     - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
+  - React
+    - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
   - Redux
     - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
     - [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
   - Features
     - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
     - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
+    - [[MO] Preloading MobX data with AsyncStorage](/react-native/features/asyncstorage.mo.md)
+  - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
 - Editors
   - Visual Studio Code
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)
