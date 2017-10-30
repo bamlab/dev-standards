@@ -34,6 +34,10 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
 - [[Standard] Pull Request Template](/code-quality/pull-request-template.s.md)
 
+## Flowtype
+
+- [[Standard] Flowtype](/flowtype/flowtype.s.md)
+
 ## Project Standards
 - [Project Success](/project-standards/project-success/index.md)
 - [Technical Agility](/project-standards/technical-agility/index.md)
