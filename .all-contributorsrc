@@ -177,6 +177,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "AmauryLiet",
+      "name": "Amaury Liet",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9596435?v=4",
+      "profile": "https://github.com/AmauryLiet",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
