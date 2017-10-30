@@ -10,7 +10,7 @@ It is usual to position React components in such a way that every child is rende
 
 Our setup will include one child view that we want rendered on top of its MapView neighbour:
 
-![Without uncle](../../assets/withoutUncle.png)
+![Without uncle](assets/withoutUncle.png)
 
 
 ## Steps (~10 minutes)
@@ -41,7 +41,7 @@ const OVERLAP_HEIGHT = 50
 const styles = {
   uncle: {
     backgroundColor: 'transparent',
-    marginTop: - OVERLAP_HEIGHT
+    marginTop: -OVERLAP_HEIGHT
   },
   child: {
     marginTop: 0
@@ -57,7 +57,7 @@ const styles = {
 
 The new layout idea is the following:
 
-![With uncle](../../assets/withUncle.png)
+![With uncle](assets/withUncle.png)
 
 Notice how the `child` if positioned right at the top of its `uncle`. We didn't want to hide the part of `neighbour` that is at the same level as the top of the `child`, so the background color of the `uncle` is set to transparent. In `parent`'s style, we added `marginTop: OVERLAP_HEIGHT` to preserve the original vertical layout of this component with respect to `neighbour`.
 
