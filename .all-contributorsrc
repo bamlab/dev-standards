@@ -167,6 +167,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "suryaambrose",
+      "name": "Surya Ambrose",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8100843?v=4",
+      "profile": "https://github.com/suryaambrose",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
