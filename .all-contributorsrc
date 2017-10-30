@@ -187,6 +187,16 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "lechinoix",
+      "name": "Nicolas Ngomai",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10167015?v=4",
+      "profile": "https://github.com/lechinoix",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
