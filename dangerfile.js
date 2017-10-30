@@ -36,8 +36,8 @@ for (let standardFile of standardFiles) {
   if (!fileContent.match(/## Owner: .+/)) fail(`**${fileUrl}**: Standard doesn't have an *Owner*, could it be you?`);
   if (!fileContent.match(/## Checks/))
     fail(`**${fileUrl}**: Standard doesn't have a *Checks* part, how could you call this an Standard?`);
-  if (!fileContent.match(/## Bad Examples/)) fail(`**${fileUrl}**: You failed to mention a *Bad Examples*`);
-  if (!fileContent.match(/## Good Examples/)) fail(`**${fileUrl}**: You failed to mention a *Good Examples* `);
+  if (!fileContent.match(/Bad Examples?/i)) fail(`**${fileUrl}**: You failed to mention a *Bad Examples*`);
+  if (!fileContent.match(/Good Examples?/i)) fail(`**${fileUrl}**: You failed to mention a *Good Examples* `);
   if (!readmeContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root readme`);
   if (!summaryContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
 }
