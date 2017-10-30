@@ -64,6 +64,7 @@ This is the flow you will go through once you've uploaded your app:
 
 ![applereviewstatus](https://user-images.githubusercontent.com/30256638/32058288-e47d61f2-ba69-11e7-87c2-8212ad0d4530.png)
 
+Here is a website that gives the current waiting time for the review step: http://appreviewtimes.com/.
 The longest step is 'Waiting for Review' that can last several days.
 
 ## ToDo
