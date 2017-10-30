@@ -38,6 +38,11 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [Project Success](/project-standards/project-success/index.md)
 - [Technical Agility](/project-standards/technical-agility/index.md)
 
+## Successful Sprint
+
+### Coding
+- [[Standard] Good practices to resolve a ticket](/successful-sprint/coding/plan-your-ticket-to-improve-efficency.s.md)
+
 ## Scrum
 - [[Standard] Timebox](/scrum/timebox.s.md)
 
