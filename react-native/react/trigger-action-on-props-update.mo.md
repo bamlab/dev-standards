@@ -18,8 +18,7 @@ triggered from within or outside the page.
 
 ## Steps (~10 minutes)
 
-- Add a prop `isConnected` to your component that gets updated from outside the page e.g. from the store:
-
+- Add to your prop a component that gets updated from outside the page e.g. from a Redux store:
 
 ```jsx
 import { Connectivity } from '../../../Connectivity';
@@ -27,7 +26,7 @@ import { Connectivity } from '../../../Connectivity';
 const mapStateToProps = state => ({
   isConnected: Connectivity.isConnected(state),
 });
-````
+```
 
 Let’s also add a component which is rendered at a certain `isTextVisible` condition:
 
@@ -64,7 +63,7 @@ makeTextDisappear = () => {
 }
 ```
 
-The critical point here is the `if (!this.props.isConnected && nextProps.isConnected)` condition (also called hook). It is necessary to be specific about what prop change triggers the desired action because `componentWillReceiveProps` is called at every prop update and the code inside is executed each time then. Our code now looks like this:
+The critical point here is the `if (!this.props.isConnected && nextProps.isConnected)` condition (also called hook). It is necessary to be specific about what prop change triggers the desired action, because `componentWillReceiveProps` is called at every prop update and the code inside is executed each time then. Our code now looks like this:
 
 ```jsx
 import { Connectivity } from '../../../Connectivity';
@@ -101,7 +100,6 @@ const mapStateToProps = state => ({
 });
 ```
 
-
 A couple of interesting notes<sup>2</sup>:
 - `componentWillReceiveProps` can be called even if the props did not change
 - If done before `render()`is called, then calling `setState` will not trigger an additional render
@@ -110,4 +108,3 @@ A couple of interesting notes<sup>2</sup>:
 [that article](https://reactjs.org/docs/react-component.html) about the full lifecycle of a React component.
 
 <sup>2</sup> : https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/update/component_will_receive_props.html
-

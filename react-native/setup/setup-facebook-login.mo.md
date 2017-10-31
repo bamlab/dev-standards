@@ -46,8 +46,8 @@ else
   sed -i.bak 's/4\.+/4.22.1/' ./node_modules/react-native-fbsdk/android/build.gradle
 fi
 ```
-To debug with android, on you terminal generate a key: `keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64` and add it to  [your facebook app](https://developers.facebook.com/apps/1806939376263478/settings/) -> `Key hashings`
--
+* To debug with android, on you terminal generate a key: `keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64` and add it to  [your facebook app](https://developers.facebook.com/apps/1806939376263478/settings/) -> `Key hashings`
+
 **check 1:** `console.log(NativeModules)` should show the FacebookLoginManager module on Android build  
 **check 2:** You should be able to log on Facebook on your application on Android on development
 
