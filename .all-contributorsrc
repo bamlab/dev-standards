@@ -167,6 +167,76 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "suryaambrose",
+      "name": "Surya Ambrose",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8100843?v=4",
+      "profile": "https://github.com/suryaambrose",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "AmauryLiet",
+      "name": "Amaury Liet",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9596435?v=4",
+      "profile": "https://github.com/AmauryLiet",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "lechinoix",
+      "name": "Nicolas Ngomai",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10167015?v=4",
+      "profile": "https://github.com/lechinoix",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "juliennassar",
+      "name": "Julien",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13121639?v=4",
+      "profile": "https://github.com/juliennassar",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "SelimBenAmmar",
+      "name": "Selim Ben Ammar",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/19991302?v=4",
+      "profile": "https://github.com/SelimBenAmmar",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "GuillaumeRenouvin",
+      "name": "GuillaumeRenouvin",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/15981192?v=4",
+      "profile": "https://github.com/GuillaumeRenouvin",
+      "contributions": [
+        "question",
+        "review"
+      ]
+    },
+    {
+      "login": "yassinecc",
+      "name": "yassinecc",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/31844581?v=4",
+      "profile": "https://github.com/yassinecc",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
