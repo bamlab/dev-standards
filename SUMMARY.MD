@@ -8,6 +8,7 @@
 - Backend
   - Django
     - [[MO] Get started with Django](/backend/django/getting-started.mo.md)
+    - [[MO] Create complex user models wih Django](/backend/django/create-user-model.mo.md)
   - GraphQL JS
     - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 - Code Quality
