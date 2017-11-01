@@ -82,8 +82,8 @@ The execution order:
 // Saga
 export function* getFavoriteBooksByTypeSaga(action) {
   const userId = yield select(userIdSelector);
-  const books = yield call(getFavoriteBookByType(userId, action.payload.type));
-  yield put(setFavoritesBooks(books, type));
+  const books = yield call(getFavoriteBookByTypeCall, userId, action.payload.type);
+  yield put(setFavoritesBooks(books, action.payload.type));
 }
 
 export default function*() {
@@ -124,25 +124,39 @@ The effect on the state:
 
 ```javascript
 // Test
-import rootReducer from '../reducer';
+import reducer from '../reducer';
 
 it('should set the favorite books by type in the store', () => {
-    const expectedState = {
-      books: {
-        favorite: {
-          crime: favoriteCrimeBooks,
-        },
+  const initialState = {
+    user: {
+      id: 1,
+    },
+    books: {
+      favorite: {},
+    },
+  };
+  const expectedState = {
+    user: {
+      id: 1,
+    },
+    books: {
+      favorite: {
+        crime: favoriteCrimeBooks,
       },
-    }
-    });
-    return expectSaga(getFavoriteBooksByTypeSaga, {
-      type: 'GET_FAVORITE_BOOKS_BY_TYPE',
-      payload: { type: 'crime' },
-    })
-      .withReducer(rootReducer)
-      .run()
-      .then(result => expect(result.storeState).toEqual(expectedState));
-  });
+    },
+  };
+  return expectSaga(getFavoriteBooksByTypeSaga, {
+    type: 'GET_FAVORITE_BOOKS_BY_TYPE',
+    payload: { type: 'crime' },
+  })
+    .withReducer(reducer, initialState)
+    .provide([
+      [select(userIdSelector), 1],
+      [matchers.call.fn(getFavoriteBookByTypeCall, 1, 'crime'), favoriteCrimeBooks],
+    ])
+    .run()
+    .then(result => expect(result.storeState).toEqual(expectedState));
+});
 ```
 
 ### 3. The props presence of a presentational component and a container (~ 5min)
