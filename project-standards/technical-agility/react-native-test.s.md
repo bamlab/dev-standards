@@ -17,7 +17,7 @@ My React Native app is well tested if :
   - 1) The reducers and selectors are tested. It helps to develop faster by reducing the number of manual testings.
   - 2) The sagas, order of execution and effects on the state are tested, when the logic is not straight-forward. It prevents regressions as they hold the business logic of the app.
   - 3) The props existence are tested in both containers and presentional components to ensure it's consistent. It helps to develop faster by reducing the number of manual testings.
-  - 4) The common presentational components are tested with a snapshot. It avoids UI regression and save time when you make a change as you don't have to check all the app manually.
+  - 4) The presentational components are tested with a snapshot. It avoids UI regression and save time when you make a change as you don't have to check all the app manually.
   - 5) The services are tested. It helps to not forget edge case.
 
 ## Bad Examples
