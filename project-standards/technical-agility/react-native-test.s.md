@@ -28,12 +28,24 @@ My React Native app is well tested if :
 
 In these examples we use `jest`, `redux-saga-test-plan` and `flow`.
 
-### 1. Reducer & selector (~2min & ~2min):
+Here is the MO to write each kind of test.
+
+### Reducer (~2min):
+
+The reducer you want to test is the following:
 ``` javascript
 // Reducer
+const initialState = {
+  user: {},
+  books: {
+    favorite: {},
+    read: {},
+    toRead: {}
+  }
+};
 export default (state = {}, action) => {
   switch (action.type) {
-    case 'SIGNUP_SET_USER_INFO':
+    case 'SET_USER_INFO':
       return {
         ...state,
         id: action.payload.id,
@@ -43,11 +55,18 @@ export default (state = {}, action) => {
       return state;
   }
 };
-
+```
+And the tests you will write are these ones:
+```javascript
 //Test
+it('should have no user info by default', () => {
+  const nextState = reducer(initialState, {});
+  expect(nextState.user).toEqual({})
+});
+
 it('should set the user info', () => {
   const action = {
-    type: 'SIGNUP_SET_USER_INFO',
+    type: 'SET_USER_INFO',
     payload: {
       id: 1,
       name: 'Donald',
@@ -59,10 +78,18 @@ it('should set the user info', () => {
     name: 'Donald',
   })
 });
+```
+The first test is important, it allows you to check that only the 'SET_USER_INFO' action has an action on the user part of the state.
 
+### Selector (~2min)
+
+Here is the selector you want to test:
+```javascript
 // Selector
 export const userIdSelector = state => state.user.id;
-
+```
+And the corresponding test:
+```javascript
 //Test
 it('should select the user Id', () => {
   const state = {
@@ -74,10 +101,9 @@ it('should select the user Id', () => {
 });
 ```
 
-### 2. Sagas ( ~5 -> ~15 min)
+### Sagas ( ~5 -> ~15 min)
 
-The execution order:
-
+Here is a saga you want to test. It makes an API call to get the user favorites books by type:
 ``` javascript
 // Saga
 export function* getFavoriteBooksByTypeSaga(action) {
@@ -89,7 +115,13 @@ export function* getFavoriteBooksByTypeSaga(action) {
 export default function*() {
   yield takeEvery('GET_FAVORITE_BOOKS_BY_TYPE', getFavoriteBooksByTypeSaga);
 }
+```
 
+First, let's test the order of execution.
+NB: You're not supposed the order of execution of all your sagas, but only the one with complex logic (loop, conditions, ...).
+
+Nevertheless, for a learning purpose, we write the test for `getFavoriteBooksByTypeSaga`:
+```javascript
 // Test
 import { getFavoriteBooksByTypeSaga} from './sagas';
 import { testSaga } from 'redux-saga-test-plan';
@@ -120,8 +152,7 @@ describe('getFavoriteBooksByTypeSaga', () => {
 });
 ```
 
-The effect on the state:
-
+A more interesting to do is to test the saga effect on the state:
 ```javascript
 // Test
 import reducer from '../reducer';
@@ -159,8 +190,9 @@ it('should set the favorite books by type in the store', () => {
 });
 ```
 
-### 3. The props presence of a presentational component and a container (~ 5min)
+### The props presence of a presentational component and a container (~ 5min)
 
+Here are the presentational component and the corresponding container we want to test:
 ``` javascript
 // BookView.js - component
 import type { NavigationScreenProp } from 'react-navigation';
@@ -176,9 +208,7 @@ export type StateProps = {
   publicationDate?: Date,
   isFavorite: boolean,
 };
-```
 
-``` javascript
 // BookView.container.js - container
 import type { DispatchProps, StateProps } from './ChoosePlan';
 
@@ -193,8 +223,11 @@ const mapStateToProps = (state: StateType): StateProps => ({
   isFavorite: isFavoriteBookSelector(state),
 });
 ```
+As you can see, we're using `flow` to test the components.
 
-### 4. The UI of a component (~5 min)
+### The UI of a component (~5 min)
+
+Let's say we want to take a snapshot of the `BookView` component of the previous part:
 ``` javascript
 import 'react-native';
 import React from 'react';
@@ -228,7 +261,6 @@ describe('<BookView />', () => {
 
 If a child of this component is connected, you need to mock the store in your test:
 ```javascript
-//
 import { createStore, Provider } from 'react-redux';
 describe('<BookView />', () => {
   const store = createStore({
@@ -262,10 +294,11 @@ describe('<BookView />', () => {
 });
 ```
 
-### 5. The services (~ 5min)
+### The services (~ 5min)
+
+Let's say we want to test a service which formats an ISEN book code. The service is not given here, as the tests are the better explanation of what the service is supposed to do!
 ```javascript
 // FormatService.spec.js
-// The service formats an ISEN book code
 import FormatService from './normalization';
 
 describe('FormatService', () => {
