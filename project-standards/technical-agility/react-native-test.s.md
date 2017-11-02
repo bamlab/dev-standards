@@ -79,7 +79,7 @@ it('should set the user info', () => {
   })
 });
 ```
-The first test is important, it allows you to check that only the 'SET_USER_INFO' action has an action on the user part of the state.
+ > **KEY POINT**: The first test is important, it allows you to check that only the 'SET_USER_INFO' action has an action on the user part of the state.
 
 ### Selector (~2min)
 
@@ -151,8 +151,9 @@ describe('getFavoriteBooksByTypeSaga', () => {
   });
 });
 ```
+> **KEY POINT**: The test ensure that your saga has no side-effect.
 
-A more interesting to do is to test the saga effect on the state:
+A more interesting test to do is to test the saga effect on the state:
 ```javascript
 // Test
 import reducer from '../reducer';
@@ -223,7 +224,7 @@ const mapStateToProps = (state: StateType): StateProps => ({
   isFavorite: isFavoriteBookSelector(state),
 });
 ```
-As you can see, we're using `flow` to test the components.
+> **KEY POINT**: Use `flow` to write this kind of test.
 
 ### The UI of a component (~5 min)
 
@@ -258,6 +259,7 @@ describe('<BookView />', () => {
   });
 });
 ```
+> **KEY POINT**: Test the component with several sets of props. For instance if book is allowed to not have an author, make a snapshot with and one without the author name.
 
 If a child of this component is connected, you need to mock the store in your test:
 ```javascript
@@ -319,3 +321,5 @@ describe('FormatService', () => {
   });
 });
 ```
+
+> **KEY POINT**: You should be exhaustive in the cases.
