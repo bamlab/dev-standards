@@ -3,6 +3,7 @@
 ## Owner: [Aurore Malherbes](https://github.com/aurorem)
 
 ## Description
+
 - Writing tests helps the technical team to :
   - Architecture its code
   - Develop faster
@@ -10,15 +11,18 @@
   - Document the code
 
 ## Impact
+
 - A lack of tests will put in jeopardy the 4 points listed above.
 
 ## Checks
+
 My React Native app is well tested if :
-  - 1) The reducers and selectors are tested. It helps to develop faster by reducing the number of manual testings. Furthermore it helps you to not forget edge cases.
-  - 2) The sagas, order of execution and effects on the state are tested, when the logic is not straight-forward. It prevents regressions as they hold the business logic of the app.
-  - 3) The props existence are tested in both containers and presentational components to ensure it's consistent. It helps to develop faster by reducing the number of manual testings.
-  - 4) The presentational components are tested with a snapshot. It avoids UI regression and save time when you make a change as you don't have to check all the app manually.
-  - 5) The services are tested. It helps to not forget edge cases.
+
+  1. The reducers and selectors are tested. It helps to develop faster by reducing the number of manual testings. Furthermore it helps you to not forget edge cases.
+  1. The sagas, order of execution and effects on the state are tested, when the logic is not straight-forward. It prevents regressions as they hold the business logic of the app.
+  1. The props existence are tested in both containers and presentational components to ensure it's consistent. It helps to develop faster by reducing the number of manual testings.
+  1. The presentational components are tested with a snapshot. It avoids UI regression and save time when you make a change as you don't have to check all the app manually.
+  1. The services are tested. It helps to not forget edge cases.
 
 ## Bad Examples
 
@@ -30,9 +34,10 @@ In these examples we use `jest`, `redux-saga-test-plan` and `flow`.
 
 Here is the MO to write each kind of test.
 
-### Reducer (~2min):
+### Reducer (~2min)
 
 The reducer you want to test is the following:
+
 ``` javascript
 // Reducer
 const initialState = {
@@ -56,7 +61,9 @@ export default (state = {}, action) => {
   }
 };
 ```
+
 And the tests you will write are these ones:
+
 ```javascript
 //Test
 it('should have no user info by default', () => {
@@ -79,16 +86,20 @@ it('should set the user info', () => {
   })
 });
 ```
+
  > **KEY POINT**: The first test is important, it allows you to check that only the 'SET_USER_INFO' action has an action on the user part of the state.
 
 ### Selector (~2min)
 
 Here is the selector you want to test:
+
 ```javascript
 // Selector
 export const userIdSelector = state => state.user.id;
 ```
+
 And the corresponding test:
+
 ```javascript
 //Test
 it('should select the user Id', () => {
@@ -104,6 +115,7 @@ it('should select the user Id', () => {
 ### Sagas ( ~5 -> ~15 min)
 
 Here is a saga you want to test. It makes an API call to get the user favorites books by type:
+
 ``` javascript
 // Saga
 export function* getFavoriteBooksByTypeSaga(action) {
@@ -121,6 +133,7 @@ First, let's test the order of execution.
 NB: You're not supposed the order of execution of all your sagas, but only the one with complex logic (loop, conditions, ...).
 
 Nevertheless, for a learning purpose, we write the test for `getFavoriteBooksByTypeSaga`:
+
 ```javascript
 // Test
 import { getFavoriteBooksByTypeSaga} from './sagas';
@@ -151,9 +164,11 @@ describe('getFavoriteBooksByTypeSaga', () => {
   });
 });
 ```
+
 > **KEY POINT**: The test ensure that your saga has no side-effect.
 
 A more interesting test to do is to test the saga effect on the state:
+
 ```javascript
 // Test
 import reducer from '../reducer';
@@ -194,6 +209,7 @@ it('should set the favorite books by type in the store', () => {
 ### The props presence of a presentational component and a container (~ 5min)
 
 Here are the presentational component and the corresponding container we want to test:
+
 ``` javascript
 // BookView.js - component
 import type { NavigationScreenProp } from 'react-navigation';
@@ -224,11 +240,13 @@ const mapStateToProps = (state: StateType): StateProps => ({
   isFavorite: isFavoriteBookSelector(state),
 });
 ```
+
 > **KEY POINT**: Use `flow` to write this kind of test.
 
 ### The UI of a component (~5 min)
 
 Let's say we want to take a snapshot of the `BookView` component of the previous part:
+
 ``` javascript
 import 'react-native';
 import React from 'react';
@@ -259,9 +277,11 @@ describe('<BookView />', () => {
   });
 });
 ```
+
 > **KEY POINT**: Test the component with several sets of props. For instance if book is allowed to not have an author, make a snapshot with and one without the author name.
 
 If a child of this component is connected, you need to mock the store in your test:
+
 ```javascript
 import { createStore, Provider } from 'react-redux';
 describe('<BookView />', () => {
@@ -299,6 +319,7 @@ describe('<BookView />', () => {
 ### The services (~ 5min)
 
 Let's say we want to test a service which formats an ISEN book code. The service is not given here, as the tests are the better explanation of what the service is supposed to do!
+
 ```javascript
 // FormatService.spec.js
 import FormatService from './normalization';
