@@ -63,5 +63,7 @@ codeowners.forEach(codeowner => {
 const isOwnedCodeModified = mentions.length > 0;
 if (isOwnedCodeModified) {
   const uniqueMentions = new Set(mentions);
-  markdown("Attention: " + [...uniqueMentions].join(", "));
+  markdown(`## Automatic reviewers
+  
+cc: ${[...uniqueMentions].join(", ")}`);
 }
