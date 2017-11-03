@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { includes, concat } = require("lodash");
+const minimatch = require("minimatch");
 
 const modifiedFiles = danger.git.modified_files;
 const newFiles = danger.git.created_files;
@@ -24,6 +25,7 @@ for (let moFile of moFiles) {
     fail(`**${fileUrl}**: MO doesn't have a *Steps* part, how could you call this an MO?`);
   if (!fileContent.match(/## Troubleshooting/)) warn(`**${fileUrl}**: Seems you do not need a *Troubleshoot* part`);
   if (!readmeContent.match(moFile)) warn(`**${fileUrl}**: Does not seem to be included in the root readme`);
+  if (!summaryContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
 }
 
 for (let standardFile of standardFiles) {
@@ -36,8 +38,32 @@ for (let standardFile of standardFiles) {
   if (!fileContent.match(/## Owner: .+/)) fail(`**${fileUrl}**: Standard doesn't have an *Owner*, could it be you?`);
   if (!fileContent.match(/## Checks/))
     fail(`**${fileUrl}**: Standard doesn't have a *Checks* part, how could you call this an Standard?`);
-  if (!fileContent.match(/## Bad Examples/)) fail(`**${fileUrl}**: You failed to mention a *Bad Examples*`);
-  if (!fileContent.match(/## Good Examples/)) fail(`**${fileUrl}**: You failed to mention a *Good Examples* `);
+  if (!fileContent.match(/Bad Examples?/i)) fail(`**${fileUrl}**: You failed to mention a *Bad Examples*`);
+  if (!fileContent.match(/Good Examples?/i)) fail(`**${fileUrl}**: You failed to mention a *Good Examples* `);
   if (!readmeContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root readme`);
   if (!summaryContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
+}
+
+const codeowners = fs.readFileSync(".github/CODEOWNERS", "utf8").split("\n");
+let mentions = [];
+codeowners.forEach(codeowner => {
+  const pattern = codeowner.split(" ")[0];
+  const owners = codeowner
+    .substring(pattern.length)
+    .trim()
+    .split(" ");
+
+  const modifiedFileHasOwner = path => minimatch(path, pattern);
+  const modifiesOwnedCode = danger.git.modified_files.filter(modifiedFileHasOwner).length > 0;
+
+  if (modifiesOwnedCode) {
+    mentions = mentions.concat(owners);
+  }
+});
+const isOwnedCodeModified = mentions.length > 0;
+if (isOwnedCodeModified) {
+  const uniqueMentions = new Set(mentions);
+  markdown(`## Automatic reviewers
+  
+cc: ${[...uniqueMentions].join(", ")}`);
 }

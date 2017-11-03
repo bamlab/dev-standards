@@ -2,6 +2,12 @@
 
 ## Owner: Yann Leflour
 
+# Why
+
+The why part is important so Bamers know what is the risk addressed by this standard.
+
+Thus they have more context and are able to onboard other dev by presenting the impact.
+
 ## Checks
 - Has an owner with a link to his Github Profile
 - Should contain all the the parts present in this document
@@ -17,11 +23,11 @@
 
 ## Examples
 
-#### Example 1: [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
+### Example 1: [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
 
 - There is no owner
 - There are no examples
 
-#### Example 2:
+### Example 2:
 
 This page is an example of what a good standard is

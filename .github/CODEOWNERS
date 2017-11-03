@@ -1,0 +1,9 @@
+backend/django/* @yleflour @tychota @xavierlefevre @Samox
+backend/graphql-js/* @yleflour @tychota @tpucci
+contributing/* @yleflour @tychota
+editor/vscode/* @yleflour
+flowtype/* @yleflour @tychota
+git/* @tychota
+project-standards/technical-agility/* @tychota
+security/* @minishlink
+dangerfile.js @yleflour @tychota
