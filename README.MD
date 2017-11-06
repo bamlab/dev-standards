@@ -52,6 +52,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[Article] Setup your React Native project icon](https://blog.bam.tech/developper-news/change-your-react-native-app-icons-in-a-single-command-line)
 - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
 - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
+- [[MO] Setup Firebase analytics](/react-native/setup/setup-firebase.mo.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
