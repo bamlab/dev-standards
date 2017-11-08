@@ -61,9 +61,10 @@ Ticket title: (1) As a user, in the page "Portfolio Creation Summary", when I cl
 ## Bad Examples:
 ### Ticket "General Car State"
 Ticket title: (2) As a user, in the page "General Car State", I see the 4 pictures of the car.
-<p align="center">
-  <img src="https://github.com/bamlab/dev-standards/successful-sprint/coding/bad_example_car1.png" width="200"/>
-</p>
+
+| What I expected   |     What I get without doing a plan   |
+|:-----------------:|:------------------:|
+|![](bad_example_car1.png) |![](bad_example_car2.png)
 
 - **What I did**
   - Put the 4 pictures in a container view 
@@ -74,8 +75,6 @@ Ticket title: (2) As a user, in the page "General Car State", I see the 4 pictur
   - The PO tested it on an iphone 5s (small screen) and the result wasn't the same. 
   - Therefore, I had to take back this ticket to work on it again (2h of rework).
   - My coach encouraged me to use flexDirection (2 cars on a row and the 2 rows in the same column) instead of using flex-wrap. 
-<p align="center">
-  <img src="https://github.com/bamlab/dev-standards/successful-sprint/coding/bad_example_car2.png" width="200"/>
-</p>
+
 
   
