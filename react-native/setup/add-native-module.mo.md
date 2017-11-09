@@ -46,7 +46,7 @@ However, some uncommon packages are more nasty than others on Android, or iOS, o
 1. `react-native link the-native-module`
 2. Verify that the linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
 3. Commit these changes.
-4. Open your project in XCode yo make it happy again.
+4. Open your project in XCode to make it happy again.
 5. Commit these changes.
 6. Follow potential additional iOS steps listed in the-native-module's doc.
 7. Make sure it builds well in debug (eg. `react-native run-ios`) and release (eg. `react-native run-ios --configuration Release`). If not, see the troubleshooting part.
@@ -60,13 +60,14 @@ However, some uncommon packages are more nasty than others on Android, or iOS, o
 #### After Android
 1. Verify that the linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
 2. Commit these changes if there were any.
-
-1. Follow potential additional iOS steps listed in the-native-module's doc.
-2. Make sure it builds well in debug (eg. `react-native run-ios`) and release (eg. `react-native run-ios --configuration Release`). If not, see the troubleshooting part.
-3. Commit every changes (eg. "[iOS] Setup the-native-module")
-4. Remove the potential corresponding `Platform.OS === 'android'`
-5. Commit every changes (eg. "[JS] Setup the-native-module for iOS")
-6. Bravo! Merge, deploy, test and put into validation.
+3. Open your project in XCode to make it happy again.
+4. Commit these changes.
+5. Follow potential additional iOS steps listed in the-native-module's doc.
+6. Make sure it builds well in debug (eg. `react-native run-ios`) and release (eg. `react-native run-ios --configuration Release`). If not, see the troubleshooting part.
+7. Commit every changes (eg. "[iOS] Setup the-native-module")
+8. Remove the potential corresponding `Platform.OS === 'android'`
+9. Commit every changes (eg. "[JS] Setup the-native-module for iOS")
+10. Bravo! Merge, deploy, test and put into validation.
 
 ## Troubleshooting
 Please make a PR or an issue (and ping the current owner) if you see any other common problems!
