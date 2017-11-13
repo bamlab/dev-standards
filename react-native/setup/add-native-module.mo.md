@@ -11,22 +11,27 @@ However, some uncommon packages are more nasty than others on Android, or iOS, o
 - [ ] A native module you want to install
 
 ## Steps
-1. Decide if you want to start with the Android part or the iOS part.
+1. Create your branch
+2. Open your project in XCode. It makes XCode happy as it reorganizes your `.pbxproj alphabetically among other things.
+3. Commit these changes (`.pbxproj` and/or `Info.plist`). This will make the work of your PR reviewer way more easier.
+4. `yarn add the-native-module`
+5. Commit (eg. "Add the-native-module to node_modules")
+6. Decide if you want to start with the Android part or the iOS part.
   * You'll want to start with the easiest path, so that you can also implement the Javascript side (if there is one) and have a feature working completely for at least one platform.
   * Most of the time, Android will be the easiest path, because it's faster to build and easier to debug.
-2. Create your branch
-3. Open your project in XCode. It makes XCode happy as it reorganizes your .pbxproj alphabetically among other things.
-4. Commit these changes (`.pbxproj` and/or `Info.plist`). This will make the work of your PR reviewer way more easier.
-5. `yarn add the-native-module`
-6. Commit (eg. "Add the-native-module to node_modules")
 7. Follow the below paths depending on whether you chose to start with Android or iOS
 
 ### Android
+The step "Make sure it builds well" means:
+* build in debug (eg. `react-native run-android`)
+* build in release (eg. `cd android && ./gradlew assembleRelease`)
+* if it doesn't build well, see the troubleshooting part or ask for help.
+
 #### As starting point
 1. `react-native link the-native-module`
-2. Follow potential additional Android steps listed in the-native-module's doc.
-3. Make sure it builds well in debug (eg. `react-native run-android`) and release (eg. `cd android && ./gradlew assembleRelease`). If not, see the troubleshooting part.
-4. Commit every changes except those related to iOS (eg. "[Android] Setup the-native-module")
+2. Make sure it builds well and commit every changes except those related to iOS (eg. "[Android] Link the-native-module")
+3. Follow potential additional Android steps listed in the-native-module's doc.
+4. Make sure it builds well and commit every changes except those related to iOS (eg. "[Android] Setup the-native-module")
 5. Implement the Javascript side if there are any, targeting only Android (use `Platform.OS === 'android'`)
 6. Commit every changes except those related to iOS (eg. "[JS] Setup the-native-module")
 7. Do you still have time to implement iOS? 
@@ -34,40 +39,43 @@ However, some uncommon packages are more nasty than others on Android, or iOS, o
     B. No. Split your tickets in two, save your iOS changes on a new branch, merge, deploy, test and put into validation. (if the ticket is 5 pts, put into validation 3 pts) Then, go on with iOS.
 
 #### After iOS
-1. Follow potential additional Android steps listed in the-native-module's doc.
-2. Make sure it builds well in debug (eg. `react-native run-android`) and release (eg. `cd android && ./gradlew assembleRelease`). If not, see the troubleshooting part.
-3. Commit every changes (eg. "[Android] Setup the-native-module")
-4. Remove the potential corresponding `Platform.OS === 'ios'`
+1. Make sure it builds well and commit every Android changes (eg. "[Android] Link the-native-module")
+2. Follow potential additional Android steps listed in the-native-module's doc.
+3. Make sure it builds well and commit every changes (eg. "[Android] Setup the-native-module")
+4. On the JS side, remove the potential corresponding `Platform.OS === 'ios'`
 5. Commit every changes (eg. "[JS] Setup the-native-module for Android")
 6. Bravo! Merge, deploy, test and put into validation.
 
 ### iOS
+The step "Make sure it builds well" means:
+* build in debug (eg. `react-native run-ios`)
+* build in release (eg. `react-native run-ios --configuration Release`)
+* if it doesn't build well, see the troubleshooting part or ask for help.
+
 #### As starting point
 1. `react-native link the-native-module`
 2. Verify that the linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
-3. Commit these changes.
+3. Make sure it builds well and commit the iOS changes if there were any (eg. "[iOS] Link the-native-module").
 4. Open your project in XCode to make it happy again.
-5. Commit these changes.
+5. Commit these changes (eg. "[iOS] Reorganize pbxproj").
 6. Follow potential additional iOS steps listed in the-native-module's doc.
-7. Make sure it builds well in debug (eg. `react-native run-ios`) and release (eg. `react-native run-ios --configuration Release`). If not, see the troubleshooting part.
-8. Commit every changes except those related to Android (eg. "[iOS] Setup the-native-module")
-9. Implement the Javascript side if there are any, targeting only iOS (use `Platform.OS === 'ios'`)
-10. Commit every changes except those related to Android (eg. "[JS] Setup the-native-module")
-11. Do you still have time to implement Android? 
+7. Make sure it builds well and commit the iOS changes if there were any (eg. "[iOS] Setup the-native-module").
+8. Implement the Javascript side if there are any, targeting only iOS (use `Platform.OS === 'ios'`)
+9. Commit every changes except those related to Android (eg. "[JS] Setup the-native-module")
+10. Do you still have time to implement Android? 
     A. Yes. Bravo! You can go on with Android.
     B. No. Split your tickets in two, save your Android changes on a new branch, merge, deploy, test and put into validation. (if the ticket is 5 pts, put into validation 3 pts) Then, go on with Android.
 
 #### After Android
 1. Verify that the linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
-2. Commit these changes if there were any.
+2. Make sure it builds well and commit the changes if there were any (eg. "[iOS] Link the-native-module").
 3. Open your project in XCode to make it happy again.
-4. Commit these changes.
+4. Commit these changes (eg. "[iOS] Reorganize pbxproj").
 5. Follow potential additional iOS steps listed in the-native-module's doc.
-6. Make sure it builds well in debug (eg. `react-native run-ios`) and release (eg. `react-native run-ios --configuration Release`). If not, see the troubleshooting part.
-7. Commit every changes (eg. "[iOS] Setup the-native-module")
-8. Remove the potential corresponding `Platform.OS === 'android'`
-9. Commit every changes (eg. "[JS] Setup the-native-module for iOS")
-10. Bravo! Merge, deploy, test and put into validation.
+6. Make sure it builds well and commit the changes if there were any (eg. "[iOS] Setup the-native-module").
+7. On the JS side, remove the potential corresponding `Platform.OS === 'android'`
+8. Commit every changes (eg. "[JS] Setup the-native-module for iOS")
+9. Bravo! Merge, deploy, test and put into validation.
 
 ## Troubleshooting
 Please make a PR or an issue (and ping the current owner) if you see any other common problems!
