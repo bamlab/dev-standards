@@ -10,36 +10,43 @@
 
 ## Steps  
 
-- In this tutorial we will create a News model, add it to the Django admin back-office and an API route to get all the pieces of news that have been created.
-- To give a full example, we will ==== REMPLIR
+- In this tutorial we will create a News model, add it to the Django admin back-office and create a GET API route to retrieve all the news that have been created.
+- To give a full example, we will ==== REMPLIR @Tycho
 
 ### Create a News model *(~10 min)*
 
 - In this example we will create a new model called News, with different attributes as you will see bellow. In the models.py file of your app (in our case Publications) create a new model. 
 
-ourproject/publications/models.py
 ```python
+# File: "our_django_project/publications/models.py"
 from django.db import models
 
 class News(models.Model):
-    title = models.CharField(max_length=50)   #CharField is a single line form in the admin; max_length speaks for itself
-    description = models.TextField(max_length=1000)   #TextField is a scrollable paragraph in the admin
-    created_at = models.DateTimeField(auto_now_add=True)    #auto_now_add generates automatically a timestamp when you create your create the news
-    updated_at = models.DateTimeField(auto_now=True)    #auto_now updates the timestamp everytime you change the news
-    city = models.ForeignKey('locations.city')    #All the cities of the City model of the locations app
+    title = models.CharField(max_length=50)   
+    description = models.TextField(max_length=1000)   
+    created_at = models.DateTimeField(auto_now_add=True)    
+    updated_at = models.DateTimeField(auto_now=True)    
+    city = models.ForeignKey('locations.city')   
 
     class Meta:
-        verbose_name_plural = "News"    #The name of the class should be singular, this forces the plural to be News and not Newss
+        verbose_name_plural = "News"
 
     def __str__(self):
         return self.title
 ```
 
+- `CharField` is a single line form in the admin; max_length speaks for itself. [Here is the Django doc for more information](https://docs.djangoproject.com/en/1.11/ref/models/fields/)
+- `TextField` is a scrollable paragraph in the admin
+- `auto_now_add` generates automatically a timestamp when you create your news
+- `auto_now` updates the timestamp everytime you change the news
+- Concerning the city attribute which is a many to one relationship: every piece of news is linked to one city, two pieces of news can have the same city.
 
-- If you have users that are in groups, they need the permission to access to the Model. We won't explain how to create a group, we just want to show you how to add permissions to them. They will be added automaticcaly when you deploy.
+- It's standard that the name of a model (not class) is singular, and django automatically puts it to plural for external use. However here, News is a singular/plural english name, so we need to make sure Django does not add a second 's' (Newss) by overriding 'verbose_name_plural
 
-ouproject/users/apps/py
+- If you have users that are in groups, they need the permission to access to the Model. We won't explain how to create a group, we just want to show you how to add permissions to them. They will be added automatically when you deploy.
+
 ```python
+# File: "our_django_project/users/apps.py"
 from django.apps import AppConfig
 from django.contrib.admin import site
 from django.db.models.signals import post_migrate
@@ -73,15 +80,23 @@ def add_group_permissions(sender, using, apps, **kwargs):
     add_model_permissions(group, News, ContentType, Permission) #Add this second line
 ```
 
-- Finally, make your migrations and migrate.
+- Finally, make your migrations and migrate. To do this run the following commands in your shel :
+
+@Tycho !!
+``bash
+docker-compose -f local.yml run django python manage.py makemigrations
+docker-compose -f local.yml run django python manage.py migrate
+```
+
+
 
 
 ### Add the News model to the admin *(~2 min)*
 
 - We now need to add the model to the admin back-office.
 
-ourproject/publications/admin.py
 ```python
+# File: "our_django_project/publications/admin.py"
 from django.contrib import admin
 from .models import News
 
@@ -97,14 +112,17 @@ class MyNewsAdmin(admin.ModelAdmin):
 If you don't override `list_display` by writing `pass` instead of `list_display`, the default column title in the admin will be the __str__ returned in the model.
 list_display allows you to add several columns to the admin interface.
 
+With `pass`: ![](https://user-images.githubusercontent.com/30256638/32740101-2104d6dc-c8a2-11e7-9838-9c2b15bb60a5.png)
+
+With `list_display`: ![](https://user-images.githubusercontent.com/30256638/32740159-50ac5a40-c8a2-11e7-8b9e-89db21193896.png)
+
 
 ### Serialize the News you get from the database *(~2 min)*
 
 - Serializers define the API representation.
 
-
-ourproject/publications/serializers.py
 ```python
+# File: "our_django_project/publications/serializers.py"
 from .models import News
 from rest_framework import serializers
 
@@ -123,6 +141,7 @@ class NewsSerializer(serializers.HyperlinkedModelSerializer):
 
 
 ```python
+# File: "our_django_project/publications/viewsets.py"
 from .models import News
 from rest_framework import viewsets
 from .serializers import NewsSerializer
@@ -150,8 +169,8 @@ class NewsViewSet(FilterByCity, viewsets. ):
 
 - Create a route for the ViewSet.
 
-ouproject/config/router.py
 ```python
+# File: "our_django_project/config/router.py"
 from rest_framework import routers
 from intramuros.users.viewsets import UserViewSet
 from intramuros.locations.viewsets import CityViewSet
@@ -164,6 +183,8 @@ router.register(r'users', UserViewSet)
 router.register(r'locations/cities', CityViewSet)
 router.register(r'publications/news', NewsViewSet)    #Add this one too
 ```
+
+### Result
 
 - You are good to go! :D
 
@@ -217,3 +238,7 @@ router.register(r'publications/news', NewsViewSet)    #Add this one too
     }
 ]
 ```
+
+
+//TODO:
+Add doc to python for extra info about models
