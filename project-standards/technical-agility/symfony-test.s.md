@@ -12,13 +12,13 @@
 
 ## Impact
 
-- A lack of tests will put in jeopardy the 4 points listed above.
+- A lack of tests will put in jeopardy the 2 points listed above.
 
 ## Checks
 
 My Symfony app is well tested if :
 
-  1. The api routs are tested with a functional test
+  1. The api route are tested with a functional test
   2. The services added to the container are unit tested 
 
 
