@@ -34,6 +34,9 @@ Once you've upgraded React Native don't forget to update your dependencies - for
 
 If this is taking too long you can create a new React Native project from scratch and import all your javascript and native parts (CocoaPods, linking, etc.).
 
+There can also be cache issues (with yarn or gradle for instance) so if your project doesn't take long to be cloned you can clone a new instance of your project if you're stuck.
+
+
 ### Examples
 
 #### 0.47 to 0.48
