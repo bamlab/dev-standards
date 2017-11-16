@@ -11,6 +11,16 @@ However, some uncommon packages are more nasty than others on Android, or iOS, o
 - [ ] A native module you want to install
 
 ## Steps
+On Android the step "Make sure it builds well" means:
+* build in debug (eg. `react-native run-android`)
+* build in release (eg. `cd android && ./gradlew assembleRelease`)
+* if it doesn't build well, see the troubleshooting part or ask for help.
+
+On iOS, the step "Make sure it builds well" means:
+* build in debug (eg. `react-native run-ios`)
+* build in release (eg. `react-native run-ios --configuration Release`)
+* if it doesn't build well, see the troubleshooting part or ask for help.
+
 1. Create your branch
 2. Open your project in XCode. It makes XCode happy as it reorganizes your `.pbxproj alphabetically among other things.
 3. Commit these changes (`.pbxproj` and/or `Info.plist`). This will make the work of your PR reviewer way more easier.
@@ -21,61 +31,72 @@ However, some uncommon packages are more nasty than others on Android, or iOS, o
   * Most of the time, Android will be the easiest path, because it's faster to build and easier to debug.
 7. Follow the below paths depending on whether you chose to start with Android or iOS
 
-### Android
-The step "Make sure it builds well" means:
-* build in debug (eg. `react-native run-android`)
-* build in release (eg. `cd android && ./gradlew assembleRelease`)
-* if it doesn't build well, see the troubleshooting part or ask for help.
+<table>
+<tr>
+<th>Android first</th>
+<th>iOS first</th>
+</tr>
+<tr>
+<td>
 
-#### As starting point
-1. `react-native link the-native-module`
-2. Make sure it builds well and commit every changes except those related to iOS (eg. "[Android] Link the-native-module")
-3. Follow potential additional Android steps listed in the-native-module's doc.
-4. Make sure it builds well and commit every changes except those related to iOS (eg. "[Android] Setup the-native-module")
-5. Implement the Javascript side if there are any, targeting only Android (use `Platform.OS === 'android'`)
-6. Commit every changes except those related to iOS (eg. "[JS] Setup the-native-module")
-7. Do you still have time to implement iOS? 
+8. `react-native link the-native-module`
+9. Make sure it builds well on Android and commit every changes except those related to iOS (eg. "[Android] Link the-native-module")
+10. Follow potential additional Android steps listed in the-native-module's doc.
+11. Make sure it builds well and commit every changes except those related to iOS (eg. "[Android] Setup the-native-module")
+12. Implement the Javascript side if there are any, targeting only Android (use `Platform.OS === 'android'`)
+13. Commit every changes except those related to iOS (eg. "[JS] Setup the-native-module")
+14. Do you still have time to implement iOS? 
     A. Yes. Bravo! You can go on with iOS.
     B. No. Split your tickets in two, save your iOS changes on a new branch, merge, deploy, test and put into validation. (if the ticket is 5 pts, put into validation 3 pts) Then, go on with iOS.
 
-#### After iOS
-1. Make sure it builds well and commit every Android changes (eg. "[Android] Link the-native-module")
-2. Follow potential additional Android steps listed in the-native-module's doc.
-3. Make sure it builds well and commit every changes (eg. "[Android] Setup the-native-module")
-4. On the JS side, remove the potential corresponding `Platform.OS === 'ios'`
-5. Commit every changes (eg. "[JS] Setup the-native-module for Android")
-6. Bravo! Merge, deploy, test and put into validation.
+</td>
+<td>
 
-### iOS
-The step "Make sure it builds well" means:
-* build in debug (eg. `react-native run-ios`)
-* build in release (eg. `react-native run-ios --configuration Release`)
-* if it doesn't build well, see the troubleshooting part or ask for help.
-
-#### As starting point
-1. `react-native link the-native-module`
-2. Verify that the linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
-3. Make sure it builds well and commit the iOS changes if there were any (eg. "[iOS] Link the-native-module").
-4. Open your project in XCode to make it happy again.
-5. Commit these changes (eg. "[iOS] Reorganize pbxproj").
-6. Follow potential additional iOS steps listed in the-native-module's doc.
-7. Make sure it builds well and commit the iOS changes if there were any (eg. "[iOS] Setup the-native-module").
-8. Implement the Javascript side if there are any, targeting only iOS (use `Platform.OS === 'ios'`)
-9. Commit every changes except those related to Android (eg. "[JS] Setup the-native-module")
-10. Do you still have time to implement Android? 
+8. `react-native link the-native-module`
+9. Verify that the iOS linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
+10. Make sure it builds well and commit the iOS changes if there were any (eg. "[iOS] Link the-native-module").
+11. Open your project in XCode to make it happy again.
+12. Commit these changes (eg. "[iOS] Reorganize pbxproj").
+13. Follow potential additional iOS steps listed in the-native-module's doc.
+14. Make sure it builds well and commit the iOS changes if there were any (eg. "[iOS] Setup the-native-module").
+15. Implement the Javascript side if there are any, targeting only iOS (use `Platform.OS === 'ios'`)
+16. Commit every changes except those related to Android (eg. "[JS] Setup the-native-module")
+17. Do you still have time to implement Android? 
     A. Yes. Bravo! You can go on with Android.
     B. No. Split your tickets in two, save your Android changes on a new branch, merge, deploy, test and put into validation. (if the ticket is 5 pts, put into validation 3 pts) Then, go on with Android.
 
-#### After Android
-1. Verify that the linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
-2. Make sure it builds well and commit the changes if there were any (eg. "[iOS] Link the-native-module").
-3. Open your project in XCode to make it happy again.
-4. Commit these changes (eg. "[iOS] Reorganize pbxproj").
-5. Follow potential additional iOS steps listed in the-native-module's doc.
-6. Make sure it builds well and commit the changes if there were any (eg. "[iOS] Setup the-native-module").
-7. On the JS side, remove the potential corresponding `Platform.OS === 'android'`
-8. Commit every changes (eg. "[JS] Setup the-native-module for iOS")
-9. Bravo! Merge, deploy, test and put into validation.
+</td>
+</tr>
+<tr>
+<td>
+
+For iOS:
+15. Verify that the iOS linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
+16. Make sure it builds well on iOS and commit the changes if there were any (eg. "[iOS] Link the-native-module").
+17. Open your project in XCode to make it happy again.
+18. Commit these changes (eg. "[iOS] Reorganize pbxproj").
+19. Follow potential additional iOS steps listed in the-native-module's doc.
+20. Make sure it builds well and commit the changes if there were any (eg. "[iOS] Setup the-native-module").
+21. On the JS side, remove the potential corresponding `Platform.OS === 'android'`
+22. Commit every changes (eg. "[JS] Setup the-native-module for iOS")
+23. Bravo! Merge, deploy, test and put into validation.
+
+
+</td>
+<td>
+
+For Android:
+18. Make sure it builds well on Android and commit every Android changes (eg. "[Android] Link the-native-module")
+19. Follow potential additional Android steps listed in the-native-module's doc.
+20. Make sure it builds well and commit every changes (eg. "[Android] Setup the-native-module")
+21. On the JS side, remove the potential corresponding `Platform.OS === 'ios'`
+22. Commit every changes (eg. "[JS] Setup the-native-module for Android")
+23. Bravo! Merge, deploy, test and put into validation.
+
+</td>
+</tr>
+
+</table>
 
 ## Troubleshooting
 Please make a PR or an issue (and ping the current owner) if you see any other common problems!
