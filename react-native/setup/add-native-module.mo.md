@@ -71,6 +71,7 @@ On iOS, the step "Make sure it builds well" means:
 <td>
 
 For iOS:
+
 15. Verify that the iOS linking went well. Be critical and identify potential things that were added to your `.pbxproj` but should not have been. If you're not confident enough, ask for help!
 16. Make sure it builds well on iOS and commit the changes if there were any (eg. "[iOS] Link the-native-module").
 17. Open your project in XCode to make it happy again.
@@ -86,6 +87,7 @@ For iOS:
 <td>
 
 For Android:
+
 18. Make sure it builds well on Android and commit every Android changes (eg. "[Android] Link the-native-module")
 19. Follow potential additional Android steps listed in the-native-module's doc.
 20. Make sure it builds well and commit every changes (eg. "[Android] Setup the-native-module")
