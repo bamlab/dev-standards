@@ -27,12 +27,16 @@ React Native is very probably the dependency you'll have to upgrade the more oft
 ### How to
 
 First of all, if you are late by several versions do them one at a time.
-Skipping one might be really tough and you can get stuff done more often if you do it one version at a time.
+Upgrading several version at a time (like from 0.42 to 0.46) can create a lot of complication, because React Native changes many javascript and native dependencies that also impact your code and its structure.
+If you do one version at a time, you are sure to be able to more quickly give a working version with a slightly newer version (like from 0.42 to 0.43, etc.) that you tested on both Android and iOS.
+
+Before upgrading, check that you project dependencies are compatible with your aimed version of React Native, like for Codepush, that always pushes a new version, for new RN versions.
 
 To upgrade a version follow [the official documentation](https://facebook.github.io/react-native/docs/upgrading.html) on how to use `react-native-git-upgrade`.
+
 Once you've upgraded React Native don't forget to update your dependencies - for example some might fail with the newest versions of React or others like CodePush are only working with specific versions of React Native.
 
-If this is taking too long you can create a new React Native project from scratch and import all your javascript and native parts (CocoaPods, linking, etc.).
+If this is taking too long you can create a new React Native project from scratch with `react-native init` and import and re-install all your javascript and native parts (CocoaPods, linking, etc.).
 
 There can also be cache issues (with yarn or gradle for instance) so if your project doesn't take long to be cloned you can clone a new instance of your project if you're stuck.
 
