@@ -1,6 +1,9 @@
 # [Standard] My Synfony Project is correctly tested
 
 ## Owner: [Nicolas Djambazian](https://github.com/nhacsam)
+## Project : Materniteam
+
+Today, this standard have been written for Materniteam and should be reworked to be generalized.
 
 ## Description
 
