@@ -75,6 +75,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Debug Native iOS Code](/react-native/debugging/debug-native-ios.mo.md)
 - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
 - [[MO] Debug Network calls](/react-native/debugging/debug-network-calls.mo.md)
+- [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
 
 ### React
 - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
