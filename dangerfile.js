@@ -25,7 +25,7 @@ for (let moFile of moFiles) {
     fail(`**${fileUrl}**: MO doesn't have a *Steps* part, how could you call this an MO?`);
   if (!fileContent.match(/## Troubleshooting/)) warn(`**${fileUrl}**: Seems you do not need a *Troubleshoot* part`);
   if (!readmeContent.match(moFile)) warn(`**${fileUrl}**: Does not seem to be included in the root readme`);
-  if (!summaryContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
+  if (!summaryContent.match(moFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
 }
 
 for (let standardFile of standardFiles) {
