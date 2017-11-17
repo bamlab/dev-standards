@@ -1,4 +1,4 @@
-# [Standard] My Synfony Project is correctly tested
+# [Standard] My Symfony Project is correctly tested
 
 ## Owner: [Nicolas Djambazian](https://github.com/nhacsam)
 ## Project : Materniteam
