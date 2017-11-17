@@ -15,10 +15,6 @@ Check the right version to use according to your react-native version.
 
 `yarn add react-native-firebase`
 
-or if you use npm:
-
-`npm install react-native-firebase`
-
 and link the native part of the react-native-firebase module:
 
 `react-native link react-native-firebase`
@@ -54,7 +50,7 @@ run `pod install` from your `ios/` folder.
 #### Setup google-services.json
 Download the `google-services.json` from the firebase console and paste it on `android/app/google-services.json`.
 
-Add the folowing lines on the `android/build.gradle` file:
+Add the following lines on the `android/build.gradle` file:
 ```gradle
 buildscript {
   // ...
@@ -105,7 +101,7 @@ allprojects {
 }
 ```
 
-Update you `android/app/src/main/java/com/[app name]/MainApplication.java` to integrate the Firebase analytics package:
+Update your `android/app/src/main/java/com/[app name]/MainApplication.java` to integrate the Firebase analytics package:
 
 ```java
 // ...
@@ -131,7 +127,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 ### Check your google services version *(~10 min)*
 
-The google services version used in Firebase could be in conflict with the version of other native modules (as react-native-maps).
+The google services version used in Firebase could be in conflict with the version of other native modules (like react-native-maps).
 
 The following [Medium blog post](https://medium.com/@suchydan/how-to-solve-google-play-services-version-collision-in-gradle-dependencies-ef086ae5c75f) propose a way to maintain the same version.
 
