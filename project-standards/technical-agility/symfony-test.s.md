@@ -94,7 +94,7 @@ If the call get data to the api. You need to add the data you expect in the fixt
 
 ### Unit Test (~ XX min)
 
-Unit tests must be use for everything which is registered as a service in `services.yml` or any other `yml` file.
+Unit tests must be used for everything which is registered as a service in `services.yml` or any other `yml` file.
 
 Given the following service :
 
@@ -180,7 +180,7 @@ Then, in a `setUp` method, you need to mock all the dependancies of the service 
     }
 ```
 
-To finish, for every public methode of the call, create a new `test{NameOfTheMethod}` method in the test class to test the most common path of it.
+To finish, for every public method of the call, create a new `test{NameOfTheMethod}` method in the test class to test the most common path of it.
 You can create multiple test method for a single tested method to test different case.
 
 
