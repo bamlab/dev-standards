@@ -1,27 +1,28 @@
-# [MO] Handle gradle dependencies versions clashes
+# [MO] Handle version conflicts between Gradle dependencies
 
 ## Owner: [Louis Zawadzki](https://github.com/louiszawadzki)
 
 ## Prerequisites:
 
-You have 2 dependencies that depend on different versions of the same package, so your application won't build and error with an error like:
+You have 2 dependencies that depend on different versions of the same package, so your Android build will fail with an error like:
 
 ```
-com.android.dex.DexException: Multiple dex files define Landroid/support/v7/appcompat/R$anim;
+com.android.dex.DexException: Multiple dex files define google/android/play-services/iid/R$anim;
 ```
 
 If you're having an issue with Google Maps and Firebase you can have a look at [this article](https://medium.com/@suchydan/how-to-solve-google-play-services-version-collision-in-gradle-dependencies-ef086ae5c75f).
 
 ## Steps:
 
-### 1. Know which dependencies is causing the issue *(~2min)*
+### 1. Find out which dependencies is causing the issue *(~2min)*
 
 First, you need to figure out which package is causing the dependency issue.
 
-You can have versions clash without any issue.
-However when one method is present in one version and not in the other there will be an issue.
+Versions conflicts break your build when one method is present in one version and not in another.
 
-Look at your error to know exactly which package is causing the issue.
+**N.B.**: You can potentially have versions conflicts without any issue. Similarly your build can pass but you can still have issues if the logic inside a function has been changed.
+
+Look at your error to know exactly which package is causing the issue (in the previous example it's probably `com.google.android.gms:play-services-iid`)
 
 Then you must find out which version should be set.
 
@@ -38,17 +39,9 @@ _debugCompile - ## Internal use, do not manually configure ##
 |    \--- com.google.android.gms:play-services-basement:11.1.6
 +--- com.salesforce.marketingcloud:marketingcloudsdk:5.3.+ -> 5.3.1
 |    +--- com.google.android.gms:play-services-gcm:11.0.1 -> 11.1.6
-|    |    +--- com.google.android.gms:play-services-base:11.0.1 -> 11.1.6
-|    |    |    +--- com.google.android.gms:play-services-basement:11.0.1 -> 11.1.6
-|    |    |    |    \--- com.android.support:support-v4:25.2.0 -> 26.0.0 (*)
-|    |    |    \--- com.google.android.gms:play-services-tasks:11.0.1 -> 11.1.6
-|    |    |         \--- com.google.android.gms:play-services-basement:11.0.1 -> 11.1.6 (*)
-|    |    +--- com.google.android.gms:play-services-basement:11.0.1 -> 11.1.6 (*)
 |    |    \--- com.google.android.gms:play-services-iid:11.0.1 -> 11.1.6
 |    |         +--- com.google.android.gms:play-services-base:11.0.1 -> 11.1.6 (*)
 |    |         \--- com.google.android.gms:play-services-basement:11.0.1 -> 11.1.6 (*)
-|    +--- com.android.support:support-v4:26.0.0 (*)
-|    \--- com.android.support:support-annotations:26.0.0
 ```
 
 A quick note on how to read this tree:
@@ -56,10 +49,12 @@ A quick note on how to read this tree:
 - `(*)` indicates that this lib is already installed higher in the tree
 - `->` indicates that a different version of the library was installed
 
-You can see here for example that `com.google.android.gms:play-services-base` version is 11.1.6 for `react-native-maps` and version 11.0.1 for `com.salesforce.marketingcloud:marketingcloudsdk`.
+You can see here for example that `com.google.android.gms:play-services-base` version is 11.1.6 for `react-native-maps` and version 11.0.1 for `com.salesforce.marketingcloud:marketingcloudsdk`, therefore forcing `com.google.android.gms:play-services-iid` to be at version 11.1.6.
 
 
 ### 2. Force dependency to use a specific version
+
+If the highest version of the dependency does not work, your next guess has to be the lowest one required by your dependencies.
 
 So now in your `android/app/build.gradle` you need to:
 
@@ -94,17 +89,9 @@ _debugCompile - ## Internal use, do not manually configure ##
 +--- project :react-native-maps
 +--- com.salesforce.marketingcloud:marketingcloudsdk:5.3.+ -> 5.3.1
 |    +--- com.google.android.gms:play-services-gcm:11.0.1
-|    |    +--- com.google.android.gms:play-services-base:11.0.1
-|    |    |    +--- com.google.android.gms:play-services-basement:11.0.1
-|    |    |    |    \--- com.android.support:support-v4:25.2.0 -> 26.0.0 (*)
-|    |    |    \--- com.google.android.gms:play-services-tasks:11.0.1
-|    |    |         \--- com.google.android.gms:play-services-basement:11.0.1 (*)
-|    |    +--- com.google.android.gms:play-services-basement:11.0.1 (*)
 |    |    \--- com.google.android.gms:play-services-iid:11.0.1
 |    |         +--- com.google.android.gms:play-services-base:11.0.1 (*)
 |    |         \--- com.google.android.gms:play-services-basement:11.0.1 (*)
-|    +--- com.android.support:support-v4:26.0.0 (*)
-|    \--- com.android.support:support-annotations:26.0.0
 +--- com.google.android.gms:play-services-maps:11.0.1
 |    +--- com.google.android.gms:play-services-base:11.0.1 (*)
 |    \--- com.google.android.gms:play-services-basement:11.0.1 (*)
@@ -113,4 +100,13 @@ _debugCompile - ## Internal use, do not manually configure ##
 
 Note that now `com.google.android.gms:play-services-base`'s version is 11.0.1
 
-Once you've done that you might realise that `com.google.android.gms:play-services-base:11.0.1` relies on another version of another lib that clashes with another lib so you have to repeat this until your build passes :)
+> **Check:** when you launch your build it either passes or error with a different error
+
+
+### 3. Repeat if you have a different error
+
+It's possible that the lib you've downgraded relies on a version of another lib that conflicts with another dependency so you will have to repeat this with this new dependency until your build passes :)
+
+It's also possible that the lowest version does not have a method required by the highest version.
+In this case you can try a version between the two that works.
+It's possible that there is no version that works.
