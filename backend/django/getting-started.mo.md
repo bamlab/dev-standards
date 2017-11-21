@@ -18,6 +18,7 @@ We will create an Admin using Django Admin Framework and a rest API, using Djang
 - Have `$PATH` environment variable priorizing Homebrew package (`export PATH=/usr/local/bin:/usr/local/sbin:$PATH` in .bashrc or similar) (~3 min)
 - Have **Python 3.6** installed (`brew install python3`): 3.6 is needed for [f"{variable} text" syntax] (https://cito.github.io/blog/f-strings/), if you have version 3.x (x lower then 6, just use the old format "{} text".format(variable)  (~2 min)
 - Have **virtualenv** installed (`pip3 install virtualenv`) (~1 min)
+- If you use Visual Studio Code, read [this article](http://ruddra.com/2017/08/19/vs-code-for-python-development/) (~5 min)
 
 ## Steps (~35 min)
 
