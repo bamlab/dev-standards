@@ -45,6 +45,8 @@ These 3 files are in the `icomoon.zip` archive: but if you only have the `*.svg`
   - `android/app/src/main/assets/fonts/icomoon.ttf`
   - `src/components/Icon/selection.json`
   - `resources/icons/icomoon.ttf`
+  
+ 3.  Run `react-native link`
 
 
 > :warning: **If you are using code-push, don't forget to hard deploy**
