@@ -6,6 +6,7 @@
 
 - [ ] An Android or iOS app with the Firebase SDK installed
    - For React Native apps, you can use [`react-native-firebase`](https://github.com/invertase/react-native-firebase)
+- Be careful, when you're using specific modules of firebase, like analytics, you may have to add some `compile` to the `gradle`
 
 ## Steps *(~30min)*
 
