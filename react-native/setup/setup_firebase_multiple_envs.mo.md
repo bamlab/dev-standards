@@ -1,6 +1,6 @@
 # [MO] Setup Firebase on iOS/Android with multiple environments *(~1h)*
 
-## Owner: Louis Lagrange
+## Owner: [Louis Lagrange](https://github.com/Minishlink)
 
 ## Prerequisites *(~30min)*
 
