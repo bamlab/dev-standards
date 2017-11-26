@@ -136,6 +136,8 @@ dependencies {
     implementation "com.google.firebase:firebase-crash:11.4.2"
 ```
 
+For a more general operating process on this, see [Handle version conflicts between Gradle dependencies](https://bamtech.gitbooks.io/dev-standards/react-native/debugging/handle-gradle-dependencies-clash.mo.html).
+
 ### iOS
 #### Lottie
 Linking adds `Lottie-Screenshot` to the `HEADER_SEARCH_PATHS` of each config in your `.pbxproj`.
