@@ -54,7 +54,7 @@
     (default is 3): 
     ```
   - Connect to your IAM user
-  - Give a general name to your instance, generaly the name of the project/company
+  - Give a general name to your instance, generaly the name of the project/company, example: name_of_project-staging
   - Precise that you are using Python 3+
   - Say no to "CodeCommit"
   - Generate a new SSH Keypair that you will share with your teammates
@@ -140,7 +140,24 @@
 - Check: You can verify on the AWS website that each server peace has been created (EB, RDS, S3, EC2)
 
 ### Create a superadmin
-- TODO
+Now that you have deployed once, on your host you should have the credentials for AWS (cat ~/.aws/config).
+
+To create a super user you will have to connect directly to the machine in order to run ./manage.py createsuperuser.
+
+- To ssh to your EC2 machine run eb ssh [PUT YOUR INSTANCE NAME IF NOT BY DEFAULT]
+- Then on the machine go to the root of the project:
+```bash
+cd /opt/python/current
+```
+- Add the python environment:
+```bash
+source ./env
+```
+- Run the createuser command:
+```bash
+cd /app
+./manage.py createsuperuser
+```
 
 ### Debug
 ```bash
