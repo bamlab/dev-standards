@@ -1,7 +1,8 @@
 # [MO] Adding a native module
 The time needed for this depends largely on the native module and the features you want.
 If you don't count the feature implementation (so only installing the native module) and if everything goes well, it should not take more than 1 hour.
-However, some uncommon packages are more nasty than others on Android, or iOS, or both, so I recommend to foresee 3 hours.
+
+However, some uncommon packages are more nasty than others on Android, or iOS, or both. So if you install a native module that was not yet used by BAM, I recommend to foresee 3 hours and a TIMEBOX.
 
 ## Owner: [Louis Lagrange](https://github.com/Minishlink)
 
@@ -13,12 +14,12 @@ However, some uncommon packages are more nasty than others on Android, or iOS, o
 ## Steps
 On Android the step "Make sure it builds well" means:
 * build in debug (eg. `react-native run-android`)
-* build in release (eg. `cd android && ./gradlew assembleRelease`)
+* build in release (eg. `cd android && ./gradlew assembleRelease` if you didn't edit the default configuration setup)
 * if it doesn't build well, see the troubleshooting part or ask for help.
 
 On iOS, the step "Make sure it builds well" means:
 * build in debug (eg. `react-native run-ios`)
-* build in release (eg. `react-native run-ios --configuration Release`)
+* build in release (eg. `react-native run-ios --configuration Release` if you didn't edit the default configuration setup)
 * if it doesn't build well, see the troubleshooting part or ask for help.
 
 1. Create your branch
@@ -27,8 +28,8 @@ On iOS, the step "Make sure it builds well" means:
 4. `yarn add the-native-module`
 5. Commit (eg. "Add the-native-module to node_modules")
 6. Decide if you want to start with the Android part or the iOS part.
-  * You'll want to start with the easiest path, so that you can also implement the Javascript side (if there is one) and have a feature working completely for at least one platform.
-  * Most of the time, Android will be the easiest path, because it's faster to build and easier to debug.
+    * You'll want to start with the easiest path, so that you can also implement the Javascript side (if there is one) and have a feature working completely for at least one platform.
+    * Most of the time, Android will be the easiest path, because it's faster to build and easier to debug.
 7. Follow the below paths depending on whether you chose to start with Android or iOS
 
 <table>
@@ -45,9 +46,9 @@ On iOS, the step "Make sure it builds well" means:
 11. Make sure it builds well and commit every changes except those related to iOS (eg. "[Android] Setup the-native-module")
 12. Implement the Javascript side if there are any, targeting only Android (use `Platform.OS === 'android'`)
 13. Commit every changes except those related to iOS (eg. "[JS] Setup the-native-module")
-14. Do you still have time to implement iOS? 
-    A. Yes. Bravo! You can go on with iOS.
-    B. No. Split your tickets in two, save your iOS changes on a new branch, merge, deploy, test and put into validation. (if the ticket is 5 pts, put into validation 3 pts) Then, go on with iOS.
+14. Do you still have time to implement iOS?
+    * A. Yes. Bravo! You can go on with iOS.
+    * B. No. Split your tickets in two, save your iOS changes on a new branch, merge, deploy, test and put into validation. (if the ticket is 5 pts, put into validation 3 pts) Then, go on with iOS.
 
 </td>
 <td>
@@ -61,9 +62,9 @@ On iOS, the step "Make sure it builds well" means:
 14. Make sure it builds well and commit the iOS changes if there were any (eg. "[iOS] Setup the-native-module").
 15. Implement the Javascript side if there are any, targeting only iOS (use `Platform.OS === 'ios'`)
 16. Commit every changes except those related to Android (eg. "[JS] Setup the-native-module")
-17. Do you still have time to implement Android? 
-    A. Yes. Bravo! You can go on with Android.
-    B. No. Split your tickets in two, save your Android changes on a new branch, merge, deploy, test and put into validation. (if the ticket is 5 pts, put into validation 3 pts) Then, go on with Android.
+17. Do you still have time to implement Android?
+    * A. Yes. Bravo! You can go on with Android.
+    * B. No. Split your tickets in two, save your Android changes on a new branch, merge, deploy, test and put into validation. (if the ticket is 5 pts, put into validation 3 pts) Then, go on with Android.
 
 </td>
 </tr>
