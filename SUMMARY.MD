@@ -28,6 +28,7 @@
     - [[Standard] Good practices to resolve a ticket](/successful-sprint/coding/plan-your-ticket-to-improve-efficency.s.md)
 - React Native
   - Setup
+    - [[MO] Adding a native module](/react-native/setup/add-native-module.mo.md)
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
     - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)

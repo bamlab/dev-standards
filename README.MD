@@ -54,6 +54,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 ## React Native
 
 ### Setup
+- [[MO] Adding a native module](/react-native/setup/add-native-module.mo.md)
 - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
 - [[MO] Deploy Project to Production - Only iOS Testflight](/react-native/setup/deploy-project-to-production.md)
 - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
