@@ -3,7 +3,7 @@ The time needed for this depends largely on the native module and the features y
 If you don't count the feature implementation (so only installing the native module) and if everything goes well, it should not take more than 1 hour.
 However, some uncommon packages are more nasty than others on Android, or iOS, or both, so I recommend to foresee 3 hours.
 
-## Owner: Louis Lagrange
+## Owner: [Louis Lagrange](https://github.com/Minishlink)
 
 ## Prerequisites
 
