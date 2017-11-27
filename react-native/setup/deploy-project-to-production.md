@@ -49,6 +49,7 @@ bundle exec fastlane ios setup --env=production
 
 ### 5. Launch the build process
 > It will sign and build your app and upload it to iTunes Connect.
+
 ```bash
 bundle exec fastlane ios deploy --env=production
 ```
