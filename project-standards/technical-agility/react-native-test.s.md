@@ -283,9 +283,10 @@ describe('<BookView />', () => {
 If a child of this component is connected, you need to mock the store in your test:
 
 ```javascript
-import { createStore, Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 describe('<BookView />', () => {
-  const store = createStore({
+  const store = createStore(() => ({
     books: {
       favorite: {
         crime: [],
@@ -299,7 +300,7 @@ describe('<BookView />', () => {
       name: 'Donald',
       id: 1
     }
-  });
+  }));
   it('renders correctly when the book is not a favorite one', () => {
     const tree = renderer.create(
       <Provider store={store}>
