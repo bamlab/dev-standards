@@ -1,26 +1,24 @@
-# [MO] How to deploy your Django back-end to AWS (~3hours)
+# [MO] How to deploy your Django back-end to AWS (~1h30)
 
 ## Owner: [Xavier Lefèvre](https://github.com/xavierlefevre)
 ## Creation date: November, 13th 2017
-## Update date: November, 26th 2017
+## Update date: November, 29th 2017
 
 ## Context
-
 - You want to host your back-end with [Amazon Web Services](https://aws.amazon.com/)
 
 ## Prerequisites
-
 - Have python3 and pip3 installed
 - Have a Django project, [see this if you want to start one](https://github.com/bamlab/dev-standards/blob/master/backend/django/getting-started.mo.md)
 - Have an AWS account ready to pay services: https://portal.aws.amazon.com/billing/signup#/start
 
 ## Steps
 
-### Create on AWS website an Identity and Access Management for the project
+### Create on AWS website an Identity and Access Management for the project (~5min)
 - Find IAM from AWS services
 - Go to the User tab
 - "Add user"
-- Give it a name and all access type
+- Give it a name and all access types
 - Attach the below "existing policies directly"
   - AmazonRDSFullAccess
   - AmazonEC2FullAccess
@@ -29,7 +27,7 @@
   - AWSElasticBeanstalkFullAccess
 - Retrieve and store somewhere safe the IAM user access and security key
 
-### Set-up your Elastic Beanstalk (EB) environment
+### Set-up your Elastic Beanstalk (EB) environment (~10min)
 - Install EB CLI: 
   ```bash
   pip3 install awsebcli
@@ -58,14 +56,14 @@
   - Precise that you are using Python 3+
   - Say no to "CodeCommit"
   - Generate a new SSH Keypair that you will share with your teammates
-- Check: EB should have generated a ".elasticbeanstalk" folder in your directoy with your configuration
-- You can commit your setup
+> Check: EB should have generated a ".elasticbeanstalk" folder in your directoy with your configuration
+- You can commit finaly your setup
   ```bash
   git add .
   git commit -m "Created EB project instance"
   ```
 
-### Configure your project for EB
+### Configure your project for EB (~15min)
 - We use cookiecutter as our base Django project at BAM, so we will use their configuration for EB:
   - Create a ".ebextensions" in your project root directoy
   - Copy the [EB configuration from cookie cutter repo](https://github.com/pydanny/cookiecutter-django/tree/master/%7B%7Bcookiecutter.project_slug%7D%7D/.ebextensions)
@@ -118,7 +116,7 @@
   git commit -m "Added python, django and database config and requirements files"
   ```
 
-### Deploying the application
+### Deploying the application (~45min)
 - For the first time you will create the instance, hence all the necessary servers:
   ```bash
   eb create --scale 1 -db -db.engine postgres -db.i db.t2.micro
@@ -137,9 +135,10 @@
     ```
     DJANGO_ACCOUNT_ALLOW_REGISTRATION, DJANGO_ADMIN_URL, DJANGO_ALLOWED_HOSTS, DJANGO_AWS_ACCESS_KEY_ID, DJANGO_AWS_SECRET_ACCESS_KEY, DJANGO_MAILGUN_API_KEY, DJANGO_SECRET_KEY, DJANGO_SECURE_SSL_REDIRECT, DJANGO_SENTRY_DSN, DJANGO_SERVER_EMAIL, DJANGO_SETTINGS_MODULE, MAILGUN_SENDER_DOMAIN, REDIS_ENDPOINT_ADDRESS, REDIS_PORT
     ```
-- Check: You can verify on the AWS website that each server peace has been created (EB, RDS, S3, EC2)
+> Check 1: You can verify on the AWS website that each server piece has been created (EB, RDS, S3, EC2)
+> Check 2: You can access the aws.ip/admin
 
-### Create a superadmin
+### Create a superadmin (~10min)
 Now that you have deployed once, on your host you should have the credentials for AWS (cat ~/.aws/config).
 
 To create a super user you will have to connect directly to the machine in order to run ./manage.py createsuperuser.
@@ -158,6 +157,7 @@ source ./env
 cd /app
 ./manage.py createsuperuser
 ```
+> Check: You can access the aws.ip/admin and go through now with your newly created superadmin
 
 ### Debug
 ```bash
