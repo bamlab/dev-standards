@@ -40,6 +40,10 @@
 
 - Fix the potential conflict : see https://facebook.github.io/react-native/docs/upgrading.html#4-resolve-the-conflicts
 
+- If other modules or librairies have to be updated for compatibility reasons, update them following the upgrade native module steps.
+
+- Once the React Native upgrade is completed, follow the tests steps (simulator and device) to perform one upgrade at a time.
+
 ### Upgrade native modules (~10 mins per native module)
 
 > Note: React Native may cause major breaking changes:
@@ -87,3 +91,10 @@
 ### Fix tests
 
 // @todo : Tycho
+
+### Deploy and test on device
+
+- Once you have tested that everything is working fine on both iOS and Android, deploy on device (do not merge your branch)
+- Run the command to hard deploy from your branch to hockeyapp
+- Test that everything is working fine on devices
+- If everything is correct, merge and soft deploy
