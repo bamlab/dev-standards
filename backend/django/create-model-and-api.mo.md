@@ -49,7 +49,7 @@ class News(models.Model):
   external use. However here, News is a singular/plural english name, so we need to make sure Django does not add a
   second 's' (Newss) by overriding `verbose_name_plural`
 
-* Finally, make your migrations and migrate. To do this run the following commands in your shell :
+* Finally, make your migrations and migrate. To do this run the following commands in your shell:
 
 ```shell
 python3 manage.py makemigrations
@@ -58,17 +58,18 @@ python3 manage.py migrate
 
 or adapt the previous commands, if you run your project with docker.
 
-- Here is an article that goes into more detail [How to Create Django Data Migrations](https://simpleisbetterthancomplex.com/tutorial/2017/09/26/how-to-create-django-data-migrations.html)
+> **Note**: Here is an article that goes into more detail [How to Create Django Data Migrations](https://simpleisbetterthancomplex.com/tutorial/2017/09/26/how-to-create-django-data-migrations.html)
 
 #### What you can check!
-- You can now check that the migrations are run and that the model exists in the database:
+- [ ] You can now check that the migrations are run and that the model exists in the database:
 
 ```bash
 python3 manage.py showmigrations
 ```
 
-- You should see the last migration in the list.
-- You could also go in the database and check that the table has been created:
+- [ ] You should see the last migration in the list.
+- [ ] You could also go in the database and check that the table has been created:
+
 ```
 python3 manage.py dbshell
 ```
@@ -93,7 +94,19 @@ def add_model_permissions(group, model, ContentType, Permission):
     permissions = Permission.objects.filter(content_type=content_type)
     for permission in permissions:
         group.permissions.add(permission)
+```
 
+- You can than create a migration to add the groups permissions when the migrations are run
+- Create an empty migration:
+
+```bash
+python manage.py makemigrations --empty users
+```
+
+- Then fill in your migration like so:
+
+```python
+from django.db import migrations
 
 # This function takes the model News and adds the permissions to the group Mayor Admin
 def add_group_permissions(sender, using, apps, **kwargs):
@@ -109,19 +122,26 @@ def add_group_permissions(sender, using, apps, **kwargs):
         group = Group.objects.using(using).create(name='Mayor Admin')
     add_model_permissions(group, News, ContentType, Permission) #Add this second line
 
+class Migration(migrations.Migration):
 
-class UsersConfig(AppConfig):
-    name = 'our_django_project.users'
-    verbose_name = "Users"
+    dependencies = [
+        ('users', '0001_initial'),
+    ]
 
-    # Call the add_groups_permissions after the migrations are run
-    def ready(self):
-        post_migrate.connect(add_group_permissions, sender=self)
+    operations = [
+        migrations.RunPython(add_group_permissions),
+    ]
+```
+
+- Then run
+
+```bash
+python manage.py migrate
 ```
 
 #### What you can check!
-- Create a new user that will be part of the mayor admin group.
-- Connect yourself as the mayor and check that you can create pieces of news.
+- [ ] Create a new user that will be part of the mayor admin group.
+- [ ] Connect yourself as the mayor and check that you can create pieces of news.
 
 
 ### Add the News model to the admin _(~5 min)_
@@ -152,16 +172,15 @@ Without `list_display`:
 With `list_display`:
 ![](https://user-images.githubusercontent.com/30256638/32740159-50ac5a40-c8a2-11e7-8b9e-89db21193896.png)
 
-You can learn how to add other configuration to your admin by reading the
-[official documentation](https://docs.djangoproject.com/en/1.11/ref/contrib/admin/#modeladmin-options)
-
 #### What you can check!
-You can now check that the titles on the admin interface have changed.
+- [ ] You can now check that the titles on the admin interface have changed.
 
+> **Note**: you can learn how to add other configuration to your admin by reading the
+[official documentation](https://docs.djangoproject.com/en/1.11/ref/contrib/admin/#modeladmin-options)
 
 ### Serialize the News you get from the database _(~5 min)_
 
-* Serializers translates Django models into other formats, generally text-based formats. In our project want to get a JSON response. Check out the [official Django doc](https://docs.djangoproject.com/en/1.11/topics/serialization/) for more info.
+* Serializers translates Django models into other formats(json, xml). In our project want to get a JSON response. Check out the [official Django doc](https://docs.djangoproject.com/en/1.11/topics/serialization/) for more info.
 
 ```python
 # File: "our_django_project/publications/serializers.py"
@@ -180,8 +199,9 @@ class NewsSerializer(serializers.HyperlinkedModelSerializer):
 
 ### Create a News ViewSet _(~5 min)_
 
-@ what is it ? what the goal.
-[](http://www.django-rest-framework.org/api-guide/viewsets/)
+- ViewSets will allow you to concentrate on modeling the state and interactions of the API, and leave the URL construction to be handled automatically
+
+> **Note**: Check out the Django doc for more info [ViewSets](http://www.django-rest-framework.org/api-guide/viewsets/)
 
 ```python
 # File: "our_django_project/publications/viewsets.py"
@@ -209,9 +229,11 @@ class NewsViewSet(FilterByCity, viewsets.ModelViewSet):
 
 * The NewsViewSet class will now inherit both classes FilterByCity viewsets.ModelViewSet from right to left. Therefore, the FilterByCity get_queryset method will override the ModelViewSet one.
 
+> **Note**: You can also use automatically generated filters ([have a look here](http://www.django-rest-framework.org/api-guide/filtering/#generic-filtering))
+
 ### Mount the `News` ViewSet to an endpoint using a router _(~5 min)_
 
-* Create a route for the ViewSet.
+* Django routers will allow you to easily generate different routes from your ViewSet (GET, POST, ...)
 
 ```python
 # File: "our_django_project/config/router.py"
@@ -228,11 +250,13 @@ router.register(r'locations/cities', CityViewSet)
 router.register(r'publications/news', NewsViewSet)    #Add this one too
 ```
 
+> **Note**:Here is the [Django doc](http://www.django-rest-framework.org/api-guide/routers) if you want to learn more about Django routers
+
 #### What you can check!
 
 * You are good to go! :D
 
-* If you go on this url: `HOST/publications/news/` you should get something like this:
+- [ ] If you go on this url: `HOST/publications/news/` you should get something like this:
 
 ```json
 [
@@ -263,7 +287,7 @@ router.register(r'publications/news', NewsViewSet)    #Add this one too
 ]
 ```
 
-* If you go on this url: `HOST/publications/news/?city-id=5` (that is filtered) you should get something like this:
+- [ ] If you go on this url: `HOST/publications/news/?city-id=5` (that is filtered) you should get something like this:
 
 ```json
 [
