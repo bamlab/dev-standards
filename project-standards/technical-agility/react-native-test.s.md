@@ -171,6 +171,7 @@ A more interesting test to do is to test the saga effect on the state:
 
 ```javascript
 // Test
+import * as matchers from 'redux-saga-test-plan/matchers';
 import reducer from '../reducer';
 
 it('should set the favorite books by type in the store', () => {
