@@ -1,22 +1,24 @@
 # [MO] Upgrade react native
 
-## Owner:
-
-- [Emilien Chauvet](https://github.com/emilienchvt)
-- [Tycho Tatitscheff](https://github.com/tychota)
+## Owner: [Tycho Tatitscheff](https://github.com/tychota)
 
 ## Prerequisites
 
 - Be sure that all the react native warnings have been fixed by looking at the native logs in Xcode / Android Studio, and React Native Debugger console.
 - Have [react-native-git-upgrade](https://github.com/facebook/react-native/tree/master/react-native-git-upgrade) installed
 
+## Warning
+
+If you are late by several versions do them one at a time. Upgrading several version at a time (like from 0.42 to 0.46) can create a lot of complication, because React Native changes many javascript and native dependencies that also impact your code and its structure. If you do one version at a time, you are sure to be able to more quickly give a working version with a slightly newer version (like from 0.42 to 0.43, etc.) that you tested on both Android and iOS.
+
+
 ## Steps (~12min)
 
 ### Create a new branch (~1 min)
 
 - Stash the existing modifications by running `git stash`
-- Create a new branch by running `git checkout -b upgrade/react-native-0-XX-0
-`
+- Create a new branch by running `git checkout -b upgrade/react-native-0-XX-0`
+
 > **Checks**: when running `git status`, you have no untracked or no modified files
 
 ### Look at the breaking changes of your new release
@@ -98,3 +100,10 @@
 - Run the command to hard deploy from your branch to hockeyapp
 - Test that everything is working fine on devices
 - If everything is correct, merge and soft deploy
+
+## Troubleshooting
+
+
+If this is taking too long you can create a new React Native project from scratch with `react-native init` and import and re-install all your javascript and native parts (CocoaPods, linking, etc.).
+
+There can also be cache issues (with yarn or gradle for instance) so if your project doesn't take long to be cloned you can clone a new instance of your project if you're stuck.
