@@ -27,6 +27,8 @@ we help him solve his problem and then together write either a [Standard] or a [
 ### Django
 - [[MO] Get started with Django](/backend/django/getting-started.mo.md)
 - [[MO] Create complex user models wih Django](/backend/django/create-user-model.mo.md)
+- [[MO] How to deploy your Django back-end to AWS](/backend/django/deploy-to-aws.mo.md)
+- [[MO] Create a model and an api route](/backend/django/create-model-and-api.mo.md)
 
 ### GraphQL JS
 - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
@@ -65,6 +67,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
 - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
 - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
+- [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
