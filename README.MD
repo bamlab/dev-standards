@@ -36,6 +36,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 ## Code Quality
 - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
 - [[Standard] Pull Request Template](/code-quality/pull-request-template.s.md)
+- [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
 
 ## Flowtype
 

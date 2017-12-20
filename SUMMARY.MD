@@ -15,6 +15,7 @@
     - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
+  - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
 - Flowtype
  - [[Standard] Flowtype](/flowtype/flowtype.s.md)
 - Project Standards
