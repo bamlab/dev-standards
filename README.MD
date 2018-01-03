@@ -85,7 +85,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 ### React
 - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
 - [[MO] Trigger an action on props update](/react-native/react/trigger-action-on-props-update.mo.md)
-
+- [[MO] Handle screen orientation](/react-native/react/screen-orientation.mo.md)
 ### Redux
 
 - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
