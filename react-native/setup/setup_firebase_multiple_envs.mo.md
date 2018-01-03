@@ -5,7 +5,7 @@
 ## Prerequisites *(~30min)*
 
 - [ ] An Android or iOS app with the Firebase SDK installed
-   - For React Native apps, you can use [`react-native-firebase`](https://github.com/invertase/react-native-firebase)
+   - For React Native apps, you can use [`react-native-firebase`](https://github.com/invertase/react-native-firebase). Read the installation documentation for [iOS](https://rnfirebase.io/docs/v3.1.*/analytics/ios) and [Android](https://rnfirebase.io/docs/v3.1.*/analytics/android) (which needs a few extra installation step).
 
 ## Steps *(~30min)*
 
