@@ -237,6 +237,56 @@
         "blog",
         "review"
       ]
+    },
+    {
+      "login": "orta",
+      "name": "Orta",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/49038?v=4",
+      "profile": "http://orta.io",
+      "contributions": [
+        "doc",
+        "ideas"
+      ]
+    },
+    {
+      "login": "taboulot",
+      "name": "Clément",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9041221?v=4",
+      "profile": "https://github.com/taboulot",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "emilienchvt",
+      "name": "emilienchvt",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/18351439?v=4",
+      "profile": "https://github.com/emilienchvt",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "pleportz",
+      "name": "Pierre-Louis Le Portz",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/20668374?v=4",
+      "profile": "https://github.com/pleportz",
+      "contributions": [
+        "blog",
+        "review"
+      ]
+    },
+    {
+      "login": "Samox",
+      "name": "Sammy Teillet",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6906559?v=4",
+      "profile": "https://github.com/Samox",
+      "contributions": [
+        "blog",
+        "review"
+      ]
     }
   ]
 }
