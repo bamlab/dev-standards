@@ -61,19 +61,21 @@ or adapt the previous commands, if you run your project with docker.
 > **Note**: Here is an article that goes into more detail [How to Create Django Data Migrations](https://simpleisbetterthancomplex.com/tutorial/2017/09/26/how-to-create-django-data-migrations.html)
 
 #### What you can check!
-- [ ] You can now check that the migrations are run and that the model exists in the database:
+
+> **CHECK 1**: You can now check that the migrations are run and that the model exists in the database:
 
 ```bash
 python3 manage.py showmigrations
 ```
 
-- [ ] You should see the last migration in the list.
-- [ ] You could also go in the database and check that the table has been created:
+> **CHECK 1**: You should see the last migration in the list.
+> **CHECK 2**: You could also go in the database and check that the table has been created:
 
 ```
 python3 manage.py dbshell
 ```
-- In the shell display the table (in case of psql `\d`) and check the existence of your model. More info [here](https://docs.djangoproject.com/en/2.0/ref/django-admin/#dbshell)
+
+* In the shell display the table (in case of psql `\d`) and check the existence of your model. More info [here](https://docs.djangoproject.com/en/2.0/ref/django-admin/#dbshell)
 
 ### Add permissions to a group _(~10 min)_
 
@@ -96,14 +98,14 @@ def add_model_permissions(group, model, ContentType, Permission):
         group.permissions.add(permission)
 ```
 
-- You can than create a migration to add the groups permissions when the migrations are run
-- Create an empty migration:
+* You can then create a migration to add the groups permissions when the migrations are run
+* Create an empty migration:
 
 ```bash
 python manage.py makemigrations --empty users
 ```
 
-- Then fill in your migration like so:
+* Then fill in your migration like so:
 
 ```python
 from django.db import migrations
@@ -133,16 +135,16 @@ class Migration(migrations.Migration):
     ]
 ```
 
-- Then run
+* Then run
 
 ```bash
 python manage.py migrate
 ```
 
 #### What you can check!
-- [ ] Create a new user that will be part of the mayor admin group.
-- [ ] Connect yourself as the mayor and check that you can create pieces of news.
 
+> **CHECK 1**: Create a new user that will be part of the mayor admin group.
+> **CHECK 2**: Connect yourself as the mayor and check that you can create pieces of news.
 
 ### Add the News model to the admin _(~5 min)_
 
@@ -173,10 +175,11 @@ With `list_display`:
 ![](https://user-images.githubusercontent.com/30256638/32740159-50ac5a40-c8a2-11e7-8b9e-89db21193896.png)
 
 #### What you can check!
-- [ ] You can now check that the titles on the admin interface have changed.
+
+> **CHECK1**: You can now check that the titles on the admin interface have changed.
 
 > **Note**: you can learn how to add other configuration to your admin by reading the
-[official documentation](https://docs.djangoproject.com/en/1.11/ref/contrib/admin/#modeladmin-options)
+> [official documentation](https://docs.djangoproject.com/en/1.11/ref/contrib/admin/#modeladmin-options)
 
 ### Serialize the News you get from the database _(~5 min)_
 
@@ -199,7 +202,7 @@ class NewsSerializer(serializers.HyperlinkedModelSerializer):
 
 ### Create a News ViewSet _(~5 min)_
 
-- ViewSets will allow you to concentrate on modeling the state and interactions of the API, and leave the URL construction to be handled automatically
+* ViewSets will allow you to concentrate on modeling the state and interactions of the API, and leave the URL construction to be handled automatically
 
 > **Note**: Check out the Django doc for more info [ViewSets](http://www.django-rest-framework.org/api-guide/viewsets/)
 
@@ -256,7 +259,7 @@ router.register(r'publications/news', NewsViewSet)    #Add this one too
 
 * You are good to go! :D
 
-- [ ] If you go on this url: `HOST/publications/news/` you should get something like this:
+> **CHECK 1**: If you go on this url: `HOST/publications/news/` you should get something like this:
 
 ```json
 [
@@ -287,7 +290,7 @@ router.register(r'publications/news', NewsViewSet)    #Add this one too
 ]
 ```
 
-- [ ] If you go on this url: `HOST/publications/news/?city-id=5` (that is filtered) you should get something like this:
+> **CHECK 1**: If you go on this url: `HOST/publications/news/?city-id=5` (that is filtered) you should get something like this:
 
 ```json
 [
