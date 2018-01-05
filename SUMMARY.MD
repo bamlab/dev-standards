@@ -48,6 +48,7 @@
     - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
   - React
     - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
+    - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
   - Redux
     - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
     - [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
