@@ -37,6 +37,7 @@
     - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
     - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
     - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
+    - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
   - Architecture
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)

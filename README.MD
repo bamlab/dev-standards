@@ -68,6 +68,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
 - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
 - [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
+- [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
