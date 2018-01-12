@@ -1,5 +1,7 @@
 # [MO] Create a model and an api route (~40 mins)
 
+* In this tutorial we will create a News model, add it to the Django admin back-office and create a GET API route.
+
 ## Owner: [Alice Breton](https://github.com/AliceB08)
 
 ## Prerequisites (~45 mins)
@@ -16,8 +18,15 @@
 
 ### Create a News model _(~10 min)_
 
-* In this example we will create a new model called `News` that has different attributes as you will see bellow. In the
-  _models.py_ file of your app (in our case `Publications`) create a new model.
+* In this example we will create a new model called `News` that has different attributes as you will see bellow.
+
+- Create a new `publications` app with the following command if you don't already have an app:
+
+```bash
+python manage.py startapp publications
+```
+
+* In the _models.py_ file of your app (in our case `publications`) create a new model.
 
 ```python
 # File: "our_django_project/publications/models.py"
@@ -177,6 +186,12 @@ With `list_display`:
 #### What you can check!
 
 > **CHECK1**: You can now check that the titles on the admin interface have changed.
+
+```bash
+python manage.py creatsuperuser
+```
+
+> > > > > > > Stashed changes
 
 > **Note**: you can learn how to add other configuration to your admin by reading the
 > [official documentation](https://docs.djangoproject.com/en/1.11/ref/contrib/admin/#modeladmin-options)
