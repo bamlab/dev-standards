@@ -69,6 +69,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
 - [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
 - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
+- [[MO]Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
