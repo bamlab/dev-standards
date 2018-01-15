@@ -12,7 +12,7 @@
 
 ## Impact
 
-- A lack of tests will put in jeopardy the 4 points listed above.
+- A lack of tests will put in jeopardy the 5 points listed above.
 
 ## Checks
 
