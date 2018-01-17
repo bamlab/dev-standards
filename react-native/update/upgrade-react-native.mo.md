@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- Be sure that all the react native warnings have been fixed by looking at the native logs in Xcode / Android Studio, and React Native Debugger console.
+- Be sure that all the react native warnings have been fixed by looking at the native logs in the React Native Debugger console.
 - Have [react-native-git-upgrade](https://github.com/facebook/react-native/tree/master/react-native-git-upgrade) installed
 
 ## Warning
