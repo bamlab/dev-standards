@@ -102,6 +102,9 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Add icon(s) with icomoon](/react-native/features/icomoon.mo.md)
 - [[MO] Preloading MobX data with AsyncStorage](/react-native/features/asyncstorage.mo.md)
 
+### Package Dependencies
+- [[MO] Handle dependencies with Yarn override](/react-native/package-dependencies/handle-dependencies-with-yarn-override.mo.md)
+
 ### React-Navigation
  - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
 
