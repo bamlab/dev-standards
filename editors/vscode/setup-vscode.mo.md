@@ -36,6 +36,7 @@ Open the plugins menu and install:
 - Add the following:
 ```json
 "editor.tabSize": 2,
+"editor.formatOnSave": true,
 "files.insertFinalNewline": true,
 "flow.useNPMPackagedFlow": true,
 "workbench.iconTheme": "vs-seti",
