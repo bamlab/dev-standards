@@ -112,6 +112,9 @@ we help him solve his problem and then together write either a [Standard] or a [
 ### React-Navigation
  - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
 
+### Firebase
+- [[MO] Good practices to debug events in Firebase](/react-native/firebase/debug-events.mo.md)
+
 ## Editors
 
 ### Visual Studio Code

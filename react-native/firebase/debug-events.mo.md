@@ -1,4 +1,4 @@
-# [Standard] Good practices to track events in Firebase
+# [MO] Good practices to debug events in Firebase
 
 ## Owner: [Thomas Pucci](https://github.com/tpucci)
 
@@ -9,8 +9,10 @@
 
 ## Scrum
 
-* You should have one ticket to send the event to Firebase which your PO will validate with a screenshot.
-* You should have a second ticket to track your event and its parameters on Firebase and save it (this ticket is dependant of the previous one and **can be treated one day after the first ticket is completed**).
+Validating events tracking with Firebase should be done with two tickets:
+
+1. You should have one ticket to send the event to Firebase which your PO will validate with a screenshot.
+2. You should have a second ticket to track your event and its parameters on Firebase and save it (this ticket is dependant of the previous one and **can be treated one day after the first ticket is completed**).
 
 _Example:_
 
@@ -20,7 +22,7 @@ _Example:_
 
 ### Set up your device in debug mode (10min)
 
-Choose to start with either Android or iOS. Once you've finished with an OS, swith to the other.
+Choose to start with either Android or iOS. Once you've finished with an OS, switch to the other.
 
 #### iOS
 
@@ -138,7 +140,7 @@ Either stash your changes on `<your_project>.xcodeproj` or do the following:
 
 #### Android
 
-1. Run your simulator or connect your device.
+1. Reload the app in your simulator or your device.
 
 > **Check**: running the command `adb devices` in your shell should display your device ID.
 >
