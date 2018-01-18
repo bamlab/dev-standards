@@ -8,7 +8,12 @@
 
 During this standard, we will go through how to handle versions dependencies of different packages to a same package.
 
-If some package doesn't use same versions of a package, depending of the order it will be called, it won't be the same version of package used. We want to ensure that the same version is used everywhere in the app. Normally this would require to manually edit `yarn.lock` file, but it is really bad because this file is deleted each time you install a new package or run a yarn command. By chance, yarn has a feature override, which allows us to fix those versions dependencies.
+If some package doesn't use same versions of a package, depending of the order it will be called, it won't be the same version of package used.
+We want to ensure that the same version is used everywhere in the app.
+
+Normally this would require to manually edit `yarn.lock` file, but it is really bad because this file is deleted each time you install a new package or run a yarn command.
+
+By chance, yarn has a feature override, which allows us to fix those versions dependencies.
 
 ## Prerequisites
 
@@ -20,13 +25,14 @@ If some package doesn't use same versions of a package, depending of the order i
 
 ### Figure out a problem
 
-* Identify the case: 
-  * there is a regression in the app (in my case `moment.locale()` was not working anymore)
-  * you just install a new package (I just installed `react-native-datepicker`)
+* Identify the case:
+  * you just installed a new package (I just installed `react-native-datepicker`) and there is a regression in the app (in my case `moment.locale()` was not working anymore)
+  * you're trying to set a parameter of a package (e.g. the default locale of `moment`) but it's not taken into account by another package
 * Then open `yarn.lock`:
   * look for your newly installed package
   * look for this package dependencies:
-  
+
+
 ```
 react-native-datepicker@^1.6.0:
 react-native-datepicker@^1.6.0:
@@ -67,14 +73,29 @@ moment-timezone@^0.5.13:
 
 ### Solve the problem
 
-* In `package.json` file, add a section 'resolutions' under 'dependencies' section.
-* Specify to which version of `moment` depend the two packages, choose same version number for both: 
+* In `package.json` file, add a section 'resolutions' at the same level as the 'dependencies' section.
+* Specify to which version of `moment` depend the two packages, choose same version number for both:
 
 ```json
+"dependencies": {
+  ...
+},
 "resolutions": {
   "react-native-datepicker/moment": "2.19.1",
   "moment-timezone/moment": "2.19.1"
 },
+```
+
+* If the package is a dependency of your app, you'll need to set its version in the `package.json`:
+
+```json
+"dependencies": {
+  "moment": "2.19.1"
+},
+"resolutions": {
+  "react-native-datepicker/moment": "2.19.1",
+  "moment-timezone/moment": "2.19.1"
+}
 ```
 
 * Run `yarn install`.
@@ -86,14 +107,12 @@ moment@2.19.1, moment@2.x.x, "moment@>= 2.9.0", moment@^2.19.0:
   version "2.19.1"		
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.1.tgz#56da1a2d1cbf01d38b7e1afc31c10bcfa1929167"
 ```
-   
-   which means that every dependencie to `moment` is resolved to a same version (here 2.19.1). 
+  
+which means that every package depending on `moment` is resolved to a same version (here 2.19.1).
 
-> **CHECK 2**: Your app should works correctly now, regression should be solved. `moment` dependencies are solved. 
+> **CHECK 2**: Your app should works correctly now, regression should be solved. `moment` dependencies are solved.
 
 
 ## Troubleshooting
 
 - Yarn documentation : https://yarnpkg.com/en/docs/selective-version-resolutions
- 
-
