@@ -61,6 +61,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.mo.md)
 - [[MO] Setup & Deploy New Project to Staging with HockeyApp (Deprecated)](/react-native/setup/setup-and-deploy-new-project-to-staging-with-hockeyapp.mo.md)
 - [[MO] Deploy Project to Production - Only iOS Testflight](/react-native/setup/deploy-project-to-production.md)
+- [[MO] Deploy Project to Production - Android Play Store](/react-native/setup/deploy-to-production-android.mo.md)
 - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
 - [[MO] Add a deploy script to your app](/react-native/setup/deploy-script.mo.md)
 - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
