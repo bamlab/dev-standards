@@ -30,8 +30,7 @@ By chance, yarn has a feature override, which allows us to fix those versions de
   * you're trying to set a parameter of a package (e.g. the default locale of `moment`) but it's not taken into account by another package
 * Then open `yarn.lock`:
   * look for your newly installed package
-  * look for this package dependencies:
-
+     \* look for this package dependencies:
 
 ```
 react-native-datepicker@^1.6.0:
@@ -47,13 +46,13 @@ react-native-datepicker@^1.6.0:
   * if another package depends on it but in another version, several lines for `moment` will appear:
 
 ```
-"moment@2.x.x":		 
-  version "2.20.1"		
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"		
+"moment@2.x.x":
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
 
-"moment@>= 2.9.0":		
-  version "2.18.1"		
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"		
+"moment@>= 2.9.0":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
 moment@^2.19.0:
   version "2.19.1"
@@ -69,7 +68,6 @@ moment-timezone@^0.5.13:
   dependencies:
     moment ">= 2.9.0"
 ```
-      
 
 ### Solve the problem
 
@@ -100,19 +98,26 @@ moment-timezone@^0.5.13:
 
 * Run `yarn install`.
 
-> **CHECK 1**: Check your yarn.lock file, `moment` should appears in only one line:
+{% hint style='info' Check 1%}
 
-```
+Check your yarn.lock file, `moment` should appears in only one line:
+
+```txt
 moment@2.19.1, moment@2.x.x, "moment@>= 2.9.0", moment@^2.19.0:
-  version "2.19.1"		
+  version "2.19.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.1.tgz#56da1a2d1cbf01d38b7e1afc31c10bcfa1929167"
 ```
-  
+
 which means that every package depending on `moment` is resolved to a same version (here 2.19.1).
 
-> **CHECK 2**: Your app should works correctly now, regression should be solved. `moment` dependencies are solved.
+{% endhint %}
 
+{% hint style='info' Check 2%}
+
+Your app should works correctly now, regression should be solved. `moment` dependencies are solved.
+
+{% endhint %}
 
 ## Troubleshooting
 
-- Yarn documentation : https://yarnpkg.com/en/docs/selective-version-resolutions
+* Yarn documentation : https://yarnpkg.com/en/docs/selective-version-resolutions
