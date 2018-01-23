@@ -98,7 +98,7 @@ moment-timezone@^0.5.13:
 
 * Run `yarn install`.
 
-{% hint style='info' Check 1%}
+{% hint style='working' %} **CHECK 1**
 
 Check your yarn.lock file, `moment` should appears in only one line:
 
@@ -112,7 +112,7 @@ which means that every package depending on `moment` is resolved to a same versi
 
 {% endhint %}
 
-{% hint style='info' Check 2%}
+{% hint style='working'%} **CHECK 2**
 
 Your app should works correctly now, regression should be solved. `moment` dependencies are solved.
 
