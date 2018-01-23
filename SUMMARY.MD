@@ -53,7 +53,7 @@
     - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
   - Redux
     - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
-    - [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
+    - [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
   - Features
     - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
     - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
