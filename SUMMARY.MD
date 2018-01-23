@@ -39,6 +39,7 @@
     - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
     - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
     - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
+    - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
   - Architecture
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
