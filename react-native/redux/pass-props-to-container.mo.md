@@ -39,7 +39,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Todo);
 
 This is a standard container, with a selector giving access to a list of events to the component and an action to create a todo event.
 
-{% hint style='info' %} **CHECK** 
+{% hint style='info' %}  
 
 But what if you want to give a specific behavior to your container ? For example enabling the adding of an event only if the todo is editable ? Or seeing only a limited number of events depeding on the rights of your user ? You can give props to your container ! Let's see how :
 
