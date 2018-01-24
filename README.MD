@@ -93,6 +93,8 @@ we help him solve his problem and then together write either a [Standard] or a [
 
 - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
 - [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
+- [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
+- [[MO] Pass props to a container](/react-native/redux/pass-props-to-container.mo.md)
 
 ### Features
 
