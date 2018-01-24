@@ -70,6 +70,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
 - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
 - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
+- [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
