@@ -28,7 +28,11 @@ Choose to start with either Android or iOS. Once you've finished with an OS, swi
 
 1. in Xcode, edit the product's scheme.
 
-{% hint style='info' %} Go in **Product**, **Scheme ▶**, **Edit Scheme... ⌘<** or use the shortcut **⌘<**. {% endhint %}
+{% hint style='info' %}
+
+Go in **Product**, **Scheme ▶**, **Edit Scheme... ⌘<** or use the shortcut **⌘<**.
+
+{% endhint %}
 
 2. In the left menu, select **Run**. Select the **Arguments** tab.
 3. In the **Arguments passed on launch** section, click the **+** icon (_Add items_).
@@ -132,7 +136,11 @@ Either stash your changes on `<your_project>.xcodeproj` or do the following:
 
 1. in Xcode, edit the product's scheme.
 
-{% hint style='info' %} Go in **Product**, **Scheme ▶**, **Edit Scheme... ⌘<** or use the shortcut **⌘<**. {% endhint %}
+{% hint style='info' %}
+
+Go in **Product**, **Scheme ▶**, **Edit Scheme... ⌘<** or use the shortcut **⌘<**.
+
+{% endhint %}
 
 2. In the left menu, select **Run**. Select the **Arguments** tab.
 3. In the **Arguments passed on launch** section, remove `-FIRDebugEnabled` click the **+** icon (_Add items_).
