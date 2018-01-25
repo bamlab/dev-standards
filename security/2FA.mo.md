@@ -1,6 +1,6 @@
 # [MO] 2-Factor Authentication (2FA) *(~15 min)*
 
-## Owner: Louis Lagrange
+## Owner: [Louis Lagrange](https://github.com/Minishlink)
 
 ## Prerequisites *(~3 min)*
 

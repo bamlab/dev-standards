@@ -1,11 +1,16 @@
 # [MO] Setup Firebase on iOS/Android with multiple environments *(~1h)*
 
-## Owner: Louis Lagrange
+## Owner: [Louis Lagrange](https://github.com/Minishlink)
 
 ## Prerequisites *(~30min)*
 
 - [ ] An Android or iOS app with the Firebase SDK installed
-   - For React Native apps, you can use [`react-native-firebase`](https://github.com/invertase/react-native-firebase)
+
+  - For React Native apps, you can use [`react-native-firebase`](https://github.com/invertase/react-native-firebase):
+    - [iOS](https://rnfirebase.io/docs/v3.2.x/installation/ios)
+    - [Android](https://rnfirebase.io/docs/v3.1.*/installation/android)
+- Be careful, when you're using specific modules of firebase, like analytics, you may have to add some `compile` to the `gradle` and some external pods
+
 
 ## Steps *(~30min)*
 

@@ -9,10 +9,13 @@
   - Django
     - [[MO] Get started with Django](/backend/django/getting-started.mo.md)
     - [[MO] Create complex user models wih Django](/backend/django/create-user-model.mo.md)
+    - [[MO] How to deploy your Django back-end to AWS](/backend/django/deploy-to-aws.mo.md)
+    - [[MO] Create a model and an api route](/backend/django/create-model-and-api.mo.md)
   - GraphQL JS
     - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
+  - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
 - Flowtype
  - [[Standard] Flowtype](/flowtype/flowtype.s.md)
 - Project Standards
@@ -28,11 +31,16 @@
     - [[Standard] Good practices to resolve a ticket](/successful-sprint/coding/plan-your-ticket-to-improve-efficency.s.md)
 - React Native
   - Setup
+    - [[MO] Adding a native module](/react-native/setup/add-native-module.mo.md)
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
     - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
     - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
     - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
+    - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
+    - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
+    - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
+    - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
   - Architecture
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
@@ -41,16 +49,27 @@
     - [[MO] Debug Native Android Code](/react-native/debugging/debug-native-android.mo.md)
     - [[MO] Debug Native iOS Code](/react-native/debugging/debug-native-ios.mo.md)
     - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
+    - [[MO] Debug a React Native WebView](/react-native/debugging/debug-webviews.mo.md)
+    - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
   - React
     - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
+    - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
   - Redux
     - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
-    - [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
+    - [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
+    - [[MO] Pass props to a container](/react-native/redux/pass-props-to-container.mo.md)
   - Features
     - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
     - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
     - [[MO] Preloading MobX data with AsyncStorage](/react-native/features/asyncstorage.mo.md)
-  - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
+  - Package Dependencies
+    - [[MO] Handle dependencies with Yarn override](/react-native/package-dependencies/handle-dependencies-with-yarn-override.mo.md)
+  - Update
+    - [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
+  - React Navigation
+    - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
+  - Firebase
+    - [[MO] Good practices to debug events in Firebase](/react-native/firebase/debug-events.mo.md)
 - Editors
   - Visual Studio Code
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)

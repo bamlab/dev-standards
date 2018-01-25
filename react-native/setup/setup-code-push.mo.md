@@ -1,6 +1,6 @@
 # [MO] Install CodePush on your project *(~1h)*
 
-## Owner: Louis Lagrange
+## Owner: [Louis Lagrange](https://github.com/Minishlink)
 
 ## Prerequisites *(~2min)*
 

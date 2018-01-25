@@ -53,6 +53,8 @@ bundle exec fastlane ios setup --env=production
 bundle exec fastlane ios deploy --env=production
 ```
 
+If there is an error due to icons, [check this doc](https://github.com/bamlab/generator-rn-toolbox/blob/master/generators/assets/README.md#generate-icons)
+
 ### 6. See your app available on Testflight internal testing
 - Wait: processing from Apple (can see the status in iTunes Connect > Your App > Activity)
 - Your app should be "green" for iTunes Connect Users: iTunes Connect > Your App > Testflight

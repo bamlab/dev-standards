@@ -19,3 +19,7 @@
 
 ## Good Examples
 *TBD*
+
+## Upgrading React Native
+
+React Native is very probably the dependency you'll have to upgrade the more often so we felt it was worth dedicating a [whole article](../../react-native/update/upgrade-react-native.mo.md) to it.

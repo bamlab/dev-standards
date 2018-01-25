@@ -25,7 +25,7 @@ for (let moFile of moFiles) {
     fail(`**${fileUrl}**: MO doesn't have a *Steps* part, how could you call this an MO?`);
   if (!fileContent.match(/## Troubleshooting/)) warn(`**${fileUrl}**: Seems you do not need a *Troubleshoot* part`);
   if (!readmeContent.match(moFile)) warn(`**${fileUrl}**: Does not seem to be included in the root readme`);
-  if (!summaryContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
+  if (!summaryContent.match(moFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
 }
 
 for (let standardFile of standardFiles) {
@@ -42,6 +42,19 @@ for (let standardFile of standardFiles) {
   if (!fileContent.match(/Good Examples?/i)) fail(`**${fileUrl}**: You failed to mention a *Good Examples* `);
   if (!readmeContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root readme`);
   if (!summaryContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
+}
+
+if (moFiles.length === 0 && standardFiles.length === 0) {
+  fail(`What have you modified ? No \`*.s.md\` and no \`*.mo.md\` files`);
+  markdown(`
+  ## What have you modified ?  No \`*.s.md\` and no \`*.mo.md\` files
+
+- Your standard files should be \`*.s.md\`
+- Your method of operation should be \`*.mo.md\`
+
+The modified files are:
+${changedFiles.map(file => `- \`${file}\`\n`)}
+`);
 }
 
 const codeowners = fs.readFileSync(".github/CODEOWNERS", "utf8").split("\n");
