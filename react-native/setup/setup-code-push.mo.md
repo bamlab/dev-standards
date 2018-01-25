@@ -28,20 +28,27 @@ Here's an example on **redacted** app, where we enabled it on staging in order t
 
 ## Steps
 
+Lookup the compatible version (we'll name it `<your.version>`) in the [compatibility table](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms).
+
 ### 1. Install code-push cli *(~1 min)*
 
 ```bash
 npm install -g code-push-cli
+# ⚠️ If you use AppCenter:
+# npm install -g appcenter-cli
 ```
 
 *Check:* `code-push -v` should give you a version.
+*Check:* ⚠️ If you use AppCenter: `appcenter -v` should give you a version.
 
-### 2. Login into code-push *(~4 min)*
+### 2. Login into code-push / AppCenter *(~4 min)*
 
 Login into GitHub with bam developers account. In your terminal:
 
 ```bash
 code-push register
+# ⚠️ If you use AppCenter:
+# appcenter login
 ```
 
 and finish the login process using GitHub.
@@ -50,22 +57,38 @@ and finish the login process using GitHub.
 
 ### 3. Install the react-native module *(~5 min)*
 
-Lookup the compatible version (we'll name it `<your.version>`) in the [compatibility table](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms).
-
 ```bash
 # Add the npm dependency
 yarn add react-native-code-push@<your.version>
+
 # Register your Android app
 code-push app add <MyApp>-android android react-native
 # Save the Staging token for later use
+# ⚠️ If you use AppCenter:
+# appcenter codepush deployment add -a <owner>/<MyApp>-android Staging
+
 # Register your iOS app
 code-push app add <MyApp>-ios ios react-native
 # Save the Staging token for later use
+# ⚠️ If you use AppCenter:
+# appcenter codepush deployment add -a <owner>/<MyApp>-ios Staging
+
+# ⚠️ If you use AppCenter, you can retreive your tokens with these commands
+# appcenter codepush deployment list -a <owner>/<MyApp>-android Staging
+# appcenter codepush deployment list -a <owner>/<MyApp>-ios Staging
+
 # Link the native modules. Paste your Staging tokens when prompted.
 react-native link react-native-code-push
 ```
 
 *Check:* your app should build with the binary CodePush modules. The deploy keys are present in `Info.plist` and in `MainApplication.java`.
+
+### ⚠️ For react-native-code-push@5.1+
+
+React-native `link` command adds a pod in your pod file. You can either:
+
+- install the pod using `pod install`.
+- or if this pod conflicts with other pods, delete the added line in your `PodFile`. In this case, you can commit everything else. Then, follow Microsoft tutorial [here](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#plugin-installation-ios---manual), paragraph **Plugin Installation (iOS - Manual)**.
 
 ### 4. Update your code *(~35 min)*
 
