@@ -98,3 +98,30 @@ And then you can remove all the other permissions:
 +    <uses-permission tools:node="remove" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 ```
+
+## Troubleshooting
+
+If you've never built your Android app before (e.g. newcomer or after destroying your project) you'll get errors like
+
+```
+[15:56:40]: ▸ Element uses-permission#android.permission.SYSTEM_ALERT_WINDOW at AndroidManifest.xml:12:5-130 duplicated with element declared at AndroidManifest.xml:8:5-77
+[15:56:40]: ▸ /Users/louiszawadzki/soge/deploy/android/app/src/main/AndroidManifest.xml:9:5-95 Warning:
+[15:56:40]: ▸ uses-permission#android.permission.READ_PHONE_STATE was tagged at AndroidManifest.xml:9 to remove other declarations but no other declaration present
+[15:56:40]: ▸ /Users/louiszawadzki/soge/deploy/android/app/src/main/AndroidManifest.xml:10:5-100 Warning:
+[15:56:40]: ▸ uses-permission#android.permission.READ_EXTERNAL_STORAGE was tagged at AndroidManifest.xml:10 to remove other declarations but no other declaration present
+[15:56:40]: ▸ /Users/louiszawadzki/soge/deploy/android/app/src/main/AndroidManifest.xml:11:5-101 Warning:
+[15:56:40]: ▸ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE was tagged at AndroidManifest.xml:11 to remove other declarations but no other declaration present
+[15:56:40]: ▸ /Users/louiszawadzki/soge/deploy/android/app/src/main/AndroidManifest.xml:12:5-130 Warning:
+[15:56:40]: ▸ uses-permission#android.permission.SYSTEM_ALERT_WINDOW@tools:true was tagged at AndroidManifest.xml:12 to remove other declarations but no other declaration present
+```
+
+To fix it you have to remove the lines you've added in the Manifest i.e.:
+
+```xml
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" tools:remove="${excludeSystemAlertWindowPermission}"/>
+<uses-permission tools:node="remove" android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission tools:node="remove" android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission tools:node="remove" android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
+
+Then build your project once and add the lines back.
