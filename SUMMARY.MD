@@ -40,6 +40,7 @@
     - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
     - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
     - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
+    - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
   - Architecture
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
@@ -65,7 +66,6 @@
     - [[MO] Handle dependencies with Yarn override](/react-native/package-dependencies/handle-dependencies-with-yarn-override.mo.md)
   - Update
     - [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
-  - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
   - React Navigation
     - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
   - Firebase

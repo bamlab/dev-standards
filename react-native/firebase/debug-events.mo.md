@@ -28,7 +28,7 @@ Choose to start with either Android or iOS. Once you've finished with an OS, swi
 
 1. in Xcode, edit the product's scheme.
 
-> Go in **Product**, **Scheme ▶**, **Edit Scheme... ⌘<** or use the shortcut **⌘<**.
+{% hint style='info' %} Go in **Product**, **Scheme ▶**, **Edit Scheme... ⌘<** or use the shortcut **⌘<**. {% endhint %}
 
 2. In the left menu, select **Run**. Select the **Arguments** tab.
 3. In the **Arguments passed on launch** section, click the **+** icon (_Add items_).
@@ -38,30 +38,38 @@ Choose to start with either Android or iOS. Once you've finished with an OS, swi
 
 ![Xcode Firebase debug setup](./assets/xcode-firebase-debug-setup.png)
 
-> **Check**:
->
-> 1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
-> 2. Select your application in the top menu.
-> 3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 1**
+{% hint style='success' %} **CHECK**
+
+1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
+2. Select your application in the top menu.
+3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 1**
+
+{% endhint %}
 
 #### Android
 
 1. Run your simulator or connect your device.
 
-> **Check**: running the command `adb devices` in your shell should display your device ID.
->
-> ```bash
-> List of devices attached
-> emulator-5554	device
-> ```
+{% hint style='success' %} **CHECK**
+
+Running the command `adb devices` in your shell should display your device ID.
+
+```bash
+List of devices attached
+emulator-5554	device
+```
+
+{% endhint %}
 
 2. Run the following command: `adb shell setprop debug.firebase.analytics.app <package_name>`
 
-> **Check**:
->
-> 1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
-> 2. Select your application in the top menu.
-> 3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 1**
+{% hint style='success' %} **CHECK**
+
+1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
+2. Select your application in the top menu.
+3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 1**
+
+{% endhint %}
 
 ### Use react-native-firebase API to track events (10min)
 
@@ -83,12 +91,14 @@ export default class Analytics {
 
 2. In your simulator or on your device, do the action which rises the event.
 
-> **Check**:
->
-> 1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
-> 2. Select your application in the top menu.
-> 3. You should see your events with their parameters
->    ![Firebase Analytics DebugView](./assets/firebase-debug-view.png)
+{% hint style='success' %} **CHECK**:
+
+1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
+2. Select your application in the top menu.
+3. You should see your events with their parameters
+   ![Firebase Analytics DebugView](./assets/firebase-debug-view.png)
+
+{% endhint %}
 
 2. (bis) Do the same for Android and iOS.
 
@@ -122,7 +132,7 @@ Either stash your changes on `<your_project>.xcodeproj` or do the following:
 
 1. in Xcode, edit the product's scheme.
 
-> Go in **Product**, **Scheme ▶**, **Edit Scheme... ⌘<** or use the shortcut **⌘<**.
+{% hint style='info' %} Go in **Product**, **Scheme ▶**, **Edit Scheme... ⌘<** or use the shortcut **⌘<**. {% endhint %}
 
 2. In the left menu, select **Run**. Select the **Arguments** tab.
 3. In the **Arguments passed on launch** section, remove `-FIRDebugEnabled` click the **+** icon (_Add items_).
@@ -132,27 +142,35 @@ Either stash your changes on `<your_project>.xcodeproj` or do the following:
 
 ![Xcode Firebase debug setup](./assets/xcode-firebase-debug-setup.png)
 
-> **Check**:
->
-> 1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
-> 2. Select your application in the top menu.
-> 3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 0**
+{% hint style='success' %} **CHECK**
+
+1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
+2. Select your application in the top menu.
+3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 0**
+
+{% endhint %}
 
 #### Android
 
 1. Reload the app in your simulator or your device.
 
-> **Check**: running the command `adb devices` in your shell should display your device ID.
->
-> ```bash
-> List of devices attached
-> emulator-5554	device
-> ```
+{% hint style='success' %} **CHECK**
+
+Running the command `adb devices` in your shell should display your device ID.
+
+```bash
+List of devices attached
+emulator-5554	device
+```
+
+{% endhint %}
 
 2. Run the following command: `adb shell setprop debug.firebase.analytics.app .none.`
 
-> **Check**:
->
-> 1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
-> 2. Select your application in the top menu.
-> 3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 0**
+{% hint style='success' %} **CHECK**:
+
+1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
+2. Select your application in the top menu.
+3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 0**
+
+{% endhint %}
