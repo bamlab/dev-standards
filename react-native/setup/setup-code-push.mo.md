@@ -85,8 +85,10 @@ react-native link react-native-code-push
 
 ### ⚠️ For react-native-code-push@5.1+
 
-React-native `link` command adds a pod in your pod file. We recommand you delete the added line in your `PodFile`. You can commit everything else.
-Then, follow Microsoft tutorial [here](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#ios-setup), paragraph **Plugin Installation (iOS - Manual)**.
+React-native `link` command adds a pod in your pod file. You can either:
+
+- install the pod using `pod install`.
+- or if this pod conflicts with other pods, delete the added line in your `PodFile`. In this case, you can commit everything else. Then, follow Microsoft tutorial [here](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#plugin-installation-ios---manual), paragraph **Plugin Installation (iOS - Manual)**.
 
 ### 4. Update your code *(~35 min)*
 
