@@ -1,4 +1,12 @@
-# [MO] Setup & Deploy New Project to Staging
+# [MO] Setup & Deploy New Project to Staging with HockeyApp
+
+{% hint style='warning' } **DEPRECATION**
+
+This standard has been deprecated by [@felixmeziere](https://github.com/felixmeziere) on January 28 in favour of [[MO] Deploy to staging](./setup-and-deploy-new-project-to-staging.mo.md).
+
+**Reason**: HockeyApp is meant to be deprecated by AppCenter. AppCenter is the new HockeyApp and there is [no loss of functionality](http://blog.m33.network/2017/09/react-native-devops-2-0-overview-of-mobile-center-next-generation-of-hockeyapp/).
+
+{% endhint %}
 
 ## Prerequisites
 - [ ] Have you entire environment setup
@@ -79,10 +87,10 @@ bundle exec fastlane android deploy --env=staging
     - Android: The Hockey App iOS Download & Feedback `Public Page url`
   - Organize
     - Custom Alias: `smarturl.it/<projectName>`
-   
-   
- ### 6. Troubleshooting
- 
+
+
+### 6. Troubleshooting
+
  If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
- 
+
 
