@@ -8,6 +8,8 @@ This standard has been deprecated by [@felixmeziere](https://github.com/felixmez
 
 {% endhint %}
 
+## Owner: [Yann Leflour](https://github.com/yleflour)
+
 ## Prerequisites
 - [ ] Have you entire environment setup
 - [ ] Generating a new SSH key and adding it to the ssh-agent: (https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
