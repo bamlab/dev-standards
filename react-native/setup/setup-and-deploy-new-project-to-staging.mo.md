@@ -16,11 +16,11 @@ This standard replaces [[MO] Deploy to staging with HockeyApp](setup-and-deploy-
 
 ## Steps
 
-> :warning: Remember to commit after each step
+{% hint style='warning %} Remember to commit after each step
 
 ### 1. Setup your React Native App
 
-```
+```bash
 react-native init <projectName>
 cd <projectName>
 # First Commit
@@ -28,7 +28,7 @@ cd <projectName>
 
 ### 2. Setup Fastlane
 
-```
+```bash
 yo rn-toolbox:fastlane-setup
 # Second Commit
 ```
@@ -40,7 +40,7 @@ yo rn-toolbox:fastlane-setup
 
 ### 3. Setup Staging Env
 
-```
+```bash
 yo rn-toolbox:fastlane-env
 # Third Commit
 ```
@@ -74,13 +74,15 @@ he certificates: `**redacted**`
 
 
 ### 4. Deployment setup
-```
+
+```bash
 bundle exec fastlane ios setup --env=staging
 # Fourth Commit
 ```
 
 ### 5. Deploy Staging
-```
+
+```bash
 bundle exec fastlane ios deploy --env=staging
 bundle exec fastlane android deploy --env=staging
 ```
@@ -91,6 +93,7 @@ bundle exec fastlane android deploy --env=staging
 - Do you want to create a New App?: `yes`
 
 ### 6. Get the download link
+
 - For each app (Android + iOS)
   - Go to the emails you just got for the two deployments
   - Copy the url that the *Install* button points to and remove the end bit so that it finishes
@@ -108,6 +111,6 @@ bundle exec fastlane android deploy --env=staging
 
 ### 7. Troubleshooting
 
- If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
+If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
 
 

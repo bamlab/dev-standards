@@ -16,11 +16,11 @@ This standard has been deprecated by [@felixmeziere](https://github.com/felixmez
 
 ## Steps
 
-> :warning: Remember to commit after each step
+{% hint style='warning %} Remember to commit after each step
 
 ### 1. Setup your React Native App
 
-```
+```bash
 react-native init <projectName>
 cd <projectName>
 # First Commit
@@ -28,7 +28,7 @@ cd <projectName>
 
 ### 2. Setup Fastlane
 
-```
+```bash
 yo rn-toolbox:fastlane-setup
 # Second Commit
 ```
@@ -40,7 +40,7 @@ yo rn-toolbox:fastlane-setup
 
 ### 3. Setup Staging Env
 
-```
+```bash
 yo rn-toolbox:fastlane-env
 # Third Commit
 ```
@@ -68,7 +68,8 @@ he certificates: `**redacted**`
 - A valid HockeyApp token: `**redacted**`
 
 ### 4. Deploy Staging
-```
+
+```bash
 bundle exec fastlane ios deploy --env=staging
 bundle exec fastlane android deploy --env=staging
 ```
@@ -93,6 +94,6 @@ bundle exec fastlane android deploy --env=staging
 
 ### 6. Troubleshooting
 
- If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
+If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
 
 
