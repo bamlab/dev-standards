@@ -17,7 +17,11 @@ This standard has been deprecated by [@felixmeziere](https://github.com/felixmez
 
 ## Steps
 
-{% hint style='warning %} Remember to commit after each step {% endhint %}
+{% hint style='warning %} **FRIENDLY ADVICE**
+
+Remember to commit after each step
+
+{% endhint %}
 
 ### 1. Setup your React Native App
 
