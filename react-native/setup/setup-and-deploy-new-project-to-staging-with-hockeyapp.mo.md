@@ -1,6 +1,6 @@
 # [MO] Setup & Deploy New Project to Staging with HockeyApp
 
-{% hint style='danger' } **DEPRECATION**
+{% hint style='danger' %} **DEPRECATION**
 
 This standard has been deprecated by [@felixmeziere](https://github.com/felixmeziere) on January 28 in favour of [[MO] Deploy to staging](./setup-and-deploy-new-project-to-staging.mo.md).
 
