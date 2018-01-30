@@ -17,7 +17,7 @@ This standard replaces [[MO] Deploy to staging with HockeyApp](setup-and-deploy-
 
 ## Steps
 
-{% hint style='warning %} **FRIENDLY ADVICE**
+{% hint style='warning' %} **FRIENDLY ADVICE**
 
 Remember to commit after each step
 
