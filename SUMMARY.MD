@@ -76,3 +76,5 @@
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)
 - Security
   - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
+  - [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
+
