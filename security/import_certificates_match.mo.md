@@ -3,7 +3,8 @@
 ## Owner: [Louis Lagrange](https://github.com/Minishlink)
 
 When using Fastlane's [Match](https://github.com/fastlane/fastlane/tree/master/match), you might want to update the certificates
-or provisioning profiles manually if you don't have enough rights on the publisher's Apple developer account.
+or provisioning profiles manually if you don't have enough rights on the publisher's Apple developer account
+(meaning that you're unable to create certificates and provisioning profile by your own or by using match).
 
 ## Prerequisites *(~10 min)*
 
@@ -46,4 +47,6 @@ platform :ios do
 8. Cypher the private key with the Match algorithm: `openssl aes-256-cbc -k ${MATCH_PASSWORD} -in cert.pem -out ${CERT_ID}.p12 -a`
 9. Cypher the public key: `openssl aes-256-cbc -k ${MATCH_PASSWORD} -in cert.cer -out ${CERT_ID}.cer -a`
 10. Cypher the provisioning profile: `openssl aes-256-cbc -k ${MATCH_PASSWORD} -in profile.mobileprovision -out AppStore_${BUNDLE_IDENTIFIER}.mobileprovision -a`
-11. On the `MATCH_GIT_BRANCH`, remove the old certificates and provisioning profiles and add the new ones
+11. Clone the Match git repository.
+12. Checkout the `MATCH_GIT_BRANCH`.
+13. Remove the old certificates and provisioning profiles and add the new ones.
