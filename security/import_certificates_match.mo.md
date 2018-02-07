@@ -10,7 +10,7 @@ or provisioning profiles manually if you don't have enough rights on the publish
 
 * A `.p12` distribution certificate and its password, say `cert.p12`
 * A `.mobileprovision` provisioning profile, say `profile.mobileprovision`
-* An Apple developer account that has read access to the publisher's Apple developer account
+* An Apple developer account that has read access to the publisher's Apple developer account (check by [logging in](https://developer.apple.com/account/))
 * Write access to the Match git repo, say `certificates.git`
 * The app's bundle identifier: `BUNDLE_IDENTIFIER`
 * A `list_certificates` lane in your `Fastfile`:
