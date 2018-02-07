@@ -47,7 +47,7 @@ yarn global add appcenter-cli
 
 ### 2. Login into AppCenter _(~4 min)_
 
-Log with your GitHub or Google account:
+Login with your GitHub or Google account:
 
 ```bash
 appcenter login
