@@ -125,6 +125,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 ## Security
 
 - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
+- [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
 
 ## License
 
