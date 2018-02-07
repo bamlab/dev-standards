@@ -68,13 +68,13 @@ if [ $DEPLOY_TYPE == "soft" ]; then
       echo "${GREEN}- - - - -"
       echo "Codepush 🍎  iOS Staging"
       echo "- - - - -${NO_COLOR}"
-      code-push release-react -d Staging <ios-codepush-project-name> ios -m --targetBinaryVersion $IOS_VERSION --des "$MESSAGE"
+      appcenter codepush release-react -d Staging -a <owner>/<MyApp>-iOS -m --target-binary-version $IOS_VERSION --description "$MESSAGE"
     fi
     if [[ $APP_OS != "ios" ]]; then
       echo "${YELLOW}- - - - -"
       echo "Codepush 🤖  Android Staging"
       echo "- - - - -${NO_COLOR}"
-      code-push release-react -d Staging <android-codepush-project-name> android -m --targetBinaryVersion $ANDROID_VERSION_NAME --des "$MESSAGE"
+      appcenter codepush release-react -d Staging -a <owner>/<MyApp>-Android -m --target-binary-version $ANDROID_VERSION_NAME --description "$MESSAGE"
     fi
   fi
 fi
