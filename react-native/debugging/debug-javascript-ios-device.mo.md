@@ -11,7 +11,7 @@
 > :warning: Make sure you have reverted the changes after debugging to avoid build issues
 
 - Make sure both the device and computer are on the same network
-- In `Libraries/React.xcodeproj/React/Base/RCTBundleURLPRovider.m`
+- In `node_modules/react-native/Libraries/React/Base/RCTBundleURLPRovider.m`
   - Replace `NSString *host = ipGuess ?: @"localhost";`
   - With your computer IP address (remove ipGuess if it poses problems): `NSString *host = @"<your_computer_ip>";`
 - In `Libraries/RCTWebSocket.xcodeproj/RCTWebSocketExecutor.m`
