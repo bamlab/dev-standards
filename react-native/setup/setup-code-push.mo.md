@@ -35,7 +35,8 @@ Lookup the compatible version (we'll name it `<your.version>`) in the [compatibi
 ### 1. Install the Appcenter cli _(~1 min)_
 
 ```bash
-# npm install -g appcenter-cli
+yarn global add appcenter-cli
+# or npm install -g appcenter-cli
 ```
 
 {% hint style='success' %} **CHECK**
