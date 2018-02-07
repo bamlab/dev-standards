@@ -76,6 +76,10 @@ appcenter codepush deployment add -a <owner>/<MyApp>-iOS Staging
 appcenter codepush deployment list -a <owner>/<MyApp>-Android
 appcenter codepush deployment list -a <owner>/<MyApp>-iOS
 
+# Invite your team members to the apps
+open https://appcenter.ms/users/<owner>/apps/<MyApp>-Android/settings/collaborators
+open https://appcenter.ms/users/<owner>/apps/<MyApp>-iOS/settings/collaborators
+
 # Link the native modules. Paste your Staging tokens when prompted.
 react-native link react-native-code-push
 ```
