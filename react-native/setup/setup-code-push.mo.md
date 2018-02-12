@@ -25,19 +25,18 @@ Cons:
 
 * You rely on Microsoft Azure's servers
 
-Here's an example on **redacted** app, where we enabled it on staging in order to speed up development (at the bottom of the screen).
-![Code Push **redacted**](/assets/codepush.png)
+Here's an example, where we enabled it on staging in order to speed up development (at the bottom of the screen).
+![Code Push](/assets/codepush.png)
 
 ## Steps
 
 Lookup the compatible version (we'll name it `<your.version>`) in the [compatibility table](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms).
 
-### 1. Install code-push cli _(~1 min)_
-
-#### On AppCenter
+### 1. Install the Appcenter cli _(~1 min)_
 
 ```bash
-# npm install -g appcenter-cli
+yarn global add appcenter-cli
+# or npm install -g appcenter-cli
 ```
 
 {% hint style='success' %} **CHECK**
@@ -46,39 +45,17 @@ Lookup the compatible version (we'll name it `<your.version>`) in the [compatibi
 
 {% endhint %}
 
-#### Normal CodePush (with HockeyApp)
+### 2. Login into AppCenter _(~4 min)_
 
-{% hint style='danger' %} **DEPRECATION**
-
-HockeyApp has been deprecated by [@felixmeziere](https://github.com/felixmeziere) on January 28 in favour of [[MO] Deploy to staging](./setup-and-deploy-new-project-to-staging.mo.md).
-
-{% endhint %}
+Login with your GitHub or Google account:
 
 ```bash
-npm install -g code-push-cli
+appcenter login
 ```
 
 {% hint style='success' %} **CHECK**
 
-`code-push -v` should give you a version.
-
-{% endhint %}
-
-### 2. Login into code-push / AppCenter _(~4 min)_
-
-Login into GitHub with bam developers account. In your terminal:
-
-```bash
-code-push register
-# ⚠️ If you use AppCenter:
-# appcenter login
-```
-
-and finish the login process using GitHub.
-
-{% hint style='success' %} **CHECK**
-
-`code-push whoami` should give you your GitHub email.
+You should see your profile info with `appcenter profile list`.
 
 {% endhint %}
 
@@ -88,21 +65,21 @@ and finish the login process using GitHub.
 # Add the npm dependency
 yarn add react-native-code-push@<your.version>
 
-# Register your Android app
-code-push app add <MyApp>-android android react-native
-# Save the Staging token for later use
-# ⚠️ If you use AppCenter:
-# appcenter codepush deployment add -a <owner>/<MyApp>-android Staging
+# Create the apps
+appcenter apps create -d <MyApp>-Android -o Android -p React-Native
+appcenter apps create -d <MyApp>-iOS -o iOS -p React-Native
 
-# Register your iOS app
-code-push app add <MyApp>-ios ios react-native
-# Save the Staging token for later use
-# ⚠️ If you use AppCenter:
-# appcenter codepush deployment add -a <owner>/<MyApp>-ios Staging
+# Configure the CodePush Staging deployment
+appcenter codepush deployment add -a <owner>/<MyApp>-Android Staging
+appcenter codepush deployment add -a <owner>/<MyApp>-iOS Staging
 
-# ⚠️ If you use AppCenter, you can retreive your tokens with these commands
-# appcenter codepush deployment list -a <owner>/<MyApp>-android Staging
-# appcenter codepush deployment list -a <owner>/<MyApp>-ios Staging
+# Save the Staging tokens for later use
+appcenter codepush deployment list -a <owner>/<MyApp>-Android
+appcenter codepush deployment list -a <owner>/<MyApp>-iOS
+
+# Invite your team members to the apps
+open https://appcenter.ms/users/<owner>/apps/<MyApp>-Android/settings/collaborators
+open https://appcenter.ms/users/<owner>/apps/<MyApp>-iOS/settings/collaborators
 
 # Link the native modules. Paste your Staging tokens when prompted.
 react-native link react-native-code-push
@@ -167,14 +144,11 @@ import { ENV } from 'MyApp/environment'
 ...
 
 class Home extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      updateDescription: null,
-      updateLabel: null,
-      codePushStatus: null
-    }
-  }
+  state = {
+    updateDescription: null,
+    updateLabel: null,
+    codePushStatus: null
+  };
 
   componentDidMount() {
     if (codePush && ENV === 'STAGING') {
@@ -243,7 +217,7 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Home;
 ```
 
 {% hint style='success' %} **CHECK**
@@ -279,6 +253,5 @@ You can try the CodePush [documentation](http://microsoft.github.io/code-push/do
 
 You should also Andon the teams with a working CodePush process:
 
-* [Nicolas Ngomai](https://github.com/lechinoix)
-* [Xavier Lefevre](https://github.com/xavierlefevre)
-* [Kevin Reynel](https://github.com/kraynel)
+- [@BAM](https://github.com/search?q=org%3Abamlab+codepush&type=Commits)
+- [DailyScrum](https://github.com/Minishlink/DailyScrum)
