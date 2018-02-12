@@ -9,6 +9,7 @@ const changedFiles = [...modifiedFiles, ...newFiles];
 
 const moFiles = changedFiles.filter(p => includes(p, ".mo.md"));
 const standardFiles = changedFiles.filter(p => includes(p, ".s.md"));
+const commonFiles = changedFiles.filter(p => p.match(/^(README|SUMMARY)\.MD$/))
 const readmeContent = fs.readFileSync("README.MD").toString();
 const summaryContent = fs.readFileSync("SUMMARY.MD").toString();
 
@@ -44,10 +45,10 @@ for (let standardFile of standardFiles) {
   if (!summaryContent.match(standardFile)) warn(`**${fileUrl}**: Does not seem to be included in the root summary`);
 }
 
-if (moFiles.length === 0 && standardFiles.length === 0) {
-  fail(`What have you modified ? No \`*.s.md\` and no \`*.mo.md\` files`);
+if ([...moFiles, ...standardFiles, ...commonFiles].length === 0) {
+  fail(`What have you modified ? No \`*.s.md\`, \`*.mo.md\` files nor \`README.MD\` and \`SUMMARY.MD\` have been modified`);
   markdown(`
-  ## What have you modified ?  No \`*.s.md\` and no \`*.mo.md\` files
+  ## What have you modified ?  No \`*.s.md\`, \`*.mo.md\` files nor \`README.MD\` and \`SUMMARY.MD\` have been modified.
 
 - Your standard files should be \`*.s.md\`
 - Your method of operation should be \`*.mo.md\`
@@ -77,6 +78,6 @@ const isOwnedCodeModified = mentions.length > 0;
 if (isOwnedCodeModified) {
   const uniqueMentions = new Set(mentions);
   markdown(`## Automatic reviewers
-  
+
 cc: ${[...uniqueMentions].join(", ")}`);
 }
