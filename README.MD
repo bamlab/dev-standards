@@ -2,11 +2,11 @@
 
 # Standards and Methods of Operation
 
-## Who are we
+## About us
 
 We are mobile developers, based in Paris, working with hybrid and cross platform technologies.
 
-Our goal is to help the client business succeed, by solving togethers their problems using agile and lean,
+Our goal is to help the client's business succeed, by solving their problems together using agile and lean,
 and developing the best product to satisfy the client's user needs.
 
 Learn more about us [in our french website](http://www.bam.tech/).
@@ -15,7 +15,7 @@ Learn more about us [in our french website](http://www.bam.tech/).
 
 Part of lean philosophy is to standardize best practices and spread them out.
 
-Every time a developer is struggling doing a part of his job (eg, change the application icon, deploying features very fast using code push, ect...),
+Every time a developer is struggling doing a part of his job (e.g.: changing the application icon, deploying features very fast using code push, etc...),
 we help him solve his problem and then together write either a [Standard] or a [Mode of Operation].
 
 ## Contributing
@@ -26,7 +26,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 ## Backend
 ### Django
 - [[MO] Get started with Django](/backend/django/getting-started.mo.md)
-- [[MO] Create complex user models wih Django](/backend/django/create-user-model.mo.md)
+- [[MO] Create complex user models with Django](/backend/django/create-user-model.mo.md)
 - [[MO] How to deploy your Django back-end to AWS](/backend/django/deploy-to-aws.mo.md)
 - [[MO] Create a model and an api route](/backend/django/create-model-and-api.mo.md)
 
@@ -65,7 +65,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Add a deploy script to your app](/react-native/setup/deploy-script.mo.md)
 - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
 - [[Article] Setup your React Native project icon](https://blog.bam.tech/developper-news/change-your-react-native-app-icons-in-a-single-command-line)
-- [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
+- [[MO] Use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
 - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
 - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
 - [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
@@ -88,7 +88,7 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
 
 ### React
-- [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
+- [[Standard] Binding functions in a React component](/react-native/react/binding-functions-in-react-component.s.md)
 - [[MO] Trigger an action on props update](/react-native/react/trigger-action-on-props-update.mo.md)
 - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
 
