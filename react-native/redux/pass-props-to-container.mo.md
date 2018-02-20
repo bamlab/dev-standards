@@ -2,11 +2,11 @@
 
 ## Owner: [Jean Faverie](https://github.com/jfaverie)
 
-* Context
+# Context
 
 In this article, we will see how to have access to and use the props of a component inside its container.
 
-* The point of this article ?
+# The point of this article ?
 
 Usually, developpers need to have access to the props of a component inside its presentational part (the .component.js file) and not its container. Thus, they use the object form of mapStateToProps and mapDispatchToProps, which don't have access to the props of the component but are easier to use and write.
 
