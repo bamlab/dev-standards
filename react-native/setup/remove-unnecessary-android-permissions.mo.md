@@ -69,7 +69,7 @@ buildTypes {
 
 Then in your `android/app/src/main/AndroidManifest.xml`:
 
-```xml
+```diff
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 +    xmlns:tools="http://schemas.android.com/tools"
      package="com.applilabchatbot"
@@ -83,7 +83,7 @@ Then in your `android/app/src/main/AndroidManifest.xml`:
 
 And then you can remove all the other permissions:
 
-```xml
+```diff
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
      xmlns:tools="http://schemas.android.com/tools"
      package="com.applilabchatbot"
