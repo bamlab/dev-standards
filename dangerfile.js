@@ -17,7 +17,7 @@ for (let moFile of moFiles) {
   const fileInfos = path.parse(moFile);
   const fileUrl = danger.github.utils.fileLinks([moFile]);
 
-  if (!fileContent.match(/^# \[MO\] /)) fail(`**${fileUrl}**: Title doesn't contain \`[MO]\` tag at the begining`);
+  if (!fileContent.match(/^# \[MO\] /)) fail(`**${fileUrl}**: Title doesn't contain \`[MO]\` tag at the beginning`);
   if (!fileContent.match(/## Owner: .+/)) fail(`**${fileUrl}**: MO doesn't have an *Owner*, could it be you?`);
   if (!fileContent.match(/## Prerequisites/))
     warn(`**${fileUrl}**: MO doesn't contain a *Prerequisites* part are you sure your brain is all you need?`);
@@ -34,7 +34,7 @@ for (let standardFile of standardFiles) {
   const fileUrl = danger.github.utils.fileLinks([standardFile]);
 
   if (!fileContent.match(/^# \[Standard\] /))
-    fail(`**${fileUrl}**: Title doesn't contain \`[Standard]\` tag at the begining`);
+    fail(`**${fileUrl}**: Title doesn't contain \`[Standard]\` tag at the beginning`);
   if (!fileContent.match(/## Owner: .+/)) fail(`**${fileUrl}**: Standard doesn't have an *Owner*, could it be you?`);
   if (!fileContent.match(/## Checks/))
     fail(`**${fileUrl}**: Standard doesn't have a *Checks* part, how could you call this an Standard?`);
