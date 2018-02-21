@@ -1,4 +1,4 @@
-# [MO] Setup HTTPS on your docker environment
+# [MO] Setup HTTPS on your docker environment (~15 min)
 
 ## Owner: [Sammy Teillet](https://github.com/samox)
 
@@ -22,9 +22,9 @@ If, _as an expert of docker_, you want to adapt the standard to the context of y
 * [ ] You can ssh to the server
 * [ ] Make sure you have the docker rights `sudo usermod -aG docker $YOUR_USER_NAME`
 
-## Steps
+## Steps  (~15 min)
 
-### Install the nginx-proxy companion
+### Install the nginx-proxy companion (~5 min)
 
 - Connect to your server `ssh user@your.domain`
 - Clone the nginx-proxy-companion [project](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion) on the server at the root of the server.
@@ -62,7 +62,7 @@ ERROR: for nginx-web  Cannot start service nginx-web: driver failed programming 
 
 {% endhint %}
 
-### Configure your project to use the companion
+### Configure your project to use the companion (~5 min)
 
 - Remove the binding 80 port command, but expose it
 
@@ -135,7 +135,7 @@ services:
 {% endhint %}
 
 
-### Make the switch
+### Make the switch (~5 min)
 
 {% hint style='danger' %} **BUSINESS INTERRUPTION**
 
