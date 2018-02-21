@@ -13,7 +13,7 @@ Let's say, you are currently working on your own `my-feature` branch and someone
 ![image](https://wac-cdn.atlassian.com/dam/jcr:01b0b04e-64f3-4659-af21-c4d86bc7cb0b/01.svg?cdnVersion=fp)
 
 ## Steps
-1. First approach : Merge a branch
+1. First approach: Merge a branch
 
 Merge the `master` branch into the `feature` branch by entering following:
 - `git checkout my-feature` 

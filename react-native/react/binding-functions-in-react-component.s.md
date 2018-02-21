@@ -17,8 +17,8 @@ The tutorial does it the old ES5 way when we should better use the ES6 way (with
 
 ## Checks
 
-### Bad Examples :
-When using the TextInput onChange, the tutorial tells you to define an handleChange function this way (CAUTION, this is a BAD EXAMPLE) :
+### Bad Examples:
+When using the TextInput onChange, the tutorial tells you to define an handleChange function this way (CAUTION, this is a BAD EXAMPLE):
 
 ```javascript
 class Test extends Component {
@@ -39,9 +39,9 @@ class Test extends Component {
 }
 ```
 
-- This is bad in two ways : performance and syntax.
+- This is bad in two ways: performance and syntax.
 
-1. Performance : the first problem here is we use `bind` at every `onChange` event, which is very costly. What we could do is (still not optimal) :
+1. Performance: the first problem here is we use `bind` at every `onChange` event, which is very costly. What we could do is (still not optimal):
 
 ```javascript
 class Test extends Component {
@@ -65,7 +65,7 @@ we improve our performance, as we only bind at the creation of the class. This i
 
 2. The `bind` function is used to be sure to use the good context (the `this` of the class, not the one of the handleChange function). 
 
-### Good Examples :
+### Good Examples:
 We can improve the syntax by using an arrow function, which has no proper context and uses the context of the class (you can use tis example).
 
 ```javascript

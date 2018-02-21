@@ -2,15 +2,15 @@
 
 ## Owner : [Nicolas Ngomai](https://github.com/lechinoix)
 
-* What is deep linking ?
+* What is deep linking?
 
 Deeplinking permits you to register a custom URL Scheme in your phone so that when calling a url as `myapp://mypath?param=value` the phone will open the app with the `mypath?param=value`.
 In React Native, you can use the `Linking Module` that handle the external links in your app.
 When calling a deeplink in your app, a 'url' event will be dispatch with the url associated.
 
-## How to implement ?
+## How to implement?
 
-- Follow this guide from react navigation : https://reactnavigation.org/docs/guides/linking
+- Follow this guide from react navigation: https://reactnavigation.org/docs/guides/linking
 - For complementary information, you can consult Linking documentation : https://facebook.github.io/react-native/docs/linking.html
 
 ## Troubleshooting
@@ -18,7 +18,7 @@ When calling a deeplink in your app, a 'url' event will be dispatch with the url
 ### iOS
 
 If you have Facebook SDK installed, a "application" function will already be implemented in your AppDelegate.m
-You will need to refactor the two methods as is :
+You will need to refactor the two methods as is:
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application

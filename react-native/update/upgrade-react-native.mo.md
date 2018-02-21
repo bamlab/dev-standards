@@ -27,7 +27,7 @@ If you are late by several versions do them one at a time. Upgrading several ver
 
 > Lets say it is `0.45.1`
 
-- Find the changelog here : https://github.com/facebook/react-native/releases/tag/v0.X.0 where X is the minor of your react native version, note down the major breaking changes you'll have to consider later.
+- Find the changelog here: https://github.com/facebook/react-native/releases/tag/v0.X.0 where X is the minor of your react native version, note down the major breaking changes you'll have to consider later.
 
 > **Check**: I have a clear list of deprecated items to check.
 
@@ -40,7 +40,7 @@ If you are late by several versions do them one at a time. Upgrading several ver
 
 - Run `react-native-git-upgrade 0.46.4`
 
-- Fix the potential conflict : see https://facebook.github.io/react-native/docs/upgrading.html#4-resolve-the-conflicts
+- Fix the potential conflict: see https://facebook.github.io/react-native/docs/upgrading.html#4-resolve-the-conflicts
 
 - If other modules or libraries have to be updated for compatibility reasons, update them following the upgrade native module steps.
 
@@ -88,11 +88,11 @@ If you are late by several versions do them one at a time. Upgrading several ver
 
 ### Fix flow
 
-// @todo : Tycho
+// @todo: Tycho
 
 ### Fix tests
 
-// @todo : Tycho
+// @todo: Tycho
 
 ### Deploy and test on device
 

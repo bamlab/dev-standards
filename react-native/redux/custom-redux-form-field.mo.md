@@ -2,11 +2,11 @@
 
 ## Owner: [Darius Afchar](https://github.com/DariusAf)
 
-* What is **redux-form** ?
+* What is **redux-form**?
 
 Redux-form is a higher-order component decorator that enables you to efficiently manage your form by automating a lot of things as form-validation, focus events, storage synchronisation...
 
-* The point of this article ?
+* The point of this article?
 
 With redux-form, a lot of things are done under the hood, so it may be tricky to add a custom component and have it work as expected. For instance, you might want to use a external component as a date-picker, or a super-component composed with different inputs that should return an aggregated answer. In those cases, you have to get your hands dirty to customise how redux-form connect to your component. Here is one way to do so.
 
@@ -14,7 +14,7 @@ With redux-form, a lot of things are done under the hood, so it may be tricky to
 
 A react project with a redux store, obviously.
 
-* a react project : create one with [create-react-app](https://github.com/facebookincubator/create-react-app)
+* a react project: create one with [create-react-app](https://github.com/facebookincubator/create-react-app)
 * [redux installed](http://redux.js.org/docs/basics/UsageWithReact.html), make sure to install **redux** and **react-redux**
 * create a store and a reducer
 
@@ -28,7 +28,7 @@ npm install redux-form
 
 2. Connect redux-form to your store by adding it to your reducers
 
-It depends on how you did organize your code, but if you have several reducers it might be similar to the following code :
+It depends on how you did organize your code, but if you have several reducers it might be similar to the following code:
 
 ```javascript
 import { combineReducers } from 'redux';
@@ -118,7 +118,7 @@ It means that the wording *handleSubmit* we have used previously is mandatory. W
 which is equivalent to 
 ```const MyForm = props => (<form onSubmit={props.handleSubmit}> ...```
 
-In the light of what was said above, to pass this *handleSubmit* function you will have to use *onSubmit* :
+In the light of what was said above, to pass this *handleSubmit* function you will have to use *onSubmit*:
 
 ```javascript
 import React, { Component } from 'react';
@@ -156,5 +156,5 @@ export default MyPageContainer;
 
 ```
 
-You are done here !
+You are done here!
 

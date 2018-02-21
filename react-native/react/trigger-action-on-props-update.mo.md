@@ -104,7 +104,7 @@ A couple of interesting notes<sup>2</sup>:
 - `componentWillReceiveProps` can be called even if the props did not change
 - If done before `render()`is called, then calling `setState` will not trigger an additional render
 
-<sup>1</sup> : See [this](https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1) or
+<sup>1</sup>: See [this](https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1) or
 [that article](https://reactjs.org/docs/react-component.html) about the full lifecycle of a React component.
 
-<sup>2</sup> : https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/update/component_will_receive_props.html
+<sup>2</sup>: https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/update/component_will_receive_props.html

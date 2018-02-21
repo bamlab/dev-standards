@@ -6,18 +6,18 @@
 
 In this article, we will see how to have access to and use the props of a component inside its container.
 
-## The point of this article ?
+## The point of this article?
 
 Usually, developers need to have access to the props of a component inside its presentational part (the .component.js file) and not its container. Thus, they use the object form of mapStateToProps and mapDispatchToProps, which don't have access to the props of the component but are easier to use and write.
 
 ## Prerequisites
 
-* a react project : create one with [create-react-app](https://github.com/facebookincubator/create-react-app)
+* a react project: create one with [create-react-app](https://github.com/facebookincubator/create-react-app)
 * [redux installed](http://redux.js.org/docs/basics/UsageWithReact.html), make sure to install **redux** and **react-redux**
 
 ## Steps
 
-1. Create a simple component's container, for example a Todo component :
+1. Create a simple component's container, for example a Todo component:
 
 ```javascript
 import { connect } from 'react-redux';
@@ -41,13 +41,13 @@ This is a standard container, with a selector giving access to a list of events 
 
 {% hint style='info' %}  
 
-But what if you want to give a specific behavior to your container ? For example enabling the adding of an event only if the todo is editable ? Or seeing only a limited number of events depending on the rights of your user ? You can give props to your container ! Let's see how :
+But what if you want to give a specific behavior to your container? For example enabling the adding of an event only if the todo is editable ? Or seeing only a limited number of events depending on the rights of your user ? You can give props to your container ! Let's see how :
 
 {% endhint %}
 
 2. Refactor your container to keep the same behavior but using the function way.
 
-To make sure you use the function way correctly, refactor your code but don't change the behavior of your code ! 
+To make sure you use the function way correctly, refactor your code but don't change the behavior of your code!
 
 The function way works exactly the same as the object way but gives you access to more features because you have now access to `dispatch` function.
 
@@ -71,7 +71,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Todo);
 
 {% hint style='success' %} **CHECK** 
 
-The behavior must be the same ! Test that everything works like before.
+The behavior must be the same! Test that everything works like before.
 
 (If it works differently, this is not a refactoring).
 
@@ -99,7 +99,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Todo);
 
 ```
 
-Now you can give a specific action and a specific selector to your container depending on the props of your component !
+Now you can give a specific action and a specific selector to your container depending on the props of your component!
 
 {% hint style='success' %} **CHECK 1** 
 

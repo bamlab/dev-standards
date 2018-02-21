@@ -9,7 +9,7 @@ It is hard for people to estimate the amount of time they will have to spend on 
 
 However, to measure the complexity of a ticket the team must know how to develop it. And sometimes they cannot know in advance how to do it because there is uncertainty that needs to be removed. To overcome the impossibility to estimate the complexity of tickets, we can use a timebox.
 
-### What is a timebox ?
+### What is a timebox?
 In a timebox the team decides to spend a certain amount of time on the ticket.
 At the end of the timebox, there can be several outcomes, here are a few examples:
 - Several solutions were found, it is up to the PR (product owner) to decide which one they would like to see in their project.
@@ -29,7 +29,7 @@ What is wrong:
 
 ### Good example of a report:
 
-The ticket : (3) [TIMEBOX - 3H] As an admin, when a customer is on the last page of the report and clicks on SEND, I see their appointment updated on the CRM.
+The ticket: (3) [TIMEBOX - 3H] As an admin, when a customer is on the last page of the report and clicks on SEND, I see their appointment updated on the CRM.
 
 
 ---

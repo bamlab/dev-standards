@@ -4,7 +4,7 @@
 
 ## Description
 
-- Writing tests helps the technical team to :
+- Writing tests helps the technical team to:
   - Architecture its code
   - Develop faster
   - Prevent bugs
@@ -16,7 +16,7 @@
 
 ## Checks
 
-My React Native app is well tested if :
+My React Native app is well tested if:
 
   1. The reducers and selectors are tested. It helps to develop faster by reducing the number of manual testings. Furthermore it helps you to not forget edge cases.
   1. The sagas, order of execution and effects on the state are tested, when the logic is not straight-forward. It prevents regressions as they hold the business logic of the app.

@@ -59,7 +59,7 @@ moment@^2.19.0:
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.1.tgz#56da1a2d1cbf01d38b7e1afc31c10bcfa1929167"
 ```
 
-* find which other package it is by searching for `moment` in dependencies section of packages :
+* find which other package it is by searching for `moment` in dependencies section of packages:
 
 ```
 moment-timezone@^0.5.13:

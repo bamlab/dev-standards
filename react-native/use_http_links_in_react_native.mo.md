@@ -11,7 +11,7 @@ Using HTTP links (in image sources for example) will not work on iOS devices/emu
 
 ## Steps (~ 2 minutes)
 
-Using the default configuration, the images in this page will not be displayed :
+Using the default configuration, the images in this page will not be displayed:
 
 ```javascript
 import React, { Component } from 'react'
@@ -36,16 +36,16 @@ export default class Workspace extends Component {
 ```
 The source uri uses the HTTP protocol
 
-the result is this :  
+the result is this:
 <br />
 <img src="https://user-images.githubusercontent.com/13121639/30554696-b92edad0-9ca5-11e7-93f0-7b41f51f8dfc.png" width="300">
 <br />
 No image displayed :(
 <br />
 
-### how to display these images :
+### how to display these images:
 
-By default iOS forbids calls using http protocol. Normally you should use secured http protocol (https), if you don't have that opportunity, you have to allow the domain using http protocol by modifying the `<Project>/ios/<Project>/info.plist` :
+By default iOS forbids calls using http protocol. Normally you should use secured http protocol (https), if you don't have that opportunity, you have to allow the domain using http protocol by modifying the `<Project>/ios/<Project>/info.plist`:
 
 in the NSExceptionDomains section, add your domain name and permission
 

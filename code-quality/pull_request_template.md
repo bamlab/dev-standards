@@ -1,6 +1,6 @@
 # Pull Request Template
 
-Every time a developer will make a pull request and a team-mate will review the work, the below points need to be checked !
+Every time a developer will make a pull request and a team-mate will review the work, the below points need to be checked!
 
 ## Reviewee
 

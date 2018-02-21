@@ -18,7 +18,7 @@ For that, you can use the [`getPathAndParamsForState` of a Router](https://react
 ## Steps *(~5min)*
 
  - Add a props `myFeatureIsActivated` on the component with default value at `true`
- - In the render method, display you component only if `myFeatureIsActivated` is at true :
+ - In the render method, display you component only if `myFeatureIsActivated` is at true:
 
  ```jsx
 return ( 
@@ -31,7 +31,7 @@ return (
 
 - Test is your component still work (nothing should have change)
 - Import your main stack navigation
-- In the mapDispatchToProps, compare the path given by the getPathAndParamsForState to the path of your page, you should have something like :
+- In the mapDispatchToProps, compare the path given by the getPathAndParamsForState to the path of your page, you should have something like:
 
 ```jsx
 import { RootNavigator } from '../../../Routing';
