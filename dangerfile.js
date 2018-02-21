@@ -45,9 +45,9 @@ for (let standardFile of standardFiles) {
 }
 
 if (moFiles.length === 0 && standardFiles.length === 0) {
-  fail(`What have you modified ? No \`*.s.md\` and no \`*.mo.md\` files`);
+  fail(`What have you modified? No \`*.s.md\` and no \`*.mo.md\` files`);
   markdown(`
-  ## What have you modified ?  No \`*.s.md\` and no \`*.mo.md\` files
+  ## What have you modified?  No \`*.s.md\` and no \`*.mo.md\` files
 
 - Your standard files should be \`*.s.md\`
 - Your method of operation should be \`*.mo.md\`
