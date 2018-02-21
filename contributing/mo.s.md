@@ -7,7 +7,7 @@
 - File name should be kebab case and suffixed by `.mo`
 - Is referenced in the root *README.MD* and *SUMMARY.MD*
 - Should contain the following parts:
-  - An owner with a link to his Github Profile
+  - An owner with a link to their Github Profile
   - Title + time
   - A list of prerequisites
   - A list of steps

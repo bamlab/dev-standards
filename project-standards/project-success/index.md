@@ -1,7 +1,7 @@
 # Project Success
 
 ### Objective
-> Succeeding to accompany our client, by making this project a success for him and for BAM
+> Succeeding to accompany our client, by making this project a success for them and for BAM
 
 ### Standards
 - Critère de succès connus, BAMED et mesurés (fixé avec le payeur)

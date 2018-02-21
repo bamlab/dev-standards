@@ -12,7 +12,7 @@ However, to measure the complexity of a ticket the team must know how to develop
 ### What is a timebox ?
 In a timebox the team decides to spend a certain amount of time on the ticket.
 At the end of the timebox, there can be several outcomes, here are a few examples:
-- Several solutions were found, it is up to the PR (product owner) to decide which one he would like to see in his project.
+- Several solutions were found, it is up to the PR (product owner) to decide which one they would like to see in their project.
 - The developer decided which is the best solution and had the time to partially or completely code the functionality.
 - During the timebox, no solution was found.
 
@@ -29,7 +29,7 @@ What is wrong:
 
 ### Good example of a report:
 
-The ticket : (3) [TIMEBOX - 3H] As an admin, when a customer is on the last page of the report and clicks on SEND, I see his appointment updated on the CRM.
+The ticket : (3) [TIMEBOX - 3H] As an admin, when a customer is on the last page of the report and clicks on SEND, I see their appointment updated on the CRM.
 
 
 ---

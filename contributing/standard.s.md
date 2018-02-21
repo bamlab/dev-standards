@@ -9,7 +9,7 @@ The why part is important so Bamers know what is the risk addressed by this stan
 Thus they have more context and are able to onboard other dev by presenting the impact.
 
 ## Checks
-- Has an owner with a link to his Github Profile
+- Has an owner with a link to their Github Profile
 - Should contain all the the parts present in this document
   - Title
   - Checks

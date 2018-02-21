@@ -27,7 +27,7 @@
 
 ### 2bis. Fixing *(Variable time)*
 
-When a reviewer has reviewed your article he may give you some feedback.
+When a reviewer has reviewed your article they may give you some feedback.
 
 - Correct what needs to be corrected
 - Answer the comments which don't need fixing

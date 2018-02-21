@@ -10,7 +10,7 @@ On a project, I had to let my user pay within my React Native app. My client wan
 
 First I tried to develop a browser solution with [stripe element](https://stripe.com/docs/stripe-js/elements/quickstart). I had two problems:
 - It was really time consuming to develop a web page for the payment;
-- It made the user navigate back and forth from the app to his web browser, resulting in a really poor user experience.
+- It made the user navigate back and forth from the app to their web browser, resulting in a really poor user experience.
 
 I then found out [tipsi-stripe](https://github.com/tipsi/tipsi-stripe) which is a React Native library that wraps the Stripe native SDK for iOS and Android. It only took me 2 hours to set it up and granted a far better user experience, satisfying our client ;).
 
@@ -23,7 +23,7 @@ So far, tipsi-stripe uses direct calls to Stripe SDKs and therefore, we did not 
 However, even if Stripe asked you to stop using tipsi, the time loss would be light as it only takes around 2 hours to install the lib. Setting up browser payment would take more than a day and offers a poorer UX.
 
 ## Steps (~1 hour)
-- Install tipsi-stripe package following his [installation documentation](https://github.com/tipsi/tipsi-stripe#installation)  
+- Install tipsi-stripe package following its [installation documentation](https://github.com/tipsi/tipsi-stripe#installation)
 **check:**
   - Break point in iOS in the code;
   - Break point in Android in the code;

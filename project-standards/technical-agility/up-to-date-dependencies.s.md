@@ -14,7 +14,7 @@
 ## Bad Examples
 
 ### redacted project
-- Problem: Cordova has not been updated for several months on the project and one day a developer could not launch the app on an iOS emulator because his new Xcode version had an emulator list discrepancy not handled by this old Cordova version, but handled by the new one.
+- Problem: Cordova has not been updated for several months on the project and one day a developer could not launch the app on an iOS emulator because their new Xcode version had an emulator list discrepancy not handled by this old Cordova version, but handled by the new one.
 - Loss: 1h30 of debugging + 1h30 of problem solving
 
 ## Good Examples

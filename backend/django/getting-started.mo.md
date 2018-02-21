@@ -224,7 +224,7 @@ from django.contrib import admin
 from .models import Book, Author
 
 
-# The inline would list for every author the books he made
+# The inline would list for every author the books they made
 class BookInline(admin.TabularInline):
     model = Book
     readonly_fields = (
