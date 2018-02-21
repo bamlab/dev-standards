@@ -2,16 +2,19 @@
 
 ## Owner: [Sammy Teillet](https://github.com/samox)
 
-{% hint style='success' %} **CONTROL POINTS**
+## Control points
+
+{% hint style='success' %} 
 
 If, _as an expert of docker_, you want to adapt the standard to the context of your project, you have to check that:
 
+{% endhint %}
+
 * [ ] server listen port `80` and `443` 
 * [ ] server redirect port `80` to `443` with `301: Moved Permanently`
-* [ ] proxy should have an automated way of renewing certificates
+* [ ] proxy should renew certificates automatically before they expire (letsencrypt certificates have 90 days of validity)
 * [ ] you should get at least `A` when checking https://www.ssllabs.com/ssltest/
-
-{% endhint %}
+* [ ] you should check in the report of https://www.ssllabs.com/ssltest/ that the server devices range cover your definition of DONE : eg, if you need to support old IE or old android, you have to lower the security enough for compatibility
 
 ## Prerequisites
 
