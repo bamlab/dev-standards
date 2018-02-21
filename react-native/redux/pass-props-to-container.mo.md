@@ -49,7 +49,7 @@ But what if you want to give a specific behavior to your container ? For example
 
 To make sure you use the function way correctly, refactor your code but don't change the behavior of your code ! 
 
-The function way works exactly the same as the object way but gives you access to more functionalities because you have now access to `dispatch` function.
+The function way works exactly the same as the object way but gives you access to more features because you have now access to `dispatch` function.
 
 ```javascript
 import { connect } from 'react-redux';

@@ -6,7 +6,7 @@
 
 ## Context
 
-During this standard, we will take the exemple of a book library gestion app.
+During this standard, we will take the example of a book library management app.
 
 We will thus create a MAB project (`BAM`, reversed) and a Library app containing a `Book` and a `Author` Models.
 
