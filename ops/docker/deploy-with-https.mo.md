@@ -7,6 +7,7 @@
 * [ ] You have a staging environment with docker
 * [ ] You can ssh to the server
 * [ ] Make sure you have the docker rights `sudo usermod -aG docker $YOUR_USER_NAME`
+* [ ] Your server has a domain name (not only an IP)
 
 
 ## Steps
@@ -83,6 +84,12 @@ https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-case
 
 {% endhint %}
 
+{% hint style='info' %} **YOUR DOCKER DOES NOT USE THE PORT 80**
+
+You can set the `VIRTUAL_PORT` in your docker configuration
+
+{% endhint %}
+
 - In your project set 3 environment variable : `VIRTUAL_HOST`, `LETSENCRYPT_HOST`, `LETSENCRYPT_EMAIL`. The email will be used by _Letsencrypt_ to notify you if the certificate expire.There are 2 ways:
     - In the docker-compose file
     - In your prod.env file that is read by your Dockerfile.
@@ -156,3 +163,11 @@ docker-compose -f docker-compose-prod.yml up -d
 - Go [there](https://www.ssllabs.com/ssltest/) and check your domain. Usefull tip: go to the __Handshake Simulation__ section and check the supported devices.
 
 {% endhint %}
+
+## Troubeshooting
+
+- https://your.domain does not respond:
+    - Shut down your dockers by running `docker-compose -f the-docker-compose-file.yml stop` in both your project folder and the nginx companion folder
+    - Check: if you do `docker ps` there are no docker up
+    - Restart the companion by running `start.sh` in the companion folder
+    - Restart your project
