@@ -41,7 +41,7 @@ class News(models.Model):
   [Here is the Django doc for more information](https://docs.djangoproject.com/en/1.11/ref/models/fields/).
 * `TextField` will return a scrollable paragraph in the admin.
 * `auto_now_add` generates automatically a timestamp when a news is created.
-* `auto_now` updates the timestamp everytime you change the news.
+* `auto_now` updates the timestamp every time you change the news.
 * Concerning the city attribute which is a **many to one** relationship: every piece of news is linked to one city, two
   pieces of news can have the same city.
 
@@ -277,7 +277,7 @@ router.register(r'publications/news', NewsViewSet)    #Add this one too
     "id": 3
   },
   {
-    "title": "Les français adorent !",
+    "title": "Les Français adorent !",
     "description": "J'ai lu cet article, il m'a aidé à faire mon premier modèle, youhouu !",
     "created_at": "2017-11-08T15:20:33.457740Z",
     "updated_at": "2017-11-08T16:54:19.322703Z",
@@ -292,7 +292,7 @@ router.register(r'publications/news', NewsViewSet)    #Add this one too
 ```json
 [
   {
-    "title": "Les français adorent !",
+    "title": "Les Français adorent !",
     "description": "Je suis française et j'ai lu cet article, il m'a aidé à faire mon premier modèle, youhouu !",
     "created_at": "2017-11-08T15:20:33.457740Z",
     "updated_at": "2017-11-08T16:54:19.322703Z",

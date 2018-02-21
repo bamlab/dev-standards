@@ -5,7 +5,7 @@
 ## Prerequisites (~15 min)
 * Have Yarn installed (~2 min)
 * Have an application created on Facebook and her id (https://developers.facebook.com/apps) (~10 min)
-* Have an account added as developper on your application facebook
+* Have an account added as developer on your application facebook
 * Have cocoapods in your project (~5 min)
 
 ## Context

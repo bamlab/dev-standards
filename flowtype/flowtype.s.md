@@ -5,7 +5,7 @@
 ## Why
 
 Flowtype is awesome:
-- it successfully replaces unit tests for some tasks, like ensuring that the differents parts of the app, remains in sync with each others.
+- it successfully replaces unit tests for some tasks, like ensuring that the different parts of the app, remains in sync with each others.
 - it give you autocompletion
 
 That being said, if flow is misconfigured and you blindly trust the result, you can still have bug where it should have raised an alert for you.

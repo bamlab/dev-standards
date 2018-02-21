@@ -9,5 +9,5 @@
 - [This week, a member of the technical team destroyed his project environment and re-installed everything under 15minutes](/project-standards/technical-agility/under-15-minutes-project-installation.s.md)
 - At least one re-factoring per day
 - [The tests' standards of my framework are respected](/project-standards/technical-agility/react-native-test.s.md)
-- Build and deployement in one command (staging and production)
+- Build and deployment in one command (staging and production)
 - Green continuous integration on every deployed branches

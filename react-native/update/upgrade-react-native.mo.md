@@ -42,7 +42,7 @@ If you are late by several versions do them one at a time. Upgrading several ver
 
 - Fix the potential conflict : see https://facebook.github.io/react-native/docs/upgrading.html#4-resolve-the-conflicts
 
-- If other modules or librairies have to be updated for compatibility reasons, update them following the upgrade native module steps.
+- If other modules or libraries have to be updated for compatibility reasons, update them following the upgrade native module steps.
 
 - Once the React Native upgrade is completed, follow the tests steps (simulator and device) to perform one upgrade at a time.
 
@@ -84,7 +84,7 @@ If you are late by several versions do them one at a time. Upgrading several ver
 > **Example**: `moment.js`
 
 - Try to look for github issues on Google
-- Use another better architectured package (see [this amazing package](https://github.com/date-fns/date-fns)) or create your own.
+- Use another better architected package (see [this amazing package](https://github.com/date-fns/date-fns)) or create your own.
 
 ### Fix flow
 

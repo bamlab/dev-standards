@@ -1,4 +1,4 @@
-# [MO] Setup Stripe in app payment form with tispi-stripe (~2 hours)
+# [MO] Setup Stripe in app payment form with tipsi-stripe (~2 hours)
 
 ## Owner: [Guillaume Renouvin](https://github.com/GuillaumeRenouvin)
 

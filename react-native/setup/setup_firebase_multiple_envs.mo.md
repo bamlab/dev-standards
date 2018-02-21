@@ -57,7 +57,7 @@ On iOS, there is one Firebase configuration file per environment.
 5. Download the configuration file `GoogleService-Info.plist` and rename it like `GoogleService-Info.{APP_IDENTIFIER}.plist`
    * Example: for `tech.bam.myApp.staging`, `GoogleService-Info.tech.bam.myApp.staging.plist`
 6. Repeat steps 3 to 5 for all your environments
-7. Duplicate your configuration file for dev environement two times and rename them like so:
+7. Duplicate your configuration file for dev environment two times and rename them like so:
    * `GoogleService-Info.plist`
    * `GoogleService-Info..plist`
 8. Put all your configuration files in the root of your iOS app folder (`ios` in React-Native)

@@ -8,7 +8,7 @@ In this article, we will see how to have access to and use the props of a compon
 
 ## The point of this article ?
 
-Usually, developpers need to have access to the props of a component inside its presentational part (the .component.js file) and not its container. Thus, they use the object form of mapStateToProps and mapDispatchToProps, which don't have access to the props of the component but are easier to use and write.
+Usually, developers need to have access to the props of a component inside its presentational part (the .component.js file) and not its container. Thus, they use the object form of mapStateToProps and mapDispatchToProps, which don't have access to the props of the component but are easier to use and write.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ This is a standard container, with a selector giving access to a list of events 
 
 {% hint style='info' %}  
 
-But what if you want to give a specific behavior to your container ? For example enabling the adding of an event only if the todo is editable ? Or seeing only a limited number of events depeding on the rights of your user ? You can give props to your container ! Let's see how :
+But what if you want to give a specific behavior to your container ? For example enabling the adding of an event only if the todo is editable ? Or seeing only a limited number of events depending on the rights of your user ? You can give props to your container ! Let's see how :
 
 {% endhint %}
 

@@ -167,6 +167,6 @@ docker-compose -f docker-compose-prod.yml up -d
 {% hint style='success' %} **CHECK**
 
 - Check the validity of your domain, go to https://your.domain
-- Go [there](https://www.ssllabs.com/ssltest/) and check your domain. Usefull tip: go to the __Handshake Simulation__ section and check the supported devices.
+- Go [there](https://www.ssllabs.com/ssltest/) and check your domain. Useful tip: go to the __Handshake Simulation__ section and check the supported devices.
 
 {% endhint %}

@@ -18,7 +18,7 @@ When calling a deeplink in your app, a 'url' event will be dispatch with the url
 ### iOS
 
 If you have Facebook SDK installed, a "application" function will already be implemented in your AppDelegate.m
-You will nedd to refactor the two methods as is :
+You will need to refactor the two methods as is :
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application

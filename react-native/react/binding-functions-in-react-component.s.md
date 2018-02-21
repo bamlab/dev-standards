@@ -13,7 +13,7 @@ The tutorial does it the old ES5 way when we should better use the ES6 way (with
 ## Prerequisites (~4 min)
 
 - Have **react-native** installed (`npm i -g react-native-cli`) (~2 min)
-- Have a react-native projet (`react-native init <project name`) (~2 min)
+- Have a react-native project (`react-native init <project name`) (~2 min)
 
 ## Checks
 
@@ -41,7 +41,7 @@ class Test extends Component {
 
 - This is bad in two ways : performance and syntax.
 
-1. Performance : the first problem here is we use `bind` at every `onChange` event, which is very costly. What we coud do is (still not optimal) : 
+1. Performance : the first problem here is we use `bind` at every `onChange` event, which is very costly. What we could do is (still not optimal) :
 
 ```javascript
 class Test extends Component {

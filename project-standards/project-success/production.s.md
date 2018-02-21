@@ -1,4 +1,4 @@
-# [Standard] Launch in production (each plateform) or Apple agreement asked (if sprint >= 2)
+# [Standard] Launch in production (each platform) or Apple agreement asked (if sprint >= 2)
 
 ## Owner: [Xavier Lefèvre](https://github.com/xavierlefevre)
 

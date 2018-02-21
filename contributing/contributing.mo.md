@@ -9,7 +9,7 @@
 
 ## Steps:
 
-### 1. Writting *(Variable time)*
+### 1. Writing *(Variable time)*
 
 - For a Method of Operation please read [the following standard](/contributing/mo.s.md)
 - For a Standard please read [the following standard](/contributing/standard.s.md)

@@ -7,13 +7,13 @@
 ### Purpose of a timebox
 It is hard for people to estimate the amount of time they will have to spend on a specific task, but it is much easier to compare the complexity between two tasks. This is why in the scrum method, tickets are estimated according to their complexity: the more difficult they are, the more points they are worth. 
 
-However, to measure the complexity of a ticket the team must know how to develop it. And sometimes they cannot know in advance how to do it because there is uncertainty that needs to be removed. To overcome the impossibilty to estimate the complexity of tickets, we can use a timebox.
+However, to measure the complexity of a ticket the team must know how to develop it. And sometimes they cannot know in advance how to do it because there is uncertainty that needs to be removed. To overcome the impossibility to estimate the complexity of tickets, we can use a timebox.
 
 ### What is a timebox ?
 In a timebox the team decides to spend a certain amount of time on the ticket.
 At the end of the timebox, there can be several outcomes, here are a few examples:
 - Several solutions were found, it is up to the PR (product owner) to decide which one he would like to see in his project.
-- The developper decided which is the best solution and had the time to partially or completely code the functionality.
+- The developer decided which is the best solution and had the time to partially or completely code the functionality.
 - During the timebox, no solution was found.
 
 ### At the end of a timebox
@@ -21,10 +21,10 @@ At the end of the timebox, there can be several outcomes, here are a few example
 
 ### Bad examples of a report:
 
-- The functionality is fully developped, you can validate that it works or create a ticket if it does not.
+- The functionality is fully developed, you can validate that it works or create a ticket if it does not.
 
 What is wrong:
-  - We don't know precisely what is developped
+  - We don't know precisely what is developed
   - It is interesting to give more detail on the different possibilities that were considered, and why the dev chose this one in particular.
 
 ### Good example of a report:

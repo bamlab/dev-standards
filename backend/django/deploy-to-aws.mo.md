@@ -32,7 +32,7 @@
   ```bash
   pip3 install awsebcli
   ```
-- Set up your EB environment, in your project root directoy:
+- Set up your EB environment, in your project root directory:
   ```bash
   eb init
   ```
@@ -52,12 +52,12 @@
     (default is 3): 
     ```
   - Connect to your IAM user
-  - Give a general name to your instance, generaly the name of the project/company, example: name_of_project-staging
+  - Give a general name to your instance, generally the name of the project/company, example: name_of_project-staging
   - Precise that you are using Python 3+
   - Say no to "CodeCommit"
   - Generate a new SSH Keypair that you will share with your teammates
-> Check: EB should have generated a ".elasticbeanstalk" folder in your directoy with your configuration
-- You can commit finaly your setup
+> Check: EB should have generated a ".elasticbeanstalk" folder in your directory with your configuration
+- You can commit finally your setup
   ```bash
   git add .
   git commit -m "Created EB project instance"
@@ -65,7 +65,7 @@
 
 ### Configure your project for EB (~15min)
 - We use cookiecutter as our base Django project at BAM, so we will use their configuration for EB:
-  - Create a ".ebextensions" in your project root directoy
+  - Create a ".ebextensions" in your project root directory
   - Copy the [EB configuration from cookie cutter repo](https://github.com/pydanny/cookiecutter-django/tree/master/%7B%7Bcookiecutter.project_slug%7D%7D/.ebextensions)
     - In "10_packages.config":
       ```

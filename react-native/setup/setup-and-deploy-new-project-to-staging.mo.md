@@ -117,4 +117,4 @@ bundle exec fastlane android deploy --env=staging
 
 ## Troubleshooting
 
-If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
+If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Triggering a `git clone git@github.com:bamlab/certificates.git` will fix it.

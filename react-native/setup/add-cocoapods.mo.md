@@ -18,7 +18,7 @@
   - Add `pods` to *.gitignore*
   - Open the `Podfile`
     - Remove every *[name]Tests* target
-    - (Optionnal) Remove the *[name]-tvOS* target
+    - (Optional) Remove the *[name]-tvOS* target
   - Run `bundle exec pod install`
 
 > **Checks:**
