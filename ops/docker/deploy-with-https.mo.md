@@ -39,7 +39,7 @@ Try to launch the companion by running:
 ./start.sh
 ```
 
-You should have the following error because the port 80 is already used by your docker:
+You should have the following error because the port 80 is already used by your app docker:
 
 ```
 ERROR: for nginx-web  Cannot start service nginx-web: driver failed programming external connectivity on endpoint nginx-web (4c0105fe57d370c99c0a143c967d1b8737006a4138618e1defebc4bab4e42d11): Bind for 0.0.0.0:80 failed: port is already allocated
@@ -101,11 +101,12 @@ Update the .env file of your web-app docker
 + VIRTUAL_HOST=my.domain.cloud.bam.tech
 + LETSENCRYPT_HOST=my.domain.cloud.bam.tech
 + LETSENCRYPT_EMAIL=your@email.com
-```
+
 
 {% hint style='warning' %} **OTHER solution**
 
 If you have no .env file you an also Update the docker-compose-prod file
+
 
 ```diff
 version: '3'
