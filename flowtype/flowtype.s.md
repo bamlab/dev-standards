@@ -59,10 +59,10 @@ If you make a typo in `React`, you can don't see it.
 // @ flow
 
 type PropsType = {|
-    chevres: Array<string>
+    goats: Array<string>
 |}
 
-const Troupeau = (props: PropsType) => (<View><Text>{props.chevres.lenght}</Text></View>)
+const Herd = (props: PropsType) => (<View><Text>{props.goats.length}</Text></View>)
 ```
 
 If you make a typo in `PropsType`, you can see it.
@@ -73,10 +73,10 @@ If you make a typo in `PropsType`, you can see it.
 // @ flow
 
 type PropsType = {
-    maChevrePreferee: string
+    myFavoriteGoat: string
 }
 
-const Troupeau = (props: PropsType) => (<View><Text>{props.monMoutonPrefere}</Text></View>)
+const Herd = (props: PropsType) => (<View><Text>{props.myFavoriteGoat}</Text></View>)
 ```
 
-(`monMoutonPrefere` should raise an error, but don't since `PropsType` are not exact)
+(`myFavoriteGoat` should raise an error, but don't since `PropsType` are not exact)
