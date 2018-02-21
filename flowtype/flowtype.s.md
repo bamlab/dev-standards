@@ -44,7 +44,7 @@ If you make a typo in `React`, you can see it, for instance.
 ```js
 import React from "react";
 // rest of the file
-class Comp from Reeeeeeeact.Component {
+class Comp from React.Component {
 
 }
 ```
