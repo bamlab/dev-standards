@@ -39,7 +39,7 @@ Try to launch the companion by running:
 ./start.sh
 ```
 
-You should have the following error:
+You should have the following error because the port 80 is already used by your app docker:
 
 ```
 ERROR: for nginx-web  Cannot start service nginx-web: driver failed programming external connectivity on endpoint nginx-web (4c0105fe57d370c99c0a143c967d1b8737006a4138618e1defebc4bab4e42d11): Bind for 0.0.0.0:80 failed: port is already allocated
@@ -83,7 +83,7 @@ https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-case
 
 {% endhint %}
 
-- In your project set 3 environment variable : `VIRTUAL_HOST`, `LETSENCRYPT_HOST`, `LETSENCRYPT_EMAIL`.There are 2 ways: 
+- In your project set 3 environment variable : `VIRTUAL_HOST`, `LETSENCRYPT_HOST`, `LETSENCRYPT_EMAIL`. The email will be used by _Letsencrypt_ to notify you if the certificate expire.There are 2 ways:
     - In the docker-compose file
     - In your prod.env file that is read by your Dockerfile.
 
@@ -96,25 +96,27 @@ Update the .env file of your web-app docker
 
 - In the `./env/prod.env` add the following:
 
-```env
-VIRTUAL_HOST=my.domain.cloud.bam.tech
-LETSENCRYPT_HOST=my.domain.cloud.bam.tech
-LETSENCRYPT_EMAIL=sammyt@bam.tech
-```
+```diff
+#... other env variable
++ VIRTUAL_HOST=my.domain.cloud.bam.tech
++ LETSENCRYPT_HOST=my.domain.cloud.bam.tech
++ LETSENCRYPT_EMAIL=your@email.com
+
 
 {% hint style='warning' %} **OTHER solution**
 
 If you have no .env file you an also Update the docker-compose-prod file
 
-```yaml
+
+```diff
 version: '3'
 services: 
   your-web-app: #It should contain port: "80:80"
     # ... 
     environment:
-      - VIRTUAL_HOST=my.domain.cloud.bam.tech
-      - LETSENCRYPT_HOST=my.domain.cloud.bam.tech
-      - LETSENCRYPT_EMAIL=sammyt@bam.tech
++      - VIRTUAL_HOST=my.domain.cloud.bam.tech
++      - LETSENCRYPT_HOST=my.domain.cloud.bam.tech
++      - LETSENCRYPT_EMAIL=your@email.com
 ```
 
 {% endhint %}
@@ -122,7 +124,7 @@ services:
 
 ### Make the switch
 
-{% hint style='warning' %} **BUSINESS INTERRUPTION**
+{% hint style='danger' %} **BUSINESS INTERRUPTION**
 
 You will have to shut down your docker (so the port 80 is available), so during this step your domain  won't be accessible.
 
@@ -149,7 +151,7 @@ cd -
 docker-compose -f docker-compose-prod.yml up -d
 ```
 
-{% hint style='success' %} **BUSINESS INTERRUPTION**
+{% hint style='success' %} **CHECK**
 
 - Check the validity of your domain, go to https://your.domain
 - Go [there](https://www.ssllabs.com/ssltest/) and check your domain. Usefull tip: go to the __Handshake Simulation__ section and check the supported devices.
