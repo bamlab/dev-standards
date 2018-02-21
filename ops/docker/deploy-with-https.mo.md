@@ -114,7 +114,7 @@ Update the .env file of your web-app docker
 + VIRTUAL_HOST=my.domain.cloud.bam.tech
 + LETSENCRYPT_HOST=my.domain.cloud.bam.tech
 + LETSENCRYPT_EMAIL=your@email.com
-
+```
 
 {% hint style='warning' %} **OTHER solution**
 
