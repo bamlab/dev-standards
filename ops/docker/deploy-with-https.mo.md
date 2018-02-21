@@ -2,12 +2,22 @@
 
 ## Owner: [Sammy Teillet](https://github.com/samox)
 
+{% hint style='success' %} **CONTROL POINTS**
+
+If, _as an expert of docker_, you want to adapt the standard to the context of your project, you have to check that:
+
+* [ ] server listen port `80` and `443` 
+* [ ] server redirect port `80` to `443` with `301: Moved Permanently`
+* [ ] proxy should have an automated way of renewing certificates
+* [ ] you should get at least `A` when checking https://www.ssllabs.com/ssltest/
+
+{% endhint %}
+
 ## Prerequisites
 
 * [ ] You have a staging environment with docker
 * [ ] You can ssh to the server
 * [ ] Make sure you have the docker rights `sudo usermod -aG docker $YOUR_USER_NAME`
-
 
 ## Steps
 
