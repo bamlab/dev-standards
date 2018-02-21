@@ -127,6 +127,9 @@ we help him solve his problem and then together write either a [Standard] or a [
 - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
 - [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
 
+## OPS
+- [[MO] Setup HTTPS on your docker environment](/ops/docker/deploy-with-https.mo.md) (10 min)
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">BAM Standards</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
