@@ -17,6 +17,10 @@
   * Open React Native Debugger
   * Launch the simulator from xcode with the play button on the top left
 
+{% hint style='success' %} **CHECK**
+In RN debugger, you can see logs from the first app.
+{% endhint %}
+
 * For the second application:
 
   * Open it with xcode `xcode ./ios/your-second-app.xcworkspace`
@@ -31,5 +35,9 @@
   * Launch the simulator from xcode with the play button
   * Launch a new packager from your project directory: `react-native start --port 9980`
   * Close and re-open the app from within the simulator
+
+{% hint style='success' %} **CHECK**
+In the other RN debugger, you can see logs from the second app.
+{% endhint %}
 
 * You are good to go! Both apps are now running with separate packagers and separate debuggers.
