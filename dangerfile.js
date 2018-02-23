@@ -14,7 +14,6 @@ const summaryContent = fs.readFileSync("SUMMARY.MD").toString();
 
 for (let moFile of moFiles) {
   const fileContent = fs.readFileSync(moFile).toString();
-  const fileInfos = path.parse(moFile);
   const fileUrl = danger.github.utils.fileLinks([moFile]);
 
   if (!fileContent.match(/^# \[MO\] /)) fail(`**${fileUrl}**: Title doesn't contain \`[MO]\` tag at the beginning`);
@@ -30,7 +29,6 @@ for (let moFile of moFiles) {
 
 for (let standardFile of standardFiles) {
   const fileContent = fs.readFileSync(standardFile).toString();
-  const fileInfos = path.parse(standardFile);
   const fileUrl = danger.github.utils.fileLinks([standardFile]);
 
   if (!fileContent.match(/^# \[Standard\] /))
