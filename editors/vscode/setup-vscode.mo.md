@@ -44,3 +44,10 @@ Open the plugins menu and install:
   "Fastfile": "ruby"
 }
 ```
+
+#### 4. Usefull Project preferences
+
+- Hit `cmd+shift+p`
+- Select `Preferences: Open Workspace Settings`
+- Add the following:
+  - For a react project with Flow `"javascript.validate.enable": false`
