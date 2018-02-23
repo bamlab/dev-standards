@@ -15,8 +15,8 @@ Learn more about us [in our french website](http://www.bam.tech/).
 
 Part of lean philosophy is to standardize best practices and spread them out.
 
-Every time a developer is struggling doing a part of his job (e.g.: changing the application icon, deploying features very fast using code push, etc...),
-we help him solve his problem and then together write either a [Standard] or a [Mode of Operation].
+Every time a developer is struggling doing a part of their job (e.g.: changing the application icon, deploying features very fast using code push, etc...),
+we help them solve their problem and then together write either a [Standard] or a [Mode of Operation].
 
 ## Contributing
 - **READ FIRST:** [[MO] Contributing](/contributing/contributing.mo.md)

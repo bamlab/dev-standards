@@ -7,7 +7,7 @@
 - File name should be kebab case and suffixed by `.mo`
 - Is referenced in the root *README.MD* and *SUMMARY.MD*
 - Should contain the following parts:
-  - An owner with a link to his Github Profile
+  - An owner with a link to their Github Profile
   - Title + time
   - A list of prerequisites
   - A list of steps
@@ -22,8 +22,8 @@
 ### Example 1: [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
 
 - There is no owner
-- No time is mentionned
-- No checks are mentionned
+- No time is mentioned
+- No checks are mentioned
 - Troubleshooting is not in its own part
 
 ## Good Examples

@@ -9,7 +9,7 @@
 
 ## Steps:
 
-### 1. Writting *(Variable time)*
+### 1. Writing *(Variable time)*
 
 - For a Method of Operation please read [the following standard](/contributing/mo.s.md)
 - For a Standard please read [the following standard](/contributing/standard.s.md)
@@ -27,7 +27,7 @@
 
 ### 2bis. Fixing *(Variable time)*
 
-When a reviewer has reviewed your article he may give you some feedback.
+When a reviewer has reviewed your article they may give you some feedback.
 
 - Correct what needs to be corrected
 - Answer the comments which don't need fixing

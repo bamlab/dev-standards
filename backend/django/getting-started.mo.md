@@ -6,7 +6,7 @@
 
 ## Context
 
-During this standard, we will take the exemple of a book library gestion app.
+During this standard, we will take the example of a book library management app.
 
 We will thus create a MAB project (`BAM`, reversed) and a Library app containing a `Book` and a `Author` Models.
 
@@ -15,7 +15,7 @@ We will create an Admin using Django Admin Framework and a rest API, using Djang
 ## Prerequisites (~10 min)
 
 - Have **HomeBrew** installed (`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)`) (~3 min)
-- Have `$PATH` environment variable priorizing Homebrew package (`export PATH=/usr/local/bin:/usr/local/sbin:$PATH` in .bashrc or similar) (~3 min)
+- Have `$PATH` environment variable prioritizing Homebrew package (`export PATH=/usr/local/bin:/usr/local/sbin:$PATH` in .bashrc or similar) (~3 min)
 - Have **Python 3.6** installed (`brew install python3`): 3.6 is needed for [f"{variable} text" syntax] (https://cito.github.io/blog/f-strings/), if you have version 3.x (x lower then 6, just use the old format "{} text".format(variable)  (~2 min)
 - Have **virtualenv** installed (`pip3 install virtualenv`) (~1 min)
 - If you use Visual Studio Code, read [this article](http://ruddra.com/2017/08/19/vs-code-for-python-development/) (~5 min)
@@ -99,7 +99,7 @@ INSTALLED_APPS = [
 
 ### Add the first model (~5 min)
 
-> **NOTE**: for editing Python code, I recommand using [Pycharm](https://www.jetbrains.com/pycharm/). The debugging and auto complete features helps a lot. There is a community edition that is free to use. That being said, [@yann](https://github.com/yleflour) commited on making VSCode great agin, even for python. Stay tuned.
+> **NOTE**: for editing Python code, I recommend using [Pycharm](https://www.jetbrains.com/pycharm/). The debugging and auto complete features helps a lot. There is a community edition that is free to use. That being said, [@yann](https://github.com/yleflour) committed on making VSCode great again, even for python. Stay tuned.
 
 - Open `mab/library/models.py` in Pycharm (or other, if you still resists).
 - Lets start with a model `Author`: a model derive from `models.Model`, and for project documentation have a small docstring explaining what it is
@@ -112,7 +112,7 @@ class Author(models.Model):
     pass
 ```
 
-- Lets add the first fields in the Author models: there is a lot of available fields in `django.db.models` and even more available in plateform specifics modules (eg, [postgres array or json fields](https://docs.djangoproject.com/en/1.11/ref/contrib/postgres/fields/)), or in external plugins
+- Lets add the first fields in the Author models: there is a lot of available fields in `django.db.models` and even more available in platform specifics modules (eg, [postgres array or json fields](https://docs.djangoproject.com/en/1.11/ref/contrib/postgres/fields/)), or in external plugins
 
 ```python
 from django.db import models
@@ -141,10 +141,10 @@ class Author(models.Model):
     )
 ```
 
-> **NOTE**: it is a good practice to add created and modifed fields to models, and add a verbose name.
+> **NOTE**: it is a good practice to add created and modified fields to models, and add a verbose name.
 
 
-- Create auto-magicaly the migrations: `python manage.py makemigrations`
+- Create auto-magically the migrations: `python manage.py makemigrations`
 - Migrate the database: `python manage.py migrate`
 
 > **CHECK 1**:
@@ -224,7 +224,7 @@ from django.contrib import admin
 from .models import Book, Author
 
 
-# The inline would list for every author the books he made
+# The inline would list for every author the books they made
 class BookInline(admin.TabularInline):
     model = Book
     readonly_fields = (
@@ -378,5 +378,5 @@ urlpatterns = [
 ## Troubleshooting
 
 - Django documentation is well organized: https://docs.djangoproject.com/en/1.11/
-- **Beware, at least 1/3 of the article are not about Python and really NSFW.** [Sam et Max blog](http://sametmax.com/) is really the best ressource for python learning in French, especially django. 
+- **Beware, at least 1/3 of the article are not about Python and really NSFW.** [Sam et Max blog](http://sametmax.com/) is really the best resource for python learning in French, especially django.
 - Django has a strong community on [Reddit](https://www.reddit.com/r/django/) and [blogs](https://www.djangoproject.com/community/blogs/)

@@ -1,4 +1,4 @@
-# [Standard] This week, a member of the technical team destroyed his project environment and re-installed everything under 15minutes
+# [Standard] This week, a member of the technical team destroyed their project environment and re-installed everything under 15minutes
 
 ## Owner: *TBD*
 

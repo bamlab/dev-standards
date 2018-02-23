@@ -14,7 +14,7 @@ If, _as an expert of docker_, you want to adapt the standard to the context of y
 * [ ] server redirect port `80` to `443` with `301: Moved Permanently`
 * [ ] proxy should renew certificates automatically before they expire (letsencrypt certificates have 90 days of validity)
 * [ ] you should get at least `A` when checking https://www.ssllabs.com/ssltest/
-* [ ] you should check in the report of https://www.ssllabs.com/ssltest/ that the server devices range cover your definition of DONE : eg, if you need to support old IE or old android, you have to lower the security enough for compatibility
+* [ ] you should check in the report of https://www.ssllabs.com/ssltest/ that the server devices range cover your definition of DONE: eg, if you need to support old IE or old android, you have to lower the security enough for compatibility
 
 ## Prerequisites
 
@@ -96,7 +96,7 @@ https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-case
 
 {% endhint %}
 
-- In your project set 3 environment variable : `VIRTUAL_HOST`, `LETSENCRYPT_HOST`, `LETSENCRYPT_EMAIL`. The email will be used by _Letsencrypt_ to notify you if the certificate expire.There are 2 ways:
+- In your project set 3 environment variable: `VIRTUAL_HOST`, `LETSENCRYPT_HOST`, `LETSENCRYPT_EMAIL`. The email will be used by _Letsencrypt_ to notify you if the certificate expire.There are 2 ways:
     - In the docker-compose file
     - In your prod.env file that is read by your Dockerfile.
 
@@ -167,6 +167,6 @@ docker-compose -f docker-compose-prod.yml up -d
 {% hint style='success' %} **CHECK**
 
 - Check the validity of your domain, go to https://your.domain
-- Go [there](https://www.ssllabs.com/ssltest/) and check your domain. Usefull tip: go to the __Handshake Simulation__ section and check the supported devices.
+- Go [there](https://www.ssllabs.com/ssltest/) and check your domain. Useful tip: go to the __Handshake Simulation__ section and check the supported devices.
 
 {% endhint %}

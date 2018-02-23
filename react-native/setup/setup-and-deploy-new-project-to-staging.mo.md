@@ -54,23 +54,18 @@ yo rn-toolbox:fastlane-env
 **_Answers_**
 
 * Please confirm the project name: `<Press Enter>`
-* The name for this new environment (lo
-  wercase, no space): `staging`
-* The name of your repository Git branc
-  h for the environment just set: `<Press Enter>`
+* The name for this new environment (lowercase, no space): `staging`
+* The name of your repository Git branch for the environment just set: `<Press Enter>`
 * The name of the company which will be
   publishing this application: `Bam`
-* Which platform will you use for deplo
-  yment?: `AppCenter`
+* Which platform will you use for deployment?: `AppCenter`
 * The iOS app name for this environment. Name should be different from the Android app and not contain spaces: `<AppName>-ios-S`
 * The Android app name for this environment. Name should be different from the Android app and not contain spaces: `<AppName>-android-S`
 * The App Id for this environment: `tech.bam.<projectname>.staging`
-* The type of certificate you will be u
-  sing: `In House (Enterprise only)`
+* The type of certificate you will be using: `In House (Enterprise only)`
 * Your git repo for match: `git@github.com:<TeamRepo>/certificates.git`
 * The branch you want to use for match: `<Press Enter>`
-* The developer.apple.com team id for t
-  he certificates: `**redacted**`
+* The developer.apple.com team id for the certificates: `**redacted**`
 * Your apple id: `**redacted**`
 * Your keystore password: `<Press Enter>`
 * A valid App Center API token: `**redacted**`
@@ -117,4 +112,4 @@ bundle exec fastlane android deploy --env=staging
 
 ## Troubleshooting
 
-If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted Trigering a `git clone git@github.com:bamlab/certificates.git` will fix it.
+If 'Cloning GitHub repo' takes more than 2 minutes: the github servers may be untrusted. Triggering a `git clone git@github.com:bamlab/certificates.git` will fix it.

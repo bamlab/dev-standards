@@ -6,7 +6,7 @@
 
 React-navigation doesn't unmount your page when you go on the next one. That allow fast transition when you go back.
 
-But if you are using a Camera component, a WebView or every compoenent which use a lot of resources and can have side effect if it continue to run background, you need to unmount them when you leave the page.
+But if you are using a Camera component, a WebView or every component which use a lot of resources and can have side effect if it continue to run background, you need to unmount them when you leave the page.
 
 For that, you can use the [`getPathAndParamsForState` of a Router](https://reactnavigation.org/docs/routers/api).
 
@@ -18,7 +18,7 @@ For that, you can use the [`getPathAndParamsForState` of a Router](https://react
 ## Steps *(~5min)*
 
  - Add a props `myFeatureIsActivated` on the component with default value at `true`
- - In the render method, display you compoenent only if `myFeatureIsActivated` is at true : 
+ - In the render method, display you component only if `myFeatureIsActivated` is at true:
 
  ```jsx
 return ( 
@@ -31,7 +31,7 @@ return (
 
 - Test is your component still work (nothing should have change)
 - Import your main stack navigation
-- In the mapDispatchToProps, compare the path given by the getPathAndParamsForState to the path of your page, you should have something like :
+- In the mapDispatchToProps, compare the path given by the getPathAndParamsForState to the path of your page, you should have something like:
 
 ```jsx
 import { RootNavigator } from '../../../Routing';
@@ -41,7 +41,7 @@ const mapStateToProps = state => ({
 });
 ```
 
-The path is given by your navigations stacks. In the following example, the path of `SIMCardScan` is `activate/simCardScan`
+The path is given by your navigation stacks. In the following example, the path of `SIMCardScan` is `activate/simCardScan`
 
 ```jsx
 const ActivateStack = StackNavigator(
@@ -78,5 +78,5 @@ export const RootNavigator = StackNavigator(
 );
 ```
 
-- Test a last time, your component should disapear at the begining of the page transition.
+- Test a last time, your component should disappear at the beginning of the page transition.
 

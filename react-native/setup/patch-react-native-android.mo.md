@@ -40,7 +40,7 @@ cp fix-rn/UIImplementation.java node_modules/react-native/ReactAndroid/src/main/
 > - when you run `$ scripts/fix-rn.sh` your files have been changed in your node modules
 
 - Add `scripts/fix-rn.sh` in the `postInstall` of your `package.json`
-- Make sure your run `yarn` after you've pulled the latest changes in your deployement script
+- Make sure your run `yarn` after you've pulled the latest changes in your deployment script
 
 > **Checks:**
 >

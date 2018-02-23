@@ -1,10 +1,10 @@
 #!/bin/sh
 
 
-# ✔ rename file adding date and add to export foler
+# ✔ rename file adding date and add to export folder
 # ✔ add header
 # ✔ convert path to category, prefixed with BAM, using last directory as category
-# ✔ covnert slug to category name
+# ✔ convert slug to category name
 # - FOR EACH
 
 DEST_DIR="export"

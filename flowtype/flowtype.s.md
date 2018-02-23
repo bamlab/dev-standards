@@ -5,7 +5,7 @@
 ## Why
 
 Flowtype is awesome:
-- it successfully replaces unit tests for some tasks, like ensuring that the differents parts of the app, remains in sync with each others.
+- it successfully replaces unit tests for some tasks, like ensuring that the different parts of the app, remains in sync with each others.
 - it give you autocompletion
 
 That being said, if flow is misconfigured and you blindly trust the result, you can still have bug where it should have raised an alert for you.
@@ -44,7 +44,7 @@ If you make a typo in `React`, you can see it, for instance.
 ```js
 import React from "react";
 // rest of the file
-class Comp from Reeeeeeeact.Component {
+class Comp from React.Component {
 
 }
 ```
@@ -59,10 +59,10 @@ If you make a typo in `React`, you can don't see it.
 // @ flow
 
 type PropsType = {|
-    chevres: Array<string>
+    goats: Array<string>
 |}
 
-const Troupeau = (props: PropsType) => (<View><Text>{props.chevres.lenght}</Text></View>)
+const Herd = (props: PropsType) => (<View><Text>{props.goats.length}</Text></View>)
 ```
 
 If you make a typo in `PropsType`, you can see it.
@@ -73,10 +73,10 @@ If you make a typo in `PropsType`, you can see it.
 // @ flow
 
 type PropsType = {
-    maChevrePreferee: string
+    myFavoriteGoat: string
 }
 
-const Troupeau = (props: PropsType) => (<View><Text>{props.monMoutonPrefere}</Text></View>)
+const Herd = (props: PropsType) => (<View><Text>{props.myFavoriteGoat}</Text></View>)
 ```
 
-(`monMoutonPrefere` should raise an error, but don't since `PropsType` are not exact)
+(`myFavoriteGoat` should raise an error, but don't since `PropsType` are not exact)
