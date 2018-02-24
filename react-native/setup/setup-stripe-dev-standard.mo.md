@@ -31,7 +31,7 @@ However, even if Stripe asked you to stop using tipsi, the time loss would be li
 - I recommend to use the basic add card form to be Stripe friendly
 [Documentation](https://github.com/tipsi/tipsi-stripe#request-with-card-form)
 
-`````
+```js
 import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import stripe from 'tipsi-stripe';
@@ -80,7 +80,7 @@ export default class Payment extends PureComponent<PropsType, StatesType> {
     );
   }
 }
-`````
+```
 
 ### Plug it with your back
 With Stripe, you have a publishable key that you can store on you application and a private key that should never appear in any distributed binary. The publishable key can only be used to create tokens from card informations. Then, you have to combine them with the private key to post it to Stripe through their API.   
