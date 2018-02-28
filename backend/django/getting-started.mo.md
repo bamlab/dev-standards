@@ -1,4 +1,4 @@
-# [MO] Get Started with Django, in 3/4 hour (~45 min)
+# [MO] Get Started with Django, in ~45 min
 
 ## Owner: [Tycho Tatitscheff](https://github.com/tychota)
 
