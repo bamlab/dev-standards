@@ -43,6 +43,7 @@
     - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
     - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
   - Architecture
+    - [[Standard] Default stack](/react-native/architecture/default-stack.s.md)
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
   - Debugging

@@ -74,6 +74,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
 
 ### Architecture
+- [[Standard] Default stack](/react-native/architecture/default-stack.s.md)
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
 - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
 
