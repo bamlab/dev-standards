@@ -1,4 +1,4 @@
-# [MO] Set up Detox on Jest *(~10 mins)*
+# [MO] Set up Detox with Jest *(~30 mins)*
 
 ## Owner: [Alban Depretz](https://github.com/chdeps)
 
@@ -65,7 +65,7 @@ Also make sure the simulator model specified under the key `"name"` (`iPhone 7` 
 > TIP: To test a release version, replace 'Debug' with 'Release' in the binaryPath and build properties. 
 
 
-## Step 3: Write your 1st test (Jest only) *(~5mins)*
+## Step 3: Write your 1st test (Jest only) *(~10mins)*
 
 ### 1. Configure Detox to run on Jest
 
@@ -111,7 +111,7 @@ beforeEach(async () => {
 });
 ```
 
-### 2. Write a test
+### 2. Write your test
 
 * Add Regexp to your test files in the config file `e2e/config.json` :
 
@@ -134,7 +134,7 @@ describe('Test 1st screen', () => {
 });
 ```
 
-## Step 4: Run tests
+## Step 4: Run tests *(~5mins)*
 
 * Add to your `package.json`:
 
@@ -153,7 +153,7 @@ npm run test:e2e:debug:build
 npm run test:e2e:debug
 ```
 
-## Step 5: Add compatibilty with eslint (Optional)
+## Step 5: Add compatibilty with eslint (Optional) *(~5mins)*
 
 ### 1. Add eslint plugin eslint-plugin-detox
 
