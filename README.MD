@@ -72,6 +72,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
 - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
 - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
+- [[Standard] Override an existing app](/react-native/setup/overriding-existing-app.s.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
