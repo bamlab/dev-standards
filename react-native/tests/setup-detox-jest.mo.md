@@ -9,7 +9,7 @@ Running Detox (on iOS) requires the following:
 * Mac with macOS (>= macOS El Capitan 10.11)
 * Xcode 8.3+ with Xcode command line tools
 * A working [React Native](https://facebook.github.io/react-native/docs/getting-started.html) app
-* A Javascript test Runner installed (Jest in our example. React Native works also with Mocha)
+* A Javascript test Runner installed (Jest in our example. Detox also works with Mocha)
 * Node 7.6.0 or above for native async-await support
 
 ## Step 1: Install dependencies *(~5mins)*
@@ -95,6 +95,7 @@ import detox from 'detox';
 import packageFile from '../package.json';
 const detoxConfig = packageFile.detox;
 
+//Valeur à adapter selon le temps maximum des tests. Dans ce cas la CI va attendre 2 mins avant d'échouer.
 jest.setTimeout(120000);
 
 beforeAll(async () => {
@@ -124,7 +125,12 @@ beforeEach(async () => {
 
 > NOTE: Here I'm matching all files that end in `.e2e.js` 
 
-* Create your 1st test file `e2e/test.e2e.js` :)
+* Add a testID to your built in RN component
+
+```js
+<Text testID="title">Your Title</Text>
+```
+* Create your 1st test file `e2e/test.e2e.js` to check that your title exists
 
 ```js
 describe('Test 1st screen', () => {
@@ -153,7 +159,7 @@ npm run test:e2e:debug:build
 npm run test:e2e:debug
 ```
 
-## Step 5: Add compatibilty with eslint (Optional) *(~5mins)*
+## Step 5: Add compatibility with eslint (Optional) *(~5mins)*
 
 ### 1. Add eslint plugin eslint-plugin-detox
 
@@ -178,6 +184,3 @@ npm install eslint-plugin-detox --save-dev
 ```js
 /* eslint-env detox/detox */
 ```
-
-
-
