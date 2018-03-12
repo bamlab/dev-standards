@@ -69,7 +69,7 @@ const {posX, posY, width, height} = event.nativeEvent.layout
 
 you can know calculate the number of green pixels rows with the width we just got with onLayout :
 ```
-numbersOfGreenPixelsRows = this.props.status * this.state.loaderWidth
+const numbersOfGreenPixelsRows = this.props.status * this.state.loaderWidth
 ```
 
 Voilà !
