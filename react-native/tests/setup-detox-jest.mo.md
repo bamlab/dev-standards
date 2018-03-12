@@ -14,7 +14,7 @@ Running Detox (on iOS) requires the following:
 
 ## Step 1: Install dependencies *(~5mins)*
 
-Go to detox getting started [documentation] (https://github.com/wix/detox/blob/master/docs/Introduction.GettingStarted.md) for more details.
+Go to detox getting started [documentation](https://github.com/wix/detox/blob/master/docs/Introduction.GettingStarted.md) for more details.
 
 ### 1. Install [appleSimUtils](https://github.com/wix/AppleSimulatorUtils)
 
@@ -184,3 +184,31 @@ npm install eslint-plugin-detox --save-dev
 ```js
 /* eslint-env detox/detox */
 ```
+
+## Troubleshooting
+
+#### If an element of the UI cannot be found after a transition.
+
+* waitFor & withTimeout (In our example, you wait for two seconds before checking for the title)
+
+ ```js
+await waitFor(element(by.id('title'))).toExist().withTimeout(2000);
+```
+
+#### If your tests hang you might have synchronisation issues.
+
+* Use a waitFor with a temporary (de)synchronisation of your app
+
+ ```js
+  await device.disableSynchronization();
+  await waitFor(element(by.id('title'))).toExist().withTimeout(2000);
+  await device.enableSynchronization();
+```
+
+> NOTE: Sometimes the synchronization engine is stuck on a never ending asynchronous activity. Use --debug-synchronization to debug synchronization issues 
+
+## Example application
+
+* Don't hesitate to refer to [Waves](https://github.com/chdeps/waves) : An open source repo I created to test Detox :)
+
+> NOTE: You will find the bitrise.yml to automate your E2E tests on a CI
