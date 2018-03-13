@@ -88,6 +88,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Debug a React Native WebView](/react-native/debugging/debug-webviews.mo.md)
 - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
 - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
+- [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
 
 ### React
 - [[Standard] Binding functions in a React component](/react-native/react/binding-functions-in-react-component.s.md)
