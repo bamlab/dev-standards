@@ -22,7 +22,7 @@ To do this, React offers a onLayout props in which you can pass a callback that 
 A react/react-native app with components. We will take here the example of a loading bar like this one :
 ![loader](https://user-images.githubusercontent.com/13121639/37297957-56f5184e-261f-11e8-9b8b-22c8de783daa.png)
 
-your goal is to calculate the number of green pixels rows you have to display for a given loading status from 0 (0%) to 1 (100%) without previous knowlegde of the loader width
+Your goal is to calculate the number of green pixels rows you have to display for a given loading status from 0 (0%) to 1 (100%) without previous knowlegde of the loader width :
 
 ```jsx
 import React from 'react';
