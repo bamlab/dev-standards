@@ -2,9 +2,19 @@
 
 ## Owner: [Julien Nassar](https://github.com/juliennassar)
 
+## Control Points
+
+- Hide your dynamically sized (or positioned) component width a `style={{ opacity: 0 }}` during the first rendering of your component to avoid glitches.
+
 ## Motivation
 
-If you need to create a loading bar or display a list of elements without previous knowlegde of the size of these elements and you want them to be all the same, you need to know the width, height or position of an elements dynamically (whithout explicitly describing it the object's style) In order to do this, you must access these cariables during the runtime of your application.
+If you need :
+- to create a custom loading bar display
+- a list of views without previous knowlegde of their size but want them to be all the same
+- just need to know the size or position of an element on your screen dynamically (whithout explicitly describing it the object's style)
+
+You must have access those variables during the runtime of your application.
+
 To do this, React offers a onLayout props in which you can pass a callback that will be executed after the rendering of a component.
 
 ## Prerequisites
@@ -14,10 +24,6 @@ A react/react-native app with components. We will take here the example of a loa
 
 your goal is to calculate the number of green pixels rows you have to display for a given loading status from 0 (0%) to 1 (100%) without previous knowlegde of the loader width
 
-## Steps (~10 minutes)
-
-Here we have a component to dsplay te loader :
-
 ```jsx
 import React from 'react';
 import { View } from 'react-native';
@@ -26,7 +32,7 @@ export default class Display extends React.Component {
   render() {
     <View style={{flexDirection: 'row'}}>
       <View>
-        {// Some react component to display whatever}
+        {/* Some react component to display whatever */}
       </View>
       <LoadingBar status={0.33}/>
     </View>
@@ -34,11 +40,11 @@ export default class Display extends React.Component {
 }
 ```
 
-We do not know the size of LoadingBar component but we want to display a 33% progress in the LoadingBar.
+We do not know the size of `LoadingBar` component but we want to display a 33% progress in the `LoadingBar`.
 
-### create a onLayout function
+## Steps (~5 minutes)
 
-First add a function to your LoadingBar component to get its width, and pass it in the onLayout props of your LoadingBar Component, and store it in your component's state :
+First add a function to your `LoadingBar` component to get its width, and pass it in the `onLayout` props of your `LoadingBar` Component, and store it in your component's state :
 
 ```jsx
 import React from 'react';
@@ -53,21 +59,21 @@ export default class LoadingBar extends React.Component {
   }
 
   getLoadingBarWidth = event => this.setState({loaderWidth: event.nativeEvent.layout.width })
-  
+
   render() {
     <View onLayout={this.getLoadingBarWidth}>
-      {// Here you want to display x% of your bar, x being the props 'status' passed by the component above} 
+      {/* Here you want to display x% of your bar, x being the props 'status' passed by the component above */}
     </View>
   }
 }
 ```
 
-the onLayout will generate an event when the LoadingBar is displayed. You can access any layouts info with :
+the `onLayout` will generate an event when the LoadingBar is displayed. You can access any layouts info with :
 ```
 const {posX, posY, width, height} = event.nativeEvent.layout
 ```
 
-you can know calculate the number of green pixels rows with the width we just got with onLayout :
+you can know calculate the number of green pixels rows with the width we just got with `onLayout` :
 ```
 const numbersOfGreenPixelsRows = this.props.status * this.state.loaderWidth
 ```
