@@ -12,11 +12,13 @@ Running Detox (on iOS) requires the following:
 * A Javascript test Runner installed (Jest in our example. Detox also works with Mocha)
 * Node 7.6.0 or above for native async-await support
 
-## Step 1: Install dependencies *(~5mins)*
+## Steps
+
+### Step 1: Install dependencies *(~5mins)*
 
 Go to detox getting started [documentation](https://github.com/wix/detox/blob/master/docs/Introduction.GettingStarted.md) for more details.
 
-### 1. Install [appleSimUtils](https://github.com/wix/AppleSimulatorUtils)
+#### 1. Install [appleSimUtils](https://github.com/wix/AppleSimulatorUtils)
 
 Collection of utils to communicate with the simulator
 
@@ -25,17 +27,17 @@ brew tap wix/brew
 brew install applesimutils
 ```
 
-### 2. Install Detox command line tools (detox-cli)
+#### 2. Install Detox command line tools (detox-cli)
 
   ```sh
   npm install -g detox-cli
   ```
   
-> TIP: `detox -h` to output the list of available commands
+> TIP: `detox -h` gives the list of available commands
 
-## Step 2: Add Detox to your project *(~5mins)*
+### Step 2: Add Detox to your project *(~5mins)*
 
-### 1. Add Detox to your project
+#### 1. Add Detox to your project
 
 ```sh
 npm install detox --save-dev
@@ -65,9 +67,9 @@ Also make sure the simulator model specified under the key `"name"` (`iPhone 7` 
 > TIP: To test a release version, replace 'Debug' with 'Release' in the binaryPath and build properties. 
 
 
-## Step 3: Write your 1st test (Jest only) *(~10mins)*
+### Step 3: Write your 1st test *(~10mins)*
 
-### 1. Configure Detox to run on Jest
+#### 1. Configure Detox to run on Jest
 
 * Create a folder e2e at the root of your project
 * Add a jest config file `e2e/config.json` :
@@ -95,7 +97,7 @@ import detox from 'detox';
 import packageFile from '../package.json';
 const detoxConfig = packageFile.detox;
 
-//Valeur à adapter selon le temps maximum des tests. Dans ce cas la CI va attendre 2 mins avant d'échouer.
+//Adapt value depending on maximum amount of time your tests take. In our case the CI will wait 2mins before failing. 
 jest.setTimeout(120000);
 
 beforeAll(async () => {
@@ -112,9 +114,9 @@ beforeEach(async () => {
 });
 ```
 
-### 2. Write your test
+#### 2. Write your test
 
-* Add Regexp to your test files in the config file `e2e/config.json` :
+* Add a Regexp to your test files in the config file `e2e/config.json` :
 
 ```json
 {
@@ -140,7 +142,7 @@ describe('Test 1st screen', () => {
 });
 ```
 
-## Step 4: Run tests *(~5mins)*
+### Step 4: Run tests *(~5mins)*
 
 * Add to your `package.json`:
 
@@ -159,9 +161,9 @@ npm run test:e2e:debug:build
 npm run test:e2e:debug
 ```
 
-## Step 5: Add compatibility with eslint (Optional) *(~5mins)*
+### Step 5: Add compatibility with eslint (Optional) *(~5mins)*
 
-### 1. Add eslint plugin eslint-plugin-detox
+#### 1. Add eslint plugin eslint-plugin-detox
 
 * Install plugin:
 
