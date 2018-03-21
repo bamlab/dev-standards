@@ -1,4 +1,4 @@
-# [MO] Set up Detox with Jest *(~30 mins)*
+# [MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*
 
 ## Owner: [Alban Depretz](https://github.com/chdeps)
 
@@ -186,6 +186,10 @@ npm install eslint-plugin-detox --save-dev
 ```js
 /* eslint-env detox/detox */
 ```
+
+### Step 6: Automate the execution of E2E integration tests on Bitrise (Optional) *(~30 mins)*
+
+* Check the bitrise.yml of the [Waves](https://github.com/chdeps/waves) repository to automate on Bitrise.
 
 ## Troubleshooting
 
