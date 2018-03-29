@@ -37,6 +37,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
 - [[Standard] Pull Request Template](/code-quality/pull-request-template.s.md)
 - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
+- [[MO] How to correctly call an API](/code-quality/api-call-checklist.mo.md)
 
 ## Flowtype
 
