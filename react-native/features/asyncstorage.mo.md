@@ -8,59 +8,53 @@ Your mobile app is great, but how does it behave offline? End users take their p
 
 ## Prerequisites
 
-We need to import `AsyncStorage` from `react-native`. The following example will use two simple methods:
+We need to import `AsyncStorage` from `react-native`.
 
-- AsyncStorage.setItem(key, value)
-- AsyncStorage.getItem(key)
+**Always remember, when you're playing with async storage, you have to first determine three things:**
+
+* When will I store the data from my application state to the async storage
+* When will I get the data from the async storage to my application state
+* When will I clear the data from the async storage
+
+Therefore the following example will use three simple methods:
+
+* AsyncStorage.setItem(key, value)
+* AsyncStorage.getItem(key)
+* AsyncStorage.removeItem(key)
 
 `key` and `value` are two strings, so don't pass a Javascript object in these functions! All AsyncStorage methods return a Promise object.
 
 ## Steps (~15 minutes)
 
-It is recommended to use an extra layer of abstraction on top of the bare AsyncStorage that takes into account the particularities of the data you want to store. Let's start with a simple example where the hotel bookings I want to store have this structure:
+It is recommended to use an extra layer of abstraction on top of the bare AsyncStorage that takes into account the particularities of the data you want to store.
+Let's start with a simple example where the hotel bookings I want to store have this structure:
 
-``
-booking
-|- id
-|- bookingDate
-|- clientId
-|- roomId
-|_ isPaymentConfirmed
-``
+`booking |- id |- bookingDate |- clientId |- roomId |_ isPaymentConfirmed`
 
 `roomId` and `clientId` refer to the following objects:
 
-``
-client
-|- id
-|_ name
-``
+`client |- id |_ name`
 
-``
-room
-|- id
-|- number
-|_ isAvailable
-``
+`room |- id |- number |_ isAvailable`
 
 You have two options from this point:
 
-1. Storing simple values
+1.  Storing simple values
 
 In this example, we want to display basic info about a current booking, such as `bookingDate`, `clientName`, and `roomNumber`. Let's first define a extra layer to list our AsyncStorage keys, in a `myAsyncStorage.js` file for example:
 
 ```jsx
-import { AsyncStorage } from 'react-native'
+import { AsyncStorage } from "react-native";
 
-const BOOKING_DATE = 'BOOKING_DATE'
-const CLIENT_NAME = 'CLIENT_NAME'
-const ROOM_NUMBER = 'ROOM_NUMBER'
+const BOOKING_DATE = "BOOKING_DATE";
+const CLIENT_NAME = "CLIENT_NAME";
+const ROOM_NUMBER = "ROOM_NUMBER";
 
 export const asyncStorageKeys = {
   BOOKING_DATE,
   CLIENT_NAME,
   ROOM_NUMBER
-}
+};
 ```
 
 These keys can be used to save/fetch data on the device in a `bookings.js` MobX store:
@@ -96,9 +90,15 @@ class BookingsStore {
   @observable bookingDate = null
   @observable clientName = ''
   @observable roomNumber = null
-  
-  @action leaveRoom(roomNumber) {
-    AsyncStorage.setItem(asyncStorageKeys.ROOM_NUMBER, true)
+
+  @action setRoomNumber(roomNumber) {
+    this.rootNumber = roomNumber
+    AsyncStorage.setItem(asyncStorageKeys.ROOM_NUMBER, roomNumber)
+  }
+
+  @action clearRoomNumber(roomNumber) {
+    this.rootNumber = null
+    AsyncStorage.removeItem(asyncStorageKeys.ROOM_NUMBER, roomNumber)
   }
   }
 }
@@ -106,7 +106,7 @@ class BookingsStore {
 
 This approach works fine until you want to preload data in the form of objects and not strings. e.g. multiple bookings. Fortunately there is a workaround to solve this issue.
 
-2. Storing complex objects in JSON strings
+2.  Storing complex objects in JSON strings
 
 We mentioned earlier that you shouldn't pass anything else than a string to `AsyncStorage.setItem`. You can however use `JSON.stringify` to convert your JavaScript objects to serialized JSON strings for storage. The original objects can be recovered using the `JSON.parse` method. Our `myAsyncStorage.js` file becomes:
 
@@ -144,32 +144,42 @@ Notice how the file has become more manageable and easy to read. To manage the c
 ```jsx
 import { observable, action } from 'mobx'
 import { AsyncStorage } from 'react-native'
-import { asyncStorageKeys, getItemFromAsyncStorage, setItemInAsyncStorage } from 'myApp/src/services/myAsyncStorage'
+import { asyncStorageKeys, getObjectFromAsyncStorage, setItemInAsyncStorage } from 'myApp/src/services/myAsyncStorage'
 
 class BookingsStore {
   constructor () {
-    getItemFromAsyncStorage(asyncStorageKeys.BOOKINGS)
-    .then(bookings.map(booking => 
-      this.bookings.push(booking)
+    getObjectFromAsyncStorage(asyncStorageKeys.BOOKINGS)
+    .then(bookings.map(booking =>
+      this.bookings.push = booking)
     }))
 
-    getItemFromAsyncStorage(asyncStorageKeys.CLIENT)
+    getObjectFromAsyncStorage(asyncStorageKeys.CLIENT)
     .then(client => {
       this.client = client
     })
 
-    getItemFromAsyncStorage(asyncStorageKeys.ROOMS)
+    getObjectFromAsyncStorage(asyncStorageKeys.ROOMS)
     .then(rooms.map(room => {
       this.rooms.push(room)
     }))
   }
-  @observable bookings = null
+  @observable bookings = []
   @observable client = null
-  @observable rooms = null
-  
+  @observable rooms = []
+
   @action leaveRoom(roomId) {
-    this.rooms[roomId].isAvailable = true
+    this.rooms = this.rooms.map(room => {
+      if (room.id === roomId) {
+        room.isAvailable = true
+      }
+      return room
+    })
     setItemInAsyncStorage(asyncStorageKeys.ROOMS, this.rooms)
+  }
+
+  @action clearRooms(roomNumber) {
+    this.rooms = []
+    AsyncStorage.removeItem(asyncStorageKeys.ROOMS)
   }
   }
 }
