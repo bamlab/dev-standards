@@ -2,21 +2,27 @@
 
 ## Owner: [Yassine Chbani](https://github.com/yassinecc)
 
+## Control Points
+
+{% hint style='success' %}
+
+If you want to use another storage backend than asyncStorage, you'll still need to check that
+
+{% endhint %}
+
+* [ ] You persist data at least before the application is closed
+* [ ] You hydrate your application with the persisted data before you display the content
+* [ ] You burst the cache when needed (on logout for personnal information for instance)
+
 ## Motivation
 
-Your mobile app is great, but how does it behave offline? End users take their phones everywhere, including places without WiFi or with very poor network reception. You can make your app stand out from the crowd if it's usable offline (to check your hotel booking for example) by storing data locally in the phone. To do so, React Native provides a simple solution: `AsyncStorage`. It is especially suitable for small amounts of data which value you can fetch by key.
+* You want some data to be persisted accross application restart.
 
 ## Prerequisites
 
 We need to import `AsyncStorage` from `react-native`.
 
-**Always remember, when you're playing with async storage, you have to first determine three things:**
-
-* When will I store the data from my application state to the async storage
-* When will I get the data from the async storage to my application state
-* When will I clear the data from the async storage
-
-Therefore the following example will use three simple methods:
+The following example will use three simple methods:
 
 * AsyncStorage.setItem(key, value)
 * AsyncStorage.getItem(key)
@@ -29,13 +35,29 @@ Therefore the following example will use three simple methods:
 It is recommended to use an extra layer of abstraction on top of the bare AsyncStorage that takes into account the particularities of the data you want to store.
 Let's start with a simple example where the hotel bookings I want to store have this structure:
 
-`booking |- id |- bookingDate |- clientId |- roomId |_ isPaymentConfirmed`
+```
+  booking
+  |- id
+  |- bookingDate
+  |- clientId
+  |- roomId
+  |_ isPaymentConfirmed
+```
 
 `roomId` and `clientId` refer to the following objects:
 
-`client |- id |_ name`
+```
+  client
+  |- id
+  |_ name
+```
 
-`room |- id |- number |_ isAvailable`
+```
+  room
+  |- id
+  |- number
+  |_ isAvailable
+```
 
 You have two options from this point:
 
