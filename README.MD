@@ -45,6 +45,7 @@ we help them solve their problem and then together write either a [Standard] or 
 ## Project Standards
 - [Project Success](/project-standards/project-success/index.md)
 - [Technical Agility](/project-standards/technical-agility/index.md)
+- [Taking over an existing project](/project-standards/taking-over-project/index.md)
 
 ## Successful Sprint
 
