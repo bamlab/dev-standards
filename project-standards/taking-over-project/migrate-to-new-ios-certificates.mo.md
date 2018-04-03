@@ -8,9 +8,13 @@
 ## Impact
 - If the original Apple developer account is not an entreprise one, the certificates for the staging app will expire and renewing them will include a dependency to the original owner of the project
 
+## Prerequisites
+- [ ] You have access to the previous Apple Developer account
+- [ ] Your project uses fastlane
+
 ## Steps
 ### Removing the old app ID
-- Log in to the original Apple developer account on developer.apple.com
+- Log in to the original Apple Developer account on developer.apple.com
 - Go to the certificates, Identifiers and Profiles page
 - In the Identifiers section, locate the staging app's ID and select it
 - In the menu you opened, browse to the bottom and delete the app ID
