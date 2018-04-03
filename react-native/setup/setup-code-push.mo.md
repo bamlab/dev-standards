@@ -84,8 +84,9 @@ _Check:_ you have written down the deployment keys in a temporary file.
 
 {% endhint %}
 
-
 ### 4. Install the react-native module _(~5 min)_
+
+Find out the adequate version of react-native-code-push using the [supported-react-native-platforms section](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms) in the react-native-code-push documentation.
 
 ```bash
 # Add the npm dependency
