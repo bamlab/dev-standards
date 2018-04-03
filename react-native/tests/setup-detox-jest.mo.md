@@ -32,7 +32,7 @@ brew install applesimutils
   ```sh
   npm install -g detox-cli
   ```
-  
+
 > TIP: `detox -h` gives the list of available commands
 
 ### Step 2: Add Detox to your project *(~5mins)*
@@ -64,7 +64,7 @@ For iOS apps in a workspace (eg: CocoaPods) use `-workspace ios/example.xcworksp
 
 Also make sure the simulator model specified under the key `"name"` (`iPhone 7` above) is actually available on your machine (it was installed by Xcode). Check this by typing `xcrun simctl list` in terminal to display all available simulators.
 
-> TIP: To test a release version, replace 'Debug' with 'Release' in the binaryPath and build properties. 
+> TIP: To test a release version, replace 'Debug' with 'Release' in the binaryPath and build properties.
 
 
 ### Step 3: Write your 1st test *(~10mins)*
@@ -97,7 +97,8 @@ import detox from 'detox';
 import packageFile from '../package.json';
 const detoxConfig = packageFile.detox;
 
-//Adapt value depending on maximum amount of time your tests take. In our case the CI will wait 2mins before failing. 
+//Adapt the value. If it is too short your tests won't have time to run. If it's too long on the other hand, it will hang for too long before it fails.
+//120000 is a good default value to start with
 jest.setTimeout(120000);
 
 beforeAll(async () => {
@@ -125,7 +126,7 @@ beforeEach(async () => {
 }
 ```
 
-> NOTE: Here I'm matching all files that end in `.e2e.js` 
+> NOTE: Here I'm matching all files that end in `.e2e.js`
 
 * Add a testID to your built in RN component
 
@@ -211,7 +212,7 @@ await waitFor(element(by.id('title'))).toExist().withTimeout(2000);
   await device.enableSynchronization();
 ```
 
-> NOTE: Sometimes the synchronization engine is stuck on a never ending asynchronous activity. Use --debug-synchronization to debug synchronization issues 
+> NOTE: Sometimes the synchronization engine is stuck on a never ending asynchronous activity. Use --debug-synchronization to debug synchronization issues
 
 ## Example application
 
