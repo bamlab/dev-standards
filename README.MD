@@ -76,6 +76,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[Standard] Override an existing app](/react-native/setup/overriding-existing-app.s.md)
 
 ### Architecture
+- [[Standard] Default stack](/react-native/architecture/default-stack.s.md)
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
 - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
 

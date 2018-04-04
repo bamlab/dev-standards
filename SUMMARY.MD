@@ -46,6 +46,7 @@
     - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
     - [[Standard] Override an existing app](/react-native/setup/overriding-existing-app.s.md)
   - Architecture
+    - [[Standard] Default stack](/react-native/architecture/default-stack.s.md)
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
   - Debugging
