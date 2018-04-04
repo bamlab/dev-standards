@@ -42,6 +42,7 @@
     - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
     - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
     - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
+    - [[Standard] Override an existing app](/react-native/setup/overriding-existing-app.s.md)
   - Architecture
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
@@ -53,6 +54,7 @@
     - [[MO] Debug a React Native WebView](/react-native/debugging/debug-webviews.mo.md)
     - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
     - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
+    - [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
   - React
     - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
     - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)

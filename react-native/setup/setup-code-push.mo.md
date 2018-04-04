@@ -30,9 +30,7 @@ Here's an example, where we enabled it on staging in order to speed up developme
 
 ## Steps
 
-Lookup the compatible version (we'll name it `<your.version>`) in the [compatibility table](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms).
-
-### 1. Install the Appcenter cli _(~1 min)_
+### 1. Install the AppCenter cli _(~1 min)_
 
 ```bash
 yarn global add appcenter-cli
@@ -59,15 +57,17 @@ You should see your profile info with `appcenter profile list`.
 
 {% endhint %}
 
-### 3. Install the react-native module _(~5 min)_
+### 3. Configure CodePush on AppCenter's servers _(~5 min)_
 
 ```bash
-# Add the npm dependency
-yarn add react-native-code-push@<your.version>
-
 # Create the apps
+# You can also do it via https://appcenter.ms
 appcenter apps create -d <MyApp>-Android -o Android -p React-Native
 appcenter apps create -d <MyApp>-iOS -o iOS -p React-Native
+
+# Invite your team members to the apps
+open https://appcenter.ms/users/<owner>/apps/<MyApp>-Android/settings/collaborators
+open https://appcenter.ms/users/<owner>/apps/<MyApp>-iOS/settings/collaborators
 
 # Configure the CodePush Staging deployment
 appcenter codepush deployment add -a <owner>/<MyApp>-Android Staging
@@ -76,29 +76,37 @@ appcenter codepush deployment add -a <owner>/<MyApp>-iOS Staging
 # Save the Staging tokens for later use
 appcenter codepush deployment list -a <owner>/<MyApp>-Android
 appcenter codepush deployment list -a <owner>/<MyApp>-iOS
+```
 
-# Invite your team members to the apps
-open https://appcenter.ms/users/<owner>/apps/<MyApp>-Android/settings/collaborators
-open https://appcenter.ms/users/<owner>/apps/<MyApp>-iOS/settings/collaborators
+{% hint style='success' %} **CHECK**
+
+_Check:_ you have written down the deployment keys in a temporary file.
+
+{% endhint %}
+
+### 4. Install the react-native module _(~5 min)_
+
+Find out the adequate version of react-native-code-push using the [supported-react-native-platforms section](https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms) in the react-native-code-push documentation.
+
+```bash
+# Add the npm dependency
+yarn add react-native-code-push@<your.version>
 
 # Link the native modules. Paste your Staging tokens when prompted.
 react-native link react-native-code-push
 ```
 
+`react-native link` command adds a pod in your `Podfile`.
+* If you don't already have `React` in your `Podfile`, it is recommended to remove the added line, commit, and follow the Microsoft tutorial [here](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#plugin-installation-ios---manual), paragraph **Plugin Installation (iOS - Manual)**.
+* If you already have `React` in your `Podfile`, make sure to `bundle exec pod install` in order to update `Podfile.lock`
+
 {% hint style='success' %} **CHECK**
 
-_Check:_ your app should build with the binary CodePush modules. The deploy keys are present in `Info.plist` and in `MainApplication.java`.
+_Check:_ your app builds on both Android and iOS, in debug and release mode.
 
 {% endhint %}
 
-### ⚠️ For react-native-code-push@5.1+
-
-React-native `link` command adds a pod in your pod file. You can either:
-
-* install the pod using `pod install`.
-* or if this pod conflicts with other pods, delete the added line in your `PodFile`. In this case, you can commit everything else. Then, follow Microsoft tutorial [here](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#plugin-installation-ios---manual), paragraph **Plugin Installation (iOS - Manual)**.
-
-### 4. Update your code _(~35 min)_
+### 5. Update your code _(~35 min)_
 
 #### Update App.js _(~10 min)_
 
@@ -106,14 +114,8 @@ React-native `link` command adds a pod in your pod file. You can either:
 // @flow
 import React, { Component } from 'react';
 ...
-import codePush from 'react-native-code-push';
+import CodePush from 'react-native-code-push';
 import { ENV } from 'MyApp/environment'
-
-const codePushOptions = {
-  updateDialog: true,
-  installMode: codePush.InstallMode.IMMEDIATE,
-  checkFrequency: codePush.CheckFrequency.MANUAL,
-};
 
 class App extends Component {
 
@@ -123,106 +125,108 @@ class App extends Component {
   }
 }
 
-const AppComponent = ENV === 'STAGING' ? codePush(codePushOptions)(App) : App;
+const codePushOptions = {
+  checkFrequency: CodePush.CheckFrequency.MANUAL,
+};
+
+const AppComponent = ENV === 'staging' ? CodePush(codePushOptions)(App) : App;
 export default AppComponent;
 ```
 
 {% hint style='success' %} **CHECK**
 
-_Check:_ No check on simulator. Your app should not crash (duh!).
+_Check:_ Manually set "ENV" to `staging` and check the logs on iOS and Android. You shouldn't see any warning for CodePush.
 
 {% endhint %}
 
-#### Update Home.js _(~15 min)_
+#### Add CodePushUpdateButton.js _(~5 min)_
 
 You can put the update process on any page you like, or even check if an update is available with a long press somewhere... It is up to you and your PO.
 
 ```js
-import React, { Component } from 'react'
-import codePush from 'react-native-code-push';
-import { ENV } from 'MyApp/environment'
-...
+import React, { Component } from 'react';
+import { Text, TouchableOpacity } from 'react-native';
+import CodePush from 'react-native-code-push';
 
-class Home extends Component {
+class CodePushUpdateButton extends Component {
   state = {
-    updateDescription: null,
-    updateLabel: null,
-    codePushStatus: null
+    info: null,
+    status: null,
+    mismatch: false,
   };
 
   componentDidMount() {
-    if (codePush && ENV === 'STAGING') {
-      // Will fetch the latest update metadata
-      codePush.getUpdateMetadata().then(update => {
-        if (!update) return;
-        this.setState({
-          updateDescription: update.description,
-          updateLabel: update.label,
-        });
+    if (!CodePush) return;
+    CodePush.getUpdateMetadata().then(update => {
+      if (!update) return;
+      let info = update.label;
+      if (update.description) {
+        info += ' (' + update.description + ')';
+      }
+      this.setState({
+        info,
       });
-    }
+    });
   }
 
-  render () {
-    return (
-      <View>
-        ...
-        {ENV === 'STAGING' &&
-          <View>
-            <Button
-              buttonText={this.state.codePushStatus || 'Check update'}
-              onPress={() => {
-                codePush.sync(
-                  {
-                    updateDialog: {
-                      appendReleaseDescription: true,
-                      descriptionPrefix: '\n\nModifications:\n',
-                    },
-                  },
-                  SyncStatus => {
-                    switch (SyncStatus) {
-                      case codePush.SyncStatus.CHECKING_FOR_UPDATE:
-                        this.setState({ codePushStatus: 'Checking for update' });
-                        break;
-                      case codePush.SyncStatus.AWAITING_USER_ACTION:
-                        this.setState({ codePushStatus: 'Await action' });
-                        break;
-                      case codePush.SyncStatus.DOWNLOADING_PACKAGE:
-                        this.setState({ codePushStatus: 'Downloading' });
-                        break;
-                      case codePush.SyncStatus.INSTALLING_UPDATE:
-                        this.setState({ codePushStatus: 'Installing' });
-                        break;
-                      default:
-                        this.setState({ codePushStatus: 'No update found' });
-                    }
-                  }
-                );
-              }}
-            />
-          </View>
+  lookForUpdate = () => {
+    CodePush.sync(
+      {
+        updateDialog: {
+          appendReleaseDescription: true,
+          descriptionPrefix: '\n\nChangelog:\n',
+        },
+        installMode: CodePush.InstallMode.IMMEDIATE,
+      },
+      SyncStatus => {
+        switch (SyncStatus) {
+          case CodePush.SyncStatus.CHECKING_FOR_UPDATE:
+            this.setState({ status: 'Checking for update' });
+            break;
+          case CodePush.SyncStatus.AWAITING_USER_ACTION:
+            this.setState({ status: 'Awaiting action' });
+            break;
+          case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
+            this.setState({ status: 'Downloading' });
+            break;
+          case CodePush.SyncStatus.INSTALLING_UPDATE:
+            this.setState({ status: 'Installing' });
+            break;
+          default:
+            this.setState({ status: 'No update found' });
         }
-        ...
-        {this.state.updateLabel &&
-            <View style={{ position: 'absolute', bottom: 5, backgroundColor: 'transparent' }}>
-              <Text style={{ fontSize: 12, textAlign: 'center' }}>
-                {this.state.updateLabel}
-              </Text>
-              <Text style={{ fontSize: 12, textAlign: 'center' }}>
-                {this.state.updateDescription}
-              </Text>
-        </View>}
-      </View>
-    )
+      },
+      null,
+      mismatch => mismatch && this.setState({ mismatch: true })
+    );
+  };
+
+  render() {
+    if (this.state.mismatch) {
+      return <Text style={{ fontSize: 11 }}>New version on HockeyApp</Text>;
+    }
+
+    return (
+      <TouchableOpacity style={{ marginLeft: 5 }} onPress={this.lookForUpdate}>
+        <Text style={{ fontSize: 12 }}>{this.state.status || 'Check update'}</Text>
+        {!!this.state.info && (
+          <Text style={{ fontSize: 8, maxWidth: 150 }} numberOfLines={3}>
+            {this.state.info}
+          </Text>
+        )}
+      </TouchableOpacity>
+    );
   }
 }
 
-export default Home;
+export default CodePushUpdateButton;
 ```
+
+Add this `CodePushUpdateButton` somewhere in your app.
 
 {% hint style='success' %} **CHECK**
 
-On simulator, you should see an update button if you force the env to staging. You can force the labels in the state variables `updateDescription` and `updateLabel` to check their position.
+On the simulator, you should see an update button if you force the env to staging.
 
 {% endhint %}
 
@@ -232,18 +236,18 @@ On simulator, you should see an update button if you force the env to staging. Y
 
 {% hint style='success' %} **CHECK**
 
-`yarn deploy -- -t hard` should deploy your application with Fastlane. `yarn deploy` should deploy with codepush.
+`yarn deploy -- -t hard` should deploy your application with Fastlane. `yarn deploy` should deploy with CodePush.
 
 {% endhint %}
 
-### 5. Test! _(~15 min)_
+### 6. Test! _(~15 min)_
 
 Open your PR, merge into the main branch. Have a hard build.
 You can now deploy with code-push.
 
 Bump your versions into `.env.staging` file before every hard deploy. If not, your JS code might try to call native libraries not present in your app.
 
-### 6. Externalize the keys (optional) _(~10min)_
+### 7. Externalize the keys (optional) _(~10min)_
 
 Externalize the keys in `Info.plist` and `AndroidManifest.xml`: see [https://github.com/kraynel/code-push-demo/commit/3cdd2496fab763a9814c1898c73505cd14fca9d1](https://github.com/kraynel/code-push-demo/commit/3cdd2496fab763a9814c1898c73505cd14fca9d1)
 
@@ -255,3 +259,4 @@ You should also Andon the teams with a working CodePush process:
 
 - [@BAM](https://github.com/search?q=org%3Abamlab+codepush&type=Commits)
 - [DailyScrum](https://github.com/Minishlink/DailyScrum)
+

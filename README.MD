@@ -72,6 +72,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
 - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
 - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
+- [[Standard] Override an existing app](/react-native/setup/overriding-existing-app.s.md)
 
 ### Architecture
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
@@ -87,6 +88,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Debug a React Native WebView](/react-native/debugging/debug-webviews.mo.md)
 - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
 - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
+- [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
 
 ### React
 - [[Standard] Binding functions in a React component](/react-native/react/binding-functions-in-react-component.s.md)
