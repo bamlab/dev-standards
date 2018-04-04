@@ -2,11 +2,44 @@
 
 ## Checks
 - Entire code except `index.ios.js` and `index.android.js` should be in `src`
-- The structure should be as follow
+- The structure should be as follow and follow the linked standards
   - `index.ios.js`
   - `index.android.js`
   - `/src`
-    - `modules`
-    - `components`
-    - `pages`
-    - `style`
+    - `package.json`
+    - `App.js`
+    - [`/components`](./components/folder.s.md)
+      - [`index.js`](./components/index.s.md)
+      - `package.json`
+      - [`/MyComponent`](./components/my-component/folder.s.md)
+        - [`MyComponent.component.js`](./components/my-component/component.s.md)
+        - [`MyComponent.style.js`](./components/my-component/style.s.md)
+        - [`index.js`](./components/my-component/index.s.md)
+    - `/redux`
+      - [`rootSaga.js`](./redux/root-saga.js)
+      - [`rootReducer.js`](./redux/root-reducer.js)
+      - `store.js`
+      - `/myModule`
+        - `actionTypes.js`
+        - `actions.js`
+        - `reducer.js`
+        - `api.js`
+        - `modelize.js`
+        - `normalize.js`
+        - `sagas.js`
+    - `/pages`
+      - `index.js`
+      - `/MyPage`
+        - `index.js`
+        - `MyPage.component.js`
+        - `MyPage.container.js`
+        - `MyPage.style.js`
+        - `/components`
+          - `index.js`
+          - `MyPageComponent.js`
+          - `/MyPageComponent2`
+    - `t/heme`
+    - `/services`
+      - `index.js`
+      - `MyService.js`
+
