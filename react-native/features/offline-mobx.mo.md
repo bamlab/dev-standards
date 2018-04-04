@@ -215,7 +215,7 @@ sendPendingDepartureInventory = () =>
 }
 ```
 
-Example on [Ada](https://github.com/theodo/ada-express/blob/develop/AdaExpress/src/stores/offline.js).
+We implemented a working example of it @BAM, let me know if you want to know more about it.
 
 {% hint style='info' %} Go further
 
@@ -240,7 +240,7 @@ This is a working example for a one shot call but you can also write a queue of 
 * When you get online again (you can use your connectivity observable) try to do the call again
 * Define a fail detection strategy (for instance after n tries, decide that the called is failed and rollback the state modification you made)
 
-## Tips & TroubleShooting
+## Tips & TroubleShoot
 
 * In order to be able to detect this, you can use the react-native's [`NetInfo.isConnected`](https://facebook.github.io/react-native/docs/netinfo.html#docsNav) function to get the connectivity status your phone thinks it has.
 

@@ -61,9 +61,9 @@ If you are also implementing sagas, take a look at [this issue](https://github.c
 
 ### Without Redux Offline
 
-We also implemented writing feature without redux offline on [HLI](https://github.com/bamlab/exanergy-routes/tree/staging/src/redux/offline)
+We also implemented writing feature without redux offline on a project @BAM, let me know if you want to know more !
 
-## Tips & TroubleShooting
+## Tips & TroubleShoot
 
 * In order to be able to detect this, you can use the react-native's [`NetInfo.isConnected`](https://facebook.github.io/react-native/docs/netinfo.html#docsNav) function to get the connectivity status your phone thinks it has.
 
