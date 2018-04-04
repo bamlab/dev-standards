@@ -35,6 +35,7 @@
   - Setup
     - [[MO] Adding a native module](/react-native/setup/add-native-module.mo.md)
     - [[MO] Setup & Deploy New Project to Staging](/react-native/setup/setup-and-deploy-new-project-to-staging.mo.md)
+    - [[MO] Deploy Project to Production - Android Play Store](/react-native/setup/deploy-to-production-android.mo.md)
     - [[MO] Setup & Deploy New Project to Staging with HockeyApp (Deprecated)](/react-native/setup/setup-and-deploy-new-project-to-staging-with-hockeyapp.mo.md)
     - [[MO] Setup Code-Push on an existing project](/react-native/setup/setup-code-push.mo.md)
     - [[MO] Add Cocoapods to your project (~10min)](/react-native/setup/add-cocoapods.mo.md)
