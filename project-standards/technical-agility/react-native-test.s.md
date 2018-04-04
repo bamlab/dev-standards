@@ -130,13 +130,13 @@ export default function*() {
 ```
 
 First, let's test the order of execution.
-NB: You're not supposed the order of execution of all your sagas, but only the one with complex logic (loop, conditions, ...).
+NB: You're not supposed to test the order of execution of all your sagas, but only the ones with complex logic (loop, conditions, ...).
 
 Nevertheless, for a learning purpose, we write the test for `getFavoriteBooksByTypeSaga`:
 
 ```javascript
 // Test
-import { getFavoriteBooksByTypeSaga} from './sagas';
+import { getFavoriteBooksByTypeSaga } from './sagas';
 import { testSaga } from 'redux-saga-test-plan';
 
 const favoriteCrimeBooks = [{
