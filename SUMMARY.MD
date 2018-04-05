@@ -99,6 +99,10 @@
 - Security
   - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
   - [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
+- Performance
+  - [How to investigate a performance issue](/performance/backend/how-to-investigate-performance.md)
+  - [Useful backend performance tools](/performance/backend/backend-performance-tools.md)
+  - [General learnings regarding performance investigations](/performance/backend/general-learnings.md)
 - Ops
   - [[MO] Setup HTTPS on your docker environment](/ops/docker/deploy-with-https.mo.md) (10 min)
 
