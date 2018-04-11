@@ -128,7 +128,13 @@ beforeEach(async () => {
 
 > NOTE: Here I'm matching all files that end in `.e2e.js`
 
-* Add a testID to your built in RN component
+* Add a testID to your component.
+
+{% hint style='info' %} Custom component
+
+Detox will only find components thanks to their testID if they directly come from react-native. Make sure your custom components transfer the testID prop to a **built-in** react-native component such as Text, TouchableOpacity, ...
+
+{% endhint %}
 
 ```js
 <Text testID="title">Your Title</Text>
@@ -193,6 +199,10 @@ npm install eslint-plugin-detox --save-dev
 * Check the bitrise.yml of the [Waves](https://github.com/chdeps/waves) repository to automate on Bitrise.
 
 ## Troubleshooting
+
+#### If an element of the UI cannot be found even if you gave it a testID.
+
+* Detox will only find components thanks to their testID if they directly come from react-native. Make sure your custom components transfer the testID prop to a **built-in** react-native component such as Text, TouchableOpacity, ...
 
 #### If an element of the UI cannot be found after a transition.
 

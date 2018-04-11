@@ -16,6 +16,7 @@
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
   - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
+  - [[MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*](/react-native/tests/setup-detox-jest.mo.md)
 - Flowtype
  - [[Standard] Flowtype](/flowtype/flowtype.s.md)
 - Project Standards
@@ -42,6 +43,7 @@
     - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
     - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
     - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
+    - [[MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*](/react-native/tests/setup-detox-jest.mo.md)
     - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
     - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
     - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
