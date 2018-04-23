@@ -28,6 +28,9 @@
 
 ```python
 # You should have the User in the same file, or from app.models import User
+from django.db import models
+from django.contrib.auth.models import User
+
 
 class Mayor(User):
     city = models.ForeignKey('locations.city')
