@@ -4,36 +4,36 @@
 
 ## Prerequisites _(~10 min)_
 
-[] Have setup an Apollo cache in your apollo client configuration:
+* [] Have setup an Apollo cache in your apollo client configuration:
 
 ```javascript
-import {ApolloClient} from 'apollo-client'
-import {InMemoryCache} from 'apollo-cache-inmemory'
-import {ApolloLink} from 'apollo-link'
-import {HttpLink} from 'apollo-link-http'
+import { ApolloClient } from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloLink } from 'apollo-link';
+import { HttpLink } from 'apollo-link-http';
 
 const httpLink = new HttpLink({
-  uri: YOUR_API_ENDPOINT',
-})
+  uri: YOUR_API_ENDPOINT
+});
 
-const cache = new InMemoryCache()
+const cache = new InMemoryCache();
 
 const client = new ApolloClient({
   link: httpLink,
-  cache,
-})
+  cache
+});
 
-export default client
+export default client;
 ```
 
-[] Make sure you have read the following
-[] Make sure the query you want to do in cache uses properties that were already requested through network (if you never asked for an author's book in the first place, there is no way you will be able to get it in the cache)
+* [] Make sure you have read the following
+* [] Make sure the query you want to do in cache uses properties that were already requested through network (if you never asked for an author's book in the first place, there is no way you will be able to get it in the cache)
 
 ## Steps _(~15 min)_
 
 1.  Making the first query through network
 
-Let's say you want to have all the books in your collections.
+Let say you want to have all the books in your collections.
 
 You do the following query using graph-gql:
 
@@ -103,7 +103,7 @@ In other word, it denormalizes the cache and will allow us in the future to quic
 Next time this request is done, Apollo will return data from cache (no network query): by default, Apollo does a 'cache-first' query.
 If you want to force Apollo to do query through network, use the 'newtork-first' option.
 
-2.  Doing a query within Apollo cache
+3.  Doing a query within Apollo cache
 
 In some case, you might want to request datas that are stored in your cache with a customize query not known by the Apollo Client.
 In order to do so, you can use cacheResolvers. In your client.js file, add the following to your InMemoryCache:
