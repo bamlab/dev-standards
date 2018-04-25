@@ -35,12 +35,14 @@ we help them solve their problem and then together write either a [Standard] or 
 
 ### Node JS
 - [[Standard] Add multiple environments configuration on loopback](/backend/node-js/add-multiple-environments-configuration-on-loopback.s.md)
+- [[Standard] Handle Errors and Exceptions in Javascript](/backend/nodejs/handle-errors-and-exceptions-in-javascript.s.md)
 
 ## Code Quality
 - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
 - [[Standard] Pull Request Template](/code-quality/pull-request-template.s.md)
 - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
 - [[MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*](/react-native/tests/setup-detox-jest.mo.md)
+- [[Standard] Handle Errors and Exceptions in Javascript](/backend/nodejs/handle-errors-and-exceptions-in-javascript.s.md)
 
 ## Flowtype
 
@@ -85,6 +87,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[Standard] Default stack](/react-native/architecture/default-stack.s.md)
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
 - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
+- [[Standard] Handle Errors and Exceptions in Javascript](/backend/nodejs/handle-errors-and-exceptions-in-javascript.s.md)
 
 ### Debugging
 
