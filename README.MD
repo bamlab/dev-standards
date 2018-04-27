@@ -156,6 +156,8 @@ we help them solve their problem and then together write either a [Standard] or 
 
 ### Backend
 
+- [Cache your routes using varnish](/performance/backend/cache-routes-using-varnish.mo.md)
+
 - [How to investigate a performance issue](/performance/backend/how-to-investigate-performance.md)
 - [Useful backend performance tools](/performance/backend/backend-performance-tools.md)
 - [General learnings regarding performance investigations](/performance/backend/general-learnings.md)
