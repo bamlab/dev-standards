@@ -16,6 +16,7 @@
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
   - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
+  - [[MO] How to correctly call an API](/code-quality/api-call-checklist.mo.md)
 - Flowtype
  - [[Standard] Flowtype](/flowtype/flowtype.s.md)
 - Project Standards
