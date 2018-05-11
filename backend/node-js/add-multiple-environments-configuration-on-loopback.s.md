@@ -22,7 +22,7 @@ Whenever you are developing a loopback application, you'll need to have multiple
 
 ### Example 2: Multiple environments variables in one config file
 
-```.json
+```json
 {
   "key1": "value1",
   "key2": "value2",
@@ -41,7 +41,7 @@ Whenever you are developing a loopback application, you'll need to have multiple
 
 ### Example 2: Only own environments variables in one config file
 
-```.json
+```json
 {
   "key1": "value1",
   "key2": "value2",
