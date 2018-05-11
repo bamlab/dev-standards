@@ -9,8 +9,8 @@ const changedFiles = [...modifiedFiles, ...newFiles];
 
 const moFiles = changedFiles.filter(p => includes(p, ".mo.md"));
 const standardFiles = changedFiles.filter(p => includes(p, ".s.md"));
-const readmeContent = fs.readFileSync("README.MD").toString();
-const summaryContent = fs.readFileSync("SUMMARY.MD").toString();
+const readmeContent = fs.readFileSync("README.md").toString();
+const summaryContent = fs.readFileSync("SUMMARY.md").toString();
 
 for (let moFile of moFiles) {
   const fileContent = fs.readFileSync(moFile).toString();
