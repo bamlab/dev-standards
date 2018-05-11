@@ -33,6 +33,9 @@ we help them solve their problem and then together write either a [Standard] or 
 ### GraphQL JS
 - [[MO] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](/backend/graphql-js/getting-started-with-apollo-server-dataloader-knex.mo.md)
 
+### Node JS
+- [[Standard] Add multiple environments configuration on loopback](/backend/nodejs/add-multiple-environments-configuration-on-loopback.s.md)
+
 ## Code Quality
 - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
 - [[Standard] Pull Request Template](/code-quality/pull-request-template.s.md)
