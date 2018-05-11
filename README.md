@@ -37,6 +37,10 @@ Every time a developer is struggling doing a part of their job \(e.g.: changing 
 
 * [\[MO\] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](backend/graphql-js/mo-kick-start-a-js-graphql-3-layers-api-with-apollo-server-dataloader-and-knex.md)
 
+#### Node JS
+
+* [\[Standard\] Add multiple environments configuration on Loopback](backend/node-js/standard-add-multiple-environments-configuration-on-loopback.md)
+
 ### Code Quality
 
 * [\[MO\] Test your React and React Native components' state with Jest \(without Enzyme\)](code-quality/mo-test-your-react-and-react-native-components-state-with-jest-without-enzyme.md)

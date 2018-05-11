@@ -13,6 +13,8 @@
     * [\[MO\] Create a model and an api route](backend/django/mo-create-a-model-and-an-api-route.md)
   * GraphQL JS
     * [\[MO\] Kick start a JS GraphQL 3 layers API with Apollo-server, Dataloader and Knex](backend/graphql-js/mo-kick-start-a-js-graphql-3-layers-api-with-apollo-server-dataloader-and-knex.md)
+  * Node JS
+    * [\[Standard\] Add multiple environments configuration on Loopback](backend/node-js/standard-add-multiple-environments-configuration-on-loopback.md)
 * Code Quality
   * [\[MO\] Test your React and React Native components' state with Jest \(without Enzyme\)](code-quality/mo-test-your-react-and-react-native-components-state-with-jest-without-enzyme.md)
   * [\[Standard\] Test files indentation](code-quality/standard-test-files-indentation.md)
