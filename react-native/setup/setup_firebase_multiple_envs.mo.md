@@ -37,13 +37,17 @@ On Android, Firebase groups the different configurations in one file.
 1. Go to the [Firebase console](https://console.firebase.google.com/)
 2. Select your project
 3. Click "Add an application", choose Android
-4. Fill in the form (giving a name like `Staging`), click save, and close the window
-5. Repeat steps 3 to 4 for all your environments
-5. Download the `google-services.json` file
+4. Fill in the form : 
+   1. Give a name like `Staging`
+   2. Give the app identifier. You must use the same as the one which is specified in your *.env* file
+5. Click save
+6. Close the window
+7. Repeat steps 3 to 6 for all your environments
+8. Download the `google-services.json` file
    1. Select one of the Android applications
    2. Click on "google-services.json"
-6. Put `google-services.json` in your `app` folder (`android/app` in React-Native)
-7. You might want to add `google-services.json` in your `.gitignore`
+9. Put `google-services.json` in your `app` folder (`android/app` in React-Native)
+10. You might want to add `google-services.json` in your `.gitignore`
 
 ![steps](assets/firebase_android.png)
 
