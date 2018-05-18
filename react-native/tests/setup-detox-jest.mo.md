@@ -130,9 +130,7 @@ beforeEach(async () => {
 
 * Add a testID to your component.
 
-> Custom component
-
-Detox will only find components thanks to their testID if they directly come from react-native. Make sure your custom components transfer the testID prop to a **built-in** react-native component such as Text, TouchableOpacity, ...
+> Custom component: Detox will only find components thanks to their testID if they directly come from react-native. Make sure your custom components transfer the testID prop to a **built-in** react-native component such as Text, TouchableOpacity, ...
 
 ```js
 <Text testID="title">Your Title</Text>
