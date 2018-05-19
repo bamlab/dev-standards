@@ -69,10 +69,6 @@
   - React
     - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
     - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
-  - Redux
-    - [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
-    - [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
-    - [[MO] Pass props to a container](/react-native/redux/pass-props-to-container.mo.md)
   - Features
     - [[Article] Add a sharing feature to the app](https://blog.bam.tech/developper-news/sharing-content-with-react-native)
     - [[MO] Lock the device orientation](/react-native/features/lock-device-orientation.mo.md)
@@ -87,6 +83,13 @@
     - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
   - Firebase
     - [[MO] Good practices to debug events in Firebase](/react-native/firebase/debug-events.mo.md)
+- React
+  - Redux
+    - [[MO] Custom fields with redux-form](/redux/custom-redux-form-field.mo.md)
+    - [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
+    - [[MO] Pass props to a container](/redux/pass-props-to-container.mo.md)
+  - Lifecycle
+    - [[MO] Trigger an action on props update](/react/lifecycle/trigger-action-on-props-update.mo.md)
 - Editors
   - Visual Studio Code
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)

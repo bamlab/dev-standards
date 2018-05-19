@@ -103,15 +103,7 @@ we help them solve their problem and then together write either a [Standard] or 
 
 ### React
 - [[Standard] Binding functions in a React component](/react-native/react/binding-functions-in-react-component.s.md)
-- [[MO] Trigger an action on props update](/react-native/react/trigger-action-on-props-update.mo.md)
 - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
-
-### Redux
-
-- [[MO] Custom fields with redux-form](/react-native/redux/custom-redux-form-field.mo.md)
-- [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
-- [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
-- [[MO] Pass props to a container](/react-native/redux/pass-props-to-container.mo.md)
 
 ### Features
 
@@ -131,6 +123,20 @@ we help them solve their problem and then together write either a [Standard] or 
 
 ### Firebase
 - [[MO] Good practices to debug events in Firebase](/react-native/firebase/debug-events.mo.md)
+
+## React
+
+### Redux
+
+- [[MO] Custom fields with redux-form](/react/redux/custom-redux-form-field.mo.md)
+- [[Package] Factorise common Redux async boilerplate with redux-async-actions-factory](https://github.com/bamlab/redux-async-actions-factory)
+- [[Package] Gain development speed on Redux with redux-enhancer](https://github.com/bamlab/redux-enhancer)
+- [[MO] Pass props to a container](/react/redux/pass-props-to-container.mo.md)
+
+### Lifecycle
+
+- [[MO] Trigger an action on props update](/react/lifecycle/trigger-action-on-props-update.mo.md)
+
 
 ## Editors
 
