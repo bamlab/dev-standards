@@ -24,19 +24,19 @@ For the example, let's say we have an input text which internally save his value
 type Props = { };
 type State = { value: string };
 class Input extends Component<Props, State> {
-	state = {
-        value: '',
-	};
+  state = {
+    value: '',
+  };
 
-    onChange = (value: string) => {
-        this.setState({ value });
-    }
+  onChange = (value: string) => {
+    this.setState({ value });
+  }
 
-	render () {
-		return (
-            <SomeInputComponent value={this.state.value} onChange={this.onChange} />
-		)
-	}
+  render () {
+    return (
+      <SomeInputComponent value={this.state.value} onChange={this.onChange} />
+    )
+  }
 }
 ```
 
@@ -54,10 +54,10 @@ type Props = { value?: string };
 
 ```jsx
 class Input extends Component<Props, State> {
-    static getDerivedStateFromProps(nextProps: Props, prevState: State) {
+  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
 
-    }
-    // ...
+  }
+  // ...
 }
 ```
 
@@ -69,35 +69,35 @@ This method should return the new state of the component, or null if if stay unc
 
 ```jsx
 class Input extends Component<Props, State> {
-    static getDerivedStateFromProps(nextProps: Props, prevState: State): ?State {
-        if (! nextProps.value) {
-            // State is not changed
-            return null;
-        }
-        return {
-            ...prevState, // don't forget to merge the old state
-            value: nextProps.value,
-        };
+  static getDerivedStateFromProps(nextProps: Props, prevState: State): ?State {
+    if (! nextProps.value) {
+      // State is not changed
+      return null;
     }
-    // ...
+    return {
+      ...prevState, // don't forget to merge the old state
+      value: nextProps.value,
+    };
+  }
+  // ...
 }
 ```
 
 If you want to make computation with the previous values of the props. You need to add it in the state.
 ```jsx
 class Input extends Component<Props, State> {
-    static getDerivedStateFromProps(nextProps: Props, prevState: State): ?State {
-        if (! nextProps.value && !prevState.previousPropsValue) {
-            // State is not changed
-            return null;
-        }
-        return {
-            ...prevState, // don't forget to merge the old state
-            value: nextProps.value,
-            previousPropsValue: nextProps.value,
-        };
+  static getDerivedStateFromProps(nextProps: Props, prevState: State): ?State {
+    if (! nextProps.value && !prevState.previousPropsValue) {
+      // State is not changed
+      return null;
     }
-    // ...
+    return {
+      ...prevState, // don't forget to merge the old state
+      value: nextProps.value,
+      previousPropsValue: nextProps.value,
+    };
+  }
+  // ...
 }
 ```
 
@@ -112,8 +112,8 @@ We will start from the code of the previous section. We want to add a props `onV
 - Add the `onValueChanged` props in the flow typing
 ```jsx
 type Props = {
-    value?: string
-    onValueChanged?: (string) => any,
+  value?: string
+  onValueChanged?: (string) => any,
 };
 ```
 
@@ -121,14 +121,14 @@ type Props = {
 
 ```jsx
 class Input extends Component<Props, State> {
-    componentDidUpdate(prevProps: Props, prevState: State) {
-        if (prevProps.value !== this.props.value || prevState.value !== this.state.value) {
-            if (this.props.onValueChanged) {
-                this.props.onValueChanged(this.state.value);
-            }
-        }
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    if (prevProps.value !== this.props.value || prevState.value !== this.state.value) {
+      if (this.props.onValueChanged) {
+        this.props.onValueChanged(this.state.value);
+      }
     }
-    // ...
+  }
+  // ...
 }
 ```
 
@@ -147,15 +147,15 @@ Initial structure :
 ```jsx
 type Props = { isConnected: boolean };
 class MyClass extends Component<Props> {
-	render () {
-		return (
-			if( this.props.isConnected ) {
-				<Text>
-					Connexion successful!
-				</Text>
-			}
-		)
-	}
+  render () {
+    return (
+      if( this.props.isConnected ) {
+        <Text>
+          Connexion successful!
+        </Text>
+      }
+    )
+  }
 }
 ```
 
@@ -168,16 +168,16 @@ Let’s also add a component which is rendered at a certain `isTextVisible` cond
 type Props = { isConnected: boolean };
 type State = { isTextVisible: boolean };
 class MyClass extends Component<Props, State> {
-	state = { isTextVisible: false }
-	render () {
-		return (
-			if( this.state.isTextVisible ) {
-				<Text>
-					Connexion successful!
-				</Text>
-			}
-		)
-	}
+  state = { isTextVisible: false }
+  render () {
+    return (
+      if( this.state.isTextVisible ) {
+        <Text>
+          Connexion successful!
+        </Text>
+      }
+    )
+  }
 }
 ```
 
@@ -187,29 +187,29 @@ type Props = { isConnected: boolean };
 type State = { isTextVisible: boolean, prevIsConnected: boolean };
 class MyClass extends Component<Props, State> {
 
-    // No need to initialize the state. The getDerivedStateFromProps method will be called before the first render
+  // No need to initialize the state. The getDerivedStateFromProps method will be called before the first render
 
-    static getDerivedStateFromProps(nextProps: Props, prevState: State): ?State {
+  static getDerivedStateFromProps(nextProps: Props, prevState: State): ?State {
 
-        if (nextProps.isConnected === prevState.prevIsConnected) {
-            return null;
-        }
-
-        return {
-            ...prevState, // don't forget to merge the old state
-            isTextVisible: nextProps.isConnected,
-            prevIsConnected: nextProps.isConnected,
-        };
+    if (nextProps.isConnected === prevState.prevIsConnected) {
+      return null;
     }
-	render () {
-		return (
-			if( this.state.isTextVisible ) {
-				<Text>
-					Connexion successful!
-				</Text>
-			}
-		)
-	}
+
+    return {
+      ...prevState, // don't forget to merge the old state
+      isTextVisible: nextProps.isConnected,
+      prevIsConnected: nextProps.isConnected,
+    };
+  }
+  render () {
+    return (
+      if( this.state.isTextVisible ) {
+        <Text>
+          Connexion successful!
+        </Text>
+      }
+    )
+  }
 }
 ```
 
@@ -218,31 +218,31 @@ Then Trigger a method to change back the `isTextVisible` state after 3 seconds
 ```jsx
 class MyClass extends Component<Props, State> {
 
-    timeoutId: ?TimeoutID;
+  timeoutId: ?TimeoutID;
 
-    componentDidUpdate(prevProps: Props, prevState: State) {
-        if (prevState.isTextVisible !== this.state.isTextVisible ) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    if (prevState.isTextVisible !== this.state.isTextVisible ) {
 
-            // If isConnected go back from true to false
-            if (this.timeoutId) {
-                clearTimeout(this.timeoutId);
-            }
+      // If isConnected go back from true to false
+      if (this.timeoutId) {
+        clearTimeout(this.timeoutId);
+      }
 
-            if (this.state.isTextVisible) {
-                this.timeoutID = setTimeout(() => {
-                    this.timeoutID = null;
-                    this.setState({ isTextVisible: false });
-                }, 3000);
-            }
-        }
+      if (this.state.isTextVisible) {
+        this.timeoutID = setTimeout(() => {
+          this.timeoutID = null;
+          this.setState({ isTextVisible: false });
+        }, 3000);
+      }
     }
+  }
 
-    componentWillUnmount() {
-        // Do not update the state of an unmounted component
-        if (this.timeoutId) {
-            clearTimeout(this.timeoutId);
-        }
+  componentWillUnmount() {
+    // Do not update the state of an unmounted component
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
     }
+  }
 }
 ```
 
