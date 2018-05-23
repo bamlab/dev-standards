@@ -100,6 +100,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
 - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
 - [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
+- [[MO] How to analyse and react to a bug on a React-Native project](/react-native/debugging/analyse-bug.mo.md)
 
 ### React
 - [[Standard] Binding functions in a React component](/react-native/react/binding-functions-in-react-component.s.md)
