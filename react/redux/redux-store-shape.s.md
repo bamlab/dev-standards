@@ -121,11 +121,11 @@ This standard allows to :
 
 # Store content
 
-**The data must not be duplicated in the store**
-**The store entities must have been normalized**
-**The store must not contain any information relevant only in one component**
-**The store must not contain any pagination information (ex: `selectedItem`, ...)**
-**State must be serialisable**
+- **The data must not be duplicated in the store**
+- **The store entities must have been normalized**
+- **The store must not contain any information relevant only in one component**
+- **The store must not contain any pagination information (ex: `selectedItem`, ...)**
+- **State must be serialisable**
 
 
 # Side Effects
