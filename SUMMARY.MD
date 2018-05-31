@@ -90,6 +90,7 @@
     - [[MO] Pass props to a container](/redux/pass-props-to-container.mo.md)
   - Lifecycle
     - [[MO] Trigger an action on props update](/react/lifecycle/trigger-action-on-props-update.mo.md)
+  - [[Standard] Wrinting a Component](/react/component.s.md)
 - Editors
   - Visual Studio Code
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)
