@@ -1,12 +1,10 @@
-# [Standard] Wrinting a Component
+# [Standard] Writing a Component
 
 ## Owner: Nicolas Djambazian
 
-
 ## Standards
 
-
-**A react component begin than a `// @flow`**
+**A react component begins than a `// @flow`**
 
 Why ? Flow typings will be used to check the Props and the State
 
