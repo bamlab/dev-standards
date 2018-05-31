@@ -41,8 +41,7 @@ const logout = async () => {
 Without cleaning the user data, you will have state and data inconsistencies with the new user.
 
 ```js
-// no cleaning
-
+// pseudo code
 const logout = async () => {
   Navigation.navigate('login');
 }
