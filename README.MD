@@ -115,6 +115,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Preloading MobX data with AsyncStorage](/react-native/features/asyncstorage.mo.md)
 - [[MO] Implement offline with MobX](/react-native/features/offline-mobx.mo.md)
 - [[MO] Implement offline with Redux](/react-native/features/offline-redux.mo.md)
+- [[Standard] Implementing a clean logout](/react-native/features/clean-logout.s.md)
 
 ### Package Dependencies
 - [[MO] Handle dependencies with Yarn override](/react-native/package-dependencies/handle-dependencies-with-yarn-override.mo.md)
