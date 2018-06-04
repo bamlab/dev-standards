@@ -69,6 +69,13 @@ To not have to think of the name of the export.
 
 To immediately know where to look for the `render` function.
 
+**Instance methods should not be prefixed with `_`**
+
+It is common practice to add `_` in front of the private methods of your components.
+It turns out that *most* component methods are private. It would mean that most of our methods would need a `_`.
+
+To not forget any `_`, we simply choose to not put any.
+
 ## Bad Example
 
 
