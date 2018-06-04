@@ -65,6 +65,10 @@ If another component need a part of your style, you have several choices :
 
 To not have to think of the name of the export.
 
+**The `render` function should come last**
+
+To immediately know where to look for the `render` function.
+
 ## Bad Example
 
 
