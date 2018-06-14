@@ -11,14 +11,15 @@ of one of your component's props? For example, call a certain method for a given
 Your component has a set of props that can change after it has been mounted and before it gets unmounted. The props change can be
 triggered from within or outside the component.
 
-Well you're in luck, because Facebook provides a set of methods that get called at different points of the lifecycle of a component <sup>1</sup>. We are going to look at the `getDerivedStateFromProps` and  the `componentDidUpdate` method in the following article. The first one is useful if you want to change your state according to the props. The second, if you want to trigger actions on props or state change.
+Well you're in luck, because Facebook provides a set of methods that get called at different points of the lifecycle of a component <sup>1</sup>. We are going to look at the `getDerivedStateFromProps` and  the `componentDidUpdate` methods in the following article. The first one is useful if you want to change your state according to the props. The second, if you want to trigger actions on props or state change.
 
 
 ## Updating the state from a props (~10 minutes)
 
 ### Prerequisites
 
-For the example, let's say we have an input text which internally save his value in his internal state. But we want to allow the parent to control him sending a `value` props.
+For the example, let's say we have an input text which saves its value in its internal state, but we want to allow the parent to control him sending a `value` props.
+
 
 ```jsx
 type Props = { };
@@ -42,7 +43,8 @@ class Input extends Component<Props, State> {
 
 ### Steps
 
-In precedent version of react, we used to implement the `componentWillReceiveProps` for that usecase. Since react rendering will be asynchronous, this method is deprecated. You now need to use the static method `getDerivedStateFromProps`.
+In the previous version of React, we used to implement the `componentWillReceiveProps` for that use case. Since react rendering will be asynchronous, this method is deprecated. You now need to use the static method `getDerivedStateFromProps`.
+
 
 
 - Add your new prop in the flow typing
@@ -61,9 +63,9 @@ class Input extends Component<Props, State> {
 }
 ```
 
-The method takes the new props and the previous state as parameters. This is a static method, so you can't access to `this` inside.
+The method takes the new props and the previous state as parameters. This is a static method, so you can't access this inside of it.
 
-This method should return the new state of the component, or null if if stay unchanged.
+This method should return the new state of the component, or null if it stays unchanged.
 
 - Return the new state
 
@@ -134,7 +136,7 @@ class Input extends Component<Props, State> {
 
 There is several things to be careful of with this method :
  - The method is called after the component rerender with the new props/state
- - The method can be called even if the props or the state didn't changed (if the component is not pure and the parent has rerendered)
+ - The method can be called even if the props or the state didn't change (if the component is not pure and the parent has rerendered)
 
 
 ## Setting a state for a limited amount of time on props change (~10 minutes)
