@@ -36,7 +36,7 @@ type Props = {
     }>,
 }
 type State = { isOpenend: boolean };
-class MyComponent extends React.Component<Props, State> {
+class MyComponent extends React.PureComponent<Props, State> {
     // ...
 }
 ```
@@ -85,7 +85,7 @@ const styles = {
 };
 
 // No flow Props typing and no default export
-export class Page extends React.Component {
+export class Page extends React.PureComponent {
   render() {
     return (
       <View style={centeredStyle}>
@@ -109,7 +109,7 @@ type Props = {
   text: string,
 }
 
-class Page extends React.Component<Props> {
+class Page extends React.PureComponent<Props> {
   render() {
     return (
       <CenteredPageContent>
