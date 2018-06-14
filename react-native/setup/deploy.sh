@@ -51,7 +51,10 @@ if [ $DEPLOY_TYPE == "soft" ]; then
   git checkout integration
   git pull
 
-  source fastlane/.env
+  source fastlane/.env.$APP_ENV
+  mv src/environment/index.js src/environment/index.js.bak
+  cp src/environment/index.$APP_ENV.js src/environment/index.js
+
   LAST_GIT_COMMIT=$(git log HEAD --pretty=format:"%h : %s" -1)
   read -e -p "What's the changelog? (leave empty for \"$LAST_GIT_COMMIT\") " INPUT_CHANGELOG
   MESSAGE="${INPUT_CHANGELOG:-$LAST_GIT_COMMIT}"
@@ -77,4 +80,7 @@ if [ $DEPLOY_TYPE == "soft" ]; then
       appcenter codepush release-react -d Staging -a <owner>/<MyApp>-Android -m --target-binary-version $ANDROID_VERSION_NAME --description "$MESSAGE"
     fi
   fi
+
+  mv src/environment/index.js.bak src/environment/index.js
+
 fi
