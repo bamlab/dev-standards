@@ -105,6 +105,7 @@ we help them solve their problem and then together write either a [Standard] or 
 ### React
 - [[Standard] Binding functions in a React component](/react-native/react/binding-functions-in-react-component.s.md)
 - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
+- [[Standard] Wrinting a Component](/react/component.s.md)
 
 ### Features
 
