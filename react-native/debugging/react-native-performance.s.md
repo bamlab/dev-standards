@@ -17,7 +17,7 @@ These best practices are ordered by potential impact on performance.
 - Don't use images that are unnecessary big. Dynamic resizing is very inefficient on Android. Resize them to 1x 2x 3x flavors (`img.png`, `img@2x.png`, `img@3x.png`) and use them normally (`require('img.png')). UX designers can export images easily this way with Sketch.
 - Use animations in order to make things more fluid (`animationEnabled` in `TabNavigator`; `LayoutAnimation`)
 - Use `shouldComponentUpdate` / `PureComponent`. Test thoroughly your component when using `shouldComponentUpdate` because this is error-prone. It will massively improve your app's performance though.
-- Don't create new functions on every render, [bind your functions efficiently](https://github.com/bamlab/dev-standards/blob/master/react-native/react/binding-functions-in-react-component.s.md)
+- Don't create new functions on every render, [bind your functions efficiently](https://github.com/bamlab/dev-standards/blob/master/react-native/react/binding-functions-in-react-component.s.md). Similarly, avoid creating inline styles.
 - When using `Animated`, use [`useNativeDriver`](https://facebook.github.io/react-native/docs/animations.html#using-the-native-driver)
 - If you have a big view that has a lot of subviews, and these are not always shown to the user, use [`removeClippedSubviews`](https://facebook.github.io/react-native/docs/view.html#removeclippedsubviews)
 - When triggering a function after clicking on a button, or at `componentDidMount`, use [`InteractionManager.runAfterInteractions`](https://facebook.github.io/react-native/docs/interactionmanager.html)
