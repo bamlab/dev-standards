@@ -48,10 +48,6 @@ Measure the performance with the following tools. They're ordered by `simplicity
 - https://facebook.github.io/react-native/docs/performance.html#profiling
 - Inspect the JS<->native bridge with [RN-Snoopy](https://github.com/jondot/rn-snoopy)
 
-## Monitor
-
-- [Firebase performance monitoring](https://firebase.google.com/docs/perf-mon/)
-
 ## Useful links
 - React Native doc: https://facebook.github.io/react-native/docs/performance.html
 - Example commit: https://github.com/Minishlink/DailyScrum/commit/3c6d5f70a638a146f1a2158b94292010eb12186a
