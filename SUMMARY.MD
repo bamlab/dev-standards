@@ -100,6 +100,23 @@
   - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
   - [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
 - [Front and Back-end Performance](/performance/performance-decision-flow.s.md)
+  - Do you know how to investigate your performance issues?
+    - General
+      - [Simulate a network like LTE, 3G or Edge with an iPhone in hotstop](front/simulate-network-iphone.mo.md)
+    - Backend
+      - [1. How to investigate a general backend performance issue](/backend/how-to-investigate-performance.mo.md)
+      - [2. Python investigation tools](backend/python-investigation-tools.mo.md)
+      - [3. Output SQL Alchemy ORM query](backend/output-sql-alchemy-orm-query.mo.md)
+  - Know that you investigated, can we help you?
+    - Backend
+      - [1. Cache your routes using varnish](/backend/cache-routes-using-varnish.mo.md)
+      - [2. Serve images as static files](/backend/serve-images-as-static-files.mo)
+      - [3. Minimize your number of SQL queries](/backend/minimize-number-sql-queries.mo.md)
+    - Front
+      - 1. Pure components **-> [To do]**
+  - Have you a mean of keeping the performance under control?
+    - Backend
+      - [1. Monitor your backend performance with K6](https://github.com/bamlab/performance-monitoring)
 - Ops
   - [[MO] Setup HTTPS on your docker environment](/ops/docker/deploy-with-https.mo.md) (10 min)
 
