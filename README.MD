@@ -152,6 +152,8 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
 - [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
 
+## [Front and Back-end Performance](/performance/performance-decision-flow.s.md)
+
 ## OPS
 - [[MO] Setup HTTPS on your docker environment](/ops/docker/deploy-with-https.mo.md) (10 min)
 
