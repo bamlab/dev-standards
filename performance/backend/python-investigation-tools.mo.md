@@ -1,6 +1,10 @@
 # Python investigation tools
 
-## Python: Simple and quick investigation of a function execution time
+## Owner: [Xavier Lefevre](https://github.com/xavierlefevre)
+
+## Steps
+
+### Python: Simple and quick investigation of a function execution time
 
 By using timer functions you can see how long takes the execution:
 ```python
@@ -30,9 +34,9 @@ def retrieve_data(self, ids):
     return answer
 ```
 
-## Python: More advanced solution to profile the execution of a function and its children
+### Python: More advanced solution to profile the execution of a function and its children
 - https://blog.sicara.com/profile-surgical-time-tracking-python-db1e0a5c06b6
 
-## Python: Further performance analysis tools
+### Python: Further performance analysis tools
 You can also profile with the below tool:
 - https://docs.python.org/3/library/profile.html

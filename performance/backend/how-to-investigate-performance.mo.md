@@ -1,7 +1,6 @@
 # [MO] How to investigate back-end performance
 
-- **Owner:** [Xavier Lefèvre](https://www.github.com/xavierlefevre)
-- **Last update date:** 5th of April 2018
+## Owner: [Xavier Lefevre](https://github.com/xavierlefevre)
 
 ## Why
 - You don't know from which end investigate the performance issue. Follow those steps to make sure you know how to investigate in an efficient way. Also in a way that you'll be able to share and explain your learnings easily with others.

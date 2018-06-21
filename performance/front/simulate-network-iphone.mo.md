@@ -1,5 +1,10 @@
 
-### iPhone: Simulate a network like LTE, 3G or Edge
+# iPhone: Simulate a network like LTE, 3G or Edge
+
+## Owner: [Xavier Lefevre](https://github.com/xavierlefevre)
+
+## Steps
+
 - Make sure you iPhone is connected to the Wifi network
 - Connect your computer to your iPhone via hotspot
 - Go to the iPhone settings

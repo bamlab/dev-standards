@@ -1,6 +1,9 @@
 # Output SQL Alchemy ORM query
 
-## Python/SQL Alchemy: Output the ORM final query to analyse it
+## Owner: [Xavier Lefevre](https://github.com/xavierlefevre)
+
+## Steps
+
 If your performance issues seem to come from your SQL queries, you should take a look at the output of SQL Alchemy:
 - Log/print the SQL Alchemy query:
     ```python
