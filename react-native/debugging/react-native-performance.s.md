@@ -14,7 +14,7 @@ These best practices are ordered by potential impact on performance.
 - Use an up-to-date version of your dependencies, and first and foremost:
     - [React Native](https://github.com/facebook/react-native/releases)
     - [React Navigation](https://github.com/react-navigation/react-navigation/releases)
-- Don't use images that are unnecessary big. Dynamic resizing is very inefficient on Android. Resize them to 1x 2x 3x flavors (`img.png`, `img@2x.png`, `img@3x.png`) and use them normally (`require('img.png')). UX designers can export images easily this way with Sketch.
+- Don't use images that are unnecessary big. Dynamic resizing is very inefficient on Android. Resize them to 1x 2x 3x flavors (`img.png`, `img@2x.png`, `img@3x.png`) and use them normally (`require('img.png')`). UX designers can export images easily this way with Sketch.
 - Use animations in order to make things more fluid (`animationEnabled` in `TabNavigator`; `LayoutAnimation`)
 - Use `shouldComponentUpdate` / `PureComponent`. Test thoroughly your component when using `shouldComponentUpdate` because this is error-prone. It will massively improve your app's performance though.
 - Don't create new functions on every render, [bind your functions efficiently](https://github.com/bamlab/dev-standards/blob/master/react-native/react/binding-functions-in-react-component.s.md). Similarly, avoid creating inline styles.
