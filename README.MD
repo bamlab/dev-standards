@@ -88,6 +88,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
 - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
 - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
+- [[Standard] React Native performance](/react-native/architecture/react-native-performance.s.md)
 
 ### Debugging
 

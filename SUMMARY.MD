@@ -57,6 +57,7 @@
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
     - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
+    - [[Standard] React Native performance](/react-native/architecture/react-native-performance.s.md)
   - Debugging
     - [[MO] Debug Javascript Code](/react-native/debugging/debug-javascript.mo.md)
     - [[MO] Debug Native Android Code](/react-native/debugging/debug-native-android.mo.md)
