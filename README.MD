@@ -88,6 +88,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
 - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
 - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
+- [[Standard] React Native performance](/react-native/architecture/react-native-performance.s.md)
 
 ### Debugging
 
@@ -101,7 +102,6 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
 - [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
 - [[MO] How to analyse and react to a bug on a React-Native project](/react-native/debugging/analyse-bug.mo.md)
-- [[Standard] React Native performance](/react-native/debugging/react-native-performance.s.md)
 
 ### React
 - [[Standard] Binding functions in a React component](/react-native/react/binding-functions-in-react-component.s.md)
