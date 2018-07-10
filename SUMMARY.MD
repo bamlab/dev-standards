@@ -22,7 +22,8 @@
   - [[MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*](/react-native/tests/setup-detox-jest.mo.md)
   - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
 - Flowtype
- - [[Standard] Flowtype](/flowtype/flowtype.s.md)
+  - [[Standard] Flowtype](/flowtype/flowtype.s.md)
+  - [[Standard] Typing a Container](/flowtype/typing-a-container.s.md)
 - Project Standards
   - [Project Success](/project-standards/project-success/index.md)
     - [[Standard] Deployed in production](/project-standards/project-success/production.s.md)
