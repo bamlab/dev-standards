@@ -24,7 +24,7 @@ It was therefore decided to display only 50 lines at first and add a 'See more' 
 
 Maybe you wonder: should I paginate on front or backend ?
 
-- Paginate back only if the cause of slowness is the time of backend request.
+- Paginate back only if the cause of slowness is the time of backend request (more than 2s).
   If you paginate your route, you must use lazy loading (you can ask [Guillaume Renouvin](https://github.com/GuillaumeRenouvin) about it)
 - Otherwise, paginate front if you want to minize elements to display and so gain on rendering time.
 
