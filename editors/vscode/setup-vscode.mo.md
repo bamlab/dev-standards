@@ -28,6 +28,7 @@ Open the plugins menu and install:
 - Git Lens *(Eric Amodio)*
 - Jest *(Orta)*
 - Color Highlight *(Sergii Naumov)*
+- [Version Lens *(pflannery)*](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
 
 #### 3. Base preferences
 
