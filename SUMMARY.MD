@@ -100,9 +100,9 @@
   - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
   - [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
 - [Front and Back-end Performance](/performance/performance-decision-flow.s.md)
-  - Do you know the best practices in React Native?
-    - [[Standard] React Native performance](/performance/front/react-native-performance.s.md)
-  - Do you know how to investigate your performance issues?
+  - Performance standards
+    - [[Standard] What you should know in order to have performing applications](/performance/front/react-native-performance.s.md)
+  - Performance issues
     - General
       - [Simulate a network like LTE, 3G or Edge with an iPhone in hotstop](/performance/front/simulate-network-iphone.mo.md)
     - Backend
@@ -111,7 +111,7 @@
       - [3. Output SQL Alchemy ORM query](/performance/backend/output-sql-alchemy-orm-query.mo.md)
     - Frontend
       - [[MO] How to investigate front-end performance issues](/performance/front/how-to-investigate-performance.mo.md)
-  - Now that you investigated, can we help you?
+  - Performance control
     - Backend
       - [1. Cache your routes using varnish](/performance/backend/cache-routes-using-varnish.mo.md)
       - [2. Serve images as static files](/performance/backend/serve-images-as-static-files.mo)

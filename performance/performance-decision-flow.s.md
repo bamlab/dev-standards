@@ -1,4 +1,16 @@
-# Performance Decision Flow
+# [Standard] Performance Decision Flow
+
+## Owner: [Thibaut Guedou](https://github.com/thibautguedou3)
+
+## Cheks
+
+- Back-end:
+  - Your requests take less than 500ms to complete
+- Front-end:
+
+  - Your pages take less than 2s to display
+  - No visible lags
+  - Every action has instant visual feedback
 
 ## Do you know how to investigate your performance issues?
 
@@ -12,7 +24,7 @@
 2.  [Python investigation tools](/performance/backend/python-investigation-tools.mo.md)
 3.  [Output SQL Alchemy ORM query](/performance/backend/output-sql-alchemy-orm-query.mo.md)
 
-## Know that you investigated, can we help you?
+## Now that you investigated, can we help you?
 
 ### Backend
 
@@ -31,3 +43,11 @@
 ### Backend
 
 - [Monitor your backend performance with K6](https://github.com/bamlab/performance-monitoring)
+
+## Good examples
+
+> Please andon and/or create an issue if you need one!
+
+## Bad examples
+
+> Please andon and/or create an issue if you need one!
