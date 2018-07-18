@@ -112,6 +112,7 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
 - [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
 - [[MO] How to analyse and react to a bug on a React-Native project](/react-native/debugging/analyse-bug.mo.md)
+- [[Standard] What differences between iOS and android should I be aware of as a react-native developer?](/react-native/debugging/differences-between-ios-and-android.s.md)
 
 ### React
 
