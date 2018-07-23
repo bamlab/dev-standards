@@ -9,17 +9,16 @@
 ## Motivation
 
 If you need :
-- to create a custom loading bar display
-- a list of views without previous knowlegde of their size but want them to be all the same
-- just need to know the size or position of an element on your screen dynamically (whithout explicitly describing it the object's style)
+- to display a list of views without previous knowlegde of their size but want them to be all the same
+- just to know the size or position of an element on your screen dynamically (whithout explicitly describing it the object's style)
 
 You must have access those variables during the runtime of your application.
 
-To do this, React offers a onLayout props in which you can pass a callback that will be executed after the rendering of a component.
+To do this, React offers a onLayout props ([see official docs](https://facebook.github.io/react-native/docs/view.html#onlayout)) in which you can pass a callback that will be executed after the rendering of a component.
 
 ## Prerequisites
 
-A react/react-native app with components. We will take here the example of a loading bar like this one :
+A React-Native app. We will take here the example of a loading bar like this one :
 ![loader](https://user-images.githubusercontent.com/13121639/37297957-56f5184e-261f-11e8-9b8b-22c8de783daa.png)
 
 Your goal is to calculate the number of green pixels rows you have to display for a given loading status from 0 (0%) to 1 (100%) without previous knowlegde of the loader width :
@@ -68,14 +67,12 @@ export default class LoadingBar extends React.Component {
 }
 ```
 
-the `onLayout` will generate an event when the LoadingBar is displayed. You can access any layouts info with :
+The `onLayout` will generate an event when the LoadingBar is displayed. You can access any layout info with :
 ```
 const {posX, posY, width, height} = event.nativeEvent.layout
 ```
 
-you can know calculate the number of green pixels rows with the width we just got with `onLayout` :
+You can know compute the number of green pixels rows with the width we just got with `onLayout` :
 ```
 const numbersOfGreenPixelsRows = this.props.status * this.state.loaderWidth
 ```
-
-Voilà !
