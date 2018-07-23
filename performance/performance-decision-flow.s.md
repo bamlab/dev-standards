@@ -23,7 +23,7 @@
 ### Front
 
 1.  Pure components **-> [To do]**
-2.  [Table or chart taking to much time to render](/performance/front/table-and-chart-with-good-performance.mo.md)
+2.  [Optimize the render time of lists, tables and charts](/performance/front/table-and-chart-with-good-performance.mo.md)
 
 ## Have you a mean of keeping the performance under control?
 
