@@ -7,6 +7,10 @@ While coding I usually use the iOS simulator only. Most of the time, if the feat
 
 ## Owner: [Pierre-Louis Le Portz](https://github.com/pleportz)
 
+## Checks
+
+If I am in one of the cases below, I made sure to check me feature on both ios and android before deploying for validation.
+
 ## I modified the native code
 
 *Check: there is a commit change in either the `android/` or the `ios/. directory*
