@@ -19,7 +19,8 @@
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
   - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
-  - [[MO] Set up Detox with Jest and automate it on Bitrise _(~ 1h)_](/react-native/tests/setup-detox-jest.mo.md)
+  - [[MO] How to use mocks with jest](/code-quality/mock-with-jest.mo.md)
+  - [[MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*](/react-native/tests/setup-detox-jest.mo.md)
   - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
 - Flowtype
 - [[Standard] Flowtype](/flowtype/flowtype.s.md)

@@ -1,4 +1,4 @@
-# [Standard] How to use mocks with jest
+# [MO] How to use mocks with jest
 
 ## Owner: [Pierre-Louis Le Portz](https://github.com/pleportz)
 
