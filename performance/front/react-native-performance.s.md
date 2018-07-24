@@ -8,7 +8,7 @@ In order to have an efficient application from the get-go, respect the following
 
 ## Why
 
-Because a few seconds of page render, a laggy chart display or a buggy animation makes you lose customers, those tips will help you avoid that before it even happens
+Because a few seconds of page render, a laggy chart display or a buggy animation makes you lose customers, those tips will help you avoid that before it even happens.
 In order to have an efficient application from the get-go, respect the following standards.
 
 ### General
