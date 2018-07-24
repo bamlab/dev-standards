@@ -19,10 +19,10 @@
 - Code Quality
   - [[MO] Test your React and React Native components' state with Jest (without Enzyme)](/code-quality/components-state-testing.mo.md)
   - [[Standard] Test files indentation](/code-quality/test-files-indentation.s.md)
-  - [[MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*](/react-native/tests/setup-detox-jest.mo.md)
+  - [[MO] Set up Detox with Jest and automate it on Bitrise _(~ 1h)_](/react-native/tests/setup-detox-jest.mo.md)
   - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
 - Flowtype
- - [[Standard] Flowtype](/flowtype/flowtype.s.md)
+- [[Standard] Flowtype](/flowtype/flowtype.s.md)
 - Project Standards
   - [Project Success](/project-standards/project-success/index.md)
     - [[Standard] Deployed in production](/project-standards/project-success/production.s.md)
@@ -47,7 +47,7 @@
     - [[MO] Setup Firebase with multiple environments (~1h)](/react-native/setup/setup_firebase_multiple_envs.mo.md)
     - [[MO] Setup Facebook login](/react-native/setup/setup-facebook-login.mo.md)
     - [[MO] Setup Stripe Payment Form](/react-native/setup/setup-stripe-dev-standard.mo.md)
-    - [[MO] Set up Detox with Jest and automate it on Bitrise *(~ 1h)*](/react-native/tests/setup-detox-jest.mo.md)
+    - [[MO] Set up Detox with Jest and automate it on Bitrise _(~ 1h)_](/react-native/tests/setup-detox-jest.mo.md)
     - [[MO] Patch React Native Android](/react-native/setup/patch-react-native-android.mo.md)
     - [[MO] Remove Default Android Permissions Android](/react-native/setup/remove-unnecessary-android-permissions.mo.md)
     - [[MO] use http links in react native](/react-native/use_http_links_in_react_native.mo.md)
@@ -57,7 +57,6 @@
     - [[Standard] Project Architecture](/react-native/architecture/project-architecture.s.md)
     - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
     - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
-    - [[Standard] React Native performance](/react-native/architecture/react-native-performance.s.md)
   - Debugging
     - [[MO] Debug Javascript Code](/react-native/debugging/debug-javascript.mo.md)
     - [[MO] Debug Native Android Code](/react-native/debugging/debug-native-android.mo.md)
@@ -83,7 +82,7 @@
   - Update
     - [[MO] Upgrade React Native](/react-native/update/upgrade-react-native.mo.md)
   - React Navigation
-    - [[MO] Unmount a component on page change *(~10 min)*](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
+    - [[MO] Unmount a component on page change _(~10 min)_](/react-native/react-navigation/unmount-compoenent-on-page-change.mo.md)
   - Firebase
     - [[MO] Good practices to debug events in Firebase](/react-native/firebase/debug-events.mo.md)
 - React
@@ -101,23 +100,26 @@
   - [[MO] 2-Factor Authentication](/security/2FA.mo.md) (15 min)
   - [[MO] Import certificates into Match](/security/import_certificates_match.mo.md) (30 min)
 - [Front and Back-end Performance](/performance/performance-decision-flow.s.md)
-  - Do you know how to investigate your performance issues?
+  - Performance standards
+    - [[Standard] What you should know in order to have performing applications](/performance/front/react-native-performance.s.md)
+  - Performance issues
     - General
       - [Simulate a network like LTE, 3G or Edge with an iPhone in hotstop](/performance/front/simulate-network-iphone.mo.md)
     - Backend
       - [1. How to investigate a general backend performance issue](/performance/backend/how-to-investigate-performance.mo.md)
       - [2. Python investigation tools](/performance/backend/python-investigation-tools.mo.md)
       - [3. Output SQL Alchemy ORM query](/performance/backend/output-sql-alchemy-orm-query.mo.md)
-  - Know that you investigated, can we help you?
+    - Frontend
+      - [[MO] How to investigate front-end performance issues](/performance/front/how-to-investigate-performance.mo.md)
+  - Performance control
     - Backend
       - [1. Cache your routes using varnish](/performance/backend/cache-routes-using-varnish.mo.md)
       - [2. Serve images as static files](/performance/backend/serve-images-as-static-files.mo)
       - [3. Minimize your number of SQL queries](/performance/backend/minimize-number-sql-queries.mo.md)
     - Front
-      - 1. Pure components **-> [To do]**
+      - 1.  Pure components **-> [To do]**
   - Have you a mean of keeping the performance under control?
     - Backend
       - [1. Monitor your backend performance with K6](https://github.com/bamlab/performance-monitoring)
 - Ops
   - [[MO] Setup HTTPS on your docker environment](/ops/docker/deploy-with-https.mo.md) (10 min)
-
