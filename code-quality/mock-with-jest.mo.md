@@ -9,6 +9,10 @@ Most teams at BAM use jest for testing their react components. **One of the most
 Typical use case:
 *"My component's snapshot test was passing but then I imported a module and now the test is broken :'("*
 
+## Prerequisites
+
+Have jest installed ;)
+
 ## Example 1: mock some method on an imported module
 
 **File to be tested:**
