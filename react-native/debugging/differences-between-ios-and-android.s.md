@@ -9,7 +9,7 @@ While coding I usually use the iOS simulator only. Most of the time, if the feat
 
 ## Checks
 
-If I am in one of the cases below, I made sure to check me feature on both ios and android before deploying for validation.
+If I am in one of the cases below, I made sure to check my feature on both ios and android before deploying to the validation platform.
 
 ## I modified the native code
 
