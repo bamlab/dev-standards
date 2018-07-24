@@ -9,6 +9,8 @@ While coding I usually use the iOS simulator only. Most of the time, if the feat
 
 ## I modified the native code
 
+*Check: there is a commit change in either the `android/` or the `ios/. directory*
+
 - I added/updated a **font**
 
   - Why: You might have forgotten to update the font for one of the two OSs.
