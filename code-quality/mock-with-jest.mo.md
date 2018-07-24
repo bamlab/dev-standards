@@ -59,6 +59,18 @@ describe('<Home />', () => {
 });
 ```
 
+**Even better**
+
+In the example above we are mocking a native module (`react-native-permissions`). Since you always need to mock a native module, **you should centralize the mock definition in order to avoid redefining it in numerous test files**. Here is how to do it:
+
+ ```javascript
+ //projet_root/__mocks__/react-native-permissions.js
+
+ jest.mock('react-native-permissions', () => ({
+   check: _ => Promise.resolve(true),
+ }));
+ ```
+
 ## Example 2: Mock one of your own components
 
 *In the example below, we chose to mock the Votes component when we added a container with graphql logic around the original Votes component*
@@ -74,7 +86,7 @@ export default class Recipe extends PureComponent {
   render() {
     return (
       <View>
-        // render something and use Votes component...
+        // render things and then use:
         <Votes />
       </View>
     );
@@ -105,3 +117,35 @@ describe('<Recipe />', () => {
 ```
 
 ## Example 3: Mock a class that is used for both rendering a component AND using static methods
+
+In the example below we use the `react-rte/lib/RichTextEditor` module to build our own state-controlled markdown input component.
+
+
+**File to be tested:**
+
+```javascript
+import React, { Component } from 'react';
+import RichTextEditor from 'react-rte/lib/RichTextEditor';
+
+export default class MarkdownInput extends Component{
+
+  // use RichTextEditor.createValueFromString() and RichTextEditor.createEmptyValue() in some lifecycle methods
+
+  render() {
+    return <RichTextEditor
+      //pass some props
+      />;
+  }
+}
+```
+
+**Centralized mock (see Example 1, section "Even better"):**
+
+```javascript
+jest.mock('path_from_root_to_node_modules/node_modules/react-rte/lib/RichTextEditor', () => {
+  const RichTextEditor = props => <richTextEditor {...props} />;
+  RichTextEditor.createValueFromString = string => ({ content: string });
+  RichTextEditor.createEmptyValue = () => ({ content: '' });
+  return RichTextEditor;
+});
+```
