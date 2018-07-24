@@ -1,12 +1,13 @@
-## What differences between iOS and android should I be aware of as a react-native developer?
+# [Standard] What differences between iOS and android should I be aware of as a react-native developer?
 ## ... and when should I double check my feature on both platforms?
 
 *react-native is awesome because it lets you build both iOS and android apps with the same javascript codebase...*
 
-While coding I usually use the iOS simulator only. Most of the time, if the feature works on iOS then it works on android automatically. Of course there are a few exceptions: in this article you will find a non comprehensive list of caveats.
+While coding I usually use the iOS simulator only. Most of the time, if the feature works on iOS then it works on android automatically. Of course there are a few exceptions: in this article you will find a non comprehensive list of these exceptions.
 
+## Owner: [Pierre-Louis Le Portz](https://github.com/pleportz)
 
-### I modified the native code
+## I modified the native code
 
 - I added/updated a **font**
 
@@ -24,11 +25,11 @@ While coding I usually use the iOS simulator only. Most of the time, if the feat
 
   - References: See [How to add a native module](https://github.com/bamlab/dev-standards/blob/master/react-native/setup/add-native-module.mo.md)
 
-### I added a fixed height property to a component
+## I added a fixed height property to a component
 
 - Why: Unlike iOS, android sets the default behaviour to the react-native `<View />` component to `overflow: hidden`. Using a fixed height often ends up with cut texts or cut images on android.
 
-### I added shadows to a component
+## I added shadows to a component
 
 - Works on iOS / does not on android:
 
@@ -63,14 +64,14 @@ const styles = {
 }
 ```
 
-### I used react-native's `<TextInput />` component
+## I used react-native's `<TextInput />` component
 
 - Why: <TextInput /> does not render identically on android and iOS:
 
   - With android you might need to specify the `underlineColorAndroid` prop (can be set to `"transparent"` for example)
   - The vertical alignment of the input text is not the same. This can be solved by using a marginTop that depends on the platform: `marginTop: Platform.OS === 'ios ? ...'`
 
-### I mistakenly added text direcly as a `<View />`'s child
+## I mistakenly added text direcly as a `<View />`'s child
 
 - Why: `<View>Hello</View>` does not crash iOS but crashes on android with the following error `Cannot add a child that doesn't have a YogaNode to a parent without a measure function! (Trying to add a 'ReactVirtualTextShadowNode' to a 'NativeViewWrapper')`
 
@@ -87,7 +88,7 @@ const styles = {
   <View>{!!this.props.myText && <Text>this.props.myText</Text>}</View>
   ```
 
-### I used a javascript function that is not implemented the same way in react-native's javascript interpreters for android and iOS
+## I used a javascript function that is not implemented the same way in react-native's javascript interpreters for android and iOS
 
 - Why: As of July 2018, react-native's javascript interpreter for android is a little bit late compared to iOS's. There are a few methods that just won't work with android:
 

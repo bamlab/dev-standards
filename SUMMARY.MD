@@ -63,6 +63,7 @@
     - [[MO] Debug Native iOS Code](/react-native/debugging/debug-native-ios.mo.md)
     - [[MO] Debug Javascript on an iOS Device](/react-native/debugging/debug-javascript-ios-device.mo.md)
     - [[MO] Debug a React Native WebView](/react-native/debugging/debug-webviews.mo.md)
+    - [[Standard] What differences between iOS and android should I be aware of as a react-native developer?]((/react-native/debugging/differences-between-ios-and-android.s.md)
     - [[MO] Handle gradle dependencies versions clashes](/react-native/debugging/handle-gradle-dependencies-clash.mo.md)
     - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
     - [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
