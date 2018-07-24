@@ -6,7 +6,7 @@
 
 Sometimes, standards are not enough, or you're not applying them, resulting in performance bottlenecks.
 
-## General tips
+## Steps
 
 Proceed by dichotomy: cut your app in multiple pieces in order to find out where the problem comes from. For example, literally remove some components or pages!
 

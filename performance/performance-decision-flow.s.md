@@ -2,7 +2,7 @@
 
 ## Owner: [Thibaut Guedou](https://github.com/thibautguedou3)
 
-## Cheks
+## Checks
 
 - Back-end:
   - Your requests take less than 500ms to complete
