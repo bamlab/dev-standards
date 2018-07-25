@@ -68,7 +68,7 @@ describe('<Home />', () => {
 In the example above we are mocking a native module (`react-native-permissions`). Since you always need to mock a native module, **you should centralize the mock definition in order to avoid redefining it in numerous test files**. Here is how to do it:
 
  ```javascript
- //projet_root/__mocks__/react-native-permissions.js
+ //project_root/__mocks__/react-native-permissions.js
 
  jest.mock('react-native-permissions', () => ({
    check: _ => Promise.resolve(true),
