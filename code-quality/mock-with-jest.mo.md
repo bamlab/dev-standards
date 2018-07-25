@@ -13,6 +13,13 @@ Typical use case:
 
 Have jest installed ;)
 
+## Steps
+
+In this MO you will learn to:
+- mock some method on an imported module
+- mock an imported component
+- mock a class that is used for both rendering a component AND using static methods
+
 ## Example 1: mock some method on an imported module
 
 **File to be tested:**
