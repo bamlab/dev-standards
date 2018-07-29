@@ -1,4 +1,4 @@
-# [MO] Get element size or position dynamically with onLayout
+# [MO] Get the size or position of a component with onLayout
 
 ## Owner: [Julien Nassar, Gaspard Denis](https://github.com/juliennassar)
 
