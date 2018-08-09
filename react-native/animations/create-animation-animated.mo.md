@@ -44,6 +44,21 @@ Animations are a great way to improve the User Experience by :
 >
 ```
 
+### Style interpolation
+
+```js
+<Animated.View
+  style={{
+    transform: [{ translateY: contentOffsetY.interpolate({
+      inputRange: [0, 100],
+      outputRange: [0, 200],
+      extrapolate: 'clamp',
+    }) }],
+    position: 'absolute',
+  }}
+>
+```
+
 ## Bad examples
 
 > Please andon and/or create an issue if you need one!
@@ -56,5 +71,19 @@ Animations are a great way to improve the User Experience by :
     onScroll={
       Animated.event([{ nativeEvent: { contentOffset: { y: contentOffsetY } } }])
     }
+>
+```
+
+### Style interpolation
+
+```js
+<Animated.View
+  style={{
+    transform: [{ height: contentOffsetY.interpolate({
+      inputRange: [0, 100],
+      outputRange: [0, 200],
+      extrapolate: 'clamp',
+    }) }],
+  }}
 >
 ```
