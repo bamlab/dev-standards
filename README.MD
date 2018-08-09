@@ -101,6 +101,10 @@ we help them solve their problem and then together write either a [Standard] or 
 - [[Standard] File Naming](/react-native/architecture/file-naming.s.md)
 - [[Standard] Handle Errors and Exceptions in Javascript](/backend/node-js/handle-errors-and-exceptions-in-javascript.s.md)
 
+### Animations
+
+- [[Standard] React Native animations](/react-native/animations/react-native-animations.s.md)
+
 ### Debugging
 
 - [[MO] Debug Javascript Code](/react-native/debugging/debug-javascript.mo.md)
