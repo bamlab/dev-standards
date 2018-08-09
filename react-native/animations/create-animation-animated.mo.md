@@ -4,7 +4,14 @@
 
 ## Why
 
-See [why](https://github.com/bamlab/animations/blob/master/why.md).
+Animations are a great way to improve the User Experience by :
+
+- easing the interactions, so that they may seem more natural
+- giving a clear visual feedback on an action's success or failure, and on its nature (tap / long press / slide / pinch)
+- educating the user on possible interactions on an element
+- helping the user wait while content is loading
+- giving a sensation of speed and minimizing small performance problems
+- show more content on the page in a fluid manner
 
 ## Checks
 
