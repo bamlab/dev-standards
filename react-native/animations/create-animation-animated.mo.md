@@ -31,6 +31,30 @@ Animations are a great way to improve the User Experience by :
 
 > Please andon and/or create an issue if you need one!
 
+### `useNativeDriver`
+
+```js
+<Animated.ScrollView
+    scrollEventThrottle={1}
+    onScroll={
+      Animated.event([{ nativeEvent: { contentOffset: { y: contentOffsetY } } }], {
+        useNativeDriver: true,
+      })
+    }
+>
+```
+
 ## Bad examples
 
 > Please andon and/or create an issue if you need one!
+
+### `useNativeDriver`
+
+```js
+<Animated.ScrollView
+    scrollEventThrottle={1}
+    onScroll={
+      Animated.event([{ nativeEvent: { contentOffset: { y: contentOffsetY } } }])
+    }
+>
+```
