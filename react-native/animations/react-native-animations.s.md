@@ -25,7 +25,7 @@ Animations are a great way to improve the User Experience by :
   - I make sure to use the parameter `useNativeDriver` in `Animated.timing`, `Animated.spring`, `Animated.decay` and `Animated.event` (see [React Native performance](../../performance/front/react-native-performance.s.md))
   - I only use `Animated.interpolate` on styles of type `opacity` or `transform` (necessary for `useNativeDriver`)
 - If I use any third party library, I look at the documentation and/or code, and if a `useNativeDriver` prop exists, I use it
-- When my animation is finished, I make a GIF (with [Kap](https://getkap.co/): `brew cask install kap`) of it and add it to the catalog [here](https://github.com/bamlab/animations/blob/master/catalog.md) (10 min)
+- When my animation is finished, I make a GIF of it (with [Kap](https://getkap.co/): `brew cask install kap`) and add it to the catalog [here](https://github.com/bamlab/animations/blob/master/catalog.md) (10 min)
 
 ## Good examples
 
