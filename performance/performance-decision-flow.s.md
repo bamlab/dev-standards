@@ -37,6 +37,7 @@
 1.  [Build performant application](/performance/front/react-native-performance.s.md)
 2.  [Investigate performance issues](/performance/front/how-to-investigate-performance.mo.md)
 3.  Pure components **-> [To do]**
+4.  [Optimize the render time of lists, tables and charts](/performance/front/table-and-chart-with-good-performance.mo.md)
 
 ## Have you a mean of keeping the performance under control?
 
