@@ -16,7 +16,7 @@
 - After your Knex instantiation add listeners on each query, query response and query errors
 ```javascript
 db.on('query', query => {
- console.log(query.sql);
+  console.log(query.sql);
 })
  .on('query-response', (response, query) => {
    console.log(query.sql);
@@ -28,29 +28,29 @@ db.on('query', query => {
 > Check: Launch your server, call an API route and you should see your queries on the logs
 
 ### Log query duration (~5min)
-- Blabla
-  ```javascript
+
+```javascript
 import now from 'performance-now';
 
 const durations = {};
 
 knex
  .on('query', query => {
-   times[uid] = {
+   durations[query.__knexQueryUid] = {
      query,
      startTime: now(),
    };
  })
  .on('query-response', (response, query) => {
-   times[query.__knexQueryUid].endTime = now();
+   durations[query.__knexQueryUid].endTime = now();
 
    console.log(query.sql, ',', `[${query.bindings ? query.bindings.join(',') : ''}]`);
    console.log(
      `Time: ${(
-       times[query.__knexQueryUid].endTime - times[query.__knexQueryUid].startTime
+       durations[query.__knexQueryUid].endTime - durations[query.__knexQueryUid].startTime
      ).toFixed(3)} ms\n`
    );
-   delete times[uid];
+   delete durations[uid];
  });
 
   ```
