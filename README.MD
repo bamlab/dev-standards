@@ -2,6 +2,8 @@
 
 # Standards and Methods of Operation
 
+> :warning: We are in process of migrating all the content to a private gitbook. The public content in this repository will be converted to blog articles for better acessibility.
+
 ## About us
 
 We are mobile developers, based in Paris, working with hybrid and cross platform technologies.
