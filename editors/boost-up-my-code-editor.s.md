@@ -1,8 +1,12 @@
-# [MO] Boost up my code editor
+# [Standard] Boost up my code editor
 
 ## Owner: [Guillaume Diallo-Mulliez](https://github.com/guitoof)
 
-## ⛳️ Control Points
+## Why ?
+
+As a developer my code editor is my main working tool. I need to be able to configure it properly and use it efficiently.
+
+## Checks
 
 My editor allows me to:
 
@@ -97,6 +101,12 @@ My editor allows me to:
 
 - for **VSCode**: [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
 
-## 🛠 Need help to setup your editor to comply with these standards ?
+## Good Examples
+
+🛠 Need help to setup your editor to comply with these standards ?
 
 - Setup VSCode : https://bamtech.gitbook.io/dev-standards/editors/visual-studio-code/mo-setup-vscode
+
+## Bad Examples
+
+Your current editor 😜
