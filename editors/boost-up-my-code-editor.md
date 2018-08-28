@@ -41,16 +41,6 @@ My editor allows me to:
   - for **ESLint** : [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - for **TSLint** : [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
 
-### 📦 **Identify Outdated packages**: so that I can upgrade them rapidly after a new release
-
-##### What ?
-
-- See the latest stable version of each package
-
-#### How ?
-
-- for **VSCode**: [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
-
 ### ☁️ **Visualize my git diff**: so that I can see what I changed since the last time it worked
 
 ##### What ?
@@ -62,11 +52,17 @@ My editor allows me to:
 
 - for **VSCode**: Build in _Source Control_ tab
 
-### 🛠 **Create & use snippets**: so that I can create components, tests and other basic files in a flash
+### 🛠 **Create & use snippets**: so that I can create basic files in a flash
+
+##### What ?
+
+- Create snippets for components, containers, tests, redux files ...
+- Share your snippets with your team to ensure consistency
 
 #### How ?
 
-- for **VSCode**: ???
+- for **VSCode**: [Project Snippets](https://marketplace.visualstudio.com/items?itemName=rebornix.project-snippets)
+- Create your snippets quickly with [VS-snippeteer](https://pierpo.github.io/vs-snippeteer/)
 
 ### 🔮 **Use Autocompletion**: so that I can avoid typos and code faster
 
@@ -77,19 +73,29 @@ My editor allows me to:
 
 #### How ?
 
-- for **VSCode**: ???
+- for **VSCode**: [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode), [vscode-flow-ide](https://marketplace.visualstudio.com/items?itemName=gcazaciuc.vscode-flow-ide)
 
 ### ⛵️ **Navigate throughout the code in a click**: so that I don't waste time fumbling through a complex tree view
 
 ##### What ?
 
-- Varibales, Functions, Classes **definition**
-- Varibales, Functions, Classes **documentation**
-- Varibales, Functions, Classes **typing**
+- Variables, Functions, Classes **definition**
+- Variables, Functions, Classes **documentation**
+- Variables, Functions, Classes **typing**
 
 #### How ?
 
-- for **VSCode**: build in ???
+- for **VSCode**: [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode), [vscode-flow-ide](https://marketplace.visualstudio.com/items?itemName=gcazaciuc.vscode-flow-ide)
+
+### 📦 **Identify Outdated packages**: so that I can upgrade them rapidly after a new release
+
+##### What ?
+
+- See the latest stable version of each package
+
+#### How ?
+
+- for **VSCode**: [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
 
 ## 🛠 Need help to setup your editor to comply with these standards ?
 
