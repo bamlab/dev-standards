@@ -26,7 +26,7 @@ My editor allows me to:
 ##### What ?
 
 - Real time or On save formatting
-- Inspect current context variables
+- Share configuration with team mates
 
 #### How ?
 
@@ -44,6 +44,7 @@ My editor allows me to:
 - for **VSCode**:
   - for **ESLint** : [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - for **TSLint** : [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint)
+  - for **Flow** : [vscode-flow-ide](https://marketplace.visualstudio.com/items?itemName=gcazaciuc.vscode-flow-ide)
 
 ### ☁️ **Visualize my git diff**: so that I can see what I changed since the last time it worked
 
@@ -86,10 +87,11 @@ My editor allows me to:
 - Variables, Functions, Classes **definition**
 - Variables, Functions, Classes **documentation**
 - Variables, Functions, Classes **typing**
+- Show file location
 
 #### How ?
 
-- for **VSCode**: [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode), [vscode-flow-ide](https://marketplace.visualstudio.com/items?itemName=gcazaciuc.vscode-flow-ide)
+- for **VSCode**: [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode), [vscode-flow-ide](https://marketplace.visualstudio.com/items?itemName=gcazaciuc.vscode-flow-ide), [breadcrumbs](https://code.visualstudio.com/updates/v1_26#_breadcrumbs)
 
 ### 📦 **Identify Outdated packages**: so that I can upgrade them rapidly after a new release
 
