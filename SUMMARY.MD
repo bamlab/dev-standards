@@ -98,6 +98,7 @@
     - [[MO] Trigger an action on props update](/react/lifecycle/trigger-action-on-props-update.mo.md)
   - [[Standard] Wrinting a Component](/react/component.s.md)
 - Editors
+  - [[Standard] Boost Up my Code Editor](editors/boost-up-my-code-editor.s.md)
   - Visual Studio Code
     - [[MO] Setup VSCode](/editors/vscode/setup-vscode.mo.md)
 - Security
