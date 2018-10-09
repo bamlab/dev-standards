@@ -8,43 +8,42 @@ When asynchronous action is performed, if you want to wait for its success or fa
 
 ## Steps
 
-- I identified the aynchronous work I want to wait for
+- I identified the asynchronous work I want to wait for
 - I included the function into a callback, the executor of the Promise will handle an asynchronous work (in the examples below the describeTable). Once the work is done, if it went well, we are calling the resolve function, if not we are calling the reject one.
-  -> When we perform the `await getDynamoHealth()`, we are truly waiting for the call of the resolve or reject function
 
 ## Examples
 
 ### Example 1: Bad example
 
 ```jsx
-export const getDynamoHealth = () => {
-  dynamodb.describeTable({}, (error, data) => {
-    // AWS asynchronous function that describe tables in the DB and takes in second argument a callback
+export const waitForCallbackToBeSolved = () => {
+  asynchronousAction(params, (error, data) => {
+    // We create a Promise with the function using a callback in second arguments
     if (error) throw error;
     else console.log(data);
   });
 };
 
-export const getHealth = async () => {
+export const getResponse = async () => {
   try {
-    await getDynamoHealth(); // If the callback does not throw the error I want to send a 200 otherwise I send a 500
-    sendStatus(200);
+    await waitForCallbackToBeSolved();
+    doStuff();
   } catch (error) {
+    log(error);
     throw error;
-    sendStatus(500);
   }
 };
 ```
 
--> [ ] No Promise nor promisify had been used hence we are sending a 200 status in all cases
+-> [ ] Neither `Promise` nor `promisify` had been used hence we are sending a 200 status in all cases
 
 ### Example 2: Good example
 
 ```jsx
-export const getDynamoHealth = (): Promise<Array<Object>> => {
+export const waitForCallbackToBeSolved = (): Promise<Array<Object>> => {
   return new Promise((resolve, reject) => {
     // We create a Promise with the function using a callback in second arguments
-    dynamodb.describeTable({ TableName: dynamodbTableName }, (error, data) => {
+    asynchronousAction(params, (error, data) => {
       if (error) {
         return reject(error);
       }
@@ -53,13 +52,13 @@ export const getDynamoHealth = (): Promise<Array<Object>> => {
   });
 };
 
-export const getHealth = async () => {
+export const getResponse = async () => {
   try {
-    await getDynamoHealth(); // If the callback does not throw the error I want to send a 200 otherwise I send a 500
-    sendStatus(200);
+    await waitForCallbackToBeSolved();
+    doStuff();
   } catch (error) {
+    log(error);
     throw error;
-    sendStatus(500);
   }
 };
 ```
