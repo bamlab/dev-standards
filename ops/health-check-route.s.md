@@ -9,12 +9,12 @@ In order to monitor correctly their environments, backend services require a Hea
 ## Checks
 
 - [ ] Make a call to every database used by the API
-- [ ] Send a 2xx status code status in case of API running correctly and 5xx status code if not
-- [ ] Make the less data usage database calls: the health check route is likely to be called very often in short period of time
+- [ ] Send a 2xx status code status if the API is running correctly, 5xx status code if not
+- [ ] Make database calls retrieving as little data as possible: the health check route is likely to be called very often in short period of time
 
 ## Examples
 
-In the examples below the API is concentrating calls to one database RDS and one DynamoDB
+In the examples below the API is making calls to one database RDS and one DynamoDB
 
 ### Example 1: Bad example
 
@@ -42,7 +42,7 @@ app.get("/health", async (req, res) => {
 
 - There is a call to one of the database but not the other
 - The call is using too much data
-- There is a 503 if the DB is down
+- There is a 503 if the DB is down: the await RDS.getAllEntries() is then throwing an error hence the catch block is executed
 
 ### Example 3: Good example
 
@@ -60,7 +60,7 @@ RDS.getHealth = async () => {
   await knex.raw("select 1+1 as result");
 };
 
-DynamoDB.getDynamoHealth = (): Promise<Array<Object>> => {
+DynamoDB.getDynamoHealth = () => {
   return new Promise((resolve, reject) => {
     dynamodb.describeTable({ TableName: dynamodbTableName }, (error, data) => {
       if (error) {
