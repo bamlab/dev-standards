@@ -4,11 +4,11 @@
 
 ## Why
 
-When asynchronous action is performed, if you want to wait for its success or failure and in order to avoid several chains of callbacks. See [callback hell](http://callbackhell.com/).
+When an asynchronous action is performed, if you want to wait for its success or failure and avoid several chains of callbacks. See [callback hell](http://callbackhell.com/).
 
 ## Steps
 
-- I identified the asynchronous work I want to wait for
+- I identified the asynchronous call I want to wait for
 - I included the function into a callback, the executor of the Promise will handle an asynchronous work (in the examples below the describeTable). Once the work is done, if it went well, we are calling the resolve function, if not we are calling the reject one.
 
 ## Examples
@@ -40,9 +40,9 @@ export const getResponse = async () => {
 ### Example 2: Good example
 
 ```jsx
-export const waitForCallbackToBeSolved = (): Promise<Array<Object>> => {
+export const waitForCallbackToBeSolved = () => {
   return new Promise((resolve, reject) => {
-    // We create a Promise with the function using a callback in second arguments
+    // We create a Promise with the function using a callback in second argument
     asynchronousAction(params, (error, data) => {
       if (error) {
         return reject(error);
