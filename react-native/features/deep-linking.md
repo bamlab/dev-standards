@@ -10,7 +10,7 @@ When calling a deeplink in your app, a 'url' event will be dispatch with the url
 
 ## How to implement?
 
-- Follow this guide from react navigation: https://reactnavigation.org/docs/guides/linking
+- Follow this guide from react navigation: https://reactnavigation.org/docs/en/deep-linking.html
 - For complementary information, you can consult Linking documentation : https://facebook.github.io/react-native/docs/linking.html
 
 ## Troubleshooting
