@@ -70,6 +70,8 @@
     - [[MO] Debug two iOS apps simultaneously](/react-native/debugging/debug-two-ios-apps-simultaneously.mo.md)
     - [[MO] Get iOS Logs](/react-native/debugging/get-ios-logs.mo.md)
     - [[MO] How to analyse and react to a bug on a React-Native project](/react-native/debugging/analyse-bug.mo.md)
+  - Javascript
+    - [[MO] Promisify a callback](/javascript/promisify-a-callback.mo.md)
   - React
     - [[Standard] Binding functions in A React component](/react-native/react/binding-functions-in-react-component.s.md)
     - [[MO] Enable component overflow on Android](/react-native/react/enable-overflow-android.mo.md)
