@@ -59,7 +59,7 @@ If your app takes too much time to initialize, solve the problem incrementally:
 
 ## Exemple with maps in react-native
 
-You can take a look the following standard : [React native maps](https://github.com/bamlab/dev-standards/blob/master/performance/front/react-native-maps-performance.s.md)
+You can take a look the following standard : [React native maps performance](https://github.com/bamlab/dev-standards/blob/master/performance/front/react-native-maps-performance.s.md)
 
 ## Good examples
 

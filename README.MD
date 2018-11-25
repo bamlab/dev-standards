@@ -184,6 +184,7 @@ we help them solve their problem and then together write either a [Standard] or 
 
 - [[Standard] Performance decision flow](/performance/performance-decision-flow.s.md)
 - [[Standard] React Native performance](/performance/front/react-native-performance.s.md)
+- [[Standard] React Native maps performance](/performance/front/react-native-maps-performance.s.md)
 - [[MO] Investigate front-end performance issues](/performance/front/how-to-investigate-performance.mo.md)
 - [[MO] Investigate back-end performance issues](/performance/backend/how-to-investigate-performance.mo.md)
 
