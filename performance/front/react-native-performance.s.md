@@ -57,6 +57,10 @@ If your app takes too much time to initialize, solve the problem incrementally:
 2.  If the startup time is > 2 seconds, show a full page modal with an animation (in the continuity of your splashscreen)
 3.  If the startup time is consistently > 5 seconds (or 7 seconds with an animated splashscreen): if you have a very big app, implement [dynamic imports](https://facebook.github.io/react-native/docs/performance.html#unbundling-inline-requires); if not, look for other clues: aren't you doing some long API calls at startup?
 
+## Exemple with maps in react-native
+
+You can take a look the following standard : [React native maps](https://github.com/bamlab/dev-standards/blob/master/performance/front/react-native-maps-performance.s.md)
+
 ## Good examples
 
 > Please andon and/or create an issue if you need one!
