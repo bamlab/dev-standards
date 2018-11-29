@@ -7,7 +7,7 @@
 
 ## Steps
 
-- Follow [this](https://github.com/yamill/react-native-orientation/blob/master/README.md) to install react-native-orientation
+- Follow [this](https://github.com/wonday/react-native-orientation-locker#installation) to install react-native-orientation-locker
 
 > :warning: Do not forget to rebuild your app
 
@@ -17,11 +17,11 @@
 
 We need to lock all the app pages, to do so import react-native-orientation in our top component:
 
-`import Orientation from 'react-native-orientation`
+`import Orientation from 'react-native-orientation-locker';`
 
 Add those lines to lock the orientation:
 
-```
+```js
 componentWillMount () {
   Orientation.lockToPortrait()
 }
@@ -29,4 +29,4 @@ componentWillMount () {
 
 - Refresh your app, and try to rotate your screen
 
-- [Star the repo](https://github.com/yamill/react-native-orientation) if it works ;)
+- [Star the repo](https://github.com/wonday/react-native-orientation-locker) if it works ;)
