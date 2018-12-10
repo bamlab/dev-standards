@@ -4,23 +4,55 @@
 
 ## Why
 
-Most teams at BAM use jest for testing their react components. **One of the most frequent andon is about mocks.**
+Most teams at BAM use jest for testing their react components or services. **One of the most frequent andon is about mocks.**
 
-Typical use case:
-*"My component's snapshot test was passing but then I imported a module and now the test is broken :'("*
+Typical use cases:
+- *"My component's snapshot test was passing but then I imported a module and now the test is broken :'("*
+- *"I do not want my test to actually do API calls with the new module I just installed"*
 
 ## Prerequisites
 
-Have jest installed ;)
+Have jest installed
 
 ## Steps
 
 In this MO you will learn to:
 - mock some method on an imported module
+- define a centralized mock to be used in all tests
 - mock an imported component
 - mock a class that is used for both rendering a component AND using static methods
 
-## Example 1: mock some method on an imported module
+## Example 1: mock some method on an imported module (generic example)
+
+**File to be tested:**
+
+```javascript
+import someModule from 'some-module';
+
+export const doStuff = someInteger => {
+  const intermediaryResult = someModule.someMethod(someInteger);
+  const finalResult = intermediaryResult / 21;
+  return finalResult;
+};
+```
+
+**Test file:**
+
+```javascript
+import { doStuff } from './doStuff.js';
+
+jest.mock('some-module', () => ({
+  someMethod: someInteger => 42,
+}));
+
+describe('doStuff', () => {
+  it('returns 2 if input is 1', () => {
+    expect(doStuff(1)).toEqual(2);
+  });
+});
+```
+
+## Example 2: define a centralized mock to be used in all tests
 
 **File to be tested:**
 
@@ -47,6 +79,18 @@ export default class Home extends PureComponent {
 }
 ```
 
+**Centralized mock**
+
+In this example we are mocking a native module (`react-native-permissions`). Since you always need to mock a native module, **you should centralize the mock definition in order to avoid redefining it in numerous test files**:
+
+ ```javascript
+ //project_root/__mocks__/react-native-permissions.js
+
+ export default {
+   check: _ => Promise.resolve('authorized'),
+ };
+ ```
+
 **Test file with snapshot test:**
 
 ```javascript
@@ -55,9 +99,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Home } from './Home';
 
-jest.mock('react-native-permissions', () => ({
-  check: _ => Promise.resolve(true),
-}));
+// no need to define the mock here
 
 describe('<Home />', () => {
   it('renders correctly', () => {
@@ -70,19 +112,7 @@ describe('<Home />', () => {
 });
 ```
 
-**Even better**
-
-In the example above we are mocking a native module (`react-native-permissions`). Since you always need to mock a native module, **you should centralize the mock definition in order to avoid redefining it in numerous test files**. Here is how to do it:
-
- ```javascript
- //project_root/__mocks__/react-native-permissions.js
-
- jest.mock('react-native-permissions', () => ({
-   check: _ => Promise.resolve(true),
- }));
- ```
-
-## Example 2: Mock one of your own components
+## Example 3: Mock one of your own components
 
 *In the example below, we chose to mock the Votes component when we added a container with graphql logic around the original Votes component*
 
@@ -127,7 +157,7 @@ describe('<Recipe />', () => {
 });
 ```
 
-## Example 3: Mock a class that is used for both rendering a component AND using static methods
+## Example 4: Mock a class that is used for both rendering a component AND using static methods
 
 In the example below we use the `react-rte/lib/RichTextEditor` module to build our own state-controlled markdown input component.
 
@@ -150,10 +180,10 @@ export default class MarkdownInput extends Component{
 }
 ```
 
-**Centralized mock (see Example 1, section "Even better"):**
+**jest mock:**
 
 ```javascript
-jest.mock('path_from_root_to_node_modules/node_modules/react-rte/lib/RichTextEditor', () => {
+jest.mock('react-rte/lib/RichTextEditor', () => {
   const RichTextEditor = props => <richTextEditor {...props} />;
   RichTextEditor.createValueFromString = string => ({ content: string });
   RichTextEditor.createEmptyValue = () => ({ content: '' });
