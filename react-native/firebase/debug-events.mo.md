@@ -65,13 +65,22 @@ emulator-5554	device
 
 {% endhint %}
 
-2. Run the following command: `adb shell setprop debug.firebase.analytics.app <package_name>`
+2. Run the following command: `adb shell setprop debug.firebase.analytics.app <app_identifier>`
 
 {% hint style='success' %} **CHECK**
 
 1. In Firebase, in the left menu, go in **Analytics**, **Debug View**.
 2. Select your application in the top menu.
 3. Your debug devices count should print: **APPAREIL DE DÉBOGAGE: 1**
+
+{% endhint %}
+
+{% hint style='info' %}
+
+How to find your `<app_identifier>` ?
+* dev: in your `build.gradle`
+* staging: in you `env.staging`
+* production: in your `env.production`
 
 {% endhint %}
 
