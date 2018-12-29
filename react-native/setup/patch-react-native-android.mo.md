@@ -10,7 +10,7 @@
 
 ### 1. Start downloading the Android NDK (2 minutes)
 
-- Download the NDK [here](https://facebook.github.io/react-native/docs/android-building-from-source.html#download-links-for-android-ndk) (it can take 20 to 30 minutes)
+- Download the NDK [here](https://facebook.github.io/react-native/docs/building-from-source#download-links-for-android-ndk) (it can take 20 to 30 minutes)
 - Once the download has started you can move on to the next steps
 
 ### 2. Apply your patch at deployment time (15 minutes)
