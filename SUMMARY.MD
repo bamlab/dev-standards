@@ -123,6 +123,7 @@
       - [1. Cache your routes using varnish](/performance/backend/cache-routes-using-varnish.mo.md)
       - [2. Serve images as static files](/performance/backend/serve-images-as-static-files.mo)
       - [3. Minimize your number of SQL queries](/performance/backend/minimize-number-sql-queries.mo.md)
+      - [4. Log queries durations with Knex](/performance/backend/log-queries-durations-with-knex.mo.md)
     - Front
       - 1.  Pure components **-> [To do]**
   - Have you a mean of keeping the performance under control?
